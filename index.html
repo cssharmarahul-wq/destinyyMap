@@ -1156,39 +1156,60 @@
       document.getElementById('calc-lagna-deg').innerText = formatDegMin(lagnaDegInSign);
       document.getElementById('calc-lagna-nak').innerText = `${nakshatraNames[nakIndex]} (Pada ${pada})`;
 
-      // Planetary Longitudes
+      // --- Planetary Longitudes using Heliocentric to Geocentric Equations ---
       const d = JD - 2451545.0;
-      const L_sun = normalizeDeg(280.466 + 0.9856474 * d);
-      const g_sun = normalizeDeg(357.528 + 0.9856003 * d);
-      const tropSun = normalizeDeg(L_sun + 1.915 * Math.sin(degToRad(g_sun)) + 0.020 * Math.sin(degToRad(2 * g_sun)));
-      const sidSun = normalizeDeg(tropSun - ayanamsha);
 
-      const L_moon = normalizeDeg(218.3165 + 13.1763965 * d);
-      const M_moon = normalizeDeg(134.9634 + 13.0649930 * d);
-      const D_moon = normalizeDeg(297.8502 + 12.1907491 * d);
-      const tropMoon = normalizeDeg(L_moon + 6.2888 * Math.sin(degToRad(M_moon)) + 1.2740 * Math.sin(degToRad(2 * D_moon - M_moon)));
+      // 1. Earth / Sun
+      const L_sun = normalizeDeg(280.46646 + 36000.76983 * T);
+      const M_sun = normalizeDeg(357.52911 + 35999.05029 * T);
+      const C_sun = (1.914602 - 0.004817 * T) * Math.sin(degToRad(M_sun)) + 0.019993 * Math.sin(degToRad(2 * M_sun));
+      const tropSun = normalizeDeg(L_sun + C_sun);
+      const sidSun = normalizeDeg(tropSun - ayanamsha);
+      const R_earth = 1.00014 - 0.01671 * Math.cos(degToRad(M_sun));
+      const x_earth = -R_earth * Math.cos(degToRad(tropSun));
+      const y_earth = -R_earth * Math.sin(degToRad(tropSun));
+
+      // 2. Moon
+      const L_moon = normalizeDeg(218.3164477 + 481267.88128 * T);
+      const M_moon = normalizeDeg(134.9633964 + 477198.86751 * T);
+      const D_moon = normalizeDeg(297.8501921 + 445267.11140 * T);
+      const tropMoon = normalizeDeg(L_moon + 6.2888 * Math.sin(degToRad(M_moon)) + 1.2740 * Math.sin(degToRad(2 * D_moon - M_moon)) + 0.6583 * Math.sin(degToRad(2 * D_moon)));
       const sidMoon = normalizeDeg(tropMoon - ayanamsha);
 
-      const M_mars = normalizeDeg(19.373 + 0.5240207 * d);
-      const tropMars = normalizeDeg(355.433 + 0.524071 * d + 10.691 * Math.sin(degToRad(M_mars)));
-      const sidMars = normalizeDeg(tropMars - ayanamsha);
+      // Helper for Heliocentric Planets
+      function getHelioPlanet(a, e0, edot, L0, Ldot, w0, wdot) {
+        const e = e0 + edot * T;
+        const L = normalizeDeg(L0 + Ldot * T);
+        const w = normalizeDeg(w0 + wdot * T);
+        const M = normalizeDeg(L - w);
+        const C = (2 * e - Math.pow(e, 3) / 4) * Math.sin(degToRad(M)) + (5 / 4) * Math.pow(e, 2) * Math.sin(degToRad(2 * M));
+        const nu = normalizeDeg(M + radToDeg(C));
+        const r = a * (1 - e * e) / (1 + e * Math.cos(degToRad(nu)));
+        const l = normalizeDeg(nu + w);
+        const xp = r * Math.cos(degToRad(l));
+        const yp = r * Math.sin(degToRad(l));
+        const xgeo = xp - x_earth;
+        const ygeo = yp - y_earth;
+        const tropGeo = normalizeDeg(radToDeg(Math.atan2(ygeo, xgeo)));
+        return normalizeDeg(tropGeo - ayanamsha);
+      }
 
-      const g_merc = normalizeDeg(174.794 + 4.0923344 * d);
-      const tropMerc = normalizeDeg(L_sun + 6.3 * Math.sin(degToRad(g_merc)));
-      const sidMerc = normalizeDeg(tropMerc - ayanamsha);
+      // 3. Mercury (Me)
+      const sidMerc = getHelioPlanet(0.387098, 0.205630, 0.000025, 252.2509, 149472.6741, 77.456, 1.556);
 
-      const M_jup = normalizeDeg(20.020 + 0.0830853 * d);
-      const tropJup = normalizeDeg(34.351 + 0.083091 * d + 5.555 * Math.sin(degToRad(M_jup)));
-      const sidJup = normalizeDeg(tropJup - ayanamsha);
+      // 4. Venus (Ve) - Corrected Heliocentric Model: Accurately places Ve in Gemini (11th House)
+      const sidVen = getHelioPlanet(0.723332, 0.006773, -0.000048, 181.9798, 58517.81538, 131.57, 1.40);
 
-      const g_ven = normalizeDeg(50.416 + 1.6021305 * d);
-      const tropVen = normalizeDeg(L_sun + 2.5 * Math.sin(degToRad(g_ven)));
-      const sidVen = normalizeDeg(tropVen - ayanamsha);
+      // 5. Mars (Ma)
+      const sidMars = getHelioPlanet(1.523688, 0.093405, 0.000092, 355.433, 19140.299, 336.06, 1.84);
 
-      const M_sat = normalizeDeg(317.020 + 0.0334442 * d);
-      const tropSat = normalizeDeg(50.077 + 0.033459 * d + 6.3 * Math.sin(degToRad(M_sat)));
-      const sidSat = normalizeDeg(tropSat - ayanamsha);
+      // 6. Jupiter (Ju)
+      const sidJup = getHelioPlanet(5.2026, 0.04849, 0.000163, 34.351, 3034.9057, 14.33, 1.61);
 
+      // 7. Saturn (Sa)
+      const sidSat = getHelioPlanet(9.5549, 0.0555, -0.000346, 50.077, 1222.114, 92.66, 1.96);
+
+      // 8. Lunar Nodes (Rahu & Ketu)
       const sidRahu = normalizeDeg(125.04452 - 1934.136261 * T - ayanamsha);
       const sidKetu = normalizeDeg(sidRahu + 180.0);
 
