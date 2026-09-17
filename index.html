@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>destinyymap | Cosmic Numerology, Vedic Kundli & DestinyyMilan</title>
   
+  <!-- Custom Logo Favicon -->
+  <link rel="icon" type="image/jpeg" href="IMG-20260917-WA0021.jpg" />
+  
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   
@@ -75,6 +78,10 @@
       background: #1F2E68;
       border-radius: 4px;
     }
+    .brand-logo-img {
+      object-fit: cover;
+      border-radius: 9999px;
+    }
   </style>
 </head>
 
@@ -82,11 +89,11 @@
 
   <!-- ================= TOP ANNOUNCEMENT BAR ================= -->
   <div class="bg-gradient-to-r from-red-950/90 via-purple-950/90 to-amber-950/90 border-b border-gold-500/20 py-2 px-4 text-xs md:text-sm text-center font-medium text-amber-200 flex items-center justify-center gap-2 flex-wrap">
-    <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+    <img src="IMG-20260917-WA0021.jpg" alt="DM Logo" class="w-4 h-4 rounded-full border border-gold-400 object-cover" />
     <span>🔥 <strong>Early Bird Offer:</strong> First 500 Registrations 100% FREE! (Claimed: <strong id="slots-claimed-txt">88 / 500</strong>)</span>
     <span class="text-slate-400">|</span>
     <span>Direct Contact Restricted Until Payment Verification</span>
-    <a href="https://wa.me/919814167742?text=Hello%20Admin,%20I%20want%20approval%20for%20DestinyyMilan" target="_blank" class="ml-2 inline-flex items-center gap-1 bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 px-2 py-0.5 rounded-full hover:bg-emerald-500 hover:text-black transition text-xs">
+    <a href="https://wa.me/919814167742?text=Hello%20Admin,%20I%20want%20approval%20for%20DestinyyMilan" target="_blank" class="ml-2 inline-flex items-center gap-1 bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 px-2.5 py-0.5 rounded-full hover:bg-emerald-500 hover:text-black transition text-xs">
       💬 WhatsApp: 9814167742
     </a>
   </div>
@@ -95,9 +102,10 @@
   <header class="sticky top-0 z-40 bg-cosmic-900/95 backdrop-blur-md border-b border-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
-      <a href="#" class="flex items-center gap-3">
-        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-gold-400 to-amber-700 flex items-center justify-center text-cosmic-950 font-cinzel font-black text-2xl shadow-lg shadow-gold-500/20">
-          ॐ
+      <!-- Brand Logo Container -->
+      <a href="#" class="flex items-center gap-3.5 group">
+        <div class="relative w-12 h-12 rounded-full p-0.5 bg-gradient-to-tr from-gold-500 via-amber-300 to-indigo-500 shadow-lg shadow-gold-500/20 group-hover:scale-105 transition-transform">
+          <img src="IMG-20260917-WA0021.jpg" alt="DestinyyMap DM Logo" class="w-full h-full brand-logo-img bg-cosmic-950" />
         </div>
         <div>
           <span class="font-cinzel font-black text-2xl tracking-wider gold-gradient-text">destinyymap</span>
@@ -105,6 +113,7 @@
         </div>
       </a>
 
+      <!-- Navigation Links -->
       <nav class="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-300">
         <a href="#numerology" class="hover:text-gold-400 transition-colors">Numerology Grid</a>
         <a href="#yearly-report" class="hover:text-gold-400 transition-colors flex items-center gap-1.5">
@@ -117,11 +126,12 @@
         </a>
         <a href="#store" class="hover:text-gold-400 transition-colors">Remedial Store</a>
         <a href="#matrimony-portal" class="text-amber-300 hover:text-amber-200 font-semibold flex items-center gap-1.5 bg-amber-500/10 px-3 py-1.5 rounded-lg border border-amber-500/30">
-          <span>DestinyyMilan Portal</span>
+          <span>DestinyyMilan</span>
           <span class="bg-emerald-500 text-black text-[10px] px-1.5 py-0.5 rounded font-black">Free Sign-Up</span>
         </a>
       </nav>
 
+      <!-- Action Area -->
       <div class="flex items-center gap-2 sm:gap-3">
         <button onclick="openPaymentModal('generic', 2360, 'DestinyyMap Payment & UPI Verification')" class="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-gradient-to-r from-red-600 to-rose-700 hover:from-red-500 hover:to-rose-600 text-white text-xs font-bold transition shadow-md shadow-red-900/30">
           <span>📲</span>
@@ -139,12 +149,22 @@
   </header>
 
   <!-- ================= HERO ================= -->
-  <section class="relative pt-14 pb-20 overflow-hidden border-b border-slate-800/80">
+  <section class="relative pt-12 pb-20 overflow-hidden border-b border-slate-800/80">
     <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-amber-500/10 via-purple-950/20 to-transparent pointer-events-none"></div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
       
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900 border border-gold-500/30 text-gold-400 text-xs font-semibold mb-6">
-        <span>✨ Authentic Vedic Mathematics • Interactive D1/D9 Kundli • Matrimony Portal</span>
+      <!-- Emblem Centerpiece -->
+      <div class="mb-5 inline-block">
+        <div class="w-24 h-24 sm:w-28 sm:h-28 mx-auto rounded-full p-1 bg-gradient-to-b from-amber-400 via-indigo-500 to-slate-900 shadow-2xl shadow-amber-500/20 relative">
+          <img src="IMG-20260917-WA0021.jpg" alt="DestinyyMap Official Seal" class="w-full h-full brand-logo-img" />
+          <span class="absolute -bottom-2 -right-2 bg-gradient-to-r from-gold-500 to-amber-600 text-black font-black text-[9px] px-2 py-0.5 rounded-full border border-black shadow">DM ॐ</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-slate-900 border border-gold-500/30 text-gold-400 text-xs font-semibold mb-4">
+          <span>✨ Authentic Vedic Mathematics • Interactive D1/D9 Kundli • Matrimony Portal</span>
+        </div>
       </div>
 
       <h1 class="font-cinzel text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight max-w-4xl mx-auto">
@@ -451,7 +471,7 @@
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         
-        <!-- Aligned North Indian Diamond SVG (House Geometry Verified) -->
+        <!-- Aligned North Indian Diamond SVG -->
         <div class="lg:col-span-6 bg-cosmic-900 p-6 rounded-3xl border border-slate-800 gold-border-glow flex flex-col items-center">
           
           <div class="w-full flex items-center justify-between mb-3 text-xs">
@@ -459,75 +479,76 @@
             <span class="text-slate-400 font-mono">Lahiri Ayanamsha</span>
           </div>
 
-          <!-- True Diamond Chart Coordinate System -->
+          <!-- True Diamond Chart Coordinate System with Center Emblem Watermark -->
           <div class="w-full max-w-[420px] aspect-square relative bg-cosmic-950 rounded-2xl p-2 border border-slate-800 shadow-inner">
-            <svg viewBox="0 0 400 400" class="w-full h-full stroke-amber-500/80 fill-none" style="stroke-width: 1.5;">
-              <!-- Outer Square -->
+            
+            <!-- Subtle Logo Watermark in Background -->
+            <div class="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none p-12">
+              <img src="IMG-20260917-WA0021.jpg" alt="DM Watermark" class="w-44 h-44 brand-logo-img" />
+            </div>
+
+            <svg viewBox="0 0 400 400" class="w-full h-full stroke-amber-500/80 fill-none relative z-10" style="stroke-width: 1.5;">
               <rect x="10" y="10" width="380" height="380" stroke="#F59E0B" stroke-width="2" />
-              <!-- Diagonals -->
               <line x1="10" y1="10" x2="390" y2="390" />
               <line x1="390" y1="10" x2="10" y2="390" />
-              <!-- Inner Diamond -->
               <polygon points="200,10 390,200 200,390 10,200" stroke="#F59E0B" stroke-width="2" />
-
-              <!-- ================= 12 HOUSES LABELS & DYNAMIC PLANETS ================= -->
 
               <!-- HOUSE 1: Top Center Diamond (Lagna) -->
               <text x="200" y="55" text-anchor="middle" class="fill-slate-500 font-mono text-[9px]" stroke="none">H1</text>
               <text id="sign-h1" x="200" y="80" text-anchor="middle" class="fill-gold-400 font-cinzel font-black text-sm" stroke="none">5</text>
               <text id="planets-h1" x="200" y="115" text-anchor="middle" class="fill-emerald-300 font-bold text-xs" stroke="none">Su • Me</text>
 
-              <!-- HOUSE 2: Top Left Triangle -->
+              <!-- HOUSE 2 -->
               <text x="120" y="50" text-anchor="middle" class="fill-slate-500 font-mono text-[9px]" stroke="none">H2</text>
               <text id="sign-h2" x="120" y="70" text-anchor="middle" class="fill-gold-400 font-cinzel font-bold text-xs" stroke="none">6</text>
               <text id="planets-h2" x="120" y="95" text-anchor="middle" class="fill-purple-300 font-semibold text-[11px]" stroke="none">Ve</text>
 
-              <!-- HOUSE 3: Upper Left Triangle -->
+              <!-- HOUSE 3 -->
               <text x="50" y="120" text-anchor="middle" class="fill-slate-500 font-mono text-[9px]" stroke="none">H3</text>
               <text id="sign-h3" x="70" y="120" text-anchor="middle" class="fill-gold-400 font-cinzel font-bold text-xs" stroke="none">7</text>
               <text id="planets-h3" x="65" y="145" text-anchor="middle" class="fill-slate-400 text-[10px]" stroke="none">-</text>
 
-              <!-- HOUSE 4: Left Center Diamond (Sukha) -->
+              <!-- HOUSE 4 -->
               <text x="55" y="200" text-anchor="middle" class="fill-slate-500 font-mono text-[9px]" stroke="none">H4</text>
               <text id="sign-h4" x="80" y="200" text-anchor="middle" class="fill-gold-400 font-cinzel font-black text-sm" stroke="none">8</text>
               <text id="planets-h4" x="110" y="205" text-anchor="middle" class="fill-blue-300 font-bold text-xs" stroke="none">Mo • Ju</text>
 
-              <!-- HOUSE 5: Lower Left Triangle (Progeny) -->
+              <!-- HOUSE 5 -->
               <text x="50" y="280" text-anchor="middle" class="fill-slate-500 font-mono text-[9px]" stroke="none">H5</text>
               <text id="sign-h5" x="70" y="280" text-anchor="middle" class="fill-gold-400 font-cinzel font-bold text-xs" stroke="none">9</text>
               <text id="planets-h5" x="65" y="305" text-anchor="middle" class="fill-red-300 text-[11px]" stroke="none">Ra</text>
 
-              <!-- HOUSE 6: Bottom Left Triangle -->
+              <!-- HOUSE 6 -->
               <text x="120" y="350" text-anchor="middle" class="fill-slate-500 font-mono text-[9px]" stroke="none">H6</text>
               <text id="sign-h6" x="120" y="330" text-anchor="middle" class="fill-gold-400 font-cinzel font-bold text-xs" stroke="none">10</text>
               <text id="planets-h6" x="120" y="305" text-anchor="middle" class="fill-slate-400 text-[10px]" stroke="none">-</text>
 
-              <!-- HOUSE 7: Bottom Center Diamond (Spouse/Marriage) -->
+              <!-- HOUSE 7 (Spouse) -->
               <text x="200" y="345" text-anchor="middle" class="fill-slate-500 font-mono text-[9px]" stroke="none">H7</text>
               <text id="sign-h7" x="200" y="325" text-anchor="middle" class="fill-gold-400 font-cinzel font-black text-sm" stroke="none">11</text>
               <text id="planets-h7" x="200" y="295" text-anchor="middle" class="fill-amber-300 font-bold text-xs" stroke="none">Sa (Shani)</text>
 
-              <!-- HOUSE 8: Bottom Right Triangle -->
+              <!-- HOUSE 8 -->
               <text x="280" y="350" text-anchor="middle" class="fill-slate-500 font-mono text-[9px]" stroke="none">H8</text>
               <text id="sign-h8" x="280" y="330" text-anchor="middle" class="fill-gold-400 font-cinzel font-bold text-xs" stroke="none">12</text>
               <text id="planets-h8" x="280" y="305" text-anchor="middle" class="fill-slate-400 text-[10px]" stroke="none">-</text>
 
-              <!-- HOUSE 9: Lower Right Triangle (Dharma/Luck) -->
+              <!-- HOUSE 9 -->
               <text x="350" y="280" text-anchor="middle" class="fill-slate-500 font-mono text-[9px]" stroke="none">H9</text>
               <text id="sign-h9" x="330" y="280" text-anchor="middle" class="fill-gold-400 font-cinzel font-bold text-xs" stroke="none">1</text>
               <text id="planets-h9" x="335" y="305" text-anchor="middle" class="fill-slate-300 text-[11px]" stroke="none">Ke</text>
 
-              <!-- HOUSE 10: Right Center Diamond (Karma/Career) -->
+              <!-- HOUSE 10 -->
               <text x="345" y="200" text-anchor="middle" class="fill-slate-500 font-mono text-[9px]" stroke="none">H10</text>
               <text id="sign-h10" x="320" y="200" text-anchor="middle" class="fill-gold-400 font-cinzel font-black text-sm" stroke="none">2</text>
               <text id="planets-h10" x="290" y="205" text-anchor="middle" class="fill-rose-400 font-bold text-xs" stroke="none">Ma (Mars)</text>
 
-              <!-- HOUSE 11: Upper Right Triangle (Gains/Dhana) -->
+              <!-- HOUSE 11 -->
               <text x="350" y="120" text-anchor="middle" class="fill-slate-500 font-mono text-[9px]" stroke="none">H11</text>
               <text id="sign-h11" x="330" y="120" text-anchor="middle" class="fill-gold-400 font-cinzel font-bold text-xs" stroke="none">3</text>
               <text id="planets-h11" x="335" y="145" text-anchor="middle" class="fill-slate-400 text-[10px]" stroke="none">-</text>
 
-              <!-- HOUSE 12: Top Right Triangle (Moksha/Expenditure) -->
+              <!-- HOUSE 12 -->
               <text x="280" y="50" text-anchor="middle" class="fill-slate-500 font-mono text-[9px]" stroke="none">H12</text>
               <text id="sign-h12" x="280" y="70" text-anchor="middle" class="fill-gold-400 font-cinzel font-bold text-xs" stroke="none">4</text>
               <text id="planets-h12" x="280" y="95" text-anchor="middle" class="fill-slate-400 text-[10px]" stroke="none">-</text>
@@ -629,9 +650,11 @@
   <section id="matrimony-portal" class="py-20 bg-cosmic-950 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
+      <!-- Matrimony Brand Header with DM Logo -->
       <div class="text-center max-w-3xl mx-auto mb-8">
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-bold mb-3">
-          💍 DestinyyMilan Dedicated Matchmaking Portal
+        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-bold mb-3">
+          <img src="IMG-20260917-WA0021.jpg" alt="DM" class="w-4 h-4 rounded-full border border-amber-400 object-cover" />
+          <span>DestinyyMilan Dedicated Matchmaking Portal</span>
         </div>
         <h2 class="font-cinzel text-3xl sm:text-5xl font-black text-white">
           Karmic Ashtakoot Matchmaking
@@ -645,8 +668,8 @@
       <div class="p-6 rounded-3xl bg-gradient-to-r from-red-950/40 via-cosmic-900 to-amber-950/40 border border-amber-500/40 shadow-2xl mb-10">
         <div class="flex flex-col md:flex-row items-center justify-between gap-6">
           <div class="flex items-start gap-4">
-            <div class="w-12 h-12 rounded-2xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-2xl flex-shrink-0">
-              🔒
+            <div class="w-14 h-14 rounded-2xl p-0.5 bg-gradient-to-br from-amber-500 to-red-600 flex items-center justify-center flex-shrink-0 shadow-lg">
+              <img src="IMG-20260917-WA0021.jpg" alt="DM Shield" class="w-full h-full brand-logo-img" />
             </div>
             <div>
               <div class="flex items-center gap-3">
@@ -673,9 +696,12 @@
         <!-- Registration Card (First 500 Free) -->
         <div class="lg:col-span-7 bg-cosmic-900 p-6 sm:p-8 rounded-3xl border border-slate-800 gold-border-glow">
           <div class="flex items-center justify-between mb-6 border-b border-slate-800 pb-4">
-            <div>
-              <h3 class="font-cinzel text-lg font-bold text-white">Register for DestinyyMilan</h3>
-              <p class="text-xs text-emerald-400">First 500 Registrations 100% Free</p>
+            <div class="flex items-center gap-3">
+              <img src="IMG-20260917-WA0021.jpg" alt="DM" class="w-9 h-9 rounded-full border border-gold-400 object-cover" />
+              <div>
+                <h3 class="font-cinzel text-lg font-bold text-white">Register for DestinyyMilan</h3>
+                <p class="text-xs text-emerald-400">First 500 Registrations 100% Free</p>
+              </div>
             </div>
             <span class="text-xs font-mono text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded border border-emerald-500/30">Free Pass</span>
           </div>
@@ -739,7 +765,10 @@
 
         <!-- Login Card -->
         <div class="lg:col-span-5 bg-cosmic-900 p-6 sm:p-8 rounded-3xl border border-slate-800">
-          <h3 class="font-cinzel text-lg font-bold text-white mb-2">Member Sign In</h3>
+          <div class="flex items-center gap-3 mb-2">
+            <img src="IMG-20260917-WA0021.jpg" alt="DM" class="w-8 h-8 rounded-full border border-amber-400 object-cover" />
+            <h3 class="font-cinzel text-lg font-bold text-white">Member Sign In</h3>
+          </div>
           <p class="text-xs text-slate-400 mb-6">Enter your Unique Matchmaking ID and password to access matches.</p>
 
           <form onsubmit="handlePortalLogin(event)" class="space-y-4 text-xs">
@@ -769,14 +798,14 @@
 
       </div>
 
-      <!-- PORTAL STATE 2: AUTHENTICATED MATCHMAKING DASHBOARD (HIDDEN UNTIL LOGIN) -->
+      <!-- PORTAL STATE 2: AUTHENTICATED MATCHMAKING DASHBOARD -->
       <div id="milan-gate-loggedin" class="hidden space-y-8">
         
-        <!-- Authenticated Header & Status -->
+        <!-- Authenticated Header & Status with Logo -->
         <div class="p-6 rounded-3xl bg-cosmic-900 border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4">
           <div>
-            <div class="flex items-center gap-3">
-              <span class="text-2xl">👤</span>
+            <div class="flex items-center gap-3.5">
+              <img src="IMG-20260917-WA0021.jpg" alt="DM Account" class="w-12 h-12 brand-logo-img border-2 border-gold-400" />
               <div>
                 <h3 class="font-cinzel text-lg font-bold text-white">Welcome, <span id="user-greeting-name">Member</span></h3>
                 <span class="text-xs text-slate-400 font-mono">Account ID: <span id="user-session-id" class="text-gold-400 font-bold">DM-8821</span></span>
@@ -828,6 +857,10 @@
       <button onclick="closePaymentModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl">✕</button>
 
       <div class="text-center mb-4">
+        <!-- Logo Seal at Top of Modal -->
+        <div class="w-12 h-12 mx-auto rounded-full p-0.5 bg-gradient-to-r from-gold-500 to-red-600 shadow-md mb-2">
+          <img src="IMG-20260917-WA0021.jpg" alt="DM Verified" class="w-full h-full brand-logo-img" />
+        </div>
         <h3 class="font-cinzel text-xl font-bold text-white" id="modal-title">Complete Payment</h3>
         <p class="text-xs text-slate-400 mt-0.5" id="modal-desc">Official Kotak811 UPI Gateway</p>
       </div>
@@ -859,7 +892,7 @@
         </div>
       </div>
 
-      <!-- UTR / Transaction ID Submission for Admin Approval -->
+      <!-- UTR Submission for Admin Approval -->
       <form onsubmit="handleUtrSubmission(event)" class="space-y-3 text-xs">
         <div>
           <label class="block text-slate-300 font-semibold mb-1">Enter 12-Digit UTR / UPI Transaction Reference *</label>
@@ -908,10 +941,8 @@
   <!-- ================= FOOTER ================= -->
   <footer class="border-t border-slate-800/80 bg-cosmic-950 py-12 text-xs text-slate-400">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
-      <div class="flex items-center gap-3">
-        <div class="w-8 h-8 rounded-lg bg-gold-500/20 border border-gold-500/40 flex items-center justify-center text-gold-400 font-cinzel font-bold">
-          ॐ
-        </div>
+      <div class="flex items-center gap-3.5">
+        <img src="IMG-20260917-WA0021.jpg" alt="destinyymap Seal" class="w-10 h-10 brand-logo-img border border-gold-400" />
         <div>
           <span class="font-cinzel font-bold text-slate-200">destinyymap Cosmic Systems</span>
           <span class="block text-[10px] text-slate-500">Admin Support & Helpline: +91 98141 67742</span>
@@ -924,18 +955,17 @@
     </div>
   </footer>
 
-  <!-- ================= JAVASCRIPT ================= -->
+  <!-- ================= JAVASCRIPT ENGINE ================= -->
   <script>
     /* Global State */
     let currentChartMode = 'd1';
-    let isMatrimonyUnlocked = false; // By default: false until UTR/Admin confirmed
+    let isMatrimonyUnlocked = false;
     let isUserLoggedIn = false;
     let currentUser = null;
     let currentPaymentType = null;
     let currentPaymentAmount = 0;
     let cart = [];
 
-    // Matrimony Matches Data
     const matrimonyMatches = [
       {
         id: 1,
@@ -987,7 +1017,6 @@
       }
     ];
 
-    // Store Catalog
     const storeProducts = [
       { id: 101, category: 'mala', name: '108 Beads Siddh Kamal Gatta Mala', price: 1250, icon: '📿', desc: 'Consecrated with Goddess Lakshmi Beej Mantra for business wealth.' },
       { id: 102, category: 'gem', name: 'Certified Ceylon Yellow Sapphire (5.25 Ratti)', price: 14500, icon: '💎', desc: 'Natural unheated Pukhraj with lab test certificate for Jupiter.' },
@@ -1025,25 +1054,20 @@
       const title = document.getElementById('chart-display-title');
       const signNames = ["Mesha", "Vrishabha", "Mithuna", "Karka", "Simha", "Kanya", "Tula", "Vrischika", "Dhanu", "Makara", "Kumbha", "Meena"];
 
-      // In North Indian Charts, House 1 is always top diamond.
-      // The signs rotate from Lagna (H1) counter-clockwise through H12.
       let baseLagna = lagnaVal;
       if (currentChartMode === 'd9') {
-        // D9 Navamsha shifts lagna according to 9th divisional harmonic
         baseLagna = ((lagnaVal + 8) % 12) + 1;
         title.innerText = `D9 Navamsha Chart (Navamsha Lagna: ${signNames[baseLagna - 1]})`;
       } else {
         title.innerText = `D1 Rashi Chart (Ascendant: ${signNames[baseLagna - 1]})`;
       }
 
-      // Populate sign numbers in all 12 houses
       for (let h = 1; h <= 12; h++) {
         let signNum = ((baseLagna - 1 + (h - 1)) % 12) + 1;
         const signEl = document.getElementById(`sign-h${h}`);
         if (signEl) signEl.textContent = signNum;
       }
 
-      // Dynamically reposition planetary occupants
       if (currentChartMode === 'd1') {
         document.getElementById('planets-h1').textContent = "Su • Me";
         document.getElementById('planets-h2').textContent = "Ve";
@@ -1058,7 +1082,6 @@
         document.getElementById('planets-h11').textContent = "-";
         document.getElementById('planets-h12').textContent = "-";
       } else {
-        // D9 Placements
         document.getElementById('planets-h1').textContent = "Ju • Ve";
         document.getElementById('planets-h2').textContent = "-";
         document.getElementById('planets-h3').textContent = "Ma";
@@ -1121,7 +1144,6 @@
       document.getElementById('res-soul').innerText = reduceToSingle(soulSum || 1);
       document.getElementById('res-personality').innerText = reduceToSingle((pythSum - soulSum) || 1);
 
-      // Lo Shu frequencies
       const counts = {1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0};
       digits.forEach(d => { if (counts[d] !== undefined) counts[d]++; });
 
@@ -1140,7 +1162,6 @@
         }
       }
 
-      // Update plane analysis
       document.getElementById('plane-mental').innerText = (counts[4] && counts[9] && counts[2]) ? "Complete (Brilliant Memory)" : "Partial Presence";
       document.getElementById('plane-emotional').innerText = (counts[3] && counts[5] && counts[7]) ? "Complete (Deep Empathy)" : "Partial Presence";
       document.getElementById('plane-practical').innerText = (counts[8] && counts[1] && counts[6]) ? "Complete (Grounding & Wealth)" : "Partial Presence";
@@ -1190,7 +1211,6 @@
         const card = document.createElement('div');
         card.className = "p-5 rounded-2xl bg-cosmic-900 border border-slate-800 hover:border-amber-500/30 transition flex flex-col sm:flex-row gap-5 items-start sm:items-center";
 
-        // Photo: Blurred until paid
         const photoHtml = isMatrimonyUnlocked
           ? `<div class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden border-2 border-emerald-400 relative flex-shrink-0 shadow-lg">
                <img src="${match.photoUrl}" alt="${match.name}" class="w-full h-full object-cover" />
@@ -1204,7 +1224,6 @@
                </div>
              </div>`;
 
-        // Contact Information: Masked until paid
         const contactHtml = isMatrimonyUnlocked
           ? `<div class="mt-3 p-3 rounded-xl bg-emerald-950/40 border border-emerald-500/40 text-xs space-y-1">
                <div class="text-emerald-300 font-semibold flex items-center gap-2">
@@ -1259,11 +1278,9 @@
       document.getElementById('modal-title').innerText = title;
       document.getElementById('modal-price').innerText = `₹${amount.toLocaleString()}`;
 
-      // Dynamically update QR string with amount and Kotak UPI ID
       const upiUrl = `upi://pay?pa=7837427391@kotakbank&pn=RAHUL%20SHARMA&am=${amount}&cu=INR`;
       document.getElementById('upi-qr-image').src = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(upiUrl)}`;
 
-      // Update WhatsApp proof link
       const waMsg = encodeURIComponent(`Hello Admin, I have transferred ₹${amount} to UPI 7837427391@kotakbank (RAHUL SHARMA) for ${title}. Here is my payment receipt.`);
       document.getElementById('modal-whatsapp-link').href = `https://wa.me/919814167742?text=${waMsg}`;
 
