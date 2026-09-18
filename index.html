@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>destinyymap | Accurate Vedic Kundli, Interactive Lo Shu & DestinyyMilan</title>
+  <title>destinyymap | Vedic Kundli, Lo Shu, Tarot, Store, Milan & Admin Portal</title>
   
   <!-- Logo Favicon -->
   <link rel="icon" type="image/jpeg" href="IMG-20260917-WA0021.jpg" />
@@ -85,6 +85,22 @@
       stroke: #FCD34D !important;
       stroke-width: 2.5 !important;
     }
+    .tarot-card-flip {
+      perspective: 1000px;
+    }
+    .tarot-card-inner {
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+    .tarot-card-flip.flipped .tarot-card-inner {
+      transform: rotateY(180deg);
+    }
+    .tarot-front, .tarot-back {
+      backface-visibility: hidden;
+    }
+    .tarot-back {
+      transform: rotateY(180deg);
+    }
     .custom-scrollbar::-webkit-scrollbar {
       width: 6px;
     }
@@ -98,56 +114,63 @@
   </style>
 </head>
 
-<body class="bg-cosmic-950 text-slate-200 selection:bg-gold-500 selection:text-black">
+<body class="bg-cosmic-950 text-slate-200 selection:bg-gold-500 selection:text-black min-h-screen flex flex-col">
 
-  <!-- ================= TOP ANNOUNCEMENT BAR ================= -->
-  <div class="bg-gradient-to-r from-red-950/90 via-purple-950/90 to-amber-950/90 border-b border-gold-500/20 py-2 px-4 text-xs md:text-sm text-center font-medium text-amber-200 flex items-center justify-center gap-2 flex-wrap">
-    <img src="IMG-20260917-WA0021.jpg" alt="DM Logo" class="w-4 h-4 rounded-full border border-gold-400 object-cover" />
-    <span>🔥 <strong>Early Bird Offer:</strong> First 500 Registrations 100% FREE!</span>
-    <span class="text-slate-400">|</span>
-    <span>Master Admin: <strong class="text-gold-400 font-mono">DM-94284</strong> (Full Unmasked Control)</span>
-    <a href="https://wa.me/919814167742?text=Hello%20Admin,%20I%20want%20approval%20for%20DestinyyMilan" target="_blank" class="ml-2 inline-flex items-center gap-1 bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 px-2.5 py-0.5 rounded-full hover:bg-emerald-500 hover:text-black transition text-xs">
-      💬 WhatsApp: 9814167742
-    </a>
+  <!-- ================= TOP ANNOUNCEMENT & ROYAL ADMIN ACCESS BAR ================= -->
+  <div class="bg-gradient-to-r from-red-950/90 via-purple-950/90 to-amber-950/90 border-b border-gold-500/20 py-2 px-4 text-xs flex items-center justify-between gap-4 flex-wrap">
+    <div class="flex items-center gap-2">
+      <img src="IMG-20260917-WA0021.jpg" alt="DM Logo" class="w-4 h-4 rounded-full border border-gold-400 object-cover" />
+      <span>🔥 <strong>Early Bird Offer:</strong> First 500 Registrations 100% FREE!</span>
+      <span class="hidden sm:inline text-slate-400">|</span>
+      <span class="hidden sm:inline text-amber-200">DestinyyMap Cosmic Network</span>
+    </div>
+
+    <!-- SEPARATE ROYAL KING ADMIN CORNER TRIGGER -->
+    <div class="flex items-center gap-3">
+      <button onclick="switchPage('admin')" class="px-3 py-1 rounded-full bg-gradient-to-r from-amber-600 via-gold-500 to-amber-600 hover:from-amber-500 text-black font-black text-xs shadow-lg shadow-amber-500/30 flex items-center gap-1.5 transition transform hover:scale-105">
+        <span class="text-sm">👑</span>
+        <span>KING'S ADMIN CORNER (DM-94284)</span>
+      </button>
+      <a href="https://wa.me/919814167742?text=Hello%20Admin,%20I%20want%20approval%20for%20DestinyyMilan" target="_blank" class="hidden md:inline-flex items-center gap-1 bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 px-2.5 py-0.5 rounded-full hover:bg-emerald-500 hover:text-black transition">
+        💬 9814167742
+      </a>
+    </div>
   </div>
 
-  <!-- ================= NAVBAR ================= -->
+  <!-- ================= MASTER NAVBAR ================= -->
   <header class="sticky top-0 z-40 bg-cosmic-900/95 backdrop-blur-md border-b border-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
-      <a href="#" class="flex items-center gap-3.5 group">
+      <!-- Brand Logo -->
+      <a href="javascript:switchPage('astrology')" class="flex items-center gap-3.5 group">
         <div class="relative w-12 h-12 rounded-full p-0.5 bg-gradient-to-tr from-gold-500 via-amber-300 to-indigo-500 shadow-lg shadow-gold-500/20 group-hover:scale-105 transition-transform">
           <img src="IMG-20260917-WA0021.jpg" alt="DestinyyMap DM Logo" class="w-full h-full brand-logo-img bg-cosmic-950" />
         </div>
         <div>
           <span class="font-cinzel font-black text-2xl tracking-wider gold-gradient-text">destinyymap</span>
-          <span class="block text-[10px] uppercase tracking-widest text-slate-400 font-semibold">Parashari Kundli • Lo Shu • Milan Portal</span>
+          <span class="block text-[10px] uppercase tracking-widest text-slate-400 font-semibold">Parashari Kundli • Milan • Tarot</span>
         </div>
       </a>
 
-      <!-- Navigation Section Links -->
-      <nav class="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-300">
-        <a href="#astrology" class="hover:text-gold-400 transition-colors">Vedic Kundli D1/D9</a>
-        <a href="#numerology" class="hover:text-gold-400 transition-colors">Lo Shu Grid</a>
-        <a href="#yearly-report" class="hover:text-gold-400 transition-colors flex items-center gap-1.5">
-          <span>Yearly Prediction</span>
-          <span class="bg-gold-500/10 text-gold-400 text-[10px] px-2 py-0.5 rounded-full border border-gold-500/30">₹999</span>
-        </a>
-        <a href="#store" class="hover:text-gold-400 transition-colors">Remedial Store</a>
-        <a href="#matrimony-portal" class="text-amber-300 hover:text-amber-200 font-semibold flex items-center gap-1.5 bg-amber-500/10 px-3 py-1.5 rounded-lg border border-amber-500/30">
-          <span>DestinyyMilan</span>
-          <span class="bg-emerald-500 text-black text-[10px] px-1.5 py-0.5 rounded font-black">Portal</span>
-        </a>
+      <!-- Navigation Pages Bar -->
+      <nav class="hidden lg:flex items-center gap-5 text-xs font-semibold text-slate-300">
+        <button onclick="switchPage('astrology')" class="nav-item hover:text-gold-400 transition py-1" data-page="astrology">Astrology</button>
+        <button onclick="switchPage('numerology')" class="nav-item hover:text-gold-400 transition py-1" data-page="numerology">Numerology</button>
+        <button onclick="switchPage('tarot')" class="nav-item hover:text-gold-400 transition py-1 flex items-center gap-1" data-page="tarot">
+          <span>Tarot</span>
+          <span class="bg-purple-500/20 text-purple-300 text-[9px] px-1.5 py-0.2 rounded font-mono">Oracle</span>
+        </button>
+        <button onclick="switchPage('store')" class="nav-item hover:text-gold-400 transition py-1" data-page="store">Store</button>
+        <button onclick="switchPage('milan')" class="nav-item text-amber-300 hover:text-amber-200 transition py-1 flex items-center gap-1 bg-amber-500/10 px-2.5 py-1 rounded-lg border border-amber-500/30" data-page="milan">
+          <span>💍 Milan Portal</span>
+        </button>
+        <button onclick="switchPage('feed')" class="nav-item hover:text-gold-400 transition py-1" data-page="feed">Feed</button>
+        <button onclick="switchPage('about')" class="nav-item hover:text-gold-400 transition py-1" data-page="about">About Us</button>
+        <button onclick="switchPage('contact')" class="nav-item hover:text-gold-400 transition py-1" data-page="contact">Contact Us</button>
       </nav>
 
       <!-- Action Area -->
       <div class="flex items-center gap-2 sm:gap-3">
-        <!-- Direct Admin Button -->
-        <button onclick="loginAsMasterAdmin()" class="px-3 py-2 rounded-xl bg-gradient-to-r from-amber-600 to-gold-500 hover:from-amber-500 text-black text-xs font-black transition shadow flex items-center gap-1.5">
-          <span>👑</span>
-          <span class="hidden sm:inline">Admin (DM-94284)</span>
-        </button>
-
         <button onclick="toggleAiDrawer()" class="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-purple-950/70 hover:bg-purple-900 border border-purple-500/40 text-purple-200 text-xs font-bold transition shadow">
           <span>✨</span>
           <span class="hidden sm:inline">AstroAI</span>
@@ -159,70 +182,41 @@
           </svg>
           <span id="cart-counter" class="absolute -top-1.5 -right-1.5 w-5 h-5 bg-gold-500 text-cosmic-950 font-bold text-xs rounded-full flex items-center justify-center">0</span>
         </button>
+
+        <!-- Mobile Menu Trigger -->
+        <button onclick="toggleMobileNav()" class="lg:hidden p-2.5 rounded-xl bg-cosmic-850 border border-slate-700 text-slate-300">
+          ☰
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-nav" class="hidden lg:hidden border-t border-slate-800 bg-cosmic-900 p-4 space-y-2 text-xs">
+      <div class="grid grid-cols-2 gap-2">
+        <button onclick="switchPage('astrology'); toggleMobileNav()" class="p-2 text-left bg-cosmic-950 rounded-lg text-slate-300">Astrology</button>
+        <button onclick="switchPage('numerology'); toggleMobileNav()" class="p-2 text-left bg-cosmic-950 rounded-lg text-slate-300">Numerology</button>
+        <button onclick="switchPage('tarot'); toggleMobileNav()" class="p-2 text-left bg-cosmic-950 rounded-lg text-purple-300">Tarot Reading</button>
+        <button onclick="switchPage('store'); toggleMobileNav()" class="p-2 text-left bg-cosmic-950 rounded-lg text-slate-300">Remedial Store</button>
+        <button onclick="switchPage('milan'); toggleMobileNav()" class="p-2 text-left bg-amber-500/20 text-amber-300 font-bold rounded-lg">💍 Milan Portal</button>
+        <button onclick="switchPage('feed'); toggleMobileNav()" class="p-2 text-left bg-cosmic-950 rounded-lg text-slate-300">Cosmic Feed</button>
+        <button onclick="switchPage('about'); toggleMobileNav()" class="p-2 text-left bg-cosmic-950 rounded-lg text-slate-300">About Us</button>
+        <button onclick="switchPage('contact'); toggleMobileNav()" class="p-2 text-left bg-cosmic-950 rounded-lg text-slate-300">Contact Us</button>
       </div>
     </div>
   </header>
 
-  <!-- ================= HERO ================= -->
-  <section class="relative pt-12 pb-16 overflow-hidden border-b border-slate-800/80">
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-amber-500/10 via-purple-950/20 to-transparent pointer-events-none"></div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+  <!-- ========================================================================= -->
+  <!-- PAGE 1: ASTROLOGY (PARASHARI KUNDLI ENGINE)                               -->
+  <!-- ========================================================================= -->
+  <section id="page-astrology" class="page-view py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
       
-      <div class="mb-4 inline-block">
-        <div class="w-20 h-20 sm:w-24 sm:h-24 mx-auto rounded-full p-1 bg-gradient-to-b from-amber-400 via-indigo-500 to-slate-900 shadow-2xl shadow-amber-500/20 relative">
-          <img src="IMG-20260917-WA0021.jpg" alt="DestinyyMap Official Seal" class="w-full h-full brand-logo-img" />
-          <span class="absolute -bottom-1.5 -right-1.5 bg-gradient-to-r from-gold-500 to-amber-600 text-black font-black text-[9px] px-2 py-0.5 rounded-full border border-black shadow">DM ॐ</span>
-        </div>
-      </div>
-
-      <h1 class="font-cinzel text-3xl sm:text-5xl font-extrabold text-white leading-tight max-w-4xl mx-auto">
-        Astronomical Vedic Kundli & <br />
-        <span class="gold-gradient-text">DestinyyMilan Matchmaking</span>
-      </h1>
-
-      <p class="mt-3 text-xs sm:text-sm text-slate-400 max-w-2xl mx-auto leading-relaxed">
-        Accurate Sidereal Lagna and planetary positions under Lahiri Ayanamsha. Explore interactive bhava diagnostics, Lo Shu grid frequencies, and our dedicated matrimonial portal with instant multi-parameter filters and Admin controls.
-      </p>
-
-      <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto text-left">
-        <a href="#astrology" class="p-4 rounded-2xl bg-cosmic-900/80 border border-purple-500/40 hover:border-purple-400 transition">
-          <div class="text-purple-400 text-xl font-cinzel font-bold mb-1">01. Kundli</div>
-          <div class="font-bold text-white text-xs sm:text-sm">Parashari D1 & D9</div>
-          <div class="text-[11px] text-purple-300">True Planetary Coordinates</div>
-        </a>
-
-        <a href="#numerology" class="p-4 rounded-2xl bg-cosmic-900/80 border border-slate-800 hover:border-gold-500/40 transition">
-          <div class="text-gold-400 text-xl font-cinzel font-bold mb-1">02. Lo Shu</div>
-          <div class="font-bold text-white text-xs sm:text-sm">Grid & Vibrations</div>
-          <div class="text-[11px] text-slate-400">Interactive Diagnostics</div>
-        </a>
-
-        <a href="#store" class="p-4 rounded-2xl bg-cosmic-900/80 border border-slate-800 hover:border-gold-500/40 transition">
-          <div class="text-emerald-400 text-xl font-cinzel font-bold mb-1">03. Store</div>
-          <div class="font-bold text-white text-xs sm:text-sm">Sacred Remedies</div>
-          <div class="text-[11px] text-slate-400">Malas, Gems & Yantras</div>
-        </a>
-
-        <a href="#matrimony-portal" class="p-4 rounded-2xl bg-amber-950/40 border border-amber-500/50 hover:border-amber-400 transition">
-          <div class="text-amber-300 text-xl font-cinzel font-bold mb-1">04. Portal</div>
-          <div class="font-bold text-white text-xs sm:text-sm">DestinyyMilan</div>
-          <div class="text-[11px] text-amber-300">Filtered & Admin Managed</div>
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ================= SECTION 1: ACCURATE VEDIC KUNDLI (D1 & D9) ================= -->
-  <section id="astrology" class="py-16 bg-cosmic-950 border-b border-slate-800 relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
-          <span class="text-xs font-bold uppercase tracking-wider text-purple-400">Pillar I</span>
-          <h2 class="font-cinzel text-2xl sm:text-3xl font-bold text-white mt-1">Astronomical Parashari Kundli Engine</h2>
+          <span class="text-xs font-bold uppercase tracking-wider text-purple-400">Pillar I • Astronomical Jyotish</span>
+          <h1 class="font-cinzel text-3xl sm:text-4xl font-black text-white mt-1">Astronomical Parashari Kundli Engine</h1>
           <p class="text-xs sm:text-sm text-slate-400 mt-1 max-w-2xl">
-            Calculates exact Sidereal Lagna and true geocentric planetary longitudes under <strong>Lahiri Ayanamsha</strong> based on city coordinates. Click any house inside the chart to inspect.
+            Calculates exact Sidereal Lagna and true geocentric planetary longitudes under <strong>Lahiri Ayanamsha</strong> based on city coordinates. Click any house to inspect.
           </p>
         </div>
 
@@ -237,7 +231,7 @@
       </div>
 
       <!-- Inputs Form -->
-      <div class="p-6 rounded-3xl bg-cosmic-900 border border-slate-800 gold-border-glow mb-8">
+      <div class="p-6 rounded-3xl bg-cosmic-900 border border-slate-800 gold-border-glow">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-end text-xs">
           <div>
             <label class="block text-slate-300 font-semibold mb-1">Date of Birth *</label>
@@ -412,9 +406,7 @@
                     <th class="pb-2">Motion</th>
                   </tr>
                 </thead>
-                <tbody id="planetary-table-body" class="divide-y divide-slate-800/60 font-mono">
-                  <!-- Populated via JS -->
-                </tbody>
+                <tbody id="planetary-table-body" class="divide-y divide-slate-800/60 font-mono"></tbody>
               </table>
             </div>
           </div>
@@ -424,25 +416,25 @@
     </div>
   </section>
 
-  <!-- ================= SECTION 2: INTERACTIVE LO SHU SACRED MATRIX ================= -->
-  <section id="numerology" class="py-16 bg-cosmic-900/50 border-b border-slate-800 relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- ========================================================================= -->
+  <!-- PAGE 2: NUMEROLOGY (LO SHU SACRED MATRIX)                                 -->
+  <!-- ========================================================================= -->
+  <section id="page-numerology" class="page-view py-12 hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
       
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
-        <div>
-          <span class="text-xs font-bold uppercase tracking-wider text-gold-400">Pillar II</span>
-          <h2 class="font-cinzel text-2xl sm:text-3xl font-bold text-white mt-1">Interactive Lo Shu Sacred Grid</h2>
-          <p class="text-xs sm:text-sm text-slate-400 mt-1 max-w-2xl">
-            Enter your name and date of birth. Tap any cell in the 3x3 Magic Square to reveal element significations and remedial guidance for missing numbers.
-          </p>
-        </div>
+      <div>
+        <span class="text-xs font-bold uppercase tracking-wider text-gold-400">Pillar II • Sacred Geometry</span>
+        <h1 class="font-cinzel text-3xl sm:text-4xl font-black text-white mt-1">Interactive Lo Shu Sacred Grid</h1>
+        <p class="text-xs sm:text-sm text-slate-400 mt-1 max-w-2xl">
+          Enter your name and date of birth. Tap any cell in the 3x3 Magic Square to reveal element significations and remedial guidance for missing numbers.
+        </p>
       </div>
 
-      <div class="bg-cosmic-850 p-6 rounded-3xl border border-slate-800 gold-border-glow mb-10">
+      <div class="bg-cosmic-850 p-6 rounded-3xl border border-slate-800 gold-border-glow">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div>
             <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Full Legal Name *</label>
-            <input id="num-name" type="text" value="" placeholder="e.g. Your Full Name" class="w-full bg-cosmic-950 border border-slate-700 rounded-xl px-4 py-3 text-white text-sm focus:border-gold-500 focus:outline-none" />
+            <input id="num-name" type="text" value="" placeholder="e.g. Rahul Sharma" class="w-full bg-cosmic-950 border border-slate-700 rounded-xl px-4 py-3 text-white text-sm focus:border-gold-500 focus:outline-none" />
           </div>
 
           <div>
@@ -561,35 +553,93 @@
     </div>
   </section>
 
-  <!-- ================= SECTION 3: SACRED REMEDIAL STORE ================= -->
-  <section id="store" class="py-16 bg-cosmic-950 border-b border-slate-800 relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
-        <div>
-          <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Pillar III</span>
-          <h2 class="font-cinzel text-2xl sm:text-3xl font-bold text-white mt-1">Sacred Remedial Marketplace</h2>
-          <p class="text-xs sm:text-sm text-slate-400 mt-1 max-w-2xl">
-            Certified Siddh Malas, Natural Gemstones, Nepal Rudraksha & Energized Puja Yantras.
-          </p>
+  <!-- ========================================================================= -->
+  <!-- PAGE 3: TAROT ORACLE (NEW INTERACTIVE FEATURE)                            -->
+  <!-- ========================================================================= -->
+  <section id="page-tarot" class="page-view py-12 hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      
+      <div class="text-center max-w-2xl mx-auto">
+        <span class="text-xs font-bold uppercase tracking-wider text-purple-400">Hermetic Oracle • 78 Arcana Deck</span>
+        <h1 class="font-cinzel text-3xl sm:text-4xl font-black text-white mt-1">Cosmic 3-Card Tarot Oracle</h1>
+        <p class="text-xs sm:text-sm text-slate-400 mt-2">
+          Focus your consciousness on a question regarding career, relationship, or finance, then draw your 3 cards for Past, Present, and Karmic Outcome.
+        </p>
+        <button onclick="drawTarotSpread()" class="mt-6 px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 text-white font-bold text-xs uppercase tracking-wider shadow-lg transition">
+          🃏 Shuffle & Draw Cosmic Spread
+        </button>
+      </div>
+
+      <!-- 3 Tarot Cards Spread -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <!-- Card 1: Past -->
+        <div id="tarot-card-1" class="tarot-card-flip p-6 rounded-3xl bg-cosmic-900 border border-slate-800 text-center space-y-3">
+          <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Position I: The Past</span>
+          <div class="w-40 h-64 mx-auto rounded-2xl bg-gradient-to-b from-purple-950 to-cosmic-950 border-2 border-purple-500/40 p-4 flex flex-col items-center justify-center shadow-xl">
+            <span id="tarot-icon-1" class="text-5xl mb-2">🔮</span>
+            <span id="tarot-name-1" class="font-cinzel font-bold text-amber-300 text-sm">The Magician</span>
+            <span id="tarot-key-1" class="text-[10px] text-slate-400 font-mono mt-1">Skill • Manifestation</span>
+          </div>
+          <p id="tarot-desc-1" class="text-xs text-slate-300">Foundation of strong personal initiatives and deliberate creation.</p>
+        </div>
+
+        <!-- Card 2: Present -->
+        <div id="tarot-card-2" class="tarot-card-flip p-6 rounded-3xl bg-cosmic-900 border border-gold-500/40 gold-border-glow text-center space-y-3">
+          <span class="text-xs font-bold uppercase tracking-wider text-gold-400">Position II: The Present</span>
+          <div class="w-40 h-64 mx-auto rounded-2xl bg-gradient-to-b from-amber-950 to-cosmic-950 border-2 border-gold-500/60 p-4 flex flex-col items-center justify-center shadow-xl">
+            <span id="tarot-icon-2" class="text-5xl mb-2">⚖️</span>
+            <span id="tarot-name-2" class="font-cinzel font-bold text-gold-300 text-sm">Justice</span>
+            <span id="tarot-key-2" class="text-[10px] text-slate-400 font-mono mt-1">Fairness • Law</span>
+          </div>
+          <p id="tarot-desc-2" class="text-xs text-slate-300">Clear ethical determinations, statutory balances, and karmic truth.</p>
+        </div>
+
+        <!-- Card 3: Outcome -->
+        <div id="tarot-card-3" class="tarot-card-flip p-6 rounded-3xl bg-cosmic-900 border border-slate-800 text-center space-y-3">
+          <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Position III: The Outcome</span>
+          <div class="w-40 h-64 mx-auto rounded-2xl bg-gradient-to-b from-purple-950 to-cosmic-950 border-2 border-purple-500/40 p-4 flex flex-col items-center justify-center shadow-xl">
+            <span id="tarot-icon-3" class="text-5xl mb-2">👑</span>
+            <span id="tarot-name-3" class="font-cinzel font-bold text-amber-300 text-sm">The Emperor</span>
+            <span id="tarot-key-3" class="text-[10px] text-slate-400 font-mono mt-1">Authority • Stability</span>
+          </div>
+          <p id="tarot-desc-3" class="text-xs text-slate-300">Total institutional sovereignty, structured governance, and worldly victory.</p>
         </div>
       </div>
-      <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+
     </div>
   </section>
 
-  <!-- ================= SECTION 4: DESTINYYMILAN MATRIMONY & ADMIN PORTAL ================= -->
-  <section id="matrimony-portal" class="py-20 bg-cosmic-950 relative border-t-2 border-amber-500/40">
+  <!-- ========================================================================= -->
+  <!-- PAGE 4: STORE (REMEDIAL MARKETPLACE)                                      -->
+  <!-- ========================================================================= -->
+  <section id="page-store" class="page-view py-12 hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      <div>
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Pillar III • Consecrated Remedies</span>
+        <h1 class="font-cinzel text-3xl sm:text-4xl font-black text-white mt-1">Sacred Remedial Marketplace</h1>
+        <p class="text-xs sm:text-sm text-slate-400 mt-1 max-w-2xl">
+          Certified Siddh Malas, Natural Gemstones, Nepal Rudraksha & Energized Puja Yantras.
+        </p>
+      </div>
+
+      <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- PAGE 5: DESTINYYMILAN (MATRIMONIAL PORTAL)                                -->
+  <!-- ========================================================================= -->
+  <section id="page-milan" class="page-view py-12 hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
       
-      <!-- Matrimony Dedicated Header -->
       <div class="text-center max-w-3xl mx-auto">
         <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-bold mb-3">
           <img src="IMG-20260917-WA0021.jpg" alt="DM" class="w-4 h-4 rounded-full border border-amber-400 object-cover" />
           <span>DestinyyMilan Dedicated Matchmaking Section</span>
         </div>
-        <h2 class="font-cinzel text-3xl sm:text-4xl font-black text-white">
+        <h1 class="font-cinzel text-3xl sm:text-4xl font-black text-white">
           Karmic Ashtakoot Matchmaking Portal
-        </h2>
+        </h1>
         <p class="text-slate-400 text-xs sm:text-sm mt-2">
           Gender-differentiated matchmaking: men see women; women see men. Photos and contacts remain locked until approval.
         </p>
@@ -608,7 +658,7 @@
                 <span class="bg-red-600 text-white text-[11px] font-black px-2.5 py-0.5 rounded-full">Fee: ₹2,360</span>
               </div>
               <p class="text-xs text-slate-300 mt-1 leading-relaxed">
-                Registration is 100% free for the first 500 applicants. Profile activation and UTR payments are manually reviewed and confirmed by <strong>Admin DM-94284</strong>.
+                Registration is 100% free for the first 500 applicants[span_0](start_span)[span_0](end_span). Profile activation and UTR payments are reviewed and confirmed by <strong>Admin DM-94284</strong>.
               </p>
             </div>
           </div>
@@ -621,111 +671,8 @@
         </div>
       </div>
 
-      <!-- ================= MASTER ADMIN CONTROL CENTER (DM-94284) ================= -->
-      <div id="admin-control-center" class="hidden p-6 sm:p-8 rounded-3xl bg-cosmic-900 border-2 border-gold-500 gold-border-glow space-y-8">
-        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between border-b border-slate-800 pb-5 gap-4">
-          <div class="flex items-center gap-3.5">
-            <div class="w-12 h-12 rounded-2xl bg-amber-500/20 border border-amber-500 flex items-center justify-center text-2xl">
-              👑
-            </div>
-            <div>
-              <div class="flex items-center gap-2">
-                <h3 class="font-cinzel text-lg sm:text-xl font-black text-white">Master Admin Command Center</h3>
-                <span class="bg-gold-500 text-black text-xs font-black px-2 py-0.5 rounded font-mono">DM-94284</span>
-              </div>
-              <p class="text-xs text-amber-300">Total Authority: Payment Confirmations • Profile Activations • Complete Access</p>
-            </div>
-          </div>
-
-          <div class="flex items-center gap-3">
-            <button onclick="closeAdminCenter()" class="px-4 py-2 rounded-xl bg-cosmic-950 border border-slate-700 hover:border-gold-500 text-xs font-bold transition">
-              Switch to Member View
-            </button>
-          </div>
-        </div>
-
-        <!-- Admin Overview Counters -->
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">
-          <div class="p-4 rounded-2xl bg-cosmic-950 border border-slate-800">
-            <span class="text-slate-400 block mb-1">Pending Payments</span>
-            <span id="stat-pending-payments" class="text-2xl font-cinzel font-bold text-red-400">1</span>
-          </div>
-          <div class="p-4 rounded-2xl bg-cosmic-950 border border-slate-800">
-            <span class="text-slate-400 block mb-1">Pending Registrations</span>
-            <span id="stat-pending-users" class="text-2xl font-cinzel font-bold text-amber-400">1</span>
-          </div>
-          <div class="p-4 rounded-2xl bg-cosmic-950 border border-slate-800">
-            <span class="text-slate-400 block mb-1">Active Verified Members</span>
-            <span id="stat-active-users" class="text-2xl font-cinzel font-bold text-emerald-400">8</span>
-          </div>
-          <div class="p-4 rounded-2xl bg-cosmic-950 border border-slate-800">
-            <span class="text-slate-400 block mb-1">Kotak UPI ID</span>
-            <span class="text-xs font-mono font-bold text-gold-400 truncate block">7837427391@kotakbank</span>
-          </div>
-        </div>
-
-        <!-- 1. Payment Confirmation Queue (Admin Approvals) -->
-        <div class="space-y-3">
-          <div class="flex items-center justify-between">
-            <h4 class="font-cinzel text-sm font-bold text-white flex items-center gap-2">
-              <span>💳</span>
-              <span>Pending UTR Payment Confirmations (Click to Approve)</span>
-            </h4>
-            <span class="text-[11px] text-slate-400">Admin Action Required</span>
-          </div>
-
-          <div id="admin-payments-queue" class="space-y-2">
-            <!-- Dynamic pending UTR cards -->
-          </div>
-        </div>
-
-        <!-- 2. Registration Approval & Profile Activation Queue -->
-        <div class="space-y-3 pt-4 border-t border-slate-800">
-          <div class="flex items-center justify-between">
-            <h4 class="font-cinzel text-sm font-bold text-white flex items-center gap-2">
-              <span>📋</span>
-              <span>Pending Member Registrations (Click to Activate)</span>
-            </h4>
-          </div>
-
-          <div id="admin-registrations-queue" class="space-y-2">
-            <!-- Dynamic registration cards -->
-          </div>
-        </div>
-
-        <!-- 3. All Directory Inspection (Unmasked) -->
-        <div class="space-y-3 pt-4 border-t border-slate-800">
-          <h4 class="font-cinzel text-sm font-bold text-white flex items-center gap-2">
-            <span>👁️</span>
-            <span>Master Member Directory (Unmasked Admin View)</span>
-          </h4>
-
-          <div class="overflow-x-auto">
-            <table class="w-full text-left text-xs">
-              <thead>
-                <tr class="border-b border-slate-800 text-slate-400 font-mono">
-                  <th class="pb-2">ID</th>
-                  <th class="pb-2">Name</th>
-                  <th class="pb-2">Gender</th>
-                  <th class="pb-2">Phone (Unmasked)</th>
-                  <th class="pb-2">Email</th>
-                  <th class="pb-2">Account Status</th>
-                  <th class="pb-2">VIP Access</th>
-                  <th class="pb-2 text-right">Admin Action</th>
-                </tr>
-              </thead>
-              <tbody id="admin-directory-tbody" class="divide-y divide-slate-800/60 font-mono text-[11px]">
-                <!-- Injected via JS -->
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-
-      <!-- PORTAL STATE 1: UNLOGGED (REGISTRATION / SIGN-IN) -->
+      <!-- MILAN STATE 1: UNLOGGED -->
       <div id="milan-gate-loggedout" class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        
-        <!-- Registration Card (First 500 Free) -->
         <div class="lg:col-span-7 bg-cosmic-900 p-6 sm:p-8 rounded-3xl border border-slate-800 gold-border-glow">
           <div class="flex items-center justify-between mb-6 border-b border-slate-800 pb-4">
             <div class="flex items-center gap-3">
@@ -798,18 +745,17 @@
           </form>
         </div>
 
-        <!-- Login Card with Admin Option -->
         <div class="lg:col-span-5 bg-cosmic-900 p-6 sm:p-8 rounded-3xl border border-slate-800">
           <div class="flex items-center gap-3 mb-2">
             <img src="IMG-20260917-WA0021.jpg" alt="DM" class="w-8 h-8 rounded-full border border-amber-400 object-cover" />
             <h3 class="font-cinzel text-lg font-bold text-white">Member Sign In</h3>
           </div>
-          <p class="text-xs text-slate-400 mb-6">Enter your credentials or Admin ID <strong>DM-94284</strong>:</p>
+          <p class="text-xs text-slate-400 mb-6">Enter your registered credentials to view matches:</p>
 
           <form onsubmit="handlePortalLogin(event)" class="space-y-4 text-xs">
             <div>
               <label class="block text-slate-300 font-semibold mb-1">Matchmaking ID *</label>
-              <input required id="login-uid" type="text" placeholder="e.g. DM-94284" class="w-full bg-cosmic-950 border border-slate-700 rounded-lg p-2.5 text-white font-mono font-bold focus:outline-none focus:border-amber-500" />
+              <input required id="login-uid" type="text" placeholder="e.g. DM-1024" class="w-full bg-cosmic-950 border border-slate-700 rounded-lg p-2.5 text-white font-mono font-bold focus:outline-none focus:border-amber-500" />
             </div>
 
             <div>
@@ -831,29 +777,21 @@
           </form>
 
           <div class="mt-6 p-4 rounded-xl bg-cosmic-950 border border-slate-800 text-[11px] text-slate-400 space-y-2">
-            <span class="text-amber-300 font-semibold block">⚡ Admin & Demo Credentials:</span>
-            <div class="flex flex-col gap-2">
-              <button onclick="loginAsMasterAdmin()" class="w-full py-1.5 px-2 bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/50 rounded text-amber-300 text-[11px] font-bold">
-                👑 Direct Admin Login (ID: DM-94284)
+            <span class="text-amber-300 font-semibold block">⚡ Demo Logins:</span>
+            <div class="flex gap-2">
+              <button onclick="fillDemoCredentials('Male')" class="flex-1 py-1.5 px-2 bg-cosmic-900 border border-slate-700 rounded text-slate-300 text-[10px]">
+                Male Demo
               </button>
-              <div class="flex gap-2">
-                <button onclick="fillDemoCredentials('Male')" class="flex-1 py-1 px-2 bg-cosmic-900 border border-slate-700 rounded text-slate-300 text-[10px]">
-                  Sign In as Male (Demo)
-                </button>
-                <button onclick="fillDemoCredentials('Female')" class="flex-1 py-1 px-2 bg-cosmic-900 border border-slate-700 rounded text-slate-300 text-[10px]">
-                  Sign In as Female (Demo)
-                </button>
-              </div>
+              <button onclick="fillDemoCredentials('Female')" class="flex-1 py-1.5 px-2 bg-cosmic-900 border border-slate-700 rounded text-slate-300 text-[10px]">
+                Female Demo
+              </button>
             </div>
           </div>
         </div>
-
       </div>
 
-      <!-- PORTAL STATE 2: AUTHENTICATED MATCHMAKING DASHBOARD -->
+      <!-- MILAN STATE 2: LOGGED IN -->
       <div id="milan-gate-loggedin" class="hidden space-y-8">
-        
-        <!-- Top Member Header -->
         <div class="p-6 rounded-3xl bg-cosmic-900 border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-5">
           <div class="flex items-center gap-3.5">
             <img src="IMG-20260917-WA0021.jpg" alt="DM Account" class="w-12 h-12 brand-logo-img border-2 border-gold-400" />
@@ -861,23 +799,16 @@
               <div class="flex items-center gap-2">
                 <h3 class="font-cinzel text-base sm:text-lg font-bold text-white">Welcome, <span id="user-greeting-name">Member</span></h3>
                 <span id="user-gender-tag" class="px-2 py-0.2 rounded-full text-[10px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">Male</span>
-                <span id="user-role-badge" class="hidden px-2 py-0.2 rounded-full text-[10px] font-black bg-gold-500 text-black">ADMIN FULL ACCESS</span>
               </div>
               <span class="text-xs text-slate-400 font-mono">Unique ID: <span id="user-session-id" class="text-gold-400 font-bold">DM-8821</span></span>
             </div>
           </div>
 
-          <!-- Controls -->
           <div class="flex flex-wrap items-center gap-3">
-            <button id="btn-open-admin-center" onclick="openAdminCenter()" class="hidden px-3.5 py-2 rounded-xl text-xs font-black bg-gradient-to-r from-amber-500 to-gold-500 text-black shadow">
-              👑 Admin Command Center
-            </button>
-
             <div class="flex items-center bg-cosmic-950 p-1 rounded-xl border border-slate-800 text-xs">
               <span class="text-slate-400 px-2">Viewing Pool:</span>
               <button id="btn-pool-f" onclick="setUserGenderView('Male')" class="px-2.5 py-1 rounded-lg font-bold bg-pink-500/20 text-pink-300 border border-pink-500/40">Women Only</button>
               <button id="btn-pool-m" onclick="setUserGenderView('Female')" class="px-2.5 py-1 rounded-lg font-bold text-slate-400 hover:text-white">Men Only</button>
-              <button id="btn-pool-all" onclick="setUserGenderView('All')" class="hidden px-2.5 py-1 rounded-lg font-bold text-gold-400 hover:text-white">All Profiles (Admin)</button>
             </div>
 
             <button onclick="toggleMyPhotoPrivacy()" id="btn-my-photo-privacy" class="px-3 py-2 rounded-xl text-xs font-bold bg-cosmic-950 border border-slate-700 text-slate-300 flex items-center gap-1.5 transition">
@@ -891,12 +822,12 @@
           </div>
         </div>
 
-        <!-- ================= FULL SEARCH & FILTER TOOLBAR ================= -->
+        <!-- Filter Toolbar -->
         <div class="p-6 rounded-3xl bg-cosmic-900 border border-gold-500/40 gold-border-glow space-y-4">
           <div class="flex items-center justify-between border-b border-slate-800 pb-3">
             <div class="flex items-center gap-2">
               <span class="text-amber-400 text-base">🔍</span>
-              <h4 class="font-cinzel text-sm font-bold text-white uppercase tracking-wider">Candidate Filters & Live Search</h4>
+              <h4 class="font-cinzel text-sm font-bold text-white uppercase tracking-wider">Candidate Filters & Search</h4>
             </div>
             <button onclick="resetAllFilters()" class="text-xs text-slate-400 hover:text-gold-400 underline">
               Reset Filters
@@ -904,13 +835,11 @@
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 text-xs">
-            <!-- Keyword Search -->
             <div>
               <label class="block text-slate-400 font-semibold mb-1">Search Keywords</label>
               <input id="filter-search" oninput="renderMatches()" type="text" placeholder="Name, City, Gotra..." class="w-full bg-cosmic-950 border border-slate-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-amber-500" />
             </div>
 
-            <!-- Religion Filter -->
             <div>
               <label class="block text-slate-400 font-semibold mb-1">Religion</label>
               <select id="filter-religion" onchange="renderMatches()" class="w-full bg-cosmic-950 border border-slate-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-amber-500">
@@ -918,32 +847,27 @@
                 <option value="Hindu">Hindu</option>
                 <option value="Sikh">Sikh</option>
                 <option value="Jain">Jain</option>
-                <option value="Other">Other</option>
               </select>
             </div>
 
-            <!-- Manglik Filter -->
             <div>
               <label class="block text-slate-400 font-semibold mb-1">Manglik Status</label>
               <select id="filter-manglik" onchange="renderMatches()" class="w-full bg-cosmic-950 border border-slate-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-amber-500">
-                <option value="all">All Dosha Statuses</option>
+                <option value="all">All Statuses</option>
                 <option value="Non-Manglik">Non-Manglik Only</option>
                 <option value="Anshik">Anshik Manglik</option>
               </select>
             </div>
 
-            <!-- Guna Score Filter -->
             <div>
               <label class="block text-slate-400 font-semibold mb-1">Min. Ashtakoot Score</label>
               <select id="filter-guna" onchange="renderMatches()" class="w-full bg-cosmic-950 border border-slate-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-amber-500">
-                <option value="0">Any Guna Match (18+)</option>
-                <option value="28">28+ Gunas (Very Auspicious)</option>
-                <option value="30">30+ Gunas (Exceptional)</option>
-                <option value="32">32+ Gunas (Rare Harmonics)</option>
+                <option value="0">Any Guna Match</option>
+                <option value="28">28+ Gunas</option>
+                <option value="30">30+ Gunas</option>
               </select>
             </div>
 
-            <!-- Profession Filter -->
             <div>
               <label class="block text-slate-400 font-semibold mb-1">Profession Field</label>
               <select id="filter-profession" onchange="renderMatches()" class="w-full bg-cosmic-950 border border-slate-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-amber-500">
@@ -954,22 +878,258 @@
               </select>
             </div>
           </div>
+        </div>
 
-          <div class="flex items-center justify-between pt-1 text-[11px] text-slate-400">
-            <span>Results Matching Filters: <strong id="filter-matches-count" class="text-gold-400 font-mono">4</strong></span>
-            <span id="admin-view-indicator" class="hidden text-emerald-400 font-mono font-bold">✓ Admin Override: Viewing Unmasked Direct Contacts</span>
+        <div id="matches-grid" class="space-y-4"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- PAGE 6: COSMIC FEED (ARTICLES, DAILY TRANSITS, PANCHANG)                  -->
+  <!-- ========================================================================= -->
+  <section id="page-feed" class="page-view py-12 hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      <div>
+        <span class="text-xs font-bold uppercase tracking-wider text-gold-400">Live Insights • Daily Astrological Bulletin</span>
+        <h1 class="font-cinzel text-3xl sm:text-4xl font-black text-white mt-1">Cosmic Transit & Karmic Feed</h1>
+        <p class="text-xs sm:text-sm text-slate-400 mt-1">
+          Daily planetary transits, Gochar influences, and Vedic wisdom published directly by our Acharyas.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs">
+        <div class="p-6 rounded-3xl bg-cosmic-900 border border-slate-800 space-y-3">
+          <span class="bg-purple-500/20 text-purple-300 text-[10px] px-2 py-0.5 rounded font-mono font-bold">PLANETARY TRANSIT</span>
+          <h3 class="font-cinzel text-base font-bold text-white">Saturn's Movement in Kumbha: Karmic Harvest</h3>
+          <p class="text-slate-400 leading-relaxed">
+            Shani Dev demands structural precision in corporate compliance, finance, and contractual justice. Hard work completed across the past 7 years crystallizes into lasting professional authority.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-3xl bg-cosmic-900 border border-slate-800 space-y-3">
+          <span class="bg-amber-500/20 text-amber-300 text-[10px] px-2 py-0.5 rounded font-mono font-bold">ASHTAKOOT MILAN</span>
+          <h3 class="font-cinzel text-base font-bold text-white">Nadi & Bhakoot Compatibility in Marriage</h3>
+          <p class="text-slate-400 leading-relaxed">
+            Understanding why Nadi (8 Points) and Bhakoot (7 Points) govern genetic, emotional, and spiritual longevity in Vedic matrimony.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-3xl bg-cosmic-900 border border-slate-800 space-y-3">
+          <span class="bg-emerald-500/20 text-emerald-300 text-[10px] px-2 py-0.5 rounded font-mono font-bold">LO SHU VASTU</span>
+          <h3 class="font-cinzel text-base font-bold text-white">Strengthening Missing Number 4 in Your Grid</h3>
+          <p class="text-slate-400 leading-relaxed">
+            Number 4 governs the southeast wealth corner and practical discipline. Learn how green aventurine crystal bracelets balance missing earth vibrations.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- PAGE 7: ABOUT US                                                          -->
+  <!-- ========================================================================= -->
+  <section id="page-about" class="page-view py-12 hidden">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 text-xs sm:text-sm text-slate-300 leading-relaxed">
+      <div class="text-center space-y-2">
+        <span class="text-xs font-bold uppercase tracking-wider text-gold-400">Our Heritage & Vision</span>
+        <h1 class="font-cinzel text-3xl sm:text-4xl font-black text-white">About destinyymap</h1>
+      </div>
+
+      <div class="p-8 rounded-3xl bg-cosmic-900 border border-slate-800 space-y-4">
+        <p>
+          <strong>destinyymap</strong> is a premier metaphysical research platform integrating authentic <strong>Parashari Vedic Astrology</strong>, <strong>Lo Shu Sacred Geometry</strong>, and the curated <strong>DestinyyMilan Matrimony Portal</strong>.
+        </p>
+        <p>
+          Rooted in Punjab, Chandigarh, and Delhi-NCR, our systems combine rigorous planetary mathematics (incorporating true spherical trigonometry under Lahiri Ayanamsha) with uncompromising ethics and statutory privacy standards.
+        </p>
+        <p>
+          Our matrimonial platform is intentionally engineered to protect members from unsolicited spam and unverified outreach. Through our verified KYC and administrator confirmations governed by <strong>Admin DM-94284</strong>, prospective partners can evaluate genuine astronomical compatibility before establishing direct contact.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- PAGE 8: CONTACT US                                                        -->
+  <!-- ========================================================================= -->
+  <section id="page-contact" class="page-view py-12 hidden">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      <div class="text-center space-y-2">
+        <span class="text-xs font-bold uppercase tracking-wider text-gold-400">Direct Communication</span>
+        <h1 class="font-cinzel text-3xl sm:text-4xl font-black text-white">Contact Our Team</h1>
+        <p class="text-xs text-slate-400">For astrological consultations, payment verification, and matrimonial queries.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
+        <div class="p-6 rounded-3xl bg-cosmic-900 border border-slate-800 space-y-4">
+          <h3 class="font-cinzel text-base font-bold text-white">Headquarters & Support</h3>
+          <div class="space-y-2 text-slate-300">
+            <div>📍 <strong>Location:</strong> Punjab • Chandigarh • Delhi-NCR (India)</div>
+            <div>📞 <strong>Official Phone & WhatsApp:</strong> <a href="tel:+919814167742" class="text-gold-400 font-mono font-bold">+91 98141 67742</a></div>
+            <div>✉️ <strong>Official Email:</strong> support@destinyymap.com</div>
+            <div>💳 <strong>Kotak 811 UPI:</strong> 7837427391@kotakbank (RAHUL SHARMA)[span_1](start_span)[span_1](end_span)</div>
+          </div>
+          <a href="https://wa.me/919814167742?text=Hello%20destinyymap,%20I%20have%20an%20inquiry." target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-bold uppercase tracking-wider text-[11px] transition">
+            Chat Direct on WhatsApp
+          </a>
+        </div>
+
+        <form onsubmit="event.preventDefault(); alert('Message Received! Our team will contact you on WhatsApp.');" class="p-6 rounded-3xl bg-cosmic-900 border border-slate-800 space-y-3">
+          <div>
+            <label class="block text-slate-300 font-semibold mb-1">Your Full Name</label>
+            <input required type="text" placeholder="Name" class="w-full bg-cosmic-950 border border-slate-700 rounded-lg p-2.5 text-white" />
+          </div>
+          <div>
+            <label class="block text-slate-300 font-semibold mb-1">Phone Number (with WhatsApp)</label>
+            <input required type="tel" placeholder="+91..." class="w-full bg-cosmic-950 border border-slate-700 rounded-lg p-2.5 text-white" />
+          </div>
+          <div>
+            <label class="block text-slate-300 font-semibold mb-1">Query / Message</label>
+            <textarea rows="3" placeholder="How can we assist you?" class="w-full bg-cosmic-950 border border-slate-700 rounded-lg p-2.5 text-white"></textarea>
+          </div>
+          <button type="submit" class="w-full py-2.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-black font-bold uppercase tracking-wider">
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- PAGE 9: DEDICATED KING'S ADMIN CORNER (DM-94284 ONLY)                     -->
+  <!-- ========================================================================= -->
+  <section id="page-admin" class="page-view py-12 hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      
+      <!-- Royal Admin Header with King Logo -->
+      <div class="p-8 rounded-3xl bg-gradient-to-r from-amber-950/80 via-cosmic-900 to-amber-950/80 border-2 border-gold-500 gold-border-glow">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div class="flex items-center gap-4 text-center sm:text-left">
+            <div class="w-16 h-16 rounded-3xl bg-gradient-to-br from-gold-400 to-amber-600 flex items-center justify-center text-3xl shadow-2xl flex-shrink-0">
+              👑
+            </div>
+            <div>
+              <div class="flex items-center justify-center sm:justify-start gap-2">
+                <h1 class="font-cinzel text-2xl sm:text-3xl font-black text-white">King's Command Corner</h1>
+                <span class="bg-gold-500 text-black text-xs font-black px-2 py-0.5 rounded font-mono">DM-94284</span>
+              </div>
+              <p class="text-xs text-amber-300 mt-1">
+                Supreme Administrative Portal • Payment Approvals • Profile Activations • Master Directory
+              </p>
+            </div>
+          </div>
+
+          <div id="admin-auth-actions">
+            <!-- Populated via JS depending on login status -->
+          </div>
+        </div>
+      </div>
+
+      <!-- LOCKED STATE: When NOT logged in as DM-94284 -->
+      <div id="admin-locked-view" class="max-w-md mx-auto p-8 rounded-3xl bg-cosmic-900 border border-slate-800 gold-border-glow text-xs space-y-4">
+        <div class="text-center space-y-2">
+          <div class="text-4xl">🔐</div>
+          <h3 class="font-cinzel text-base font-bold text-white">King's Admin Authentication Required</h3>
+          <p class="text-slate-400">This corner is strictly restricted to Master Admin <strong>DM-94284</strong>.</p>
+        </div>
+
+        <form onsubmit="handleDirectAdminAuth(event)" class="space-y-3">
+          <div>
+            <label class="block text-slate-300 font-semibold mb-1">Admin ID</label>
+            <input id="direct-admin-uid" type="text" value="DM-94284" readonly class="w-full bg-cosmic-950 border border-slate-700 rounded-lg p-2.5 text-gold-400 font-mono font-bold" />
+          </div>
+
+          <div>
+            <label class="block text-slate-300 font-semibold mb-1">Master Password *</label>
+            <input required id="direct-admin-pwd" type="password" placeholder="••••••••" class="w-full bg-cosmic-950 border border-slate-700 rounded-lg p-2.5 text-white focus:border-gold-500 focus:outline-none" />
+          </div>
+
+          <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-amber-500 to-gold-500 text-black font-black uppercase tracking-wider shadow">
+            Authenticate & Open Royal Command
+          </button>
+        </form>
+      </div>
+
+      <!-- UNLOCKED STATE: Full Administrative Command Suite -->
+      <div id="admin-unlocked-view" class="hidden space-y-8">
+        
+        <!-- Summary Counters -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">
+          <div class="p-4 rounded-2xl bg-cosmic-900 border border-slate-800">
+            <span class="text-slate-400 block mb-1">Pending Payments</span>
+            <span id="stat-pending-payments" class="text-2xl font-cinzel font-bold text-red-400">1</span>
+          </div>
+          <div class="p-4 rounded-2xl bg-cosmic-900 border border-slate-800">
+            <span class="text-slate-400 block mb-1">Pending Registrations</span>
+            <span id="stat-pending-users" class="text-2xl font-cinzel font-bold text-amber-400">1</span>
+          </div>
+          <div class="p-4 rounded-2xl bg-cosmic-900 border border-slate-800">
+            <span class="text-slate-400 block mb-1">Total Members</span>
+            <span id="stat-active-users" class="text-2xl font-cinzel font-bold text-emerald-400">8</span>
+          </div>
+          <div class="p-4 rounded-2xl bg-cosmic-900 border border-slate-800">
+            <span class="text-slate-400 block mb-1">Kotak UPI Gateway</span>
+            <span class="text-xs font-mono font-bold text-gold-400 truncate block">7837427391@kotakbank[span_2](start_span)[span_2](end_span)</span>
           </div>
         </div>
 
-        <!-- Matches Container -->
-        <div id="matches-grid" class="space-y-4"></div>
+        <!-- 1. Payment Confirmations Queue -->
+        <div class="p-6 rounded-3xl bg-cosmic-900 border border-slate-800 space-y-4">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+            <h3 class="font-cinzel text-sm font-bold text-white flex items-center gap-2">
+              <span>💳</span>
+              <span>Pending UTR Payment Confirmations (Manual Approvals)</span>
+            </h3>
+            <span class="text-[10px] text-amber-400 font-mono">Action Required</span>
+          </div>
+          <div id="admin-payments-queue" class="space-y-2"></div>
+        </div>
+
+        <!-- 2. Profile Activation Queue -->
+        <div class="p-6 rounded-3xl bg-cosmic-900 border border-slate-800 space-y-4">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+            <h3 class="font-cinzel text-sm font-bold text-white flex items-center gap-2">
+              <span>📋</span>
+              <span>Pending Member Profile Activations</span>
+            </h3>
+          </div>
+          <div id="admin-registrations-queue" class="space-y-2"></div>
+        </div>
+
+        <!-- 3. Unmasked Master Member Directory -->
+        <div class="p-6 rounded-3xl bg-cosmic-900 border border-slate-800 space-y-4">
+          <h3 class="font-cinzel text-sm font-bold text-white flex items-center gap-2">
+            <span>👁️</span>
+            <span>Master Member Directory (Unmasked Admin View)</span>
+          </h3>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs">
+              <thead>
+                <tr class="border-b border-slate-800 text-slate-400 font-mono">
+                  <th class="pb-2">ID</th>
+                  <th class="pb-2">Name</th>
+                  <th class="pb-2">Gender</th>
+                  <th class="pb-2">Phone (Unmasked)</th>
+                  <th class="pb-2">Email</th>
+                  <th class="pb-2">Status</th>
+                  <th class="pb-2">VIP Access</th>
+                  <th class="pb-2 text-right">Admin Action</th>
+                </tr>
+              </thead>
+              <tbody id="admin-directory-tbody" class="divide-y divide-slate-800/60 font-mono text-[11px]"></tbody>
+            </table>
+          </div>
+        </div>
 
       </div>
 
     </div>
   </section>
 
-  <!-- ================= IN-APP RESTRICTED SAFE CHAT DRAWER ================= -->
+  <!-- ================= UNIVERSAL SAFE CHAT DRAWER ================= -->
   <div id="chat-drawer" class="fixed inset-y-0 right-0 z-50 w-full max-w-md bg-cosmic-900 border-l border-slate-800 shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col">
     <div class="p-5 border-b border-slate-800 flex items-center justify-between bg-cosmic-950">
       <div class="flex items-center gap-3">
@@ -979,7 +1139,7 @@
             <span id="chat-target-name">Candidate Chat</span>
             <span class="bg-emerald-500 text-black text-[9px] font-black px-1 rounded">Safe Mode</span>
           </h3>
-          <p class="text-[10px] text-slate-400">Encrypted In-App Communication</p>
+          <p class="text-[10px] text-slate-400">Encrypted Communication</p>
         </div>
       </div>
       <button onclick="toggleChatDrawer()" class="text-slate-400 hover:text-white text-xl">✕</button>
@@ -987,29 +1147,22 @@
 
     <div class="p-3 bg-red-950/40 border-b border-red-500/30 text-[11px] text-amber-200 flex items-start gap-2">
       <span class="text-base">🛡️</span>
-      <span><strong>Strict Security Policy:</strong> Direct phone numbers, emails, and digits are blocked. Please send pre-approved messages.</span>
+      <span><strong>Strict Security:</strong> Phone numbers & emails are masked. Please send pre-approved proposals.</span>
     </div>
 
     <div class="p-3 bg-cosmic-950 border-b border-slate-800 space-y-1.5 text-[11px]">
-      <span class="text-slate-400 font-semibold block">Click to Send Predetermined Message:</span>
+      <span class="text-slate-400 font-semibold block">Pre-Approved Messages:</span>
       <div class="flex flex-col gap-1.5">
-        <button onclick="sendPredeterminedMsg('Namaste! I reviewed your profile and found our 36-Guna Ashtakoot match highly auspicious.')" class="text-left bg-cosmic-900 hover:bg-cosmic-800 border border-slate-700 p-2 rounded-lg text-slate-300 text-[11px] transition">
+        <button onclick="sendPredeterminedMsg('Namaste! I found our 36-Guna match highly auspicious.')" class="text-left bg-cosmic-900 hover:bg-cosmic-800 border border-slate-700 p-2 rounded-lg text-slate-300 text-[11px] transition">
           🌸 "Namaste! I found our 36-Guna match highly auspicious."
         </button>
-        <button onclick="sendPredeterminedMsg('Would you and your family be open to an anonymous video meeting through DestinyyMilan?')" class="text-left bg-cosmic-900 hover:bg-cosmic-800 border border-slate-700 p-2 rounded-lg text-slate-300 text-[11px] transition">
+        <button onclick="sendPredeterminedMsg('Would you be open to an anonymous video meeting through DestinyyMilan?')" class="text-left bg-cosmic-900 hover:bg-cosmic-800 border border-slate-700 p-2 rounded-lg text-slate-300 text-[11px] transition">
           📹 "Would you be open to an anonymous video meeting?"
-        </button>
-        <button onclick="sendPredeterminedMsg('I am genuinely interested in your profile and would like our families to review the D1/D9 Kundlis.')" class="text-left bg-cosmic-900 hover:bg-cosmic-800 border border-slate-700 p-2 rounded-lg text-slate-300 text-[11px] transition">
-          💍 "I am interested; would like our families to review Kundlis."
         </button>
       </div>
     </div>
 
-    <div id="chat-messages-container" class="flex-1 overflow-y-auto p-4 space-y-3 custom-scrollbar text-xs">
-      <div class="p-3 rounded-xl bg-cosmic-950 border border-slate-800 text-slate-400 text-[11px] text-center">
-        Secure conversation room opened. Mobile numbers and emails are masked.
-      </div>
-    </div>
+    <div id="chat-messages-container" class="flex-1 overflow-y-auto p-4 space-y-3 custom-scrollbar text-xs"></div>
 
     <form onsubmit="handleCustomChatSubmit(event)" class="p-3 border-t border-slate-800 bg-cosmic-950 space-y-2">
       <div id="chat-error-alert" class="hidden p-2 rounded-lg bg-red-900/60 border border-red-500 text-red-200 text-[10px]"></div>
@@ -1056,46 +1209,21 @@
         <div class="w-10 h-10 rounded-xl bg-purple-500/20 border border-purple-500/40 flex items-center justify-center text-xl text-purple-300">✨</div>
         <div>
           <h3 class="font-cinzel text-base font-bold text-white">AstroMilan AI Agent</h3>
-          <p class="text-[11px] text-slate-400">Match Filtering & Task Automation</p>
+          <p class="text-[11px] text-slate-400">Vedic Consultant & Task Automation</p>
         </div>
       </div>
       <button onclick="toggleAiDrawer()" class="text-slate-400 hover:text-white text-xl">✕</button>
     </div>
 
-    <div class="p-3 bg-cosmic-950 border-b border-slate-800 text-[11px] space-y-1.5">
-      <span class="text-slate-400 font-semibold block">Quick AI Commands:</span>
-      <div class="flex flex-wrap gap-1.5">
-        <button onclick="executeAiPrompt('Show profiles with 30+ Gunas')" class="bg-cosmic-900 border border-slate-700 hover:border-purple-400 text-slate-300 px-2 py-1 rounded text-[10px]">
-          🔍 30+ Gunas
-        </button>
-        <button onclick="executeAiPrompt('Filter non-manglik candidates')" class="bg-cosmic-900 border border-slate-700 hover:border-purple-400 text-slate-300 px-2 py-1 rounded text-[10px]">
-          🛡️ Non-Manglik
-        </button>
-        <button onclick="executeAiPrompt('Show corporate and doctor profiles')" class="bg-cosmic-900 border border-slate-700 hover:border-purple-400 text-slate-300 px-2 py-1 rounded text-[10px]">
-          💼 High Career
-        </button>
-      </div>
-    </div>
-
     <div id="ai-chat-history" class="flex-1 overflow-y-auto p-4 space-y-3 custom-scrollbar text-xs">
       <div class="p-3 rounded-2xl bg-cosmic-950 border border-slate-800 text-slate-300 leading-relaxed">
-        <strong>Namaste! 🙏 I am your DestinyyMilan AI Agent.</strong><br/>
-        I can filter candidates by Ashtakoot Gunas, explain Manglik remedies, assist with registration, or transfer inquiries directly to Acharya on <strong>WhatsApp (9814167742)</strong>.
+        <strong>Namaste! 🙏 I am your DestinyyMap AI Agent.</strong><br/>
+        I can calculate your numbers, explain Kundli positions, or navigate you to any section of the website.
       </div>
-    </div>
-
-    <div class="p-3 bg-emerald-950/30 border-t border-emerald-500/30 flex items-center justify-between text-xs">
-      <div class="text-emerald-300 text-[11px]">
-        <strong>WhatsApp Escalation:</strong>
-        <span class="block text-[10px] text-slate-400">+91 98141 67742</span>
-      </div>
-      <a href="https://wa.me/919814167742?text=Hello%20AstroMilan,%20I%20have%20an%20inquiry%20regarding%20my%20matchmaking." target="_blank" class="px-3 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-[11px]">
-        Chat on WhatsApp
-      </a>
     </div>
 
     <form onsubmit="handleAiChatSubmit(event)" class="p-3 border-t border-slate-800 bg-cosmic-950 flex gap-2">
-      <input id="ai-input" type="text" placeholder="Ask AI: e.g. Filter matches, explain 36 gunas..." class="flex-1 bg-cosmic-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-purple-500" />
+      <input id="ai-input" type="text" placeholder="Ask AI..." class="flex-1 bg-cosmic-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-purple-500" />
       <button type="submit" class="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs">
         Ask
       </button>
@@ -1111,8 +1239,8 @@
         <div class="w-12 h-12 mx-auto rounded-full p-0.5 bg-gradient-to-r from-gold-500 to-red-600 shadow-md mb-2">
           <img src="IMG-20260917-WA0021.jpg" alt="DM Verified" class="w-full h-full brand-logo-img" />
         </div>
-        <h3 id="modal-title" class="font-cinzel text-xl font-bold text-white">Unlock Verified Contacts</h3>
-        <p id="modal-desc" class="text-xs text-slate-400 mt-0.5">Kotak 811 Instant Gateway</p>
+        <h3 id="modal-title" class="font-cinzel text-xl font-bold text-white">Unlock Verified Access</h3>
+        <p id="modal-desc" class="text-xs text-slate-400 mt-0.5">Official Kotak 811 Gateway</p>
       </div>
 
       <div class="bg-gradient-to-b from-kotak-dark via-cosmic-950 to-cosmic-950 border-2 border-red-500/40 rounded-2xl p-5 text-center mb-5 relative shadow-xl">
@@ -1150,12 +1278,6 @@
           Submit UTR for Admin DM-94284 Verification
         </button>
       </form>
-
-      <div class="mt-4 text-center">
-        <a href="https://wa.me/919814167742?text=Hello%20Admin,%20I%20have%20paid%20via%20Kotak%20QR." target="_blank" class="text-xs text-emerald-400 hover:underline flex items-center justify-center gap-1">
-          <span>💬 Send payment screenshot on WhatsApp (9814167742)</span>
-        </a>
-      </div>
     </div>
   </div>
 
@@ -1169,9 +1291,7 @@
       <button onclick="toggleCart()" class="text-slate-400 hover:text-white text-xl">✕</button>
     </div>
 
-    <div id="cart-items-list" class="flex-1 overflow-y-auto p-6 space-y-4 custom-scrollbar">
-      <div class="text-center py-12 text-slate-500 text-xs">Your cart is currently empty.</div>
-    </div>
+    <div id="cart-items-list" class="flex-1 overflow-y-auto p-6 space-y-4 custom-scrollbar"></div>
 
     <div class="p-6 border-t border-slate-800 bg-cosmic-950 space-y-4">
       <div class="flex items-center justify-between text-sm">
@@ -1180,30 +1300,59 @@
       </div>
 
       <button onclick="checkoutCart()" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-gold-500 to-amber-600 hover:from-gold-400 text-cosmic-950 font-black text-xs uppercase tracking-wider shadow-lg transition">
-        Proceed to Kotak QR Checkout
+        Proceed to Checkout
       </button>
     </div>
   </div>
 
   <!-- ================= FOOTER ================= -->
-  <footer class="border-t border-slate-800/80 bg-cosmic-950 py-12 text-xs text-slate-400">
+  <footer class="border-t border-slate-800/80 bg-cosmic-950 py-12 text-xs text-slate-400 mt-auto">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
       <div class="flex items-center gap-3.5">
         <img src="IMG-20260917-WA0021.jpg" alt="destinyymap Seal" class="w-10 h-10 brand-logo-img border border-gold-400" />
         <div>
           <span class="font-cinzel font-bold text-slate-200">destinyymap Cosmic Systems</span>
-          <span class="block text-[10px] text-slate-500">Admin Control Center: DM-94284 • Support: +91 98141 67742</span>
+          <span class="block text-[10px] text-slate-500">Master Admin: DM-94284 • Support: +91 98141 67742</span>
         </div>
       </div>
       <div class="text-center sm:text-right">
         <p>© 2026 destinyymap. All Rights Reserved.</p>
-        <p class="text-[10px] text-slate-500 mt-1">UPI Payee: RAHUL SHARMA (7837427391@kotakbank)</p>
+        <p class="text-[10px] text-slate-500 mt-1">UPI Payee: RAHUL SHARMA (7837427391@kotakbank)[span_3](start_span)[span_3](end_span)</p>
       </div>
     </div>
   </footer>
 
-  <!-- ================= JAVASCRIPT ENGINE ================= -->
+  <!-- ================= JAVASCRIPT MASTER ROUTER & ENGINE ================= -->
   <script>
+    /* ================= MASTER CLIENT-SIDE ROUTER ================= */
+    function switchPage(pageId) {
+      document.querySelectorAll('.page-view').forEach(el => el.classList.add('hidden'));
+      const target = document.getElementById('page-' + pageId);
+      if (target) target.classList.remove('hidden');
+
+      // Update Nav highlighting
+      document.querySelectorAll('.nav-item').forEach(btn => {
+        if (btn.dataset.page === pageId) {
+          btn.classList.add('text-gold-400');
+        } else {
+          btn.classList.remove('text-gold-400');
+        }
+      });
+
+      // Special Check for Admin Corner
+      if (pageId === 'admin') {
+        renderAdminView();
+      }
+
+      window.location.hash = pageId;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function toggleMobileNav() {
+      document.getElementById('mobile-nav').classList.toggle('hidden');
+    }
+
+    /* Database Constants */
     const cityDatabase = {
       amritsar: { name: "Amritsar, Punjab", lat: 31.6340, lon: 74.8723, tz: 5.5 },
       jalandhar: { name: "Jalandhar, Punjab", lat: 31.3260, lon: 75.5762, tz: 5.5 },
@@ -1214,80 +1363,76 @@
       mumbai: { name: "Mumbai, Maharashtra", lat: 19.0760, lon: 72.8777, tz: 5.5 }
     };
 
-    const rashiNames = [
-      "Mesha (Aries)", "Vrishabha (Taurus)", "Mithuna (Gemini)", "Karka (Cancer)",
-      "Simha (Leo)", "Kanya (Virgo)", "Tula (Libra)", "Vrischika (Scorpio)",
-      "Dhanu (Sagittarius)", "Makara (Capricorn)", "Kumbha (Aquarius)", "Meena (Pisces)"
-    ];
-
-    const rashiLords = [
-      "Mars (Mangal)", "Venus (Shukra)", "Mercury (Budha)", "Moon (Chandra)",
-      "Sun (Surya)", "Mercury (Budha)", "Venus (Shukra)", "Mars (Mangal)",
-      "Jupiter (Guru)", "Saturn (Shani)", "Saturn (Shani)", "Jupiter (Guru)"
-    ];
-
-    const nakshatraNames = [
-      "Ashwini", "Bharani", "Krittika", "Rohini", "Mrigashira", "Ardra", "Punarvasu",
-      "Pushya", "Ashlesha", "Magha", "Purva Phalguni", "Uttara Phalguni", "Hasta",
-      "Chitra", "Swati", "Vishakha", "Anuradha", "Jyeshtha", "Mula", "Purva Ashadha",
-      "Uttara Ashadha", "Shravana", "Dhanishta", "Shatabhisha", "Purva Bhadrapada",
-      "Uttara Bhadrapada", "Revati"
-    ];
+    const rashiNames = ["Mesha (Aries)", "Vrishabha (Taurus)", "Mithuna (Gemini)", "Karka (Cancer)", "Simha (Leo)", "Kanya (Virgo)", "Tula (Libra)", "Vrischika (Scorpio)", "Dhanu (Sagittarius)", "Makara (Capricorn)", "Kumbha (Aquarius)", "Meena (Pisces)"];
+    const rashiLords = ["Mars", "Venus", "Mercury", "Moon", "Sun", "Mercury", "Venus", "Mars", "Jupiter", "Saturn", "Saturn", "Jupiter"];
+    const nakshatraNames = ["Ashwini", "Bharani", "Krittika", "Rohini", "Mrigashira", "Ardra", "Punarvasu", "Pushya", "Ashlesha", "Magha", "Purva Phalguni", "Uttara Phalguni", "Hasta", "Chitra", "Swati", "Vishakha", "Anuradha", "Jyeshtha", "Mula", "Purva Ashadha", "Uttara Ashadha", "Shravana", "Dhanishta", "Shatabhisha", "Purva Bhadrapada", "Uttara Bhadrapada", "Revati"];
 
     const bhavaSignifications = {
-      1: { name: "Tanu Bhava (The Self / Lagna)", desc: "Physical constitution, life path, personal drive, vitality, and intellectual disposition." },
-      2: { name: "Dhana Bhava (Wealth & Speech)", desc: "Accumulated liquid wealth, speech, domestic family environment, and vocal authority." },
-      3: { name: "Sahaja Bhava (Courage & Siblings)", desc: "Mental fortitude, younger siblings, communications, writing, short travels, and physical valour." },
-      4: { name: "Sukha Bhava (Mother & Real Estate)", desc: "Inner peace, maternal lineage, landed property, real estate developments, and vehicles." },
-      5: { name: "Putra Bhava (Progeny & Intellect)", desc: "Higher learning, strategic financial analytics, past karma (Purva Punya), and children." },
-      6: { name: "Ari / Shatru Bhava (Obstacles & Service)", desc: "Legal disputes, debt eradication, statutory challenges, daily routines, and immune health." },
-      7: { name: "Kalatra Bhava (Spouse & Partnership)", desc: "Marriage, long-term matrimonial compatibility, business partnerships, and public alliances." },
-      8: { name: "Randhra Bhava (Transformation & Occult)", desc: "Longevity, unearned wealth, sudden inheritances, deep occult research, and Vedic secrets." },
-      9: { name: "Dharma Bhava (Fortune & Higher Wisdom)", desc: "Father, dharma, spiritual preceptor (Guru), fortune, morality, and long pilgrimage travels." },
-      10: { name: "Karma Bhava (Career & Status)", desc: "Professional authority, corporate governance, Independent Directorships, and worldly reputation." },
-      11: { name: "Labha Bhava (Gains & Large Networks)", desc: "Realization of ambitions, massive financial yields, elder siblings, and institutional networks." },
-      12: { name: "Vyaya Bhava (Moksha & Foreign Lands)", desc: "Subconscious realization, foreign relocation, isolation, spiritual liberation, and institutional investments." }
+      1: { name: "Tanu Bhava (Ascendant / Self)", desc: "Vitality, life path, executive authority, and ethical persistence." },
+      2: { name: "Dhana Bhava (Wealth & Speech)", desc: "Accumulated wealth, vocal clarity, and family lineage." },
+      3: { name: "Sahaja Bhava (Courage & Siblings)", desc: "Mental fortitude, short journeys, writing, and analytical prowess." },
+      4: { name: "Sukha Bhava (Mother & Property)", desc: "Landed assets, home peace, real estate acquisitions, and vehicles." },
+      5: { name: "Putra Bhava (Intellect & Progeny)", desc: "Strategic speculation, academic distinction, and creative investments." },
+      6: { name: "Ari Bhava (Service & Obstacles)", desc: "Litigation victory, debt liquidation, and daily resilience." },
+      7: { name: "Kalatra Bhava (Spouse & Public Alliances)", desc: "Matrimonial stability, business partnerships, and contracts." },
+      8: { name: "Randhra Bhava (Transformation & Secrets)", desc: "Longevity, unearned gains, and deep metaphysical research." },
+      9: { name: "Dharma Bhava (Fortune & Preceptor)", desc: "Higher wisdom, moral standing, paternal grace, and fortune." },
+      10: { name: "Karma Bhava (Career & Governance)", desc: "Statutory governance, Corporate Directorships, and professional stature." },
+      11: { name: "Labha Bhava (Gains & Large Networks)", desc: "Substantial capital yields, institutional honors, and ambition realization." },
+      12: { name: "Vyaya Bhava (Moksha & Foreign Realms)", desc: "Foreign transactions, spiritual liberation, and institutional investments." }
     };
 
     const loshuDetails = {
-      1: { name: "Number 1: Water Element", sig: "Career direction, communication flow, independence, and personal planning.", remedy: "Keep a water fountain or aquatic artwork in the North sector." },
-      2: { name: "Number 2: Earth Element", sig: "Relationships, marriage harmony, emotional sensitivity, and cooperation.", remedy: "Place natural quartz crystals or pair of rose quartz stones in South-West." },
-      3: { name: "Number 3: Wood Element", sig: "Family bonding, health vitality, intellectual absorption, and creative growth.", remedy: "Keep green plants or wooden artifacts in the East sector." },
-      4: { name: "Number 4: Wood Element", sig: "Wealth structuring, legal adherence, discipline, and property foundation.", remedy: "Wear green aventurine or keep 4-stalk green bamboo in South-East." },
-      5: { name: "Number 5: Earth Element (Core Matrix)", sig: "Balance, stability, courage, freedom, and emotional equilibrium.", remedy: "Place yellow/golden decorative pyramid in the central Brahmasthan." },
-      6: { name: "Number 6: Metal Element", sig: "Mentors, helpful friends, luxury, international commerce, and fatherly support.", remedy: "Hang a 6-rod metallic hollow wind chime in North-West sector." },
-      7: { name: "Number 7: Metal Element", sig: "Children, creativity, intuition, occult exploration, and research focus.", remedy: "Display white metal decorative artifacts or wear Siddh Rudraksha." },
-      8: { name: "Number 8: Earth Element", sig: "Knowledge, organization, financial discernment, perseverance, and intuition.", remedy: "Keep crystal geode or terracotta objects in the North-East sector." },
-      9: { name: "Number 9: Fire Element", sig: "Fame, reputation, leadership energy, vitality, and social recognition.", remedy: "Keep bright red accents or triangular pyramid lighting in South sector." }
+      1: { name: "Number 1: Water Element", sig: "Career direction and communication flow.", remedy: "Keep aquatic decor in the North." },
+      2: { name: "Number 2: Earth Element", sig: "Marriage harmony and emotional sensitivity.", remedy: "Place natural quartz crystals in South-West." },
+      3: { name: "Number 3: Wood Element", sig: "Intellectual absorption and creative health.", remedy: "Keep green plants in the East." },
+      4: { name: "Number 4: Wood Element", sig: "Wealth structuring and practical discipline.", remedy: "Wear green aventurine or keep green bamboo in South-East." },
+      5: { name: "Number 5: Earth Element", sig: "Balance, stability, and emotional courage.", remedy: "Place golden pyramid in center Brahmasthan." },
+      6: { name: "Number 6: Metal Element", sig: "Mentors, international commerce, and luxury.", remedy: "Hang 6-rod metal chime in North-West." },
+      7: { name: "Number 7: Metal Element", sig: "Children, creativity, and occult focus.", remedy: "Display white metal artifacts or wear Siddh Rudraksha." },
+      8: { name: "Number 8: Earth Element", sig: "Financial discernment and perseverance.", remedy: "Keep crystal geode in North-East." },
+      9: { name: "Number 9: Fire Element", sig: "Fame, reputation, and leadership vitality.", remedy: "Keep triangular pyramid lighting in South." }
     };
 
-    /* Admin State & Store */
+    /* Tarot Major Arcana Deck */
+    const tarotDeck = [
+      { name: "The Fool", icon: "🎒", key: "Beginnings • Spontaneity", desc: "A fresh spiritual journey filled with pure faith and unburdened potential." },
+      { name: "The Magician", icon: "🪄", key: "Manifestation • Resourcefulness", desc: "All elements align to transform intention into concrete worldly reality." },
+      { name: "The High Priestess", icon: "🌙", key: "Intuition • Sacred Secrets", desc: "Inner knowing and ancient metaphysical insight guiding your subconscious." },
+      { name: "The Empress", icon: "🌾", key: "Abundance • Fertility", desc: "Creative fruition, financial flourishing, and maternal harmony." },
+      { name: "The Emperor", icon: "👑", key: "Authority • Governance", desc: "Firm structural sovereignty, corporate mastery, and ethical order." },
+      { name: "The Hierophant", icon: "🏛️", key: "Tradition • Wisdom", desc: "Spiritual lineage, sacred rites, and institutional knowledge." },
+      { name: "The Lovers", icon: "💑", key: "Union • Karmic Choice", desc: "Sacred matrimonial alignment, shared values, and deep mutual honor." },
+      { name: "The Chariot", icon: "⚔️", key: "Willpower • Victory", desc: "Triumph through focused mental discipline and overcoming conflicting forces." },
+      { name: "Strength", icon: "🦁", key: "Courage • Compassion", desc: "Mastery of emotional currents through gentle, unyielding inner power." },
+      { name: "Wheel of Fortune", icon: "☸️", key: "Cycles • Destiny", desc: "A turning point in your cosmic karma bringing long-awaited breakthroughs." },
+      { name: "Justice", icon: "⚖️", key: "Truth • Law", desc: "Statutory fairness, karmic resolution, and clear ethical equilibrium." },
+      { name: "The Sun", icon: "☀️", key: "Radiance • Joy", desc: "Supreme clarity, vital prosperity, and unclouded worldly success." },
+      { name: "The World", icon: "🌐", key: "Completion • Fulfillment", desc: "Successful culmination of a monumental life cycle and wholeness." }
+    ];
+
+    /* Admin State & Profiles */
     const ADMIN_UID = "DM-94284";
     let isMasterAdmin = false;
 
-    // Load or seed pending payments
     let adminPaymentsQueue = JSON.parse(localStorage.getItem('dm_pending_payments') || 'null') || [
       { id: "PAY-101", uid: "DM-1024", userName: "Dr. Tanya Malhotra", utr: "423981029381", amount: 2360, purpose: "Matrimony Lifetime VIP", status: "Pending", date: "2026-09-18" }
     ];
 
-    // Load or seed pending registrations
     let adminRegistrationsQueue = JSON.parse(localStorage.getItem('dm_pending_regs') || 'null') || [
       { uid: "DM-5542", name: "Gurpreet Singh Gill", gender: "Male", phone: "+91 98721 00982", email: "gurpreet.gill@gmail.com", religion: "Sikh", status: "Pending Approval" }
     ];
 
-    /* Dynamic Candidates */
     let femaleProfiles = [
       { id: 101, gender: "Female", name: "Geetanjali Bedi", age: 29, height: "5'5\"", religion: "Hindu", gotra: "Bedi", profession: "Executive / Analytics Lead", education: "Post Graduate (MBA)", location: "Chandigarh / Delhi-NCR", phone: "+91 98142 88219", email: "geetanjali.bedi@destinyymilan.com", photoUrl: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500&auto=format&fit=crop&q=80", gunaScore: 31, manglik: "Non-Manglik", category: "corporate", isVip: false },
       { id: 102, gender: "Female", name: "Dr. Tanya Malhotra", age: 28, height: "5'6\"", religion: "Hindu", gotra: "Kashyap", profession: "Dental Surgeon / Clinic Owner", education: "BDS, MDS", location: "Jalandhar / Amritsar", phone: "+91 98721 44520", email: "tanya.malhotra@destinyymilan.com", photoUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&auto=format&fit=crop&q=80", gunaScore: 29, manglik: "Anshik Manglik", category: "medical", isVip: false },
-      { id: 103, gender: "Female", name: "Simran Kaur Sandhu", age: 27, height: "5'7\"", religion: "Sikh", gotra: "Sandhu", profession: "Corporate Counsel / Legal Associate", education: "LL.M (Corporate Law)", location: "Gurugram / Chandigarh", phone: "+91 99150 78234", email: "simran.sandhu@destinyymilan.com", photoUrl: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=500&auto=format&fit=crop&q=80", gunaScore: 28, manglik: "Non-Manglik", category: "corporate", isVip: false },
-      { id: 104, gender: "Female", name: "Ananya Sharma", age: 26, height: "5'4\"", religion: "Hindu", gotra: "Bhardwaj", profession: "Chartered Accountant (Auditor)", education: "CA, B.Com (Hons)", location: "Delhi-NCR / Ludhiana", phone: "+91 98112 34910", email: "ananya.sharma@destinyymilan.com", photoUrl: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&auto=format&fit=crop&q=80", gunaScore: 32, manglik: "Non-Manglik", category: "corporate", isVip: false }
+      { id: 103, gender: "Female", name: "Simran Kaur Sandhu", age: 27, height: "5'7\"", religion: "Sikh", gotra: "Sandhu", profession: "Corporate Counsel / Legal Associate", education: "LL.M (Corporate Law)", location: "Gurugram / Chandigarh", phone: "+91 99150 78234", email: "simran.sandhu@destinyymilan.com", photoUrl: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=500&auto=format&fit=crop&q=80", gunaScore: 28, manglik: "Non-Manglik", category: "corporate", isVip: false }
     ];
 
     let maleProfiles = [
       { id: 201, gender: "Male", name: "Rahuul Sharma", age: 32, height: "5'11\"", religion: "Hindu", gotra: "Bhardwaj", profession: "CS Finalist & Independent Director", education: "Company Secretary, B.Com", location: "Amritsar / Chandigarh / Gurugram", phone: "+91 98141 67742", email: "rahuul.sharma@destinyymilan.com", photoUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&auto=format&fit=crop&q=80", gunaScore: 31, manglik: "Non-Manglik", category: "corporate", isVip: true },
       { id: 202, gender: "Male", name: "Dr. Aman Verma", age: 31, height: "6'0\"", religion: "Hindu", gotra: "Vats", profession: "MD Physician (Specialist)", education: "MBBS, MD (Medicine)", location: "Chandigarh / Delhi", phone: "+91 98765 43210", email: "dr.aman@destinyymilan.com", photoUrl: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&auto=format&fit=crop&q=80", gunaScore: 30, manglik: "Non-Manglik", category: "medical", isVip: false },
-      { id: 203, gender: "Male", name: "Vikramjit Singh", age: 30, height: "5'10\"", religion: "Sikh", gotra: "Sodhi", profession: "Real Estate Developer & Builder", education: "B.Tech, MBA", location: "Amritsar / Jalandhar", phone: "+91 98140 11223", email: "vikram.singh@destinyymilan.com", photoUrl: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=500&auto=format&fit=crop&q=80", gunaScore: 29, manglik: "Anshik Manglik", category: "business", isVip: false },
-      { id: 204, gender: "Male", name: "Karan Johar", age: 29, height: "5'9\"", religion: "Hindu", gotra: "Kashyap", profession: "Senior Investment Analyst", education: "CFA, MBA Finance", location: "Gurugram / Delhi-NCR", phone: "+91 98711 99882", email: "karan.analyst@destinyymilan.com", photoUrl: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=500&auto=format&fit=crop&q=80", gunaScore: 33, manglik: "Non-Manglik", category: "corporate", isVip: false }
+      { id: 203, gender: "Male", name: "Vikramjit Singh", age: 30, height: "5'10\"", religion: "Sikh", gotra: "Sodhi", profession: "Real Estate Developer & Builder", education: "B.Tech, MBA", location: "Amritsar / Jalandhar", phone: "+91 98140 11223", email: "vikram.singh@destinyymilan.com", photoUrl: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=500&auto=format&fit=crop&q=80", gunaScore: 29, manglik: "Anshik Manglik", category: "business", isVip: false }
     ];
 
     let currentCalculatedChart = null;
@@ -1297,8 +1442,6 @@
     let activeGenderView = 'Male';
     let isMyPhotoHidden = true;
     let currentChatTarget = null;
-    let currentPaymentType = null;
-    let currentPaymentAmount = 0;
     let cart = [];
     let activeLoShuCounts = {1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0};
 
@@ -1315,36 +1458,69 @@
       renderStoreProducts();
       calculateAstronomicalKundli();
       renderMatches();
-      updateAdminDashboard();
+
+      // Read Hash URL on load
+      const hash = window.location.hash.replace('#', '') || 'astrology';
+      switchPage(hash);
     });
 
-    /* ================= MASTER ADMIN CONTROL CENTER (DM-94284) ================= */
-    function loginAsMasterAdmin() {
-      document.getElementById('login-uid').value = ADMIN_UID;
-      document.getElementById('login-pwd').value = "admin123";
-      handlePortalLogin(new Event('submit'));
+    /* ================= KING'S ADMIN CORNER (STRICT LOGIN) ================= */
+    function renderAdminView() {
+      const lockedView = document.getElementById('admin-locked-view');
+      const unlockedView = document.getElementById('admin-unlocked-view');
+      const actionEl = document.getElementById('admin-auth-actions');
+
+      if (isMasterAdmin) {
+        lockedView.classList.add('hidden');
+        unlockedView.classList.remove('hidden');
+        actionEl.innerHTML = `
+          <button onclick="adminLogout()" class="px-4 py-2 rounded-xl bg-cosmic-950 border border-slate-700 hover:border-red-500 text-slate-300 hover:text-red-400 text-xs font-bold transition">
+            Sign Out of King's Corner
+          </button>
+        `;
+        updateAdminDashboard();
+      } else {
+        lockedView.classList.remove('hidden');
+        unlockedView.classList.add('hidden');
+        actionEl.innerHTML = `
+          <span class="text-xs font-mono text-amber-300 bg-cosmic-950 px-3 py-1.5 rounded-xl border border-slate-800">
+            Status: Authentication Locked
+          </span>
+        `;
+      }
     }
 
-    function openAdminCenter() {
-      document.getElementById('admin-control-center').classList.remove('hidden');
-      updateAdminDashboard();
-      document.getElementById('admin-control-center').scrollIntoView({ behavior: 'smooth' });
+    function handleDirectAdminAuth(e) {
+      e.preventDefault();
+      const pwd = document.getElementById('direct-admin-pwd').value.trim();
+
+      if (pwd !== "admin123") {
+        alert("❌ Access Denied: Incorrect Master Admin password.");
+        return;
+      }
+
+      isMasterAdmin = true;
+      renderAdminView();
+      alert("👑 Welcome, Master Admin DM-94284!\n\nKing's Command Corner is fully unlocked.");
     }
 
-    function closeAdminCenter() {
-      document.getElementById('admin-control-center').classList.add('hidden');
+    function adminLogout() {
+      isMasterAdmin = false;
+      renderAdminView();
+      switchPage('astrology');
     }
 
     function updateAdminDashboard() {
+      if (!isMasterAdmin) return;
       document.getElementById('stat-pending-payments').innerText = adminPaymentsQueue.filter(p => p.status === 'Pending').length;
       document.getElementById('stat-pending-users').innerText = adminRegistrationsQueue.filter(r => r.status === 'Pending Approval').length;
       document.getElementById('stat-active-users').innerText = femaleProfiles.length + maleProfiles.length;
 
-      // 1. Render Payments Queue
+      // 1. Payments Queue
       const payQueueEl = document.getElementById('admin-payments-queue');
       const pendingPays = adminPaymentsQueue.filter(p => p.status === 'Pending');
       if (pendingPays.length === 0) {
-        payQueueEl.innerHTML = `<div class="p-4 rounded-xl bg-cosmic-950 border border-slate-800 text-slate-500 text-xs text-center">No pending UTR payments. All transactions verified!</div>`;
+        payQueueEl.innerHTML = `<div class="p-4 rounded-xl bg-cosmic-950 border border-slate-800 text-slate-500 text-xs text-center">No pending UTR payments.</div>`;
       } else {
         payQueueEl.innerHTML = '';
         pendingPays.forEach(pay => {
@@ -1356,13 +1532,13 @@
                 <span class="font-bold text-white">${pay.userName} (${pay.uid})</span>
                 <span class="bg-red-500 text-white font-mono text-[10px] px-2 py-0.2 rounded">UTR: ${pay.utr}</span>
               </div>
-              <div class="text-slate-400 mt-1">Amount: <strong class="text-gold-400 font-mono">₹${pay.amount}</strong> via Kotak 811 UPI • Purpose: ${pay.purpose} • Date: ${pay.date}</div>
+              <div class="text-slate-400 mt-1">Amount: <strong class="text-gold-400 font-mono">₹${pay.amount}</strong> • Date: ${pay.date}</div>
             </div>
             <div class="flex items-center gap-2">
               <button onclick="approveUtrPayment('${pay.id}')" class="px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-bold uppercase tracking-wider text-[11px] shadow transition">
-                ✓ Confirm Payment & Activate VIP
+                ✓ Confirm & Activate VIP
               </button>
-              <button onclick="rejectUtrPayment('${pay.id}')" class="px-3 py-2 rounded-xl bg-cosmic-900 border border-slate-700 hover:border-red-500 text-slate-400 hover:text-red-400 text-[11px] transition">
+              <button onclick="rejectUtrPayment('${pay.id}')" class="px-3 py-2 rounded-xl bg-cosmic-900 border border-slate-700 hover:border-red-500 text-slate-400 text-[11px] transition">
                 Reject
               </button>
             </div>
@@ -1371,11 +1547,11 @@
         });
       }
 
-      // 2. Render Registration Queue
+      // 2. Registrations Queue
       const regQueueEl = document.getElementById('admin-registrations-queue');
       const pendingRegs = adminRegistrationsQueue.filter(r => r.status === 'Pending Approval');
       if (pendingRegs.length === 0) {
-        regQueueEl.innerHTML = `<div class="p-4 rounded-xl bg-cosmic-950 border border-slate-800 text-slate-500 text-xs text-center">No pending registrations waiting for activation.</div>`;
+        regQueueEl.innerHTML = `<div class="p-4 rounded-xl bg-cosmic-950 border border-slate-800 text-slate-500 text-xs text-center">No pending registrations.</div>`;
       } else {
         regQueueEl.innerHTML = '';
         pendingRegs.forEach(reg => {
@@ -1390,17 +1566,15 @@
               </div>
               <div class="text-slate-400 mt-1">Phone: <span class="text-white font-mono">${reg.phone}</span> • Email: <span class="text-white font-mono">${reg.email}</span></div>
             </div>
-            <div class="flex items-center gap-2">
-              <button onclick="activatePendingRegistration('${reg.uid}')" class="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold uppercase tracking-wider text-[11px] shadow transition">
-                ✓ Activate Profile
-              </button>
-            </div>
+            <button onclick="activatePendingRegistration('${reg.uid}')" class="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold uppercase tracking-wider text-[11px] shadow transition">
+              ✓ Activate Profile
+            </button>
           `;
           regQueueEl.appendChild(div);
         });
       }
 
-      // 3. Render Master Directory
+      // 3. Master Directory
       const tbody = document.getElementById('admin-directory-tbody');
       tbody.innerHTML = '';
       const allMembers = [...maleProfiles, ...femaleProfiles];
@@ -1427,37 +1601,31 @@
     function approveUtrPayment(payId) {
       const pay = adminPaymentsQueue.find(p => p.id === payId);
       if (!pay) return;
-
       pay.status = 'Approved';
       localStorage.setItem('dm_pending_payments', JSON.stringify(adminPaymentsQueue));
-
       isMatrimonyUnlocked = true;
       femaleProfiles.forEach(p => p.isVip = true);
       maleProfiles.forEach(p => p.isVip = true);
-
       updateAdminDashboard();
       renderMatches();
-      alert(`🎉 Admin DM-94284 Confirmed!\n\nPayment UTR "${pay.utr}" approved. Member profile upgraded to VIP with unmasked contact privileges.`);
+      alert(`🎉 Admin DM-94284 Confirmed!\n\nUTR "${pay.utr}" approved. Member upgraded to VIP.`);
     }
 
     function rejectUtrPayment(payId) {
       adminPaymentsQueue = adminPaymentsQueue.filter(p => p.id !== payId);
       localStorage.setItem('dm_pending_payments', JSON.stringify(adminPaymentsQueue));
       updateAdminDashboard();
-      alert("Payment record rejected and removed.");
+      alert("Payment record rejected.");
     }
 
     function activatePendingRegistration(uid) {
       const reg = adminRegistrationsQueue.find(r => r.uid === uid);
       if (!reg) return;
-
       reg.status = 'Active';
       localStorage.setItem('dm_pending_regs', JSON.stringify(adminRegistrationsQueue));
-
-      const newId = Math.floor(1000 + Math.random() * 9000);
       const targetPool = reg.gender === 'Male' ? maleProfiles : femaleProfiles;
       targetPool.push({
-        id: newId,
+        id: Math.floor(1000 + Math.random() * 9000),
         gender: reg.gender,
         name: reg.name,
         age: 30,
@@ -1475,10 +1643,9 @@
         category: "corporate",
         isVip: false
       });
-
       updateAdminDashboard();
       renderMatches();
-      alert(`✓ Profile Activated!\n\nMember ${reg.name} (${uid}) has been activated by Admin DM-94284.`);
+      alert(`✓ Profile Activated for ${reg.name} (${uid})!`);
     }
 
     function toggleMemberVip(id, gender) {
@@ -1491,13 +1658,22 @@
       }
     }
 
+    /* ================= TAROT READING ENGINE ================= */
+    function drawTarotSpread() {
+      const shuffled = [...tarotDeck].sort(() => 0.5 - Math.random());
+      for (let i = 1; i <= 3; i++) {
+        const card = shuffled[i - 1];
+        document.getElementById(`tarot-icon-${i}`).innerText = card.icon;
+        document.getElementById(`tarot-name-${i}`).innerText = card.name;
+        document.getElementById(`tarot-key-${i}`).innerText = card.key;
+        document.getElementById(`tarot-desc-${i}`).innerText = card.desc;
+      }
+    }
+
     /* ================= ASTRONOMICAL KUNDLI EPHEMERIS ================= */
     function degToRad(deg) { return deg * Math.PI / 180.0; }
     function radToDeg(rad) { return rad * 180.0 / Math.PI; }
-    function normalizeDeg(deg) {
-      deg = deg % 360;
-      return deg < 0 ? deg + 360 : deg;
-    }
+    function normalizeDeg(deg) { deg = deg % 360; return deg < 0 ? deg + 360 : deg; }
     function formatDegMin(degFloat) {
       const d = Math.floor(degFloat);
       const m = Math.floor((degFloat - d) * 60);
@@ -1515,7 +1691,6 @@
       const dobVal = document.getElementById('k-dob').value;
       const tobVal = document.getElementById('k-tob').value;
       const cityKey = document.getElementById('k-city').value;
-
       if (!dobVal || !tobVal) return;
 
       let lat, lon, tz;
@@ -1525,9 +1700,7 @@
         tz = parseFloat(document.getElementById('custom-tz').value) || 5.5;
       } else {
         const c = cityDatabase[cityKey] || cityDatabase.amritsar;
-        lat = c.lat;
-        lon = c.lon;
-        tz = c.tz;
+        lat = c.lat; lon = c.lon; tz = c.tz;
       }
 
       const [yearStr, monthStr, dayStr] = dobVal.split('-');
@@ -1543,28 +1716,23 @@
       const A = Math.floor(y / 100);
       const B = 2 - A + Math.floor(A / 4);
       const JD = Math.floor(365.25 * (y + 4716)) + Math.floor(30.6001 * (m + 1)) + day + (decimalHourUT / 24.0) + B - 1524.5;
-
       const T = (JD - 2451545.0) / 36525.0;
       const ayanamsha = 23.85805 + 1.3960417 * T;
       document.getElementById('calc-ayanamsha').innerText = formatDegMin(ayanamsha);
 
-      let GMST = 280.46061837 + 360.98564736629 * (JD - 2451545.0);
-      GMST = normalizeDeg(GMST);
+      let GMST = normalizeDeg(280.46061837 + 360.98564736629 * (JD - 2451545.0));
       const LST = normalizeDeg(GMST + lon);
-      const eps = 23.439291 - 0.0130042 * T;
-      const epsRad = degToRad(eps);
+      const epsRad = degToRad(23.439291 - 0.0130042 * T);
       const latRad = degToRad(lat);
       const lstRad = degToRad(LST);
 
       const numerator = Math.cos(lstRad);
       const denominator = -Math.sin(lstRad) * Math.cos(epsRad) - Math.tan(latRad) * Math.sin(epsRad);
-      let tropAsc = radToDeg(Math.atan2(numerator, denominator));
-      tropAsc = normalizeDeg(tropAsc);
-
+      let tropAsc = normalizeDeg(radToDeg(Math.atan2(numerator, denominator)));
       const siderealAsc = normalizeDeg(tropAsc - ayanamsha);
+
       const lagnaSignIndex = Math.floor(siderealAsc / 30);
       const lagnaDegInSign = siderealAsc % 30;
-
       const nakIndex = Math.floor(siderealAsc / (360 / 27));
       const pada = Math.floor((siderealAsc % (360 / 27)) / (360 / 108)) + 1;
 
@@ -1572,11 +1740,11 @@
       document.getElementById('calc-lagna-deg').innerText = formatDegMin(lagnaDegInSign);
       document.getElementById('calc-lagna-nak').innerText = `${nakshatraNames[nakIndex]} (Pada ${pada})`;
 
+      // Planetary Longitudes
       const d = JD - 2451545.0;
       const L_sun = normalizeDeg(280.46646 + 36000.76983 * T);
       const M_sun = normalizeDeg(357.52911 + 35999.05029 * T);
-      const C_sun = 1.914602 * Math.sin(degToRad(M_sun));
-      const tropSun = normalizeDeg(L_sun + C_sun);
+      const tropSun = normalizeDeg(L_sun + 1.914602 * Math.sin(degToRad(M_sun)));
       const sidSun = normalizeDeg(tropSun - ayanamsha);
       const R_earth = 1.00014 - 0.01671 * Math.cos(degToRad(M_sun));
       const x_earth = -R_earth * Math.cos(degToRad(tropSun));
@@ -1592,16 +1760,12 @@
         const L = normalizeDeg(L0 + Ldot * T);
         const w = normalizeDeg(w0 + wdot * T);
         const M = normalizeDeg(L - w);
-        const C = 2 * e * Math.sin(degToRad(M));
-        const nu = normalizeDeg(M + radToDeg(C));
+        const nu = normalizeDeg(M + radToDeg(2 * e * Math.sin(degToRad(M))));
         const r = a * (1 - e * e) / (1 + e * Math.cos(degToRad(nu)));
         const l = normalizeDeg(nu + w);
         const xp = r * Math.cos(degToRad(l));
         const yp = r * Math.sin(degToRad(l));
-        const xgeo = xp - x_earth;
-        const ygeo = yp - y_earth;
-        const tropGeo = normalizeDeg(radToDeg(Math.atan2(ygeo, xgeo)));
-        return normalizeDeg(tropGeo - ayanamsha);
+        return normalizeDeg(radToDeg(Math.atan2(yp - y_earth, xp - x_earth)) - ayanamsha);
       }
 
       const sidMerc = getHelioPlanet(0.387098, 0.205630, 0.000025, 252.2509, 149472.6741, 77.456, 1.556);
@@ -1609,7 +1773,6 @@
       const sidMars = getHelioPlanet(1.523688, 0.093405, 0.000092, 355.433, 19140.299, 336.06, 1.84);
       const sidJup = getHelioPlanet(5.2026, 0.04849, 0.000163, 34.351, 3034.9057, 14.33, 1.61);
       const sidSat = getHelioPlanet(9.5549, 0.0555, -0.000346, 50.077, 1222.114, 92.66, 1.96);
-
       const sidRahu = normalizeDeg(125.04452 - 1934.136261 * T - ayanamsha);
       const sidKetu = normalizeDeg(sidRahu + 180.0);
 
@@ -1646,7 +1809,7 @@
           <td class="py-2 text-amber-300">${rashiNames[p.rashiIndex].split(' ')[0]}</td>
           <td class="py-2 text-slate-300">${formatDegMin(p.degInRashi)}</td>
           <td class="py-2 text-purple-300 font-bold">H${p.d1House}</td>
-          <td class="py-2 text-emerald-400">${p.retrograde ? 'Retrograde (R)' : 'Direct'}</td>
+          <td class="py-2 text-emerald-400">${p.retrograde ? 'Retrograde' : 'Direct'}</td>
         `;
         tableBody.appendChild(tr);
       });
@@ -1659,7 +1822,6 @@
       currentChartMode = mode;
       const btnD1 = document.getElementById('btn-chart-d1');
       const btnD9 = document.getElementById('btn-chart-d9');
-
       if (mode === 'd1') {
         btnD1.className = "px-4 py-2 rounded-lg font-bold text-xs bg-purple-600 text-white shadow transition";
         btnD9.className = "px-4 py-2 rounded-lg font-bold text-xs text-slate-400 hover:text-white transition";
@@ -1674,7 +1836,6 @@
       if (!currentCalculatedChart) return;
       const baseLagnaSign = currentCalculatedChart.lagnaSignIndex;
       const signNamesShort = ["Mesha", "Vrishabha", "Mithuna", "Karka", "Simha", "Kanya", "Tula", "Vrischika", "Dhanu", "Makara", "Kumbha", "Meena"];
-
       document.getElementById('chart-display-title').innerText = `D1 Rashi Chart (Lagna: ${signNamesShort[baseLagnaSign]} ${Math.floor(currentCalculatedChart.lagnaDeg)}°)`;
 
       for (let h = 1; h <= 12; h++) {
@@ -1705,21 +1866,16 @@
       if (!currentCalculatedChart) return;
       const baseLagnaSign = currentCalculatedChart.lagnaSignIndex;
       const houseSignIndex = (baseLagnaSign + (houseNum - 1)) % 12;
-      const houseSignName = rashiNames[houseSignIndex];
-      const lordName = rashiLords[houseSignIndex];
-
       const residentPlanets = currentCalculatedChart.planets
         .filter(p => p.d1House === houseNum)
         .map(p => `${p.name} (${formatDegMin(p.degInRashi)}${p.retrograde ? ' R' : ''})`);
 
-      if (houseNum === 1) {
-        residentPlanets.unshift(`Ascendant (Lagna) ${formatDegMin(currentCalculatedChart.lagnaDeg)}`);
-      }
+      if (houseNum === 1) residentPlanets.unshift(`Ascendant (Lagna) ${formatDegMin(currentCalculatedChart.lagnaDeg)}`);
 
       const info = bhavaSignifications[houseNum];
       document.getElementById('inspector-house-title').innerText = `House ${houseNum}: ${info.name}`;
-      document.getElementById('inspector-house-sign').innerText = `Sign: ${houseSignName.split(' ')[0]} (${houseSignIndex + 1})`;
-      document.getElementById('inspector-house-lord').innerText = lordName;
+      document.getElementById('inspector-house-sign').innerText = `Sign: ${rashiNames[houseSignIndex].split(' ')[0]} (${houseSignIndex + 1})`;
+      document.getElementById('inspector-house-lord').innerText = rashiLords[houseSignIndex];
       document.getElementById('inspector-house-planets').innerText = residentPlanets.length > 0 ? residentPlanets.join(', ') : 'None (Vacant)';
       document.getElementById('inspector-house-desc').innerText = info.desc;
     }
@@ -1728,15 +1884,10 @@
     function calculateNumerology() {
       const dobVal = document.getElementById('num-dob').value;
       const nameVal = document.getElementById('num-name').value.toUpperCase().trim();
-
-      if (!dobVal || !nameVal) {
-        alert("Please enter both Name and Date of Birth.");
-        return;
-      }
+      if (!dobVal || !nameVal) { alert("Please enter both Name and Date of Birth."); return; }
 
       const [year, month, day] = dobVal.split('-');
       const digits = (year + month + day).split('').map(Number).filter(n => n > 0);
-
       const counts = {1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0};
       digits.forEach(d => { if (counts[d] !== undefined) counts[d]++; });
       activeLoShuCounts = counts;
@@ -1755,24 +1906,22 @@
           }
         }
       }
-
       inspectLoShuCell(4);
-      document.getElementById('res-py-overview').innerHTML = `<strong>Calculated Personal Year for ${nameVal}:</strong> Active vibrational cycle of restructuring and wealth stabilization.`;
+      document.getElementById('res-py-overview').innerHTML = `<strong>Calculated Personal Year for ${nameVal}:</strong> Cycle of discipline, capital consolidation, and authority.`;
     }
 
     function inspectLoShuCell(num) {
       const info = loshuDetails[num];
       const count = activeLoShuCounts[num] || 0;
-
       document.getElementById('loshu-diag-title').innerText = info.name;
       document.getElementById('loshu-diag-status').innerText = `Count: ${count}x in Grid`;
       document.getElementById('loshu-diag-significance').innerText = info.sig;
       document.getElementById('loshu-diag-remedy').innerText = count > 0 
-        ? `Strength Active: Birth date embodies natural harmony in this plane.` 
+        ? `Strength Active: Natural harmony in this plane.` 
         : `Remedial Guidance: ${info.remedy}`;
     }
 
-    /* ================= DESTINYYMILAN AUTH & FILTER LOGIC ================= */
+    /* ================= MILAN MATCHMAKING & USER AUTH ================= */
     function handlePortalRegister(e) {
       e.preventDefault();
       const name = document.getElementById('reg-name').value.trim();
@@ -1782,14 +1931,12 @@
       const religion = document.getElementById('reg-religion').value;
       const genId = 'DM-' + Math.floor(1000 + Math.random() * 9000);
 
-      const newRegistration = { uid: genId, name, gender, phone, email, religion, status: "Pending Approval" };
-      adminRegistrationsQueue.push(newRegistration);
+      adminRegistrationsQueue.push({ uid: genId, name, gender, phone, email, religion, status: "Pending Approval" });
       localStorage.setItem('dm_pending_regs', JSON.stringify(adminRegistrationsQueue));
-
-      alert(`🎉 Registration Submitted!\n\nYour Unique ID is ${genId}.\nYour profile has been forwarded to Admin DM-94284 for activation.`);
+      alert(`🎉 Registration Submitted!\n\nYour Unique ID is ${genId}.\nProfile has been forwarded to Admin DM-94284 for activation.`);
 
       document.getElementById('login-uid').value = genId;
-      document.getElementById('login-pwd').value = "demo123";
+      document.getElementById('login-pwd').value = "";
     }
 
     function handlePortalLogin(e) {
@@ -1797,40 +1944,13 @@
       const uid = document.getElementById('login-uid').value.trim();
       const gender = document.getElementById('login-gender').value;
 
-      if (uid.toUpperCase() === ADMIN_UID) {
-        isMasterAdmin = true;
-        isUserLoggedIn = true;
-
-        document.getElementById('milan-gate-loggedout').classList.add('hidden');
-        document.getElementById('milan-gate-loggedin').classList.remove('hidden');
-
-        document.getElementById('user-greeting-name').innerText = "Master Admin (Rahul Sharma)";
-        document.getElementById('user-session-id').innerText = ADMIN_UID;
-        document.getElementById('user-gender-tag').innerText = "Supreme Authority";
-        document.getElementById('user-role-badge').classList.remove('hidden');
-        document.getElementById('btn-open-admin-center').classList.remove('hidden');
-        document.getElementById('btn-pool-all').classList.remove('hidden');
-        document.getElementById('admin-view-indicator').classList.remove('hidden');
-
-        openAdminCenter();
-        renderMatches();
-        return;
-      }
-
-      // Regular Member
-      isMasterAdmin = false;
       isUserLoggedIn = true;
-
       document.getElementById('milan-gate-loggedout').classList.add('hidden');
       document.getElementById('milan-gate-loggedin').classList.remove('hidden');
 
       document.getElementById('user-greeting-name').innerText = uid;
       document.getElementById('user-session-id').innerText = uid;
       document.getElementById('user-gender-tag').innerText = gender;
-      document.getElementById('user-role-badge').classList.add('hidden');
-      document.getElementById('btn-open-admin-center').classList.add('hidden');
-      document.getElementById('btn-pool-all').classList.add('hidden');
-      document.getElementById('admin-view-indicator').classList.add('hidden');
 
       setUserGenderView(gender);
     }
@@ -1844,8 +1964,6 @@
 
     function handlePortalLogout() {
       isUserLoggedIn = false;
-      isMasterAdmin = false;
-      closeAdminCenter();
       document.getElementById('milan-gate-loggedin').classList.add('hidden');
       document.getElementById('milan-gate-loggedout').classList.remove('hidden');
     }
@@ -1854,18 +1972,12 @@
       activeGenderView = gender;
       const btnF = document.getElementById('btn-pool-f');
       const btnM = document.getElementById('btn-pool-m');
-      const btnAll = document.getElementById('btn-pool-all');
-
-      btnF.className = "px-2.5 py-1 rounded-lg font-bold text-slate-400 hover:text-white";
-      btnM.className = "px-2.5 py-1 rounded-lg font-bold text-slate-400 hover:text-white";
-      if (btnAll) btnAll.className = "px-2.5 py-1 rounded-lg font-bold text-slate-400 hover:text-white";
-
       if (gender === 'Male') {
         btnF.className = "px-2.5 py-1 rounded-lg font-bold bg-pink-500/20 text-pink-300 border border-pink-500/40";
-      } else if (gender === 'Female') {
-        btnM.className = "px-2.5 py-1 rounded-lg font-bold bg-blue-500/20 text-blue-300 border border-blue-500/40";
+        btnM.className = "px-2.5 py-1 rounded-lg font-bold text-slate-400 hover:text-white";
       } else {
-        if (btnAll) btnAll.className = "px-2.5 py-1 rounded-lg font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40";
+        btnM.className = "px-2.5 py-1 rounded-lg font-bold bg-blue-500/20 text-blue-300 border border-blue-500/40";
+        btnF.className = "px-2.5 py-1 rounded-lg font-bold text-slate-400 hover:text-white";
       }
       renderMatches();
     }
@@ -1875,30 +1987,21 @@
       const icon = document.getElementById('privacy-icon');
       const text = document.getElementById('privacy-text');
       const btn = document.getElementById('btn-my-photo-privacy');
-
       if (isMyPhotoHidden) {
-        icon.innerText = "🔒";
-        text.innerText = "My Photo: Masked";
+        icon.innerText = "🔒"; text.innerText = "My Photo: Masked";
         btn.className = "px-3 py-2 rounded-xl text-xs font-bold bg-cosmic-950 border border-slate-700 text-slate-300 flex items-center gap-1.5 transition";
       } else {
-        icon.innerText = "👁️";
-        text.innerText = "My Photo: Visible";
+        icon.innerText = "👁️"; text.innerText = "My Photo: Visible";
         btn.className = "px-3 py-2 rounded-xl text-xs font-bold bg-emerald-500/20 border border-emerald-500 text-emerald-300 flex items-center gap-1.5 transition";
       }
     }
 
     function resetAllFilters() {
-      const searchEl = document.getElementById('filter-search');
-      if (searchEl) searchEl.value = '';
-      const relEl = document.getElementById('filter-religion');
-      if (relEl) relEl.value = 'all';
-      const manglikEl = document.getElementById('filter-manglik');
-      if (manglikEl) manglikEl.value = 'all';
-      const gunaEl = document.getElementById('filter-guna');
-      if (gunaEl) gunaEl.value = '0';
-      const profEl = document.getElementById('filter-profession');
-      if (profEl) profEl.value = 'all';
-
+      document.getElementById('filter-search').value = '';
+      document.getElementById('filter-religion').value = 'all';
+      document.getElementById('filter-manglik').value = 'all';
+      document.getElementById('filter-guna').value = '0';
+      document.getElementById('filter-profession').value = 'all';
       renderMatches();
     }
 
@@ -1907,17 +2010,7 @@
       if (!container) return;
       container.innerHTML = '';
 
-      // Determine Base Pool
-      let basePool;
-      if (activeGenderView === 'Male') {
-        basePool = femaleProfiles;
-      } else if (activeGenderView === 'Female') {
-        basePool = maleProfiles;
-      } else {
-        basePool = [...femaleProfiles, ...maleProfiles]; // Admin view all
-      }
-
-      // Read Dynamic Filter Inputs
+      const basePool = activeGenderView === 'Male' ? femaleProfiles : maleProfiles;
       const searchTxt = (document.getElementById('filter-search')?.value || '').toLowerCase().trim();
       const selRel = document.getElementById('filter-religion')?.value || 'all';
       const selManglik = document.getElementById('filter-manglik')?.value || 'all';
@@ -1925,33 +2018,20 @@
       const selProf = document.getElementById('filter-profession')?.value || 'all';
 
       let filtered = basePool.filter(m => {
-        // Keyword Search
         if (searchTxt) {
-          const matchString = `${m.name} ${m.location} ${m.gotra} ${m.profession} ${m.education}`.toLowerCase();
+          const matchString = `${m.name} ${m.location} ${m.gotra} ${m.profession}`.toLowerCase();
           if (!matchString.includes(searchTxt)) return false;
         }
-        // Religion
         if (selRel !== 'all' && !m.religion.toLowerCase().includes(selRel.toLowerCase())) return false;
-        // Manglik
         if (selManglik === 'Non-Manglik' && !m.manglik.toLowerCase().includes('non-manglik')) return false;
         if (selManglik === 'Anshik' && !m.manglik.toLowerCase().includes('anshik')) return false;
-        // Guna Score
         if (minGuna > 0 && m.gunaScore < minGuna) return false;
-        // Profession
         if (selProf !== 'all' && m.category !== selProf) return false;
-
         return true;
       });
 
-      const countLabel = document.getElementById('filter-matches-count');
-      if (countLabel) countLabel.innerText = filtered.length;
-
       if (filtered.length === 0) {
-        container.innerHTML = `
-          <div class="p-8 text-center rounded-2xl bg-cosmic-900 border border-slate-800 text-slate-400 text-xs">
-            No profiles match the active filter criteria. Tap "Reset Filters" above to see all candidates.
-          </div>
-        `;
+        container.innerHTML = `<div class="p-8 text-center rounded-2xl bg-cosmic-900 border border-slate-800 text-slate-400 text-xs">No candidates match this filter.</div>`;
         return;
       }
 
@@ -1959,16 +2039,15 @@
         const card = document.createElement('div');
         card.className = "p-5 rounded-2xl bg-cosmic-900 border border-slate-800 hover:border-amber-500/40 transition flex flex-col sm:flex-row gap-5 items-start sm:items-center";
 
-        // Unmask condition: Admin DM-94284, Paid user, or VIP
         const isVisible = isMasterAdmin || isMatrimonyUnlocked || match.isVip;
 
         const photoHtml = isVisible
           ? `<div class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden border-2 border-emerald-400 relative flex-shrink-0 shadow-lg">
                <img src="${match.photoUrl}" alt="${match.name}" class="w-full h-full object-cover" />
-               <span class="absolute bottom-1 right-1 bg-emerald-500 text-black text-[9px] font-black px-1 rounded">${isMasterAdmin ? 'ADMIN VIEW' : 'VERIFIED'}</span>
+               <span class="absolute bottom-1 right-1 bg-emerald-500 text-black text-[9px] font-black px-1 rounded">VERIFIED</span>
              </div>`
           : `<div class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden border border-slate-700 relative flex-shrink-0 bg-cosmic-950 flex items-center justify-center">
-               <img src="${match.photoUrl}" alt="Locked Photo" class="w-full h-full object-cover blur-photo-lock" />
+               <img src="${match.photoUrl}" alt="Locked" class="w-full h-full object-cover blur-photo-lock" />
                <div class="absolute inset-0 bg-cosmic-950/70 flex flex-col items-center justify-center text-center p-1">
                  <span class="text-xl">🔒</span>
                  <span class="text-[9px] font-bold text-amber-300 uppercase tracking-tight mt-1">Photo Masked</span>
@@ -1978,17 +2057,16 @@
         const contactHtml = isVisible
           ? `<div class="mt-3 p-3 rounded-xl bg-emerald-950/40 border border-emerald-500/40 text-xs space-y-1">
                <div class="text-emerald-300 font-semibold flex items-center gap-2">
-                 <span>📞 Direct Phone:</span>
+                 <span>📞 Phone:</span>
                  <a href="tel:${match.phone}" class="text-white font-mono underline font-bold">${match.phone}</a>
-                 <span class="bg-emerald-500 text-black text-[9px] font-black px-1 rounded">WhatsApp Active</span>
                </div>
                <div class="text-emerald-300 font-semibold flex items-center gap-2">
-                 <span>✉️ Direct Email:</span>
+                 <span>✉️ Email:</span>
                  <a href="mailto:${match.email}" class="text-white font-mono underline">${match.email}</a>
                </div>
              </div>`
           : `<div class="mt-3 p-2.5 rounded-xl bg-cosmic-950 border border-slate-800 text-xs flex items-center justify-between text-slate-400">
-               <span>🔒 Phone & Email: <span class="text-slate-500 font-mono">+91 98••••••12 (Masked)</span></span>
+               <span>🔒 Phone & Email: <span class="text-slate-500 font-mono">+91 98••••••12</span></span>
                <button onclick="openPaymentModal('matrimony', 2360, 'Unlock Contact Details')" class="text-amber-400 hover:underline text-[11px] font-bold">
                  Unlock (₹2,360)
                </button>
@@ -1999,10 +2077,7 @@
           <div class="flex-1 w-full">
             <div class="flex flex-wrap items-center justify-between gap-2">
               <div>
-                <div class="flex items-center gap-2">
-                  <h4 class="font-cinzel text-base font-bold text-white">${match.name}</h4>
-                  <span class="text-[10px] font-mono px-1.5 py-0.2 rounded bg-slate-800 text-slate-400">DM-${match.id}</span>
-                </div>
+                <h4 class="font-cinzel text-base font-bold text-white">${match.name}</h4>
                 <div class="text-xs text-slate-400">${match.age} Yrs • ${match.height} • ${match.religion} (${match.gotra})</div>
               </div>
               <div class="text-right">
@@ -2014,7 +2089,7 @@
             </div>
 
             <div class="mt-2 text-xs text-slate-300">
-              <span class="text-slate-400">Profession:</span> ${match.profession} (${match.education}) • ${match.location}
+              <span class="text-slate-400">Profession:</span> ${match.profession} • ${match.location}
             </div>
 
             ${contactHtml}
@@ -2029,12 +2104,6 @@
                 <span>📹</span>
                 <span>Request Anonymous Video Call</span>
               </button>
-
-              ${isMasterAdmin ? `
-                <button onclick="toggleMemberVip(${match.id}, '${match.gender}')" class="px-3 py-1.5 rounded-lg bg-gold-500/20 border border-gold-500 text-gold-300 text-xs font-bold">
-                  ${match.isVip ? 'Revoke VIP' : 'Make VIP'}
-                </button>
-              ` : ''}
             </div>
           </div>
         `;
@@ -2110,11 +2179,6 @@
       document.getElementById('ai-drawer').classList.toggle('translate-x-full');
     }
 
-    function executeAiPrompt(promptText) {
-      document.getElementById('ai-input').value = promptText;
-      handleAiChatSubmit(new Event('submit'));
-    }
-
     function handleAiChatSubmit(e) {
       e.preventDefault();
       const input = document.getElementById('ai-input');
@@ -2129,23 +2193,7 @@
       input.value = '';
 
       setTimeout(() => {
-        let reply = "";
-        const lower = text.toLowerCase();
-        if (lower.includes("30") || lower.includes("guna")) {
-          document.getElementById('filter-guna').value = "30";
-          renderMatches();
-          reply = "✨ Candidate pool filtered: Showing profiles with 30+ Gunas.";
-        } else if (lower.includes("manglik")) {
-          document.getElementById('filter-manglik').value = "Non-Manglik";
-          renderMatches();
-          reply = "🛡️ Filter applied: Showing Non-Manglik profiles.";
-        } else if (lower.includes("doctor") || lower.includes("corporate")) {
-          document.getElementById('filter-profession').value = lower.includes("doctor") ? "medical" : "corporate";
-          renderMatches();
-          reply = "💼 Filter applied: Showing selected professional fields.";
-        } else {
-          reply = `✨ Query noted: "${text}". Need direct human verification? Message our coordinator on WhatsApp (+91 98141 67742).`;
-        }
+        let reply = `✨ Query noted: "${text}". Need direct human verification? Message our coordinator on WhatsApp (+91 98141 67742).`;
         const aiBubble = document.createElement('div');
         aiBubble.className = "p-3 rounded-2xl bg-cosmic-950 border border-slate-800 text-slate-300 leading-relaxed";
         aiBubble.innerHTML = `<div>${reply}</div>`;
@@ -2156,9 +2204,6 @@
 
     /* ================= KOTAK QR & PAYMENT WORKFLOW ================= */
     function openPaymentModal(type, amount, title) {
-      currentPaymentType = type;
-      currentPaymentAmount = amount;
-
       document.getElementById('modal-title').innerText = title;
       document.getElementById('modal-price').innerText = `₹${amount.toLocaleString()}`;
       document.getElementById('payment-modal').classList.remove('hidden');
@@ -2171,30 +2216,21 @@
     function handleUtrSubmission(e) {
       e.preventDefault();
       const utr = document.getElementById('modal-utr-input').value.trim();
-
-      if (utr.length < 6) {
-        alert("Please enter a valid 12-digit UPI UTR / Reference Number.");
-        return;
-      }
-
+      if (utr.length < 6) { alert("Please enter a valid 12-digit UPI UTR."); return; }
       closePaymentModal();
 
-      const newPayment = {
+      adminPaymentsQueue.push({
         id: "PAY-" + Math.floor(100 + Math.random() * 900),
-        uid: isMasterAdmin ? ADMIN_UID : "DM-MEMBER",
-        userName: isMasterAdmin ? "Master Admin" : "Member Applicant",
+        uid: "DM-MEMBER",
+        userName: "Member Applicant",
         utr: utr,
-        amount: currentPaymentAmount || 2360,
+        amount: 2360,
         purpose: "Matrimony Lifetime VIP",
         status: "Pending",
         date: new Date().toISOString().split('T')[0]
-      };
-
-      adminPaymentsQueue.push(newPayment);
+      });
       localStorage.setItem('dm_pending_payments', JSON.stringify(adminPaymentsQueue));
-      updateAdminDashboard();
-
-      alert(`🎉 UTR ${utr} Submitted!\n\nYour payment reference is queued for confirmation by Admin DM-94284.`);
+      alert(`🎉 UTR ${utr} Submitted!\n\nYour payment reference is queued for review by Admin DM-94284.`);
     }
 
     /* ================= REMEDIAL STORE ================= */
@@ -2203,7 +2239,7 @@
       grid.innerHTML = '';
       storeProducts.forEach(p => {
         const card = document.createElement('div');
-        card.className = "bg-cosmic-950 p-5 rounded-2xl border border-slate-800 hover:border-emerald-500/40 transition flex flex-col justify-between";
+        card.className = "bg-cosmic-900 p-5 rounded-2xl border border-slate-800 hover:border-emerald-500/40 transition flex flex-col justify-between";
         card.innerHTML = `
           <div>
             <div class="text-4xl mb-3">${p.icon}</div>
@@ -2223,11 +2259,7 @@
 
     function addToCart(id) {
       const product = storeProducts.find(p => p.id === id);
-      if (product) {
-        cart.push(product);
-        updateCartUI();
-        toggleCart(true);
-      }
+      if (product) { cart.push(product); updateCartUI(); toggleCart(true); }
     }
 
     function updateCartUI() {
@@ -2262,10 +2294,7 @@
       totalSpan.innerText = `₹${total.toLocaleString()}`;
     }
 
-    function removeFromCart(index) {
-      cart.splice(index, 1);
-      updateCartUI();
-    }
+    function removeFromCart(index) { cart.splice(index, 1); updateCartUI(); }
 
     function toggleCart(forceOpen = false) {
       const drawer = document.getElementById('cart-drawer');
@@ -2277,7 +2306,7 @@
       if (cart.length === 0) return;
       const total = cart.reduce((a, b) => a + b.price, 0);
       toggleCart();
-      openPaymentModal('store', total, 'Energized Remedial Products');
+      openPaymentModal('store', total, 'Remedial Products Consecration');
     }
   </script>
 </body>
