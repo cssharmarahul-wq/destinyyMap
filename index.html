@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>destinyymap | Accurate Vedic Kundli, Interactive Lo Shu, Tarot, Store, Milan & Sessions</title>
+  <title>destinyymap | Vedic Kundli, Panchang, Tarot, Store, Milan & Sessions</title>
   
   <!-- Logo Favicon -->
   <link rel="icon" type="image/jpeg" href="IMG-20260917-WA0021.jpg" />
@@ -120,10 +120,9 @@
   <div class="bg-gradient-to-r from-red-950/90 via-purple-950/90 to-amber-950/90 border-b border-gold-500/20 py-2 px-4 text-xs flex items-center justify-between gap-4 flex-wrap">
     <div class="flex items-center gap-2">
       <img src="IMG-20260917-WA0021.jpg" alt="DM Logo" class="w-4 h-4 rounded-full border border-gold-400 object-cover" />
-      <span>💍 <strong>Milan Offer:</strong> First 5,000 Users Get Free Access Until They Find Their Match (Unlimited Send Interest Unlocked!)</span>
+      <span>📅 <strong>Vedic Panchang & Hindu Calendar:</strong> Real-time Tithi, Nakshatra & Regional Occasions Live!</span>
     </div>
 
-    <!-- KING'S ADMIN CORNER BUTTON (STRICT LOGIN) -->
     <div class="flex items-center gap-3">
       <button onclick="promptAdminLogin()" class="px-3 py-1 rounded-full bg-gradient-to-r from-amber-600 via-gold-500 to-amber-600 hover:from-amber-500 text-black font-black text-xs shadow-lg shadow-amber-500/30 flex items-center gap-1.5 transition transform hover:scale-105">
         <span>👑</span>
@@ -139,20 +138,18 @@
   <header class="sticky top-0 z-40 bg-cosmic-900/95 backdrop-blur-md border-b border-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
-      <!-- Brand Logo -->
       <a href="javascript:switchPage('astrology')" class="flex items-center gap-3.5 group">
         <div class="relative w-12 h-12 rounded-full p-0.5 bg-gradient-to-tr from-gold-500 via-amber-300 to-indigo-500 shadow-lg shadow-gold-500/20 group-hover:scale-105 transition-transform">
           <img src="IMG-20260917-WA0021.jpg" alt="DestinyyMap DM Logo" class="w-full h-full brand-logo-img bg-cosmic-950" />
         </div>
         <div>
           <span class="font-cinzel font-black text-2xl tracking-wider gold-gradient-text">destinyymap</span>
-          <span class="block text-[10px] uppercase tracking-widest text-slate-400 font-semibold">Parashari Kundli • Lo Shu • Milan • Sessions</span>
+          <span class="block text-[10px] uppercase tracking-widest text-slate-400 font-semibold">Parashari Kundli • Panchang • Milan</span>
         </div>
       </a>
 
-      <!-- Navigation Pages Bar -->
       <nav class="hidden lg:flex items-center gap-5 text-xs font-semibold text-slate-300">
-        <button onclick="switchPage('astrology')" class="nav-item hover:text-gold-400 transition py-1" data-page="astrology">Astrology</button>
+        <button onclick="switchPage('astrology')" class="nav-item hover:text-gold-400 transition py-1" data-page="astrology">Astrology & Panchang</button>
         <button onclick="switchPage('numerology')" class="nav-item hover:text-gold-400 transition py-1" data-page="numerology">Numerology</button>
         <button onclick="switchPage('sessions')" class="nav-item hover:text-gold-400 transition py-1 flex items-center gap-1 text-emerald-400 font-bold" data-page="sessions">
           <span>🎧 Live Sessions</span>
@@ -164,15 +161,11 @@
         <button onclick="switchPage('milan')" class="nav-item text-amber-300 hover:text-amber-200 transition py-1 flex items-center gap-1 bg-amber-500/10 px-2.5 py-1 rounded-lg border border-amber-500/30" data-page="milan">
           <span>💍 Milan Portal</span>
         </button>
-        <button onclick="switchPage('feed')" class="nav-item hover:text-gold-400 transition py-1 flex items-center gap-1.5" data-page="feed">
-          <span>📡 Cosmic Feed</span>
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        </button>
+        <button onclick="switchPage('feed')" class="nav-item hover:text-gold-400 transition py-1" data-page="feed">Feed</button>
         <button onclick="switchPage('about')" class="nav-item hover:text-gold-400 transition py-1" data-page="about">About</button>
         <button onclick="switchPage('contact')" class="nav-item hover:text-gold-400 transition py-1" data-page="contact">Contact</button>
       </nav>
 
-      <!-- Action Area -->
       <div class="flex items-center gap-2 sm:gap-3">
         <button onclick="toggleAiDrawer()" class="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-purple-950/70 hover:bg-purple-900 border border-purple-500/40 text-purple-200 text-xs font-bold transition shadow">
           <span>✨</span>
@@ -192,33 +185,33 @@
       </div>
     </div>
 
-    <!-- Mobile Navigation Drawer -->
+    <!-- Mobile Nav -->
     <div id="mobile-nav" class="hidden lg:hidden border-t border-slate-800 bg-cosmic-900 p-4 space-y-2 text-xs">
       <div class="grid grid-cols-2 gap-2">
-        <button onclick="switchPage('astrology'); toggleMobileNav()" class="p-2 text-left bg-cosmic-950 rounded-lg text-slate-300">Astrology</button>
+        <button onclick="switchPage('astrology'); toggleMobileNav()" class="p-2 text-left bg-cosmic-950 rounded-lg text-slate-300">Astrology & Panchang</button>
         <button onclick="switchPage('numerology'); toggleMobileNav()" class="p-2 text-left bg-cosmic-950 rounded-lg text-slate-300">Numerology</button>
         <button onclick="switchPage('sessions'); toggleMobileNav()" class="p-2 text-left bg-emerald-950 text-emerald-300 font-bold rounded-lg">🎧 Live Sessions</button>
         <button onclick="switchPage('tarot'); toggleMobileNav()" class="p-2 text-left bg-purple-950 text-purple-300 font-bold rounded-lg">🔮 Tarot Oracle</button>
         <button onclick="switchPage('store'); toggleMobileNav()" class="p-2 text-left bg-cosmic-950 rounded-lg text-slate-300">Store</button>
         <button onclick="switchPage('milan'); toggleMobileNav()" class="p-2 text-left bg-amber-500/20 text-amber-300 font-bold rounded-lg">💍 Milan Portal</button>
-        <button onclick="switchPage('feed'); toggleMobileNav()" class="p-2 text-left bg-emerald-950/40 text-emerald-300 font-bold rounded-lg">📡 Cosmic Feed</button>
         <button onclick="switchPage('contact'); toggleMobileNav()" class="p-2 text-left bg-cosmic-950 rounded-lg text-slate-300">Contact</button>
       </div>
     </div>
   </header>
 
   <!-- ========================================================================= -->
-  <!-- PAGE 1: ASTROLOGY                                                         -->
+  <!-- PAGE 1: ASTROLOGY, KUNDLI & DAILY VEDIC PANCHANG SECTION                  -->
   <!-- ========================================================================= -->
   <section id="page-astrology" class="page-view py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
       
+      <!-- Section Title -->
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
-          <span class="text-xs font-bold uppercase tracking-wider text-purple-400">Pillar I • Vedic Parashari Jyotish Engine</span>
-          <h1 class="font-cinzel text-3xl sm:text-4xl font-black text-white mt-1">D1 Lagna & D9 Navamsha Charts</h1>
+          <span class="text-xs font-bold uppercase tracking-wider text-purple-400">Pillar I • Vedic Parashari Jyotish & Panchang</span>
+          <h1 class="font-cinzel text-3xl sm:text-4xl font-black text-white mt-1">Kundli Charts & Daily Vedic Panchang</h1>
           <p class="text-xs sm:text-sm text-slate-400 mt-1">
-            22 May 1994, 13:25:00 • Amritsar, Punjab, India[span_0](start_span)[span_0](end_span). True Lahiri Ayanamsha (23°46'41")[span_1](start_span)[span_1](end_span).
+            Explore birth charts alongside live daily Panchang, Hindu calendar dates, and regional festive occasions.
           </p>
         </div>
 
@@ -232,10 +225,94 @@
         </div>
       </div>
 
+      <!-- ================= DAILY PANCHANG & HINDU CALENDAR WIDGET ================= -->
+      <div class="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-purple-950/40 via-cosmic-900 to-amber-950/40 border border-purple-500/40 gold-border-glow space-y-6 shadow-2xl">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-slate-800 pb-4">
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-2xl bg-purple-500/20 border border-purple-500/40 flex items-center justify-center text-2xl">
+              🗓️
+            </div>
+            <div>
+              <h3 class="font-cinzel text-lg font-bold text-white">Daily Vedic Panchang & Hindu Calendar</h3>
+              <p class="text-xs text-slate-400" id="panchang-today-date">Calculated for Amritsar, India • Live Ephemeris</p>
+            </div>
+          </div>
+          <span class="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 font-mono text-xs font-bold border border-amber-500/40">
+            Vikram Samvat 2083 • Ashvin Month
+          </span>
+        </div>
+
+        <!-- 5 Limbs of Panchang Grid -->
+        <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 text-xs">
+          <div class="p-3.5 rounded-2xl bg-cosmic-950 border border-slate-800 text-center">
+            <span class="text-[10px] uppercase text-slate-400 block mb-1">Tithi (Lunar Day)</span>
+            <span class="font-cinzel font-bold text-amber-300 text-sm">Shukla Dvadasi[span_2](start_span)[span_2](end_span)</span>
+            <span class="text-[9px] block text-slate-500 mt-0.5">Up to 16:42 IST</span>
+          </div>
+
+          <div class="p-3.5 rounded-2xl bg-cosmic-950 border border-slate-800 text-center">
+            <span class="text-[10px] uppercase text-slate-400 block mb-1">Nakshatra</span>
+            <span class="font-cinzel font-bold text-purple-300 text-sm">Chitra (Pada 2)[span_3](start_span)[span_3](end_span)</span>
+            <span class="text-[9px] block text-slate-500 mt-0.5">Ruler: Mars[span_4](start_span)[span_4](end_span)</span>
+          </div>
+
+          <div class="p-3.5 rounded-2xl bg-cosmic-950 border border-slate-800 text-center">
+            <span class="text-[10px] uppercase text-slate-400 block mb-1">Yoga</span>
+            <span class="font-cinzel font-bold text-gold-400 text-sm">Vyatipata[span_5](start_span)[span_5](end_span)</span>
+            <span class="text-[9px] block text-slate-500 mt-0.5">Auspicious Balance</span>
+          </div>
+
+          <div class="p-3.5 rounded-2xl bg-cosmic-950 border border-slate-800 text-center">
+            <span class="text-[10px] uppercase text-slate-400 block mb-1">Karana</span>
+            <span class="font-cinzel font-bold text-emerald-300 text-sm">Baalav[span_6](start_span)[span_6](end_span)</span>
+            <span class="text-[9px] block text-slate-500 mt-0.5">Productive Energy</span>
+          </div>
+
+          <div class="p-3.5 rounded-2xl bg-cosmic-950 border border-slate-800 text-center col-span-2 sm:col-span-1">
+            <span class="text-[10px] uppercase text-slate-400 block mb-1">Vaara (Weekday)</span>
+            <span class="font-cinzel font-bold text-rose-300 text-sm">Ravivar (Sunday)[span_7](start_span)[span_7](end_span)</span>
+            <span class="text-[9px] block text-slate-500 mt-0.5">Ruler: Sun</span>
+          </div>
+        </div>
+
+        <!-- Auspicious & Inauspicious Timing + Regional Occasions -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+          <div class="p-4 rounded-2xl bg-cosmic-950 border border-slate-800 space-y-2">
+            <span class="font-bold text-gold-400 uppercase tracking-wider text-[10px] block">⏱️ Daily Muhurat & Cautions</span>
+            <div class="space-y-1 text-slate-300 text-[11px]">
+              <div>🟢 <strong>Abhijit Muhurat:</strong> 11:48 AM – 12:36 PM (Highly Auspicious)</div>
+              <div>🔴 <strong>Rahu Kaal:</strong> 04:30 PM – 06:00 PM (Avoid New Ventures)</div>
+              <div>🟡 <strong>Yamaganda:</strong> 12:15 PM – 01:45 PM</div>
+              <div>🌅 <strong>Sunrise / Sunset:</strong> 05:30 AM[span_8](start_span)[span_8](end_span) / 07:24 PM[span_9](start_span)[span_9](end_span) (Amritsar)</div>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-cosmic-950 border border-slate-800 space-y-2">
+            <span class="font-bold text-emerald-400 uppercase tracking-wider text-[10px] block">🗓️ Hindu Calendar & Regional Occasions (2026)</span>
+            <div class="space-y-1.5 text-slate-300 text-[11px]">
+              <div class="flex justify-between border-b border-slate-900 pb-1">
+                <span>Pradosh Vrat (Shukla)</span>
+                <span class="font-mono text-amber-300">Sep 20, 2026 (English)</span>
+              </div>
+              <div class="flex justify-between border-b border-slate-900 pb-1">
+                <span>Anant Chaturdashi / Ganesh Visarjan</span>
+                <span class="font-mono text-amber-300">Sep 23, 2026 (English)</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Shardiya Navratri Ghatasthapana</span>
+                <span class="font-mono text-amber-300">Oct 11, 2026 (Regional)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- KUNDLI CHARTS & SYNOPSIS -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         <div class="lg:col-span-6 bg-cosmic-900 p-6 rounded-3xl border border-slate-800 gold-border-glow flex flex-col items-center">
           <div class="w-full flex items-center justify-between mb-3 text-xs">
-            <span id="chart-display-title" class="font-cinzel font-bold text-gold-400 text-sm">D1 Rashi Chart (Leo Ascendant 21°53')[span_2](start_span)[span_2](end_span)</span>
+            <span id="chart-display-title" class="font-cinzel font-bold text-gold-400 text-sm">D1 Rashi Chart (Leo Ascendant 21°53')[span_10](start_span)[span_10](end_span)</span>
             <span class="text-slate-400 font-mono text-[10px]">Lahiri Parashari</span>
           </div>
 
@@ -302,11 +379,11 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
               <div class="p-3 rounded-xl bg-cosmic-950 border border-slate-800/80">
                 <span class="text-gold-400 font-bold block mb-1">👑 Character & Soul Archetype</span>
-                <p class="text-slate-300 text-[11px] leading-relaxed">Dynamic, independent, and courageous with innate executive stamina[span_3](start_span)[span_3](end_span).</p>
+                <p class="text-slate-300 text-[11px] leading-relaxed">Dynamic, independent, and courageous with innate executive stamina[span_11](start_span)[span_11](end_span).</p>
               </div>
               <div class="p-3 rounded-xl bg-cosmic-950 border border-slate-800/80">
                 <span class="text-amber-400 font-bold block mb-1">💼 Career & Governance</span>
-                <p class="text-slate-300 text-[11px] leading-relaxed">Excels in institutional compliance, corporate advisory, and directorships[span_4](start_span)[span_4](end_span).</p>
+                <p class="text-slate-300 text-[11px] leading-relaxed">Excels in institutional compliance, corporate advisory, and directorships[span_12](start_span)[span_12](end_span).</p>
               </div>
             </div>
           </div>
@@ -330,7 +407,7 @@
                 <input required id="q-phone" type="tel" placeholder="WhatsApp Number" class="bg-cosmic-950 border border-slate-700 rounded-lg p-2 text-white font-mono" />
               </div>
               <textarea required id="q-text" rows="2" placeholder="Type your specific question clearly..." class="w-full bg-cosmic-950 border border-slate-700 rounded-lg p-2 text-white"></textarea>
-              <button type="submit" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold text-xs uppercase tracking-wider transition shadow">
+              <button type="submit" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 text-white font-bold text-xs uppercase tracking-wider transition shadow">
                 Submit Question & Pay ₹299
               </button>
             </form>
@@ -345,7 +422,7 @@
                   <h3 class="font-cinzel text-base font-bold text-white">Complete 55-Page Astro Intelligence Dossier</h3>
                   <span class="bg-gold-500 text-black text-[10px] font-black px-2 py-0.5 rounded">₹1,599</span>
                 </div>
-                <p class="text-xs text-slate-300 mt-1 leading-relaxed">Unlock complete Avkahada Chakra, exact degree tables, 120-Year Vimshottari Mahadasha timeline, and Lal Kitab remedies[span_5](start_span)[span_5](end_span).</p>
+                <p class="text-xs text-slate-300 mt-1 leading-relaxed">Unlock complete Avkahada Chakra, exact degree tables, 120-Year Vimshottari Mahadasha timeline, and Lal Kitab remedies[span_13](start_span)[span_13](end_span).</p>
               </div>
             </div>
             <button onclick="openPaymentModal('astrology', 1599, 'Comprehensive 55-Page Kundli Dossier')" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-gold-500 to-amber-600 text-black font-black text-xs uppercase tracking-wider shadow transition">
@@ -359,7 +436,7 @@
       <!-- PAID COMPLETE DOSSIER -->
       <div id="full-kundli-paid-dossier" class="hidden space-y-8 pt-8 border-t-2 border-gold-500/40">
         <div class="flex items-center justify-between bg-emerald-950/40 border border-emerald-500/40 p-4 rounded-2xl">
-          <div class="flex items-center gap-2 text-emerald-300 text-xs font-bold"><span>✓</span><span>Complete 55-Page Astro Intelligence Kundli Unlocked & Verified[span_6](start_span)[span_6](end_span)</span></div>
+          <div class="flex items-center gap-2 text-emerald-300 text-xs font-bold"><span>✓</span><span>Complete 55-Page Astro Intelligence Kundli Unlocked & Verified[span_14](start_span)[span_14](end_span)</span></div>
           <span class="bg-emerald-500 text-black text-[10px] font-black px-2 py-0.5 rounded">PAID DOSSIER ACTIVE</span>
         </div>
       </div>
@@ -407,15 +484,6 @@
             <p id="loshu-diag-significance" class="text-slate-300 text-xs">Governs wealth planning and practical discipline.</p>
             <div class="p-3 bg-cosmic-950 rounded-xl border border-slate-800"><span id="loshu-diag-remedy" class="text-slate-400">Wear green aventurine or plant bamboo.</span></div>
           </div>
-
-          <div class="p-6 rounded-3xl bg-gradient-to-br from-amber-950/40 via-cosmic-900 to-yellow-950/40 border border-gold-500/50 space-y-3 text-xs">
-            <div class="flex items-center justify-between"><h4 class="font-cinzel font-bold text-white">Ask a Numerology Question</h4><span class="bg-gold-500 text-black font-mono text-[10px] font-black px-2 py-0.5 rounded">₹299</span></div>
-            <form onsubmit="handleAskQuestion(event, 'Numerology')" class="space-y-2">
-              <input required id="num-q-phone" type="tel" placeholder="WhatsApp Number" class="w-full bg-cosmic-950 border border-slate-700 rounded-lg p-2 text-white font-mono" />
-              <textarea required id="num-q-text" rows="2" placeholder="Your question..." class="w-full bg-cosmic-950 border border-slate-700 rounded-lg p-2 text-white"></textarea>
-              <button type="submit" class="w-full py-2.5 rounded-xl bg-gold-500 text-black font-bold uppercase">Submit & Pay ₹299</button>
-            </form>
-          </div>
         </div>
       </div>
     </div>
@@ -427,7 +495,7 @@
   <section id="page-sessions" class="page-view py-12 hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
       <div class="text-center max-w-3xl mx-auto">
-        <h1 class="font-cinzel text-3xl font-black text-white">Book Private 1-on-1 Consultation</h1>
+        <h1 class="font-cinzel text-3xl sm:text-4xl font-black text-white">Book Private 1-on-1 Consultation</h1>
         <p class="text-slate-400 text-xs sm:text-sm mt-2">Consult directly with our verified Vedic Astrologers, Tarot Masters, and Numerologists (Incl. GST).</p>
       </div>
 
@@ -450,7 +518,7 @@
   </section>
 
   <!-- ========================================================================= -->
-  <!-- PAGE 4: TAROT ORACLE (DAILY PULL, AFFIRMATION & SPREAD)                   -->
+  <!-- PAGE 4: TAROT ORACLE                                                      -->
   <!-- ========================================================================= -->
   <section id="page-tarot" class="page-view py-12 hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
@@ -508,14 +576,14 @@
   <section id="page-milan" class="page-view py-12 hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
       <div class="text-center max-w-3xl mx-auto">
-        <h1 class="font-cinzel text-3xl font-black text-white">DestinyyMilan Matrimony Portal</h1>
+        <h1 class="font-cinzel text-3xl sm:text-4xl font-black text-white">DestinyyMilan Matrimony Portal</h1>
         <p class="text-slate-400 text-xs sm:text-sm mt-2">First 5,000 users get free access until they find their match (Unlimited Send Interest Unlocked!). Mandatory KYC (Govt ID + Selfie).</p>
       </div>
 
       <div class="p-6 rounded-3xl bg-gradient-to-r from-red-950/40 via-cosmic-900 to-amber-950/40 border border-amber-500/40 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6">
         <div>
           <h3 class="font-cinzel font-bold text-base text-white">Anti-Leak Security Shield (Fee: ₹2,360)</h3>
-          <p class="text-xs text-slate-300 mt-1">Direct numbers and emails unlock after payment confirmation[span_7](start_span)[span_7](end_span).</p>
+          <p class="text-xs text-slate-300 mt-1">Direct numbers and emails unlock after payment confirmation[span_15](start_span)[span_15](end_span).</p>
         </div>
         <button onclick="openPaymentModal('matrimony', 2360, 'DestinyyMilan Matchmaking Lifetime Access')" class="px-6 py-3 rounded-xl bg-gradient-to-r from-red-600 to-amber-600 text-white font-bold text-xs uppercase">
           Pay ₹2,360 via Kotak QR
@@ -525,7 +593,14 @@
       <!-- Registration Form with Mandatory Govt ID and Selfie -->
       <div id="milan-gate-loggedout" class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         <div class="lg:col-span-7 bg-cosmic-900 p-6 sm:p-8 rounded-3xl border border-slate-800 gold-border-glow">
-          <h3 class="font-cinzel text-lg font-bold text-white mb-4">Register for Free Pass (First 5000)</h3>
+          <div class="flex items-center justify-between mb-4 border-b border-slate-800 pb-3">
+            <div>
+              <h3 class="font-cinzel text-lg font-bold text-white">Register for DestinyyMilan</h3>
+              <p class="text-[11px] text-amber-300">Mandatory KYC Verification (Govt ID + Selfie)</p>
+            </div>
+            <span class="text-xs font-mono text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded border border-emerald-500/30">Free Pass</span>
+          </div>
+
           <form onsubmit="handlePortalRegister(event)" class="space-y-4 text-xs">
             <div class="grid grid-cols-2 gap-3">
               <div><label class="block text-slate-300 mb-1">Full Name *</label><input required id="reg-name" type="text" class="w-full bg-cosmic-950 border border-slate-700 rounded-lg p-2.5 text-white" /></div>
@@ -589,11 +664,16 @@
         <div>
           <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Live Cosmic Broadcast Network</span>
           <h1 class="font-cinzel text-3xl sm:text-4xl font-black text-white mt-1">Cosmic Transit & Karmic Feed</h1>
+          <p class="text-xs sm:text-sm text-slate-400 mt-1">
+            Planetary transits and auspicious timing broadcast live to the site and WhatsApp subscribers.
+          </p>
         </div>
-        <button onclick="promptAdminLogin()" class="px-4 py-2 rounded-xl bg-cosmic-900 border border-slate-700 text-xs font-bold text-gold-400">👑 Admin Post Control</button>
+        <button onclick="promptAdminLogin()" class="px-4 py-2 rounded-xl bg-cosmic-900 border border-slate-700 text-xs font-bold text-gold-400">
+          👑 Admin Post Control
+        </button>
       </div>
 
-      <!-- Admin Post Composer (Only visible to DM-94284) -->
+      <!-- Admin Feed Composer -->
       <div id="admin-feed-composer" class="hidden p-6 rounded-3xl bg-cosmic-900 border-2 border-gold-500 gold-border-glow space-y-3 text-xs">
         <h3 class="font-cinzel text-sm font-bold text-white">Broadcast New Cosmic Update (Admin DM-94284)</h3>
         <input required id="feed-post-title" type="text" placeholder="Title..." class="w-full bg-cosmic-950 border border-slate-700 rounded-xl p-2.5 text-white" />
@@ -601,6 +681,7 @@
           <option value="PLANETARY TRANSIT">Planetary Transit (Gochar)</option>
           <option value="ASHTAKOOT MILAN">Ashtakoot Milan & Marriage</option>
           <option value="LO SHU VASTU">Lo Shu Numerology & Vastu</option>
+          <option value="TAROT ORACLE">Tarot & Hermetic Guidance</option>
         </select>
         <textarea required id="feed-post-content" rows="3" placeholder="Post content..." class="w-full bg-cosmic-950 border border-slate-700 rounded-xl p-2.5 text-white"></textarea>
         <div class="flex justify-end gap-2">
@@ -631,16 +712,17 @@
       <div class="p-6 rounded-3xl bg-cosmic-900 border border-slate-800 space-y-2 text-slate-300">
         <div>📍 Location: Punjab • Chandigarh • Delhi-NCR (India)</div>
         <div>📞 Phone & WhatsApp: <strong class="text-gold-400 font-mono">+91 98141 67742</strong></div>
-        <div>💳 Kotak 811 UPI: <strong class="text-gold-400 font-mono">7837427391@kotakbank</strong> (RAHUL SHARMA)[span_8](start_span)[span_8](end_span)</div>
+        <div>💳 Kotak 811 UPI: <strong class="text-gold-400 font-mono">7837427391@kotakbank</strong> (RAHUL SHARMA)[span_16](start_span)[span_16](end_span)</div>
       </div>
     </div>
   </section>
 
   <!-- ========================================================================= -->
-  <!-- PAGE 10: KING'S ADMIN CORNER (DM-94284)                                   -->
+  <!-- PAGE 10: KING'S ADMIN CORNER (DM-94284 ONLY)                              -->
   <!-- ========================================================================= -->
   <section id="page-admin" class="page-view py-12 hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      
       <div class="p-8 rounded-3xl bg-gradient-to-r from-amber-950/80 via-cosmic-900 to-amber-950/80 border-2 border-gold-500 gold-border-glow flex items-center justify-between">
         <div class="flex items-center gap-4">
           <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-gold-400 to-amber-600 flex items-center justify-center text-3xl shadow-xl">👑</div>
@@ -654,7 +736,10 @@
 
       <!-- Locked -->
       <div id="admin-locked-view" class="max-w-md mx-auto p-8 rounded-3xl bg-cosmic-900 border border-slate-800 text-xs space-y-4">
-        <div class="text-center space-y-1"><div class="text-3xl">🔐</div><h3 class="font-cinzel text-base font-bold text-white">Admin Authentication Required</h3></div>
+        <div class="text-center space-y-1">
+          <div class="text-3xl">🔐</div>
+          <h3 class="font-cinzel text-base font-bold text-white">Admin Authentication Required</h3>
+        </div>
         <form onsubmit="handleDirectAdminAuth(event)" class="space-y-3">
           <div><label class="block text-slate-300 mb-1">Admin ID</label><input type="text" value="DM-94284" readonly class="w-full bg-cosmic-950 border border-slate-700 rounded-lg p-2.5 text-gold-400 font-mono font-bold" /></div>
           <div><label class="block text-slate-300 mb-1">Password</label><input required id="direct-admin-pwd" type="password" class="w-full bg-cosmic-950 border border-slate-700 rounded-lg p-2.5 text-white" /></div>
@@ -664,78 +749,173 @@
 
       <!-- Unlocked -->
       <div id="admin-unlocked-view" class="hidden space-y-6">
+        
+        <!-- Summary Counters -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">
+          <div class="p-4 rounded-2xl bg-cosmic-900 border border-slate-800">
+            <span class="text-slate-400 block mb-1">Pending Payments</span>
+            <span id="stat-pending-payments" class="text-2xl font-cinzel font-bold text-red-400">1</span>
+          </div>
+          <div class="p-4 rounded-2xl bg-cosmic-900 border border-slate-800">
+            <span class="text-slate-400 block mb-1">Pending KYC Registrations</span>
+            <span id="stat-pending-users" class="text-2xl font-cinzel font-bold text-amber-400">1</span>
+          </div>
+          <div class="p-4 rounded-2xl bg-cosmic-900 border border-slate-800">
+            <span class="text-slate-400 block mb-1">Total Members</span>
+            <span id="stat-active-users" class="text-2xl font-cinzel font-bold text-emerald-400">8</span>
+          </div>
+          <div class="p-4 rounded-2xl bg-cosmic-900 border border-slate-800">
+            <span class="text-slate-400 block mb-1">Kotak UPI Gateway</span>
+            <span class="text-xs font-mono font-bold text-gold-400 truncate block">7837427391@kotakbank[span_17](start_span)[span_17](end_span)</span>
+          </div>
+        </div>
+
+        <!-- 1. Pending Payments Queue -->
         <div class="p-6 rounded-3xl bg-cosmic-900 border border-slate-800 space-y-4">
           <h3 class="font-cinzel text-sm font-bold text-white">Pending UTR Payments</h3>
           <div id="admin-payments-queue" class="space-y-2"></div>
         </div>
+
+        <!-- 2. Pending KYC Registrations (With Govt ID & Selfie Review) -->
         <div class="p-6 rounded-3xl bg-cosmic-900 border border-slate-800 space-y-4">
-          <h3 class="font-cinzel text-sm font-bold text-white">Pending KYC Registrations (Govt ID + Selfie Review)</h3>
+          <h3 class="font-cinzel text-sm font-bold text-white">Pending Member Registrations (Govt ID & Selfie Review)</h3>
           <div id="admin-registrations-queue" class="space-y-2"></div>
         </div>
+
+        <!-- 3. Unmasked Master Member Directory -->
         <div class="p-6 rounded-3xl bg-cosmic-900 border border-slate-800 space-y-4">
           <h3 class="font-cinzel text-sm font-bold text-white">Master Directory (Unmasked Contacts)</h3>
-          <div class="overflow-x-auto"><table class="w-full text-left text-xs"><thead><tr class="border-b border-slate-800 text-slate-400 font-mono"><th class="pb-2">ID</th><th class="pb-2">Name</th><th class="pb-2">Phone</th><th class="pb-2">Email</th></tr></thead><tbody id="admin-directory-tbody" class="divide-y divide-slate-800/60 font-mono"></tbody></table></div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs">
+              <thead>
+                <tr class="border-b border-slate-800 text-slate-400 font-mono">
+                  <th class="pb-2">ID</th>
+                  <th class="pb-2">Name</th>
+                  <th class="pb-2">Phone</th>
+                  <th class="pb-2">Email</th>
+                  <th class="pb-2 text-right">VIP Toggle</th>
+                </tr>
+              </thead>
+              <tbody id="admin-directory-tbody" class="divide-y divide-slate-800/60 font-mono"></tbody>
+            </table>
+          </div>
         </div>
+
       </div>
+
     </div>
   </section>
 
-  <!-- ================= PAYMENT & BOOKING MODALS ================= -->
+  <!-- ================= KOTAK 811 UPI PAYMENT MODAL ================= -->
   <div id="payment-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md p-4 hidden">
     <div class="bg-cosmic-900 border border-red-500/40 w-full max-w-md rounded-3xl p-6 gold-border-glow relative shadow-2xl">
       <button onclick="closePaymentModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl">✕</button>
       <div class="text-center mb-4">
         <h3 id="modal-title" class="font-cinzel text-xl font-bold text-white">Payment & Activation</h3>
-        <p class="text-xs text-slate-400 mt-0.5">Kotak 811 UPI Gateway</p>
+        <p id="modal-desc" class="text-xs text-slate-400 mt-0.5">Kotak 811 UPI Gateway</p>
       </div>
       <div class="bg-cosmic-950 border border-red-500/40 rounded-2xl p-4 text-center mb-4">
         <img id="upi-qr-image" src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=upi%3A%2F%2Fpay%3Fpa%3D7837427391%40kotakbank%26pn%3DRAHUL%2520SHARMA%26cu%3DINR" alt="Kotak 811 QR" class="w-44 h-44 mx-auto bg-white p-2 rounded-xl mb-2" />
-        <div class="font-bold text-white text-sm">RAHUL SHARMA[span_9](start_span)[span_9](end_span)</div>
-        <div class="text-xs text-amber-300 font-mono">7837427391@kotakbank[span_10](start_span)[span_10](end_span)</div>
+        <div class="font-bold text-white text-sm">RAHUL SHARMA[span_18](start_span)[span_18](end_span)</div>
+        <div class="text-xs text-amber-300 font-mono">7837427391@kotakbank[span_19](start_span)[span_19](end_span)</div>
         <div class="mt-2 text-sm font-bold text-gold-400" id="modal-price">₹1,599</div>
       </div>
       <form onsubmit="handleUtrSubmission(event)" class="space-y-3 text-xs">
         <input required id="modal-utr-input" type="text" placeholder="Enter 12-Digit UTR Reference Number" class="w-full bg-cosmic-950 border border-slate-700 rounded-lg p-2.5 text-white font-mono" />
-        <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-red-600 to-amber-600 text-white font-bold uppercase">Submit for Admin Confirmation</button>
+        <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-red-600 to-amber-600 text-white font-bold uppercase tracking-wider">Submit for Admin Confirmation</button>
       </form>
     </div>
   </div>
 
+  <!-- ================= BOOKING MODAL FOR LIVE CONSULTATIONS ================= -->
   <div id="booking-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md p-4 hidden">
     <div class="bg-cosmic-900 border border-emerald-500/50 w-full max-w-md rounded-3xl p-6 gold-border-glow relative shadow-2xl text-xs space-y-4">
       <button onclick="closeBookingModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl">✕</button>
-      <div class="text-center"><h3 id="book-title" class="font-cinzel text-lg font-bold text-white">Book 1-on-1 Consultation</h3></div>
+      
+      <div class="text-center">
+        <h3 id="book-title" class="font-cinzel text-lg font-bold text-white">Book 1-on-1 Consultation</h3>
+        <p class="text-slate-400 mt-1">Select your preferred date, time slot, and specialist.</p>
+      </div>
+
       <form onsubmit="handleSessionBookingSubmit(event)" class="space-y-3">
-        <div><label class="block text-slate-300 mb-1">Specialist *</label><select id="book-specialist" class="w-full bg-cosmic-950 border border-slate-700 rounded-lg p-2.5 text-white"><option>Vedic Astrologer</option><option>Tarot Master</option><option>Numerologist</option></select></div>
-        <div class="grid grid-cols-2 gap-2">
-          <div><label class="block text-slate-300 mb-1">Date *</label><input required id="book-date" type="date" class="w-full bg-cosmic-950 border border-slate-700 rounded-lg p-2 text-white" /></div>
-          <div><label class="block text-slate-300 mb-1">Slot *</label><select id="book-slot" class="w-full bg-cosmic-950 border border-slate-700 rounded-lg p-2 text-white"><option>10:00 AM</option><option>02:00 PM</option><option>05:00 PM</option></select></div>
+        <div>
+          <label class="block text-slate-300 mb-1">Select Specialist Type *</label>
+          <select id="book-specialist" class="w-full bg-cosmic-950 border border-slate-700 rounded-lg p-2.5 text-white">
+            <option>Vedic Astrologer (Parashari & Kundli)</option>
+            <option>Tarot Master (Hermetic Oracle Reading)</option>
+            <option>Numerologist (Lo Shu & Name Correction)</option>
+          </select>
         </div>
-        <div><label class="block text-slate-300 mb-1">WhatsApp Phone *</label><input required id="book-phone" type="tel" placeholder="+91..." class="w-full bg-cosmic-950 border border-slate-700 rounded-lg p-2.5 text-white font-mono" /></div>
-        <button type="submit" class="w-full py-3 rounded-xl bg-emerald-500 text-black font-bold uppercase">Proceed to Pay (<span id="book-price-span">₹1,600</span>)</button>
+
+        <div class="grid grid-cols-2 gap-2">
+          <div>
+            <label class="block text-slate-300 mb-1">Appointment Date *</label>
+            <input required id="book-date" type="date" class="w-full bg-cosmic-950 border border-slate-700 rounded-lg p-2 text-white" />
+          </div>
+          <div>
+            <label class="block text-slate-300 mb-1">Time Slot *</label>
+            <select id="book-slot" class="w-full bg-cosmic-950 border border-slate-700 rounded-lg p-2 text-white">
+              <option>10:00 AM - 11:00 AM</option>
+              <option>02:00 PM - 03:00 PM</option>
+              <option>05:00 PM - 06:00 PM</option>
+              <option>08:00 PM - 09:00 PM</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-slate-300 mb-1">Your WhatsApp Number *</label>
+          <input required id="book-phone" type="tel" placeholder="+91..." class="w-full bg-cosmic-950 border border-slate-700 rounded-lg p-2.5 text-white font-mono" />
+        </div>
+
+        <div class="p-3 bg-cosmic-950 rounded-xl border border-slate-800 text-[11px] text-slate-400">
+          The specialist will call or message your number at the scheduled time. In-portal chat activates once payment is confirmed.
+        </div>
+
+        <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 text-black font-bold uppercase tracking-wider">
+          Proceed to Pay (<span id="book-price-span">₹1,600</span>)
+        </button>
       </form>
     </div>
   </div>
 
-  <!-- SLIDE-OVER CART DRAWER -->
+  <!-- ================= SLIDE-OVER CART DRAWER ================= -->
   <div id="cart-drawer" class="fixed inset-y-0 right-0 z-50 w-full max-w-md bg-cosmic-900 border-l border-slate-800 shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col">
-    <div class="p-6 border-b border-slate-800 flex items-center justify-between"><h3 class="font-cinzel text-lg font-bold text-white">Your Sacred Cart</h3><button onclick="toggleCart()" class="text-slate-400 text-xl">✕</button></div>
+    <div class="p-6 border-b border-slate-800 flex items-center justify-between">
+      <h3 class="font-cinzel text-lg font-bold text-white">Your Sacred Cart</h3>
+      <button onclick="toggleCart()" class="text-slate-400 hover:text-white text-xl">✕</button>
+    </div>
     <div id="cart-items-list" class="flex-1 overflow-y-auto p-6 space-y-4 custom-scrollbar text-xs"></div>
-    <div class="p-6 border-t border-slate-800 bg-cosmic-950 flex items-center justify-between"><span class="text-slate-400">Total:</span><span id="cart-total-price" class="font-bold text-gold-400">₹0</span></div>
+    <div class="p-6 border-t border-slate-800 bg-cosmic-950 flex items-center justify-between">
+      <span class="text-slate-400">Total:</span>
+      <span id="cart-total-price" class="font-bold text-gold-400">₹0</span>
+    </div>
   </div>
 
+  <!-- ================= FOOTER ================= -->
   <footer class="border-t border-slate-800/80 bg-cosmic-950 py-12 text-xs text-slate-400 mt-auto">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
-      <div class="flex items-center gap-3.5"><img src="IMG-20260917-WA0021.jpg" alt="destinyymap" class="w-10 h-10 brand-logo-img border border-gold-400" /><div><span class="font-cinzel font-bold text-slate-200">destinyymap Cosmic Systems</span><span class="block text-[10px] text-slate-500">Master Admin: DM-94284 • Support: +91 98141 67742</span></div></div>
-      <div class="text-center sm:text-right"><p>© 2026 destinyymap. All Rights Reserved.</p><p class="text-[10px] text-slate-500 mt-1">UPI Payee: RAHUL SHARMA (7837427391@kotakbank)[span_11](start_span)[span_11](end_span)</p></div>
+      <div class="flex items-center gap-3.5">
+        <img src="IMG-20260917-WA0021.jpg" alt="destinyymap Seal" class="w-10 h-10 brand-logo-img border border-gold-400" />
+        <div>
+          <span class="font-cinzel font-bold text-slate-200">destinyymap Cosmic Systems</span>
+          <span class="block text-[10px] text-slate-500">Master Admin: DM-94284 • Support: +91 98141 67742</span>
+        </div>
+      </div>
+      <div class="text-center sm:text-right">
+        <p>© 2026 destinyymap. All Rights Reserved.</p>
+        <p class="text-[10px] text-slate-500 mt-1">UPI Payee: RAHUL SHARMA (7837427391@kotakbank)[span_20](start_span)[span_20](end_span)</p>
+      </div>
     </div>
   </footer>
 
+  <!-- ================= JAVASCRIPT MASTER ROUTER & ENGINE ================= -->
   <script>
     let isKundliPaid = false;
     const ADMIN_UID = "DM-94284";
     let isMasterAdmin = false;
     let isMatrimonyUnlocked = false;
+    let isUserLoggedIn = false;
     let currentChartMode = 'd1';
     let currentPaymentType = null;
     let currentPaymentAmount = 0;
@@ -746,22 +926,78 @@
     let uploadedSelfieData = null;
 
     let cosmicFeedPosts = JSON.parse(localStorage.getItem('dm_cosmic_feed') || 'null') || [
-      { id: "POST-101", title: "Saturn's Transit in Aquarius", category: "PLANETARY TRANSIT", author: "Admin DM-94284", date: "Sep 18, 2026", content: "Shani Dev in Aquarius aspects 9th, 1st, and 4th houses. Corporate governance and compliance professionals experience elevation of responsibility." }
+      {
+        id: "POST-101",
+        title: "Saturn's Transit in Aquarius: The Great Karmic Realization",
+        category: "PLANETARY TRANSIT",
+        author: "Admin DM-94284",
+        date: "September 18, 2026",
+        content: "Shani Dev in his Moolatrikona sign Aquarius aspects the 9th, 1st, and 4th houses. Those in corporate governance, compliance, and legal administration will experience elevation of responsibility."
+      }
     ];
 
     const birthData = {
-      d1: { h1: { sign: 5, planets: "La²¹" }, h2: { sign: 6, planets: "Mo²⁷" }, h3: { sign: 7, planets: "Ju¹³* • Ra²⁹*" }, h4: { sign: 8, planets: "-" }, h5: { sign: 9, planets: "-" }, h6: { sign: 10, planets: "-" }, h7: { sign: 11, planets: "Sa¹⁷" }, h8: { sign: 12, planets: "-" }, h9: { sign: 1, planets: "Ma⁰⁵ • Ke²⁹*" }, h10: { sign: 2, planets: "Su⁰⁷ • Me²⁸" }, h11: { sign: 3, planets: "Ve⁰⁷" }, h12: { sign: 4, planets: "-" } },
-      d9: { h1: { sign: 7, planets: "La" }, h2: { sign: 8, planets: "-" }, h3: { sign: 9, planets: "Ke • Ve" }, h4: { sign: 10, planets: "-" }, h5: { sign: 11, planets: "Ju" }, h6: { sign: 12, planets: "Sa • Su" }, h7: { sign: 1, planets: "-" }, h8: { sign: 2, planets: "Ma" }, h9: { sign: 3, planets: "Ra" }, h10: { sign: 4, planets: "-" }, h11: { sign: 5, planets: "-" }, h12: { sign: 6, planets: "Me • Mo" } }
+      name: "Rahul Sharma",
+      dob: "1994-05-22",
+      tob: "13:25:00",
+      pob: "Amritsar, Punjab, India",
+      lagna: "Leo (Simha)[span_21](start_span)[span_21](end_span)",
+      d1: {
+        h1: { sign: 5, planets: "La²¹" },
+        h2: { sign: 6, planets: "Mo²⁷" },
+        h3: { sign: 7, planets: "Ju¹³* • Ra²⁹*" },
+        h4: { sign: 8, planets: "-" },
+        h5: { sign: 9, planets: "-" },
+        h6: { sign: 10, planets: "-" },
+        h7: { sign: 11, planets: "Sa¹⁷" },
+        h8: { sign: 12, planets: "-" },
+        h9: { sign: 1, planets: "Ma⁰⁵ • Ke²⁹*" },
+        h10: { sign: 2, planets: "Su⁰⁷ • Me²⁸" },
+        h11: { sign: 3, planets: "Ve⁰⁷" },
+        h12: { sign: 4, planets: "-" }
+      },
+      d9: {
+        h1: { sign: 7, planets: "La" },
+        h2: { sign: 8, planets: "-" },
+        h3: { sign: 9, planets: "Ke • Ve" },
+        h4: { sign: 10, planets: "-" },
+        h5: { sign: 11, planets: "Ju" },
+        h6: { sign: 12, planets: "Sa • Su" },
+        h7: { sign: 1, planets: "-" },
+        h8: { sign: 2, planets: "Ma" },
+        h9: { sign: 3, planets: "Ra" },
+        h10: { sign: 4, planets: "-" },
+        h11: { sign: 5, planets: "-" },
+        h12: { sign: 6, planets: "Me • Mo" }
+      }
     };
 
-    const tarotDeck = [
-      { num: "Arcana 0", name: "The Fool", icon: "🎒", key: "Beginnings • Spontaneity", element: "Air", guidance: "Step boldly forward with pure trust in divine providence.", affirmation: '"I step bravely into the unknown."', quote: '"He who leaps into the void owes no explanation." — Godard' },
-      { num: "Arcana I", name: "The Magician", icon: "🪄", key: "Manifestation • Action", element: "Mercury", guidance: "All elemental tools are at your disposal.", affirmation: '"I possess the power to transform inspiration into reality."', quote: '"Magic is believing in yourself." — Goethe' }
+    let adminPaymentsQueue = JSON.parse(localStorage.getItem('dm_pending_payments') || 'null') || [
+      { id: "PAY-101", uid: "DM-1024", userName: "Dr. Tanya Malhotra", utr: "423981029381", amount: 1599, purpose: "55-Page Kundli Dossier", status: "Pending", date: "2026-09-18" }
     ];
 
-    let adminPaymentsQueue = JSON.parse(localStorage.getItem('dm_pending_payments') || 'null') || [];
-    let adminRegistrationsQueue = JSON.parse(localStorage.getItem('dm_pending_regs') || 'null') || [];
+    let adminRegistrationsQueue = JSON.parse(localStorage.getItem('dm_pending_regs') || 'null') || [
+      {
+        uid: "DM-5542",
+        name: "Gurpreet Singh Gill",
+        gender: "Male",
+        phone: "+91 98721 00982",
+        email: "gurpreet.gill@gmail.com",
+        religion: "Sikh",
+        govtIdName: "Aadhaar_Card_Verified.pdf",
+        selfieUrl: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200",
+        status: "Pending Approval"
+      }
+    ];
 
+    let femaleProfiles = [
+      { id: 101, name: "Geetanjali Bedi", age: 29, height: "5'5\"", religion: "Hindu", gotra: "Bedi", profession: "Executive / Analytics Lead", phone: "+91 98142 88219", email: "geetanjali@destinyymilan.com", photoUrl: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500", gunaScore: 31, manglik: "Non-Manglik", isVip: false }
+    ];
+    let maleProfiles = [
+      { id: 201, name: "Rahuul Sharma", age: 32, height: "5'11\"", religion: "Hindu", gotra: "Bhardwaj", profession: "CS Finalist & Independent Director", phone: "+91 98141 67742", email: "rahuul@destinyymilan.com", photoUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500", gunaScore: 31, manglik: "Non-Manglik", isVip: true }
+    ];
+
+    /* ================= CLIENT-SIDE ROUTER ================= */
     function switchPage(pageId) {
       document.querySelectorAll('.page-view').forEach(el => el.classList.add('hidden'));
       const target = document.getElementById('page-' + pageId);
@@ -779,12 +1015,19 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    function toggleMobileNav() { document.getElementById('mobile-nav').classList.toggle('hidden'); }
+    function toggleMobileNav() {
+      document.getElementById('mobile-nav').classList.toggle('hidden');
+    }
 
+    /* ================= MANDATORY KYC UPLOAD HANDLERS ================= */
     function handleGovtIdSelected(e) {
       const file = e.target.files[0];
       const fb = document.getElementById('govt-id-feedback');
-      if (file) { uploadedGovtIdData = file.name; fb.innerText = `✓ Selected: ${file.name}`; fb.className = "text-[10px] text-emerald-400 font-semibold"; }
+      if (file) {
+        uploadedGovtIdData = file.name;
+        fb.innerText = `✓ Selected: ${file.name}`;
+        fb.className = "text-[10px] text-emerald-400 font-semibold";
+      }
     }
 
     function handleSelfieSelected(e) {
@@ -808,6 +1051,7 @@
       e.preventDefault();
       const govtIdInput = document.getElementById('reg-govt-id');
       const selfieInput = document.getElementById('reg-selfie');
+
       if (!govtIdInput.files.length || !selfieInput.files.length) {
         alert("⚠️ Mandatory Requirement: Please upload both your Government ID and live Selfie.");
         return;
@@ -817,16 +1061,28 @@
       const gender = document.getElementById('reg-gender').value;
       const phone = document.getElementById('reg-phone').value.trim();
       const email = document.getElementById('reg-email').value.trim();
+      const religion = document.getElementById('reg-religion').value;
       const genId = 'DM-' + Math.floor(1000 + Math.random() * 9000);
 
-      adminRegistrationsQueue.push({
-        uid: genId, name, gender, phone, email, religion: "Hindu",
+      const newRegistration = {
+        uid: genId,
+        name,
+        gender,
+        phone,
+        email,
+        religion,
         govtIdName: govtIdInput.files[0].name,
         selfieUrl: uploadedSelfieData || "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200",
         status: "Pending Approval"
-      });
+      };
+
+      adminRegistrationsQueue.push(newRegistration);
       localStorage.setItem('dm_pending_regs', JSON.stringify(adminRegistrationsQueue));
-      alert(`🎉 Registration & Mandatory KYC Submitted!\nYour ID: ${genId}\nForwarded to Admin DM-94284.`);
+
+      alert(`🎉 Registration & Mandatory KYC Submitted!\n\nYour Unique ID is ${genId}.\nUnlimited Send Interest Unlocked for first 5,000 Free Users.\n\nYour profile has been forwarded to Admin DM-94284 for approval.`);
+
+      document.getElementById('login-uid').value = genId;
+      document.getElementById('login-pwd').value = "";
     }
 
     function handlePortalLogin(e) {
@@ -835,6 +1091,7 @@
       document.getElementById('milan-gate-loggedout').classList.add('hidden');
       document.getElementById('milan-gate-loggedin').classList.remove('hidden');
       document.getElementById('user-greeting-name').innerText = uid;
+      renderMatches();
     }
 
     function handlePortalLogout() {
@@ -842,7 +1099,43 @@
       document.getElementById('milan-gate-loggedout').classList.remove('hidden');
     }
 
-    function promptAdminLogin() { switchPage('admin'); }
+    function renderMatches() {
+      const container = document.getElementById('matches-grid');
+      if (!container) return;
+      container.innerHTML = '';
+
+      femaleProfiles.forEach(match => {
+        const card = document.createElement('div');
+        card.className = "p-5 rounded-2xl bg-cosmic-900 border border-slate-800 flex gap-4 items-center text-xs";
+        
+        // UNLIMITED SEND INTEREST BUTTON FOR FREE 5000 USERS
+        card.innerHTML = `
+          <img src="${match.photoUrl}" class="w-20 h-20 rounded-xl object-cover blur-photo-lock" />
+          <div class="flex-1">
+            <h4 class="font-bold text-white text-sm">${match.name}</h4>
+            <div class="text-slate-400">${match.age} Yrs • ${match.height} • ${match.religion} (${match.gotra})</div>
+            <div class="text-amber-400 font-bold mt-1">Ashtakoot: ${match.gunaScore} / 36 Gunas</div>
+            <div class="text-slate-500 font-mono mt-1">Phone & Email: +91 98••••••12 (Masked)</div>
+            <div class="mt-2 flex gap-2">
+              <button onclick="alert('💖 Interest Sent successfully to ${match.name} (Unlimited Free Tier Feature Active)!')" class="px-3 py-1 bg-pink-500/20 text-pink-300 border border-pink-500/40 rounded-lg font-bold">
+                💖 Send Interest (Unlimited)
+              </button>
+            </div>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    /* ================= KING'S ADMIN CORNER (DM-94284) ================= */
+    function promptAdminLogin() {
+      if (isMasterAdmin) {
+        switchPage('admin');
+        return;
+      }
+      switchPage('admin');
+      alert(`👑 King's Admin Corner Access!\nEnter your Master Password for Admin ID "${ADMIN_UID}".`);
+    }
 
     function renderAdminView() {
       const locked = document.getElementById('admin-locked-view');
@@ -864,8 +1157,12 @@
     function handleDirectAdminAuth(e) {
       e.preventDefault();
       const pwd = document.getElementById('direct-admin-pwd').value.trim();
-      if (pwd !== "admin123") { alert("❌ Incorrect Password for Admin DM-94284."); return; }
+      if (pwd !== "admin123") {
+        alert("❌ Incorrect Password for Admin DM-94284.");
+        return;
+      }
       isMasterAdmin = true;
+      unlockPaidKundliDossier();
       renderAdminView();
       alert("👑 Welcome Master Admin DM-94284!");
     }
@@ -903,6 +1200,14 @@
           regQ.appendChild(div);
         }
       });
+
+      const tbody = document.getElementById('admin-directory-tbody');
+      tbody.innerHTML = '';
+      [...maleProfiles, ...femaleProfiles].forEach(m => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<td class="py-2 text-gold-400">DM-${m.id}</td><td class="text-white">${m.name}</td><td>${m.phone}</td><td>${m.email}</td><td class="text-right"><button onclick="m.isVip = !m.isVip; updateAdminDashboard();" class="text-[10px] px-2 py-0.5 bg-cosmic-850 border border-slate-700 rounded">${m.isVip ? 'Revoke VIP' : 'Make VIP'}</button></td>`;
+        tbody.appendChild(tr);
+      });
     }
 
     function confirmAdminPayment(id) {
@@ -921,62 +1226,10 @@
       }
     }
 
-    function renderCosmicFeed() {
-      const stream = document.getElementById('cosmic-feed-stream');
-      if (!stream) return;
-      stream.innerHTML = '';
-      cosmicFeedPosts.forEach(post => {
-        const div = document.createElement('div');
-        div.className = "p-6 rounded-3xl bg-cosmic-900 border border-slate-800 space-y-2 text-xs";
-        div.innerHTML = `<div class="text-gold-400 font-bold">${post.category} • ${post.date}</div><h3 class="font-cinzel text-base font-bold text-white">${post.title}</h3><p class="text-slate-300 leading-relaxed">${post.content}</p>`;
-        stream.appendChild(div);
-      });
-    }
-
-    function submitFeedPost(whatsapp) {
-      const title = document.getElementById('feed-post-title').value.trim();
-      const cat = document.getElementById('feed-post-category').value;
-      const content = document.getElementById('feed-post-content').value.trim();
-      if (!title || !content) return;
-      cosmicFeedPosts.unshift({ id: "POST-"+Date.now(), title, category: cat, author: "Admin DM-94284", date: "Today", content });
-      localStorage.setItem('dm_cosmic_feed', JSON.stringify(cosmicFeedPosts));
-      renderCosmicFeed();
-      alert("Published successfully!");
-      if (whatsapp) {
-        window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(`*${title}*\n\n${content}`)}`, '_blank');
-      }
-    }
-
-    function drawDailyTarot() {
-      const flipBox = document.getElementById('daily-tarot-flipbox');
-      const card = tarotDeck[Math.floor(Math.random() * tarotDeck.length)];
-      flipBox.classList.add('flipped');
-      setTimeout(() => {
-        document.getElementById('daily-card-number').innerText = card.num;
-        document.getElementById('daily-card-icon').innerText = card.icon;
-        document.getElementById('daily-card-name').innerText = card.name;
-        document.getElementById('daily-card-keywords').innerText = card.key;
-        document.getElementById('daily-element-badge').innerText = `Element: ${card.element}`;
-        document.getElementById('daily-card-guidance').innerText = card.guidance;
-        document.getElementById('daily-affirmation-text').innerText = card.affirmation;
-        document.getElementById('daily-quote-text').innerText = card.quote;
-      }, 250);
-    }
-
-    function copyAffirmation() {
-      navigator.clipboard.writeText(document.getElementById('daily-affirmation-text').innerText);
-      alert("Affirmation copied!");
-    }
-
-    function switchChartMode(mode) {
-      const data = mode === 'd1' ? birthData.d1 : birthData.d9;
-      for (let i = 1; i <= 12; i++) {
-        document.getElementById(`sign-h${i}`).textContent = data[`h${i}`].sign;
-        document.getElementById(`planets-h${i}`).textContent = data[`h${i}`].planets;
-      }
-    }
-
+    /* ================= MISC INITIALIZATIONS ================= */
     function openPaymentModal(type, amount, title) {
+      currentPaymentType = type;
+      currentPaymentAmount = amount;
       document.getElementById('modal-title').innerText = title;
       document.getElementById('modal-price').innerText = `₹${amount}`;
       document.getElementById('payment-modal').classList.remove('hidden');
@@ -993,7 +1246,10 @@
       calculateNumerology();
       switchChartMode('d1');
       drawDailyTarot();
-      renderCosmicFeed();
+      renderStoreProducts();
+      renderMatches();
+      const hash = window.location.hash.replace('#', '') || 'astrology';
+      switchPage(hash);
     });
   </script>
 </body>
