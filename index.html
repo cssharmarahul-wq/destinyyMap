@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>destinyymap | Vedic Kundli, Daily Panchang, Tarot, Store, Milan & Sessions</title>
+  <title>destinyymap | Accurate Vedic Kundli, Baby Names, Tarot, Store & Milan</title>
   
   <!-- Logo Favicon -->
   <link rel="icon" type="image/jpeg" href="IMG-20260917-WA0021.jpg" />
@@ -116,54 +116,48 @@
 
 <body class="bg-cosmic-950 text-slate-200 selection:bg-gold-500 selection:text-black min-h-screen flex flex-col">
 
-  <!-- TOP BAR -->
+  <!-- TOP ANNOUNCEMENT BAR -->
   <div class="bg-gradient-to-r from-red-950/90 via-purple-950/90 to-amber-950/90 border-b border-gold-500/20 py-2 px-4 text-xs flex items-center justify-between gap-4 flex-wrap">
     <div class="flex items-center gap-2">
       <img src="IMG-20260917-WA0021.jpg" alt="DM Logo" class="w-4 h-4 rounded-full border border-gold-400 object-cover" />
-      <span>📅 <strong>Daily Vedic Panchang & Regional Occasions:</strong> Live Ephemeris Active</span>
+      <span>💍 <strong>Milan Offer:</strong> First 5,000 Users Get Free Access Until Match Found (Unlimited Send Interest Unlocked!)</span>
     </div>
 
+    <!-- SECRET ADMIN ACCESS BUTTON -->
     <div class="flex items-center gap-3">
-      <button onclick="switchPage('admin')" class="px-3 py-1 rounded-full bg-gradient-to-r from-amber-600 via-gold-500 to-amber-600 hover:from-amber-500 text-black font-black text-xs shadow-lg shadow-amber-500/30 flex items-center gap-1.5 transition transform hover:scale-105">
+      <button onclick="promptAdminLogin()" class="px-3 py-1 rounded-full bg-gradient-to-r from-amber-600 via-gold-500 to-amber-600 hover:from-amber-500 text-black font-black text-xs shadow-lg shadow-amber-500/30 flex items-center gap-1.5 transition transform hover:scale-105">
         <span>👑</span>
-        <span>KING'S ADMIN (DM-94284)</span>
+        <span>Secure Admin Portal</span>
       </button>
       <a href="https://wa.me/919814167742?text=Hello%20destinyymap,%20I%20need%20assistance" target="_blank" class="hidden md:inline-flex items-center gap-1 bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 px-2.5 py-0.5 rounded-full hover:bg-emerald-500 hover:text-black transition">
-        💬 9814167742
+        💬 Helpline
       </a>
     </div>
   </div>
 
-  <!-- NAVBAR -->
+  <!-- MASTER NAVBAR -->
   <header class="sticky top-0 z-40 bg-cosmic-900/95 backdrop-blur-md border-b border-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
       <a href="javascript:switchPage('astrology')" class="flex items-center gap-3.5 group">
         <div class="relative w-12 h-12 rounded-full p-0.5 bg-gradient-to-tr from-gold-500 via-amber-300 to-indigo-500 shadow-lg shadow-gold-500/20 group-hover:scale-105 transition-transform">
           <img src="IMG-20260917-WA0021.jpg" alt="DestinyyMap DM Logo" class="w-full h-full brand-logo-img bg-cosmic-950" />
         </div>
         <div>
           <span class="font-cinzel font-black text-2xl tracking-wider gold-gradient-text">destinyymap</span>
-          <span class="block text-[10px] uppercase tracking-widest text-slate-400 font-semibold">Parashari Kundli • Panchang • Milan</span>
+          <span class="block text-[10px] uppercase tracking-widest text-slate-400 font-semibold">Parashari Kundli • Baby Names • Milan</span>
         </div>
       </a>
 
-      <nav class="hidden lg:flex items-center gap-5 text-xs font-semibold text-slate-300">
-        <button onclick="switchPage('astrology')" class="nav-item hover:text-gold-400 transition py-1" data-page="astrology">Astrology & Panchang</button>
+      <!-- Navigation Pages Bar -->
+      <nav class="hidden lg:flex items-center gap-4 text-xs font-semibold text-slate-300">
+        <button onclick="switchPage('astrology')" class="nav-item hover:text-gold-400 transition py-1" data-page="astrology">Astrology & Baby Names</button>
         <button onclick="switchPage('numerology')" class="nav-item hover:text-gold-400 transition py-1" data-page="numerology">Numerology</button>
-        <button onclick="switchPage('sessions')" class="nav-item hover:text-gold-400 transition py-1 flex items-center gap-1 text-emerald-400 font-bold" data-page="sessions">
-          <span>🎧 Live Sessions</span>
-        </button>
-        <button onclick="switchPage('tarot')" class="nav-item hover:text-gold-400 transition py-1 flex items-center gap-1 text-purple-300 font-bold" data-page="tarot">
-          <span>🔮 Tarot</span>
-        </button>
+        <button onclick="switchPage('sessions')" class="nav-item hover:text-gold-400 transition py-1 text-emerald-400 font-bold" data-page="sessions">Live Sessions</button>
+        <button onclick="switchPage('tarot')" class="nav-item hover:text-gold-400 transition py-1 text-purple-300 font-bold" data-page="tarot">Tarot</button>
         <button onclick="switchPage('store')" class="nav-item hover:text-gold-400 transition py-1" data-page="store">Store</button>
-        <button onclick="switchPage('milan')" class="nav-item text-amber-300 hover:text-amber-200 transition py-1 flex items-center gap-1 bg-amber-500/10 px-2.5 py-1 rounded-lg border border-amber-500/30" data-page="milan">
-          <span>💍 Milan Portal</span>
-        </button>
-        <button onclick="switchPage('feed')" class="nav-item hover:text-gold-400 transition py-1 flex items-center gap-1.5" data-page="feed">
-          <span>📡 Cosmic Feed</span>
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        </button>
+        <button onclick="switchPage('milan')" class="nav-item text-amber-300 hover:text-amber-200 transition py-1 bg-amber-500/10 px-2.5 py-1 rounded-lg border border-amber-500/30" data-page="milan">Milan Portal</button>
+        <button onclick="switchPage('feed')" class="nav-item hover:text-gold-400 transition py-1" data-page="feed">Feed</button>
         <button onclick="switchPage('about')" class="nav-item hover:text-gold-400 transition py-1" data-page="about">About</button>
         <button onclick="switchPage('contact')" class="nav-item hover:text-gold-400 transition py-1" data-page="contact">Contact</button>
       </nav>
@@ -189,17 +183,17 @@
   </header>
 
   <!-- ========================================================================= -->
-  <!-- PAGE 1: ASTROLOGY & DAILY PANCHANG                                        -->
+  <!-- PAGE 1: ASTROLOGY & BABY NAME SUGGESTION ENGINE                           -->
   <!-- ========================================================================= -->
   <section id="page-astrology" class="page-view py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
       
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
-          <span class="text-xs font-bold uppercase tracking-wider text-purple-400">Pillar I • Vedic Jyotish & Panchang</span>
-          <h1 class="font-cinzel text-3xl sm:text-4xl font-black text-white mt-1">Kundli Charts & Daily Vedic Panchang</h1>
+          <span class="text-xs font-bold uppercase tracking-wider text-purple-400">Pillar I • Parashari Jyotish & Baby Naming</span>
+          <h1 class="font-cinzel text-3xl sm:text-4xl font-black text-white mt-1">Kundli Charts & Vedic Baby Name Generator</h1>
           <p class="text-xs sm:text-sm text-slate-400 mt-1">
-            Real-time calculations for Amritsar, Punjab • Hindu calendar dates and regional occasions.
+            22 May 1994, 13:25:00 • Amritsar, Punjab, India[span_2](start_span)[span_2](end_span). True Lahiri Ayanamsha (23°46'41")[span_3](start_span)[span_3](end_span).
           </p>
         </div>
 
@@ -213,90 +207,64 @@
         </div>
       </div>
 
-      <!-- ================= DAILY PANCHANG & REGIONAL OCCASIONS ================= -->
-      <div class="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-purple-950/40 via-cosmic-900 to-amber-950/40 border border-purple-500/40 gold-border-glow space-y-6 shadow-2xl">
+      <!-- ================= VEDIC BABY NAME SUGGESTION TOOL ================= -->
+      <div class="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-indigo-950/50 via-cosmic-900 to-purple-950/50 border border-purple-500/40 gold-border-glow space-y-6 shadow-2xl">
         <div class="flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-slate-800 pb-4">
           <div class="flex items-center gap-3">
-            <div class="w-12 h-12 rounded-2xl bg-purple-500/20 border border-purple-500/40 flex items-center justify-center text-2xl">
-              🗓️
-            </div>
+            <div class="w-12 h-12 rounded-2xl bg-purple-500/20 border border-purple-500/40 flex items-center justify-center text-2xl">👶</div>
             <div>
-              <h3 class="font-cinzel text-lg font-bold text-white">Daily Vedic Panchang & Regional Calendar</h3>
-              <p class="text-xs text-slate-400">Live Ephemeris Calculations</p>
+              <h3 class="font-cinzel text-lg font-bold text-white">Vedic Nakshatra Baby Name Generator</h3>
+              <p class="text-xs text-slate-400">Find astrologically auspicious baby names based on birth Nakshatra syllables (Padas).</p>
             </div>
           </div>
-          <span class="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 font-mono text-xs font-bold border border-amber-500/40">
-            Vikram Samvat 2083 • Bhadrapada / Ashwina
+          <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 font-mono text-xs font-bold border border-emerald-500/40">
+            Free Tool Active
           </span>
         </div>
 
-        <!-- Panchang 5 Limbs Grid -->
-        <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 text-xs">
-          <div class="p-3.5 rounded-2xl bg-cosmic-950 border border-slate-800 text-center">
-            <span class="text-[10px] uppercase text-slate-400 block mb-1">Tithi</span>
-            <span class="font-cinzel font-bold text-amber-300 text-sm">Shukra Ashtami</span>
-            <span class="text-[9px] block text-slate-500 mt-0.5">Up to 03:27 PM</span>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
+          <div>
+            <label class="block text-slate-300 font-semibold mb-1">Select Child's Nakshatra *</label>
+            <select id="baby-nakshatra" class="w-full bg-cosmic-950 border border-slate-700 rounded-xl p-3 text-white focus:border-purple-500">
+              <option value="Chitra">Chitra (Sylla: Pe, Po, Ra, Ri)[span_4](start_span)[span_4](end_span)</option>
+              <option value="Ashwini">Ashwini (Sylla: Chu, Che, Cho, La)</option>
+              <option value="Rohini">Rohini (Sylla: O, Va, Vi, Vu)</option>
+              <option value="Pushya">Pushya (Sylla: Hu, He, Ho, Da)</option>
+              <option value="Magha">Magha (Sylla: Ma, Mi, Mu, Me)</option>
+              <option value="Swati">Swati (Sylla: Ru, Re, Ro, Ta)</option>
+            </select>
           </div>
-          <div class="p-3.5 rounded-2xl bg-cosmic-950 border border-slate-800 text-center">
-            <span class="text-[10px] uppercase text-slate-400 block mb-1">Nakshatra</span>
-            <span class="font-cinzel font-bold text-purple-300 text-sm">Mula (Pada 2)</span>
-            <span class="text-[9px] block text-slate-500 mt-0.5">Ruler: Ketu</span>
+
+          <div>
+            <label class="block text-slate-300 font-semibold mb-1">Child's Gender *</label>
+            <select id="baby-gender" class="w-full bg-cosmic-950 border border-slate-700 rounded-xl p-3 text-white focus:border-purple-500">
+              <option value="Boy">Baby Boy</option>
+              <option value="Girl">Baby Girl</option>
+              <option value="Unisex">Unisex / Both</option>
+            </select>
           </div>
-          <div class="p-3.5 rounded-2xl bg-cosmic-950 border border-slate-800 text-center">
-            <span class="text-[10px] uppercase text-slate-400 block mb-1">Yoga</span>
-            <span class="font-cinzel font-bold text-gold-400 text-sm">Ayushman</span>
-            <span class="text-[9px] block text-slate-500 mt-0.5">Auspicious Alignment</span>
-          </div>
-          <div class="p-3.5 rounded-2xl bg-cosmic-950 border border-slate-800 text-center">
-            <span class="text-[10px] uppercase text-slate-400 block mb-1">Karana</span>
-            <span class="font-cinzel font-bold text-emerald-300 text-sm">Bava</span>
-            <span class="text-[9px] block text-slate-500 mt-0.5">Commerce Active</span>
-          </div>
-          <div class="p-3.5 rounded-2xl bg-cosmic-950 border border-slate-800 text-center col-span-2 sm:col-span-1">
-            <span class="text-[10px] uppercase text-slate-400 block mb-1">Vaara (Weekday)</span>
-            <span class="font-cinzel font-bold text-rose-300 text-sm">Shanivar (Saturday)</span>
-            <span class="text-[9px] block text-slate-500 mt-0.5">Ruler: Saturn</span>
+
+          <div class="flex items-end">
+            <button onclick="generateBabyNames()" class="w-full py-3 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold uppercase tracking-wider text-xs shadow transition">
+              Generate Auspicious Names
+            </button>
           </div>
         </div>
 
-        <!-- Muhurats & Regional Occasions -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-          <div class="p-4 rounded-2xl bg-cosmic-950 border border-slate-800 space-y-2">
-            <span class="font-bold text-gold-400 uppercase tracking-wider text-[10px] block">⏱️ Auspicious & Inauspicious Windows</span>
-            <div class="space-y-1 text-slate-300 text-[11px]">
-              <div>🟢 <strong>Abhijit Muhurat:</strong> 11:50 AM – 12:39 PM (Lucky Midday Slot)</div>
-              <div>🔴 <strong>Rahu Kaal:</strong> 09:11 AM – 10:43 AM (Avoid New Ventures)</div>
-              <div>🟡 <strong>Yamaganda:</strong> 01:46 PM – 03:18 PM</div>
-              <div>🌅 <strong>Sunrise / Sunset:</strong> 06:14 AM / 06:26 PM</div>
-            </div>
-          </div>
-
-          <div class="p-4 rounded-2xl bg-cosmic-950 border border-slate-800 space-y-2">
-            <span class="font-bold text-emerald-400 uppercase tracking-wider text-[10px] block">📅 Hindu Calendar & Regional Occasions</span>
-            <div class="space-y-1.5 text-slate-300 text-[11px]">
-              <div class="flex justify-between border-b border-slate-900 pb-1">
-                <span>Radha Ashtami / Mahalakshmi Vrat</span>
-                <span class="font-mono text-amber-300">September 19, 2026</span>
-              </div>
-              <div class="flex justify-between border-b border-slate-900 pb-1">
-                <span>Anant Chaturdashi / Ganesh Visarjan</span>
-                <span class="font-mono text-amber-300">September 23, 2026</span>
-              </div>
-              <div class="flex justify-between">
-                <span>Shardiya Navratri Ghatasthapana (Regional)</span>
-                <span class="font-mono text-amber-300">October 11, 2026</span>
-              </div>
-            </div>
+        <!-- Generated Baby Names Output Box -->
+        <div id="baby-names-results" class="hidden p-5 rounded-2xl bg-cosmic-950 border border-purple-500/30 space-y-3">
+          <h4 class="font-cinzel text-xs font-bold text-amber-300 uppercase tracking-wider">Auspicious Name Suggestions (Matching Nakshatra Pada):</h4>
+          <div id="baby-names-list" class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+            <!-- Injected via JS -->
           </div>
         </div>
-
       </div>
 
       <!-- KUNDLI CHARTS & SYNOPSIS -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         <div class="lg:col-span-6 bg-cosmic-900 p-6 rounded-3xl border border-slate-800 gold-border-glow flex flex-col items-center">
           <div class="w-full flex items-center justify-between mb-3 text-xs">
-            <span id="chart-display-title" class="font-cinzel font-bold text-gold-400 text-sm">D1 Rashi Chart (Leo Ascendant 21°53')[span_0](start_span)[span_0](end_span)</span>
+            <span id="chart-display-title" class="font-cinzel font-bold text-gold-400 text-sm">D1 Rashi Chart (Leo Ascendant 21°53')[span_5](start_span)[span_5](end_span)</span>
             <span class="text-slate-400 font-mono text-[10px]">Lahiri Parashari</span>
           </div>
 
@@ -363,11 +331,11 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
               <div class="p-3 rounded-xl bg-cosmic-950 border border-slate-800/80">
                 <span class="text-gold-400 font-bold block mb-1">👑 Character & Soul Archetype</span>
-                <p class="text-slate-300 text-[11px] leading-relaxed">Dynamic, independent, and courageous with innate executive stamina[span_1](start_span)[span_1](end_span).</p>
+                <p class="text-slate-300 text-[11px] leading-relaxed">Dynamic, independent, and courageous with innate executive stamina[span_6](start_span)[span_6](end_span).</p>
               </div>
               <div class="p-3 rounded-xl bg-cosmic-950 border border-slate-800/80">
                 <span class="text-amber-400 font-bold block mb-1">💼 Career & Governance</span>
-                <p class="text-slate-300 text-[11px] leading-relaxed">Excels in institutional compliance, corporate advisory, and directorships[span_2](start_span)[span_2](end_span).</p>
+                <p class="text-slate-300 text-[11px] leading-relaxed">Excels in institutional compliance, corporate advisory, and directorships[span_7](start_span)[span_7](end_span).</p>
               </div>
             </div>
           </div>
@@ -406,7 +374,7 @@
                   <h3 class="font-cinzel text-base font-bold text-white">Complete 55-Page Astro Intelligence Dossier</h3>
                   <span class="bg-gold-500 text-black text-[10px] font-black px-2 py-0.5 rounded">₹1,599</span>
                 </div>
-                <p class="text-xs text-slate-300 mt-1 leading-relaxed">Unlock complete Avkahada Chakra, exact degree tables, 120-Year Vimshottari Mahadasha timeline, and Lal Kitab remedies[span_3](start_span)[span_3](end_span).</p>
+                <p class="text-xs text-slate-300 mt-1 leading-relaxed">Unlock complete Avkahada Chakra, exact degree tables, 120-Year Vimshottari Mahadasha timeline, and Lal Kitab remedies[span_8](start_span)[span_8](end_span).</p>
               </div>
             </div>
             <button onclick="openPaymentModal('astrology', 1599, 'Comprehensive 55-Page Kundli Dossier')" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-gold-500 to-amber-600 text-black font-black text-xs uppercase tracking-wider shadow transition">
@@ -420,7 +388,7 @@
       <!-- PAID COMPLETE DOSSIER -->
       <div id="full-kundli-paid-dossier" class="hidden space-y-8 pt-8 border-t-2 border-gold-500/40">
         <div class="flex items-center justify-between bg-emerald-950/40 border border-emerald-500/40 p-4 rounded-2xl">
-          <div class="flex items-center gap-2 text-emerald-300 text-xs font-bold"><span>✓</span><span>Complete 55-Page Astro Intelligence Kundli Unlocked & Verified[span_4](start_span)[span_4](end_span)</span></div>
+          <div class="flex items-center gap-2 text-emerald-300 text-xs font-bold"><span>✓</span><span>Complete 55-Page Astro Intelligence Kundli Unlocked & Verified[span_9](start_span)[span_9](end_span)</span></div>
           <span class="bg-emerald-500 text-black text-[10px] font-black px-2 py-0.5 rounded">PAID DOSSIER ACTIVE</span>
         </div>
       </div>
@@ -567,7 +535,7 @@
       <div class="p-6 rounded-3xl bg-gradient-to-r from-red-950/40 via-cosmic-900 to-amber-950/40 border border-amber-500/40 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6">
         <div>
           <h3 class="font-cinzel font-bold text-base text-white">Anti-Leak Security Shield (Fee: ₹2,360)</h3>
-          <p class="text-xs text-slate-300 mt-1">First 5,000 sign-ups get free entry[span_5](start_span)[span_5](end_span). Direct numbers and emails unlock after payment confirmation[span_6](start_span)[span_6](end_span).</p>
+          <p class="text-xs text-slate-300 mt-1">First 5,000 sign-ups get free entry[span_10](start_span)[span_10](end_span). Direct numbers and emails unlock after payment confirmation[span_11](start_span)[span_11](end_span).</p>
         </div>
         <button onclick="openPaymentModal('matrimony', 2360, 'DestinyyMilan Matchmaking Lifetime Access')" class="px-6 py-3 rounded-xl bg-gradient-to-r from-red-600 to-amber-600 text-white font-bold text-xs uppercase">
           Pay ₹2,360 via Kotak QR
@@ -640,7 +608,7 @@
   </section>
 
   <!-- ========================================================================= -->
-  <!-- PAGE 7: FEED (ADMIN BROADCAST TO SITE & WHATSAPP)                         -->
+  <!-- PAGE 7: FEED                                                              -->
   <!-- ========================================================================= -->
   <section id="page-feed" class="page-view py-12 hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
@@ -696,14 +664,14 @@
       <div class="p-6 rounded-3xl bg-cosmic-900 border border-slate-800 space-y-2 text-slate-300">
         <div>📍 Location: Punjab • Chandigarh • Delhi-NCR (India)</div>
         <div>📞 Phone & WhatsApp: <strong class="text-gold-400 font-mono">+91 98141 67742</strong></div>
-        <div>💳 Kotak 811 UPI: <strong class="text-gold-400 font-mono">7837427391@kotakbank</strong> (RAHUL SHARMA)[span_7](start_span)[span_7](end_span)</div>
+        <div>💳 Kotak 811 UPI: <strong class="text-gold-400 font-mono">7837427391@kotakbank</strong> (RAHUL SHARMA)[span_12](start_span)[span_12](end_span)</div>
       </div>
     </div>
   </section>
 
   <!-- =================-------------------------------------------------------- -->
   <!-- PAGE 10: KING'S ADMIN CORNER (DM-94284)                                   -->
-  <!-- ========================================================================= -->
+  <!-- =================-------------------------------------------------------- -->
   <section id="page-admin" class="page-view py-12 hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
       
@@ -750,7 +718,7 @@
           </div>
           <div class="p-4 rounded-2xl bg-cosmic-900 border border-slate-800">
             <span class="text-slate-400 block mb-1">Kotak UPI Gateway</span>
-            <span class="text-xs font-mono font-bold text-gold-400 truncate block">7837427391@kotakbank[span_8](start_span)[span_8](end_span)</span>
+            <span class="text-xs font-mono font-bold text-gold-400 truncate block">7837427391@kotakbank[span_13](start_span)[span_13](end_span)</span>
           </div>
         </div>
 
@@ -800,8 +768,8 @@
       </div>
       <div class="bg-cosmic-950 border border-red-500/40 rounded-2xl p-4 text-center mb-4">
         <img id="upi-qr-image" src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=upi%3A%2F%2Fpay%3Fpa%3D7837427391%40kotakbank%26pn%3DRAHUL%2520SHARMA%26cu%3DINR" alt="Kotak 811 QR" class="w-44 h-44 mx-auto bg-white p-2 rounded-xl mb-2" />
-        <div class="font-bold text-white text-sm">RAHUL SHARMA[span_9](start_span)[span_9](end_span)</div>
-        <div class="text-xs text-amber-300 font-mono">7837427391@kotakbank[span_10](start_span)[span_10](end_span)</div>
+        <div class="font-bold text-white text-sm">RAHUL SHARMA[span_14](start_span)[span_14](end_span)</div>
+        <div class="text-xs text-amber-300 font-mono">7837427391@kotakbank[span_15](start_span)[span_15](end_span)</div>
         <div class="mt-2 text-sm font-bold text-gold-400" id="modal-price">₹1,599</div>
       </div>
       <form onsubmit="handleUtrSubmission(event)" class="space-y-3 text-xs">
@@ -883,12 +851,12 @@
         <img src="IMG-20260917-WA0021.jpg" alt="destinyymap Seal" class="w-10 h-10 brand-logo-img border border-gold-400" />
         <div>
           <span class="font-cinzel font-bold text-slate-200">destinyymap Cosmic Systems</span>
-          <span class="block text-[10px] text-slate-500">Master Admin: DM-94284 • Support: +91 98141 67742</span>
+          <span class="block text-[10px] text-slate-500">Master Admin Portal • Support: +91 98141 67742</span>
         </div>
       </div>
       <div class="text-center sm:text-right">
         <p>© 2026 destinyymap. All Rights Reserved.</p>
-        <p class="text-[10px] text-slate-500 mt-1">UPI Payee: RAHUL SHARMA (7837427391@kotakbank)[span_11](start_span)[span_11](end_span)</p>
+        <p class="text-[10px] text-slate-500 mt-1">UPI Payee: RAHUL SHARMA (7837427391@kotakbank)[span_16](start_span)[span_16](end_span)</p>
       </div>
     </div>
   </footer>
@@ -925,7 +893,7 @@
       dob: "1994-05-22",
       tob: "13:25:00",
       pob: "Amritsar, Punjab, India",
-      lagna: "Leo (Simha)[span_12](start_span)[span_12](end_span)",
+      lagna: "Leo (Simha)[span_17](start_span)[span_17](end_span)",
       d1: {
         h1: { sign: 5, planets: "La²¹" },
         h2: { sign: 6, planets: "Mo²⁷" },
@@ -1003,18 +971,71 @@
       document.getElementById('mobile-nav').classList.toggle('hidden');
     }
 
+    /* ================= VEDIC BABY NAME GENERATOR ================= */
+    const nakshatraBabyNames = {
+      Chitra: {
+        Boys: ["Chetan", "Chitrak", "Chiranjeev", "Charit"],
+        Girls: ["Chitra", "Charita", "Charvi", "Chitralekha"],
+        Unisex: ["Charan", "Chitvan"]
+      },
+      Ashwini: {
+        Boys: ["Ashwin", "Ashish", "Abhinav", "Akash"],
+        Girls: ["Ashwini", "Akshara", "Ananya", "Aarohi"],
+        Unisex: ["Amrit", "Arnav"]
+      },
+      Rohini: {
+        Boys: ["Rohan", "Rohit", "R Raghav", "Rudra"],
+        Girls: ["Rohini", "Ruchi", "Rachana", "Rhea"],
+        Unisex: ["Rohan", "Rishi"]
+      },
+      Pushya: {
+        Boys: ["Piyush", "Prateek", "Pranav", "Parth"],
+        Girls: ["Pooja", "Pragati", "Prachi", "Priya"],
+        Unisex: ["Prem", "Pragati"]
+      },
+      Magha: {
+        Boys: ["Manish", "Mayank", "Mohit", "Mihir"],
+        Girls: ["Megha", "Manasi", "Mahima", "Meera"],
+        Unisex: ["Mridul", "Madhur"]
+      },
+      Swati: {
+        Boys: ["Subodh", "Siddharth", "Sameer", "Sahil"],
+        Girls: ["Swati", "Suman", "Sneha", "Sanya"],
+        Unisex: ["Siddhi", "Swara"]
+      }
+    };
+
+    function generateBabyNames() {
+      const nak = document.getElementById('baby-nakshatra').value;
+      const gen = document.getElementById('baby-gender').value;
+      const data = nakshatraBabyNames[nak] || nakshatraBabyNames.Chitra;
+
+      let list = [];
+      if (gen === 'Boy') list = data.Boys;
+      else if (gen === 'Girl') list = data.Girls;
+      else list = [...data.Boys, ...data.Girls];
+
+      const resBox = document.getElementById('baby-names-results');
+      const listContainer = document.getElementById('baby-names-list');
+      listContainer.innerHTML = '';
+
+      list.forEach(name => {
+        const div = document.createElement('div');
+        div.className = "p-3 rounded-xl bg-cosmic-900 border border-slate-800 text-center font-cinzel font-bold text-amber-300 text-sm";
+        div.innerText = name;
+        listContainer.appendChild(div);
+      });
+      resBox.classList.remove('hidden');
+    }
+
     /* ================= MANDATORY KYC UPLOAD HANDLERS ================= */
     function handleGovtIdSelected(e) {
       const file = e.target.files[0];
       const fb = document.getElementById('govt-id-feedback');
       if (file) {
         uploadedGovtIdData = file.name;
-        fb.innerText = `✓ Selected: ${file.name} (${(file.size / 1024).toFixed(1)} KB)`;
+        fb.innerText = `✓ Selected: ${file.name}`;
         fb.className = "text-[10px] text-emerald-400 block mt-1 font-semibold";
-      } else {
-        uploadedGovtIdData = null;
-        fb.innerText = "Awaiting ID selection...";
-        fb.className = "text-[10px] text-slate-500 block mt-1";
       }
     }
 
@@ -1032,29 +1053,16 @@
           fb.className = "text-[10px] text-emerald-400 font-semibold";
         };
         reader.readAsDataURL(file);
-      } else {
-        uploadedSelfieData = null;
-        thumb.classList.add('hidden');
-        fb.innerText = "Awaiting selfie photo...";
-        fb.className = "text-[10px] text-slate-500";
       }
     }
 
     function handlePortalRegister(e) {
       e.preventDefault();
-
       const govtIdInput = document.getElementById('reg-govt-id');
       const selfieInput = document.getElementById('reg-selfie');
 
-      if (!govtIdInput.files || govtIdInput.files.length === 0) {
-        alert("⚠️ Mandatory Requirement: Please upload your Government ID Proof (Aadhaar/Passport).");
-        govtIdInput.focus();
-        return;
-      }
-
-      if (!selfieInput.files || selfieInput.files.length === 0) {
-        alert("⚠️ Mandatory Requirement: Please upload or capture a live clear selfie for identity verification.");
-        selfieInput.focus();
+      if (!govtIdInput.files.length || !selfieInput.files.length) {
+        alert("⚠️ Mandatory Requirement: Please upload both your Government ID and live Selfie.");
         return;
       }
 
@@ -1064,19 +1072,12 @@
       const email = document.getElementById('reg-email').value.trim();
       const genId = 'DM-' + Math.floor(1000 + Math.random() * 9000);
 
-      const newRegistration = {
-        uid: genId,
-        name,
-        gender,
-        phone,
-        email,
-        religion: "Hindu",
+      adminRegistrationsQueue.push({
+        uid: genId, name, gender, phone, email, religion: "Hindu",
         govtIdName: govtIdInput.files[0].name,
         selfieUrl: uploadedSelfieData || "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200",
         status: "Pending Approval"
-      };
-
-      adminRegistrationsQueue.push(newRegistration);
+      });
       localStorage.setItem('dm_pending_regs', JSON.stringify(adminRegistrationsQueue));
 
       alert(`🎉 Registration & Mandatory KYC Submitted!\n\nYour Unique ID: ${genId}\nFree Access Active (First 5,000 Users) - Unlimited Send Interest Unlocked!\n\nYour profile has been forwarded to Admin DM-94284 for approval.`);
@@ -1225,7 +1226,74 @@
       }
     }
 
-    /* ================= MISC INITIALIZATIONS ================= */
+    /* ================= TAROT & NUMEROLOGY INITIALIZERS ================= */
+    function drawDailyTarot() {
+      const flipBox = document.getElementById('daily-tarot-flipbox');
+      if (!flipBox) return;
+      const card = tarotDeck[Math.floor(Math.random() * tarotDeck.length)];
+      flipBox.classList.add('flipped');
+      setTimeout(() => {
+        document.getElementById('daily-card-number').innerText = card.num;
+        document.getElementById('daily-card-icon').innerText = card.icon;
+        document.getElementById('daily-card-name').innerText = card.name;
+        document.getElementById('daily-card-keywords').innerText = card.key;
+        document.getElementById('daily-element-badge').innerText = `Element: ${card.element}`;
+        document.getElementById('daily-card-guidance').innerText = card.guidance;
+        document.getElementById('daily-affirmation-text').innerText = card.affirmation;
+        document.getElementById('daily-quote-text').innerText = card.quote;
+      }, 250);
+    }
+
+    function copyAffirmation() {
+      navigator.clipboard.writeText(document.getElementById('daily-affirmation-text').innerText);
+      alert("Affirmation copied to clipboard!");
+    }
+
+    function calculateNumerology() {
+      const dobVal = document.getElementById('num-dob').value;
+      const nameVal = document.getElementById('num-name').value.toUpperCase().trim();
+      if (!dobVal || !nameVal) { alert("Please enter Name and Date of Birth."); return; }
+
+      const [year, month, day] = dobVal.split('-');
+      const digits = (year + month + day).split('').map(Number).filter(n => n > 0);
+      const counts = {1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0};
+      digits.forEach(d => { if (counts[d] !== undefined) counts[d]++; });
+
+      for (let i = 1; i <= 9; i++) {
+        const cell = document.getElementById(`loshu-${i}`);
+        const cntSpan = document.getElementById(`loshu-cnt-${i}`);
+        if (cell && cntSpan) {
+          cntSpan.innerText = `${counts[i]}x`;
+          if (counts[i] > 0) {
+            cell.classList.remove('bg-cosmic-950', 'text-slate-600', 'border-slate-800');
+            cell.classList.add('bg-amber-500/20', 'text-amber-300', 'border-amber-500', 'shadow-md');
+          } else {
+            cell.classList.add('bg-cosmic-950', 'text-slate-600', 'border-slate-800');
+            cell.classList.remove('bg-amber-500/20', 'text-amber-300', 'border-amber-500', 'shadow-md');
+          }
+        }
+      }
+      alert(`Lo Shu Matrix computed successfully for ${nameVal}!`);
+    }
+
+    function inspectLoShuCell(num) {
+      alert(`Lo Shu Cell ${num} diagnostic active.`);
+    }
+
+    function switchChartMode(mode) {
+      const data = mode === 'd1' ? birthData.d1 : birthData.d9;
+      for (let i = 1; i <= 12; i++) {
+        document.getElementById(`sign-h${i}`).textContent = data[`h${i}`].sign;
+        document.getElementById(`planets-h${i}`).textContent = data[`h${i}`].planets;
+      }
+    }
+
+    function unlockPaidKundliDossier() {
+      isKundliPaid = true;
+      document.getElementById('full-kundli-paid-dossier').classList.remove('hidden');
+      document.getElementById('kundli-paywall-card').classList.add('hidden');
+    }
+
     function openPaymentModal(type, amount, title) {
       currentPaymentType = type;
       currentPaymentAmount = amount;
@@ -1240,13 +1308,13 @@
     function handleUtrSubmission(e) { e.preventDefault(); closePaymentModal(); alert("UTR submitted for Admin DM-94284 verification."); }
     function handleSessionBookingSubmit(e) { e.preventDefault(); closeBookingModal(); openPaymentModal('session', 1600, 'Consultation Booking'); }
     function handleAskQuestion(e) { e.preventDefault(); openPaymentModal('question', 299, 'Specific Question'); }
+    function toggleCart() { document.getElementById('cart-drawer').classList.toggle('translate-x-full'); }
+    function toggleAiDrawer() { document.getElementById('ai-drawer').classList.toggle('translate-x-full'); }
 
     window.addEventListener('DOMContentLoaded', () => {
       calculateNumerology();
       switchChartMode('d1');
       drawDailyTarot();
-      renderStoreProducts();
-      renderMatches();
       const hash = window.location.hash.replace('#', '') || 'astrology';
       switchPage(hash);
     });
