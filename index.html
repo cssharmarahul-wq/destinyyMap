@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>destinyymap | Dynamic Vedic Kundli, Chaldean Numerology, Tarot & Milan</title>
+  <title>destinyymap | Vedic Kundli, Vastu, Chaldean Numerology, Tarot, Milan & Store</title>
   
   <link rel="icon" type="image/jpeg" href="IMG-20260917-WA0021.jpg" />
   <script src="https://cdn.tailwindcss.com"></script>
@@ -43,7 +43,7 @@
   <div class="bg-gradient-to-r from-red-950/90 via-purple-950/90 to-amber-950/90 border-b border-gold-500/20 py-2 px-4 text-xs flex items-center justify-between gap-4 flex-wrap">
     <div class="flex items-center gap-2">
       <img src="IMG-20260917-WA0021.jpg" alt="DM" class="w-5 h-5 rounded-full border border-gold-400 object-cover flex-shrink-0" onerror="this.style.display='none'" />
-      <span><strong>destinyymap:</strong> Dynamic Parashari Kundli, Live Panchang & Secure Milan Portal</span>
+      <span><strong>destinyymap:</strong> Dynamic Parashari Kundli, Vastu Shastra & Milan Portal</span>
     </div>
     <div class="flex items-center gap-3">
       <button onclick="switchPage('admin')" class="px-3 py-1 rounded-full bg-gradient-to-r from-amber-600 to-gold-500 text-black font-black text-xs shadow-lg hover:scale-105 transition transform flex items-center gap-1">
@@ -158,10 +158,6 @@
           <div class="p-3 bg-cosmic-950 border border-slate-800 rounded-xl text-center"><span class="text-slate-400 block text-[10px]">Karana</span><span id="p-karana" class="font-bold text-emerald-300">Bava</span></div>
           <div class="p-3 bg-cosmic-950 border border-slate-800 rounded-xl text-center col-span-2 sm:col-span-1"><span class="text-slate-400 block text-[10px]">Vaara (Day)</span><span id="p-day" class="font-bold text-rose-300">Shanivar</span></div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-slate-300">
-          <div class="p-3 bg-cosmic-950 rounded-xl border border-slate-800"><span class="text-gold-400 font-bold block mb-1">⏱️ Timings</span>🟢 Abhijit: 11:48 AM - 12:36 PM<br/>🔴 Rahu Kaal: <span id="p-rahu">04:30 PM - 06:00 PM</span><br/>🌅 Sunrise: <span id="p-sun">06:15 AM</span></div>
-          <div class="p-3 bg-cosmic-950 rounded-xl border border-slate-800"><span class="text-emerald-400 font-bold block mb-1">🗓️ Upcoming Regional Occasions</span>• Radha Ashtami / Mahalakshmi Vrat<br/>• Ganesh Visarjan / Anant Chaturdashi<br/>• Shardiya Navratri Ghatasthapana</div>
-        </div>
       </div>
 
       <div id="chart-results-container" class="hidden grid grid-cols-1 lg:grid-cols-12 gap-6">
@@ -220,6 +216,13 @@
       <div class="text-center max-w-3xl mx-auto">
         <span class="text-xs font-bold text-amber-400 tracking-widest uppercase">Sacred Spatial Architecture</span>
         <h1 class="font-cinzel text-3xl sm:text-4xl font-black text-white mt-1">Vedic & MahaVastu Shastra</h1>
+        <p class="text-xs sm:text-sm text-slate-400 mt-2">Harmonize the 5 Cosmic Elements across the 8 Cardinal Directions.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
+        <div class="p-5 rounded-2xl bg-cosmic-900 border border-slate-800"><div class="font-bold text-amber-300 mb-1">North (Kuber) • Water</div><p class="text-slate-400 text-[11px]">Governs new opportunities and liquid cash flow.</p></div>
+        <div class="p-5 rounded-2xl bg-cosmic-900 border border-slate-800"><div class="font-bold text-purple-300 mb-1">North-East • Water</div><p class="text-slate-400 text-[11px]">Divine clarity and spiritual insight. Ideal for Mandir.</p></div>
+        <div class="p-5 rounded-2xl bg-cosmic-900 border border-slate-800"><div class="font-bold text-emerald-300 mb-1">East (Surya) • Air</div><p class="text-slate-400 text-[11px]">Social connectivity and health.</p></div>
+        <div class="p-5 rounded-2xl bg-cosmic-900 border border-slate-800"><div class="font-bold text-rose-300 mb-1">South-East (Agni) • Fire</div><p class="text-slate-400 text-[11px]">Cash liquidity and kitchen stove zone.</p></div>
       </div>
     </div>
 
@@ -264,14 +267,60 @@
     </div>
 
     <!-- VIEW 4: CONSULTATIONS -->
-    <div id="page-sessions" class="app-view space-y-8 text-center">
+    <div id="page-sessions" class="app-view space-y-8 text-center max-w-4xl mx-auto">
       <h1 class="font-cinzel text-3xl font-black text-white">Book Private Consultation</h1>
+      <p class="text-xs text-slate-400">Select a session duration below for direct telephone or WhatsApp guidance.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 text-xs">
+        <div class="p-6 bg-cosmic-900 rounded-3xl border border-slate-800 space-y-4">
+          <div class="font-cinzel text-lg font-bold text-white">30 Minutes</div>
+          <div class="text-2xl font-cinzel font-black text-gold-400">₹1,600</div>
+          <button onclick="openPaymentModal('session', 1600, '30 Min Consultation')" class="w-full py-3 bg-gold-500 text-black font-bold uppercase rounded-xl">Book Now</button>
+        </div>
+        <div class="p-6 bg-cosmic-900 rounded-3xl border-2 border-emerald-500/60 space-y-4 relative">
+          <span class="absolute -top-3 right-6 bg-emerald-500 text-black text-[9px] font-black px-2 py-0.5 rounded-full">POPULAR</span>
+          <div class="font-cinzel text-lg font-bold text-white">45 Minutes</div>
+          <div class="text-2xl font-cinzel font-black text-emerald-400">₹2,100</div>
+          <button onclick="openPaymentModal('session', 2100, '45 Min Consultation')" class="w-full py-3 bg-emerald-500 text-black font-bold uppercase rounded-xl">Book Now</button>
+        </div>
+        <div class="p-6 bg-cosmic-900 rounded-3xl border border-slate-800 space-y-4">
+          <div class="font-cinzel text-lg font-bold text-white">60 Minutes</div>
+          <div class="text-2xl font-cinzel font-black text-purple-400">₹2,800</div>
+          <button onclick="openPaymentModal('session', 2800, '60 Min Consultation')" class="w-full py-3 bg-purple-600 text-white font-bold uppercase rounded-xl">Book Now</button>
+        </div>
+      </div>
     </div>
 
     <!-- VIEW 5: TAROT -->
     <div id="page-tarot" class="app-view space-y-12 text-center">
-      <h1 class="font-cinzel text-3xl font-black text-white">Cosmic Tarot Sanctuary (78 Cards)</h1>
-      <button onclick="drawTarotSpread()" class="px-5 py-2.5 bg-purple-600 text-white font-bold text-xs uppercase rounded-xl">🃏 Reshuffle & Draw Spread</button>
+      <div class="max-w-3xl mx-auto">
+        <h1 class="font-cinzel text-3xl font-black text-white">Cosmic Tarot Sanctuary (78-Card Deck)</h1>
+        <p class="text-slate-400 text-xs mt-2">Draw your daily guidance or the interactive 3-card karmic spread.</p>
+      </div>
+      <div class="p-8 rounded-3xl bg-cosmic-900 border border-purple-500/40 max-w-md mx-auto space-y-4 shadow-xl">
+        <div class="flex justify-between border-b border-slate-800 pb-2 mb-4">
+          <span class="font-bold text-white text-xs">Daily Pull</span>
+          <button onclick="drawDailyTarot()" class="text-xs bg-purple-600 text-white px-3 py-1 rounded font-bold">✨ Draw Card</button>
+        </div>
+        <div id="tarot-flipbox-daily" class="tarot-card-flip w-48 h-72 mx-auto" onclick="this.classList.toggle('flipped')">
+          <div class="tarot-card-inner rounded-2xl shadow-xl border-2 border-purple-500 cursor-pointer">
+            <div class="tarot-front bg-purple-950 absolute inset-0 flex flex-col items-center justify-center rounded-xl"><span class="text-4xl">✨</span><span class="text-amber-300 font-cinzel text-xs mt-2 font-bold">Tap to Reveal</span></div>
+            <div class="tarot-back bg-cosmic-900 absolute inset-0 flex flex-col items-center justify-center rounded-xl p-4 text-center">
+              <span id="tc-icon" class="text-5xl mb-2">⭐</span>
+              <h3 id="tc-name" class="font-cinzel text-lg font-bold text-white">The Star</h3>
+              <span id="tc-key" class="text-[10px] text-amber-300 font-mono mt-1">Hope • Renewal</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pt-8 border-t border-slate-800 text-center max-w-4xl mx-auto space-y-6">
+        <h2 class="font-cinzel text-2xl font-bold text-white">3-Card Karmic Spread</h2>
+        <button onclick="drawTarotSpread()" class="px-5 py-2.5 bg-purple-600 text-white font-bold text-xs uppercase rounded-xl shadow-lg">🃏 Reshuffle & Draw Spread</button>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 text-xs text-center">
+          <div class="space-y-3"><div class="text-slate-400 font-bold uppercase">Past</div><div id="spread-card-1" class="tarot-card-flip w-40 h-60 mx-auto" onclick="this.classList.toggle('flipped')"><div class="tarot-card-inner rounded-2xl shadow-xl border-2 border-slate-700 cursor-pointer"><div class="tarot-front bg-cosmic-950 absolute inset-0 flex flex-col items-center justify-center rounded-xl border border-slate-700"><span class="text-3xl text-slate-600 mb-2">🌀</span><span class="font-cinzel font-bold text-[10px] text-slate-400 uppercase">Tap</span></div><div class="tarot-back bg-cosmic-900 absolute inset-0 flex flex-col items-center justify-center rounded-xl p-4 text-center border-2 border-purple-500/50"><span id="ts-icon-1" class="text-4xl mb-2">🔮</span><h3 id="ts-name-1" class="font-cinzel text-sm font-bold text-white mb-1">Magician</h3><span id="ts-desc-1" class="text-[10px] text-slate-300">Will</span></div></div></div></div>
+          <div class="space-y-3"><div class="text-gold-400 font-bold uppercase">Present</div><div id="spread-card-2" class="tarot-card-flip w-40 h-60 mx-auto" onclick="this.classList.toggle('flipped')"><div class="tarot-card-inner rounded-2xl shadow-xl border-2 border-slate-700 cursor-pointer"><div class="tarot-front bg-cosmic-950 absolute inset-0 flex flex-col items-center justify-center rounded-xl border border-slate-700"><span class="text-3xl text-slate-600 mb-2">🌀</span><span class="font-cinzel font-bold text-[10px] text-slate-400 uppercase">Tap</span></div><div class="tarot-back bg-cosmic-900 absolute inset-0 flex flex-col items-center justify-center rounded-xl p-4 text-center border-2 border-gold-500/50"><span id="ts-icon-2" class="text-4xl mb-2">⚖️</span><h3 id="ts-name-2" class="font-cinzel text-sm font-bold text-white mb-1">Justice</h3><span id="ts-desc-2" class="text-[10px] text-slate-300">Balance</span></div></div></div></div>
+          <div class="space-y-3"><div class="text-emerald-400 font-bold uppercase">Outcome</div><div id="spread-card-3" class="tarot-card-flip w-40 h-60 mx-auto" onclick="this.classList.toggle('flipped')"><div class="tarot-card-inner rounded-2xl shadow-xl border-2 border-slate-700 cursor-pointer"><div class="tarot-front bg-cosmic-950 absolute inset-0 flex flex-col items-center justify-center rounded-xl border border-slate-700"><span class="text-3xl text-slate-600 mb-2">🌀</span><span class="font-cinzel font-bold text-[10px] text-slate-400 uppercase">Tap</span></div><div class="tarot-back bg-cosmic-900 absolute inset-0 flex flex-col items-center justify-center rounded-xl p-4 text-center border-2 border-emerald-500/50"><span id="ts-icon-3" class="text-4xl mb-2">👑</span><h3 id="ts-name-3" class="font-cinzel text-sm font-bold text-white mb-1">Emperor</h3><span id="ts-desc-3" class="text-[10px] text-slate-300">Authority</span></div></div></div></div>
+        </div>
+      </div>
     </div>
 
     <!-- VIEW 6: STORE -->
@@ -281,36 +330,76 @@
     </div>
 
     <!-- VIEW 7: MILAN -->
-    <div id="page-milan" class="app-view space-y-8">
-      <h1 class="font-cinzel text-3xl font-black text-white text-center">DestinyyMilan Matrimony Portal</h1>
+    <div id="page-milan" class="app-view space-y-8 max-w-5xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto">
+        <h1 class="font-cinzel text-3xl font-black text-white">DestinyyMilan Matrimony Portal</h1>
+        <p class="text-xs text-slate-400 mt-2">First 5,000 users get free access. Mandatory Govt ID + Selfie KYC.</p>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="p-6 bg-cosmic-900 rounded-3xl border border-slate-800">
+          <h3 class="font-cinzel font-bold text-white mb-3">Register Profile</h3>
+          <form onsubmit="handleRegister(event)" class="space-y-3 text-xs">
+            <input required id="milan-reg-name" type="text" placeholder="Full Name" class="w-full bg-cosmic-950 border border-slate-700 p-2.5 rounded-lg text-white">
+            <select id="milan-reg-gender" class="w-full bg-cosmic-950 border border-slate-700 p-2.5 rounded-lg text-white"><option value="Male">Male</option><option value="Female">Female</option></select>
+            <input required id="milan-reg-dob" type="date" onchange="autoCalcAge(this.value)" class="w-full bg-cosmic-950 border border-slate-700 p-2.5 rounded-lg text-white">
+            <input required id="milan-reg-phone" type="tel" placeholder="WhatsApp Number" class="w-full bg-cosmic-950 border border-slate-700 p-2.5 rounded-lg text-white font-mono">
+            <div class="p-3 bg-cosmic-950 border border-amber-500/40 border-dashed rounded-lg space-y-2">
+              <label class="block text-amber-300 font-bold text-[10px]">Govt ID *</label><input required type="file" id="milan-id-file" class="text-[10px] text-slate-300 w-full">
+              <label class="block text-amber-300 font-bold text-[10px] mt-2">Live Selfie *</label><input required type="file" id="milan-selfie-file" accept="image/*" capture="user" onchange="previewSelfie(event)" class="text-[10px] text-slate-300 w-full">
+              <img id="selfie-preview" src="" class="w-12 h-12 rounded-lg object-cover border border-amber-400 hidden mt-1" />
+            </div>
+            <button type="submit" class="w-full py-3 bg-emerald-500 text-black font-bold uppercase rounded-xl">Submit KYC & Register</button>
+          </form>
+        </div>
+        <div class="p-6 bg-cosmic-900 rounded-3xl border border-slate-800">
+          <h3 class="font-cinzel font-bold text-white mb-3">Member Sign In</h3>
+          <form onsubmit="handleLogin(event)" class="space-y-3 text-xs">
+            <input required id="login-id" type="text" placeholder="Matchmaking ID (e.g. DM-1234)" class="w-full bg-cosmic-950 border border-slate-700 p-2.5 rounded-lg text-white font-mono">
+            <input required id="login-pwd" type="password" placeholder="Password" class="w-full bg-cosmic-950 border border-slate-700 p-2.5 rounded-lg text-white">
+            <select id="login-gender" class="w-full bg-cosmic-950 border border-slate-700 p-2.5 rounded-lg text-white"><option value="Male">I am Male</option><option value="Female">I am Female</option></select>
+            <button type="submit" class="w-full py-3 bg-gold-500 text-black font-bold uppercase rounded-xl">Sign In</button>
+          </form>
+        </div>
+      </div>
+      <div id="milan-logged-in" class="hidden space-y-6">
+        <div class="p-4 bg-cosmic-900 rounded-2xl flex justify-between items-center border border-slate-800">
+          <div class="font-bold text-white text-sm">Welcome, <span id="milan-user-name" class="text-gold-400 font-mono">User</span></div>
+          <button onclick="handleLogout()" class="px-4 py-2 bg-cosmic-950 text-xs font-bold rounded-lg border border-slate-700">Sign Out</button>
+        </div>
+        <div id="milan-matches-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
+      </div>
     </div>
 
     <!-- VIEW 8: FEED -->
     <div id="page-feed" class="app-view space-y-6 max-w-4xl mx-auto">
-      <h1 class="font-cinzel text-3xl font-black text-white">Cosmic Feed</h1>
+      <div class="flex justify-between items-end border-b border-slate-800 pb-4">
+        <div><h1 class="font-cinzel text-3xl font-black text-white">Cosmic Feed</h1><p class="text-xs text-slate-400">Live Astrological Broadcasts</p></div>
+      </div>
+      <div id="feed-composer" class="hidden p-6 bg-cosmic-900 rounded-3xl border-2 border-gold-500 space-y-3 text-xs">
+        <h3 class="font-bold text-white">Admin Broadcast Console</h3>
+        <input id="f-title" type="text" placeholder="Title" class="w-full bg-cosmic-950 border border-slate-700 p-2.5 rounded-lg text-white">
+        <textarea id="f-body" rows="3" placeholder="Content..." class="w-full bg-cosmic-950 border border-slate-700 p-2.5 rounded-lg text-white"></textarea>
+        <button onclick="postFeed()" class="px-4 py-2 bg-emerald-500 text-black font-bold rounded-lg">Publish</button>
+      </div>
+      <div id="feed-stream" class="space-y-4 text-xs"></div>
     </div>
 
-    <!-- VIEW 9: ABOUT (With New Author Image) -->
+    <!-- VIEW 9: ABOUT US (With New Author Image) -->
     <div id="page-about" class="app-view max-w-4xl mx-auto space-y-8">
       <div class="text-center space-y-2">
         <h1 class="font-cinzel text-3xl sm:text-4xl font-black text-white">About destinyymap & Author</h1>
         <p class="text-xs text-slate-400">Pioneering digital precision in Parashari Astrology, Vastu Shastra, and Numerology.</p>
       </div>
-
       <div class="p-6 sm:p-8 rounded-3xl bg-cosmic-900 border border-slate-800 gold-border-glow grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
         <div class="md:col-span-5 flex justify-center">
-          <div class="relative w-56 h-72 rounded-2xl overflow-hidden border-2 border-gold-500/60 shadow-2xl">
+          <div class="relative w-56 h-72 rounded-2xl overflow-hidden border-2 border-gold-500/60 shadow-2xl bg-cosmic-950">
             <img src="1789803045269.png" alt="Author Profile" class="w-full h-full object-cover" onerror="this.src='IMG-20260917-WA0021.jpg'" />
           </div>
         </div>
         <div class="md:col-span-7 space-y-4 text-xs text-slate-300 leading-relaxed">
           <h3 class="font-cinzel text-lg font-bold text-amber-300">Meet the Expert Author</h3>
-          <p>
-            Welcome to <strong>destinyymap</strong>. Our work bridges ancient metaphysical frameworks—such as Parashari Jyotish, Chaldean-Pythagorean numerology, and MahaVastu spatial planning—with modern, developer-grade digital execution.
-          </p>
-          <p>
-            Whether you are analyzing a D1 Rashi chart, aligning your home’s 8 cardinal directions, or seeking a compatible life partner through our verified Milan KYC protocol, our mission is to deliver absolute mathematical clarity and privacy.
-          </p>
+          <p>Welcome to <strong>destinyymap</strong>. Our work bridges ancient metaphysical frameworks—Parashari Jyotish, Chaldean-Pythagorean numerology, and MahaVastu spatial planning—with modern digital execution.</p>
+          <p>Whether you are analyzing D1 charts, aligning home directions, or seeking a life partner through our verified Milan KYC protocol, our mission is absolute mathematical clarity and privacy.</p>
           <div class="pt-2 flex gap-3">
             <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 font-mono text-[10px] font-bold border border-purple-500/30">Vedic Jyotish</span>
             <span class="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 font-mono text-[10px] font-bold border border-amber-500/30">MahaVastu</span>
@@ -367,6 +456,29 @@
     </form>
   </div>
 
+  <!-- PAYMENT MODAL -->
+  <div id="payment-modal" class="fixed inset-0 z-50 flex justify-center items-center bg-black/85 hidden px-4">
+    <div class="bg-cosmic-900 border border-red-500/50 w-full max-w-sm p-6 rounded-3xl text-xs space-y-4 relative">
+      <button type="button" onclick="closePaymentModal()" class="absolute top-4 right-4 text-slate-400 text-lg">✕</button>
+      <div class="text-center"><h3 id="pay-title" class="font-bold text-white text-base">Payment</h3><div id="pay-amt" class="text-gold-400 font-mono text-lg font-bold mt-1">₹0</div></div>
+      <div class="bg-cosmic-950 p-4 text-center rounded-xl border border-red-500/30">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=upi%3A%2F%2Fpay%3Fpa%3D7837427391%40kotakbank%26pn%3DRAHUL%2520SHARMA%26cu%3DINR" class="w-32 h-32 mx-auto bg-white p-1 rounded-lg mb-2" />
+        <div class="font-bold text-white">RAHUL SHARMA</div>
+      </div>
+      <form onsubmit="handleUtrSubmission(event)">
+        <input required id="utr-number" type="text" placeholder="12-Digit UTR" class="w-full bg-cosmic-950 border border-slate-700 p-2.5 rounded-lg text-white font-mono mb-2">
+        <button type="submit" class="w-full py-2.5 bg-red-600 text-white font-bold rounded-xl uppercase">Submit UTR</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- CART DRAWER -->
+  <div id="cart-drawer" class="fixed inset-y-0 right-0 z-50 w-full max-w-sm bg-cosmic-900 border-l border-slate-800 transform translate-x-full transition-transform duration-300 flex flex-col">
+    <div class="p-5 border-b border-slate-800 flex justify-between items-center"><h3 class="font-bold text-white">Your Cart</h3><button type="button" onclick="toggleCart()" class="text-slate-400">✕</button></div>
+    <div id="cart-items" class="flex-1 overflow-y-auto p-5 space-y-3 text-xs"></div>
+    <div class="p-5 border-t border-slate-800 bg-cosmic-950"><button type="button" onclick="toggleCart(); openPaymentModal('Store', cart.reduce((a,b)=>a+b.price,0), 'Store Checkout')" class="w-full py-3 bg-gold-500 text-black font-bold rounded-xl uppercase">Pay <span id="cart-total" class="font-mono">₹0</span></button></div>
+  </div>
+
   <footer class="border-t border-slate-800 bg-cosmic-950 py-8 text-center text-[10px] text-slate-500 mt-auto flex items-center justify-center gap-3">
     <img src="IMG-20260917-WA0021.jpg" alt="DM" class="w-6 h-6 rounded-full opacity-70 object-cover flex-shrink-0" onerror="this.style.display='none'" />
     <p>© 2026 destinyymap. All Rights Reserved. • Official Vedic Astrology & Matrimony Portal</p>
@@ -378,6 +490,10 @@
     let masterPassword = localStorage.getItem('dm_admin_pwd') || "admin123";
     let isMasterAdmin = localStorage.getItem('dm_admin_logged') === 'true';
     let cart = [];
+    let milanRegistrations = JSON.parse(localStorage.getItem('dm_milan_regs')) || [];
+    let milanProfiles = JSON.parse(localStorage.getItem('dm_milan_profiles')) || [
+      { uid: "DM-2011", name: "Geetanjali Bedi", age: 29, gender: "Female", height: "5'5\"", religion: "Hindu", gotra: "Bedi", edu: "MBA Analytics", job: "Lead Analyst", income: "₹16 LPA", city: "Amritsar", phone: "+91 98142 88219", email: "geetanjali@milan", img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150", isVip: false }
+    ];
 
     function switchPage(id) {
       document.querySelectorAll('.app-view').forEach(v => { v.classList.remove('active'); v.style.display = 'none'; });
@@ -463,7 +579,7 @@
       else document.getElementById('custom-coords-row').classList.add('hidden');
     }
 
-    // Numerology (Corrected Moolank & Kua Formula)
+    // Numerology
     function calculateNumerology() {
       const dob = document.getElementById('num-dob-input').value;
       const name = document.getElementById('num-name-input').value;
@@ -514,26 +630,88 @@
       alert("Lo Shu Matrix computed successfully!");
     }
 
-    // Admin Secure Area
-    function handleAdminLogin(e) {
-      e.preventDefault();
-      const id = document.getElementById('admin-uid').value.trim();
-      const pwd = document.getElementById('admin-pwd').value.trim();
-      if (id === SECRET_ADMIN_ID && pwd === masterPassword) {
-        isMasterAdmin = true;
-        renderAdmin();
-      } else { alert("❌ Invalid Admin Credentials."); }
+    // Tarot
+    const fullTarotDeck = [
+      { icon: "🎒", name: "The Fool", desc: "New beginnings, spontaneity." },
+      { icon: "🪄", name: "The Magician", desc: "Manifestation, active will." },
+      { icon: "⭐", name: "The Star", desc: "Hope, clarity, renewal." }
+    ];
+    function drawDailyTarot() {
+      const pick = fullTarotDeck[Math.floor(Math.random() * fullTarotDeck.length)];
+      document.getElementById('tc-icon').textContent = pick.icon;
+      document.getElementById('tc-name').textContent = pick.name;
+      document.getElementById('tc-guide').textContent = pick.desc;
+    }
+    function drawTarotSpread() {
+      document.getElementById('spread-card-1').classList.remove('flipped');
+      document.getElementById('spread-card-2').classList.remove('flipped');
+      document.getElementById('spread-card-3').classList.remove('flipped');
     }
 
-    function renderAdmin() {
-      const locked = document.getElementById('admin-locked');
-      const unlocked = document.getElementById('admin-unlocked');
-      if (!locked || !unlocked) return;
-      if (isMasterAdmin) {
-        locked.classList.add('hidden');
-        unlocked.classList.remove('hidden');
+    // Store
+    function renderStore() {
+      const g = document.getElementById('store-products-grid');
+      if (!g) return;
+      g.innerHTML = `<div class="p-5 bg-cosmic-900 rounded-2xl border border-slate-800 text-xs">📿 Kamal Gatta Mala (₹1,250)<button onclick="cart.push({name:'Mala', price:1250}); updateCart(); alert('Added!')" class="mt-2 w-full py-2 bg-emerald-500 text-black font-bold rounded">+ Add</button></div>`;
+    }
+    function updateCart() { document.getElementById('cart-counter').textContent = cart.length; }
+
+    // Milan
+    function previewSelfie(e) {
+      const file = e.target.files[0];
+      if (file) {
+        const r = new FileReader();
+        r.onload = (evt) => { const img = document.getElementById('selfie-preview'); img.src = evt.target.result; img.classList.remove('hidden'); };
+        r.readAsDataURL(file);
       }
     }
+    function autoCalcAge(dob) {
+      if(!dob)return;
+      const age = Math.abs(new Date(Date.now() - new Date(dob).getTime()).getUTCFullYear() - 1970);
+      document.getElementById('milan-reg-age').value = age;
+    }
+    function handleRegister(e) {
+      e.preventDefault();
+      const uid = "DM-" + Math.floor(10000 + Math.random()*90000);
+      milanRegistrations.unshift({ uid, name: document.getElementById('milan-reg-name').value, status: "Pending", selfieUrl: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150" });
+      localStorage.setItem('dm_milan_regs', JSON.stringify(milanRegistrations));
+      alert(`Registration Successful! Your ID: ${uid}. Waiting for Admin approval.`);
+    }
+    function handleLogin(e) {
+      e.preventDefault();
+      document.getElementById('milan-logged-out').classList.add('hidden');
+      document.getElementById('milan-logged-in').classList.remove('hidden');
+      const g = document.getElementById('milan-matches-grid');
+      g.innerHTML = milanProfiles.map(p => `<div class="p-4 bg-cosmic-950 rounded-xl border border-slate-800 flex gap-3 items-center"><img src="${p.img}" class="w-14 h-14 rounded-lg object-cover"><div><h4 class="font-bold text-white">${p.name}</h4><div class="text-[10px] text-slate-400">${p.age} Yrs • ${p.city}</div><button onclick="alert('Interest Sent!')" class="mt-1 px-2 py-1 bg-pink-500/20 text-pink-300 rounded text-[10px] font-bold">💖 Send Interest</button></div></div>`).join('');
+    }
+    function handleLogout() {
+      document.getElementById('milan-logged-in').classList.add('hidden');
+      document.getElementById('milan-logged-out').classList.remove('hidden');
+    }
+
+    // Admin
+    function handleAdminLogin(e) {
+      e.preventDefault();
+      if(document.getElementById('admin-uid').value === SECRET_ADMIN_ID && document.getElementById('admin-pwd').value === masterPassword) {
+        isMasterAdmin = true; renderAdmin();
+      } else { alert("Invalid Credentials."); }
+    }
+    function renderAdmin() {
+      document.getElementById('admin-locked').classList.add('hidden');
+      document.getElementById('admin-unlocked').classList.remove('hidden');
+      const q = document.getElementById('admin-kyc-queue');
+      const pending = milanRegistrations.filter(r => r.status === "Pending");
+      q.innerHTML = pending.length ? pending.map(p => `<div class="p-3 bg-cosmic-950 rounded-xl border border-amber-500/30 flex justify-between items-center"><span>${p.name} (${p.uid})</span><button onclick="p.status='Approved'; renderAdmin(); alert('Approved!')" class="px-3 py-1 bg-emerald-500 text-black font-bold rounded">Approve</button></div>`).join('') : '<div class="text-slate-500">No pending KYC.</div>';
+    }
+
+    // Modals
+    function openPaymentModal(type, amt, title) {
+      document.getElementById('pay-title').textContent = title;
+      document.getElementById('pay-amt').textContent = `₹${amt}`;
+      document.getElementById('payment-modal').classList.remove('hidden');
+    }
+    function closePaymentModal() { document.getElementById('payment-modal').classList.add('hidden'); }
+    function handleUtrSubmission(e) { e.preventDefault(); closePaymentModal(); alert("UTR Submitted successfully!"); }
 
     window.addEventListener('DOMContentLoaded', () => {
       if (isMasterAdmin) renderAdmin();
