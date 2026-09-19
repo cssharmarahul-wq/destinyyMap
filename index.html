@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>destinyymap | Vedic Kundli, Vastu, Numerology, Tarot & Matrimony Portal</title>
+  <title>destinyymap | Vedic Kundli, Vastu, Chaldean Numerology, Tarot, Milan & Store</title>
   
   <link rel="icon" type="image/jpeg" href="IMG-20260917-WA0021.jpg" />
   <script src="https://cdn.tailwindcss.com"></script>
@@ -23,16 +24,17 @@
     }
   </script>
   <style>
-    body { background-color: #030611; color: #E2E8F0; font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; writing-mode: horizontal-tb !important; }
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { background-color: #030611; color: #E2E8F0; font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; writing-mode: horizontal-tb !important; direction: ltr !important; }
     .gold-text { background: linear-gradient(135deg, #FFFBEB 0%, #FCD34D 50%, #D97706 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     .gold-border-glow { border: 1px solid rgba(245, 158, 11, 0.35); box-shadow: 0 0 20px rgba(245, 158, 11, 0.12); }
     .blur-photo-lock { filter: blur(14px); user-select: none; pointer-events: none; }
-    .tarot-card-flip { perspective: 1000px; cursor: pointer; }
+    .tarot-card-flip { perspective: 1000px; cursor: pointer; width: 160px; height: 240px; }
     .tarot-card-inner { transition: transform 0.6s ease; transform-style: preserve-3d; position: relative; width: 100%; height: 100%; }
     .tarot-card-flip.flipped .tarot-card-inner { transform: rotateY(180deg); }
-    .tarot-front, .tarot-back { backface-visibility: hidden; position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+    .tarot-front, .tarot-back { backface-visibility: hidden; position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 1rem; }
     .tarot-back { transform: rotateY(180deg); }
-    .app-view { display: none; }
+    .app-view { display: none; width: 100%; }
     .app-view.active { display: block; animation: fadeIn 0.3s ease-in-out; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
   </style>
@@ -43,7 +45,7 @@
   <div class="bg-gradient-to-r from-red-950/90 via-purple-950/90 to-amber-950/90 border-b border-gold-500/20 py-2 px-4 text-xs flex items-center justify-between gap-4 flex-wrap">
     <div class="flex items-center gap-2">
       <img src="IMG-20260917-WA0021.jpg" alt="DM" class="w-5 h-5 rounded-full border border-gold-400 object-cover flex-shrink-0" onerror="this.style.display='none'" />
-      <span><strong>destinyymap:</strong> Dynamic Parashari Kundli, Vastu Shastra & Full Matrimony Suite</span>
+      <span><strong>destinyymap:</strong> Dynamic Parashari Kundli, Vastu Shastra & Milan Portal</span>
     </div>
     <div class="flex items-center gap-3">
       <button onclick="switchPage('admin')" class="px-3 py-1 rounded-full bg-gradient-to-r from-amber-600 to-gold-500 text-black font-black text-xs shadow-lg hover:scale-105 transition transform flex items-center gap-1">
@@ -72,7 +74,7 @@
         <button onclick="switchPage('numerology')" class="nav-btn hover:text-gold-400 transition py-1" data-page="numerology">Numerology</button>
         <button onclick="switchPage('tarot')" class="nav-btn hover:text-gold-400 transition py-1 text-purple-300 font-bold" data-page="tarot">Tarot</button>
         <button onclick="switchPage('store')" class="nav-btn hover:text-gold-400 transition py-1" data-page="store">Store</button>
-        <button onclick="switchPage('milan')" class="nav-btn text-amber-300 hover:text-amber-200 transition py-1 bg-amber-500/10 px-2.5 py-1 rounded-lg border border-amber-500/30" data-page="milan">💍 Milan Matrimony</button>
+        <button onclick="switchPage('milan')" class="nav-btn text-amber-300 hover:text-amber-200 transition py-1 bg-amber-500/10 px-2.5 py-1 rounded-lg border border-amber-500/30" data-page="milan">💍 Milan Portal</button>
         <button onclick="switchPage('sessions')" class="nav-btn hover:text-gold-400 transition py-1 text-emerald-400 font-bold" data-page="sessions">🎧 Consultations</button>
         <button onclick="switchPage('feed')" class="nav-btn hover:text-gold-400 transition py-1 flex items-center gap-1" data-page="feed">📡 Feed</button>
         <button onclick="switchPage('about')" class="nav-btn hover:text-gold-400 transition py-1" data-page="about">About</button>
@@ -95,7 +97,7 @@
       <button onclick="switchPage('numerology'); toggleMobileNav()" class="p-2 bg-cosmic-950 rounded-lg text-left text-slate-300">Numerology</button>
       <button onclick="switchPage('tarot'); toggleMobileNav()" class="p-2 bg-cosmic-950 rounded-lg text-left text-purple-300">Tarot Oracle</button>
       <button onclick="switchPage('store'); toggleMobileNav()" class="p-2 bg-cosmic-950 rounded-lg text-left text-slate-300">Store</button>
-      <button onclick="switchPage('milan'); toggleMobileNav()" class="p-2 bg-amber-500/20 text-amber-300 font-bold rounded-lg text-left">💍 Milan Matrimony</button>
+      <button onclick="switchPage('milan'); toggleMobileNav()" class="p-2 bg-amber-500/20 text-amber-300 font-bold rounded-lg text-left">💍 Milan Portal</button>
       <button onclick="switchPage('sessions'); toggleMobileNav()" class="p-2 bg-emerald-950 text-emerald-300 font-bold rounded-lg text-left">🎧 Consultations</button>
       <button onclick="switchPage('feed'); toggleMobileNav()" class="p-2 bg-cosmic-950 rounded-lg text-left text-slate-300">Cosmic Feed</button>
       <button onclick="switchPage('about'); toggleMobileNav()" class="p-2 bg-cosmic-950 rounded-lg text-left text-slate-300">About Us</button>
@@ -281,6 +283,22 @@
             <div class="flex justify-between items-center"><span class="text-slate-400">Kua Number:</span><strong id="res-kua" class="text-amber-300 font-mono text-sm">6 (West Group)</strong></div>
           </div>
         </div>
+
+        <div class="lg:col-span-7 space-y-4">
+          <div class="p-6 rounded-3xl bg-cosmic-900 border border-slate-800 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+            <h3 class="col-span-full font-cinzel font-bold text-white mb-2">The 6 Cosmic Planes</h3>
+            <div class="p-3 bg-cosmic-950 rounded-xl border border-slate-800"><div class="font-bold text-amber-300 flex justify-between">Mental (4-9-2) <span class="text-[10px] text-emerald-400 font-bold">Active</span></div></div>
+            <div class="p-3 bg-cosmic-950 rounded-xl border border-slate-800"><div class="font-bold text-amber-300 flex justify-between">Emotional (3-5-7) <span class="text-[10px] text-slate-400">Partial</span></div></div>
+            <div class="p-3 bg-cosmic-950 rounded-xl border border-slate-800"><div class="font-bold text-amber-300 flex justify-between">Practical (8-1-6) <span class="text-[10px] text-slate-400">Partial</span></div></div>
+            <div class="p-3 bg-cosmic-950 rounded-xl border border-slate-800"><div class="font-bold text-amber-300 flex justify-between">Thought (4-3-8) <span class="text-[10px] text-slate-400">Partial</span></div></div>
+            <div class="p-3 bg-cosmic-950 rounded-xl border border-slate-800"><div class="font-bold text-amber-300 flex justify-between">Will (9-5-1) <span class="text-[10px] text-emerald-400 font-bold">Active</span></div></div>
+            <div class="p-3 bg-cosmic-950 rounded-xl border border-slate-800"><div class="font-bold text-amber-300 flex justify-between">Action (2-7-6) <span class="text-[10px] text-slate-400">Partial</span></div></div>
+          </div>
+          <div class="p-5 bg-purple-900/30 border border-purple-500/40 rounded-3xl">
+            <span class="font-bold text-amber-300 text-[10px] uppercase block mb-1">✨ Numerology Suggestion</span>
+            <p id="num-suggestion" class="text-slate-300 text-xs leading-relaxed">With Destiny Number 5 and Moolank 4, you possess strong leadership and analytical foundations. Missing 7 & 8: Keep clear quartz in the center of your home for stability and wear a green aventurine bracelet to enhance wealth discipline.</p>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -308,7 +326,7 @@
       </div>
     </div>
 
-    <!-- VIEW 5: TAROT -->
+    <!-- VIEW 5: TAROT (Fully Fixed Reshuffle) -->
     <div id="page-tarot" class="app-view space-y-12 text-center">
       <div class="max-w-3xl mx-auto">
         <h1 class="font-cinzel text-3xl font-black text-white">Cosmic Tarot Sanctuary (78-Card Deck)</h1>
@@ -333,10 +351,10 @@
       <div class="pt-8 border-t border-slate-800 text-center max-w-4xl mx-auto space-y-6">
         <h2 class="font-cinzel text-2xl font-bold text-white">3-Card Karmic Spread</h2>
         <button onclick="drawTarotSpread()" class="px-5 py-2.5 bg-purple-600 text-white font-bold text-xs uppercase rounded-xl shadow-lg">🃏 Reshuffle & Draw Spread</button>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 text-xs text-center">
-          <div class="space-y-3"><div class="text-slate-400 font-bold uppercase">Past</div><div id="spread-card-1" class="tarot-card-flip w-40 h-60 mx-auto" onclick="this.classList.toggle('flipped')"><div class="tarot-card-inner rounded-2xl shadow-xl border-2 border-slate-700 cursor-pointer"><div class="tarot-front bg-cosmic-950 absolute inset-0 flex flex-col items-center justify-center rounded-xl border border-slate-700"><span class="text-3xl text-slate-600 mb-2">🌀</span><span class="font-cinzel font-bold text-[10px] text-slate-400 uppercase">Tap</span></div><div class="tarot-back bg-cosmic-900 absolute inset-0 flex flex-col items-center justify-center rounded-xl p-4 text-center border-2 border-purple-500/50"><span id="ts-icon-1" class="text-4xl mb-2">🔮</span><h3 id="ts-name-1" class="font-cinzel text-sm font-bold text-white mb-1">Magician</h3><span id="ts-desc-1" class="text-[10px] text-slate-300">Will</span></div></div></div></div>
-          <div class="space-y-3"><div class="text-gold-400 font-bold uppercase">Present</div><div id="spread-card-2" class="tarot-card-flip w-40 h-60 mx-auto" onclick="this.classList.toggle('flipped')"><div class="tarot-card-inner rounded-2xl shadow-xl border-2 border-slate-700 cursor-pointer"><div class="tarot-front bg-cosmic-950 absolute inset-0 flex flex-col items-center justify-center rounded-xl border border-slate-700"><span class="text-3xl text-slate-600 mb-2">🌀</span><span class="font-cinzel font-bold text-[10px] text-slate-400 uppercase">Tap</span></div><div class="tarot-back bg-cosmic-900 absolute inset-0 flex flex-col items-center justify-center rounded-xl p-4 text-center border-2 border-gold-500/50"><span id="ts-icon-2" class="text-4xl mb-2">⚖️</span><h3 id="ts-name-2" class="font-cinzel text-sm font-bold text-white mb-1">Justice</h3><span id="ts-desc-2" class="text-[10px] text-slate-300">Balance</span></div></div></div></div>
-          <div class="space-y-3"><div class="text-emerald-400 font-bold uppercase">Outcome</div><div id="spread-card-3" class="tarot-card-flip w-40 h-60 mx-auto" onclick="this.classList.toggle('flipped')"><div class="tarot-card-inner rounded-2xl shadow-xl border-2 border-slate-700 cursor-pointer"><div class="tarot-front bg-cosmic-950 absolute inset-0 flex flex-col items-center justify-center rounded-xl border border-slate-700"><span class="text-3xl text-slate-600 mb-2">🌀</span><span class="font-cinzel font-bold text-[10px] text-slate-400 uppercase">Tap</span></div><div class="tarot-back bg-cosmic-900 absolute inset-0 flex flex-col items-center justify-center rounded-xl p-4 text-center border-2 border-emerald-500/50"><span id="ts-icon-3" class="text-4xl mb-2">👑</span><h3 id="ts-name-3" class="font-cinzel text-sm font-bold text-white mb-1">Emperor</h3><span id="ts-desc-3" class="text-[10px] text-slate-300">Authority</span></div></div></div></div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 text-xs text-center justify-items-center">
+          <div class="space-y-3"><div class="text-slate-400 font-bold uppercase">Past</div><div id="spread-card-1" class="tarot-card-flip" onclick="this.classList.toggle('flipped')"><div class="tarot-card-inner rounded-2xl shadow-xl border-2 border-slate-700 cursor-pointer"><div class="tarot-front bg-cosmic-950 absolute inset-0 flex flex-col items-center justify-center rounded-xl border border-slate-700"><span class="text-3xl text-slate-600 mb-2">🌀</span><span class="font-cinzel font-bold text-[10px] text-slate-400 uppercase">Tap</span></div><div class="tarot-back bg-cosmic-900 absolute inset-0 flex flex-col items-center justify-center rounded-xl p-4 text-center border-2 border-purple-500/50"><span id="ts-icon-1" class="text-4xl mb-2">🔮</span><h3 id="ts-name-1" class="font-cinzel text-sm font-bold text-white mb-1">Magician</h3><span id="ts-desc-1" class="text-[10px] text-slate-300">Will</span></div></div></div></div>
+          <div class="space-y-3"><div class="text-gold-400 font-bold uppercase">Present</div><div id="spread-card-2" class="tarot-card-flip" onclick="this.classList.toggle('flipped')"><div class="tarot-card-inner rounded-2xl shadow-xl border-2 border-slate-700 cursor-pointer"><div class="tarot-front bg-cosmic-950 absolute inset-0 flex flex-col items-center justify-center rounded-xl border border-slate-700"><span class="text-3xl text-slate-600 mb-2">🌀</span><span class="font-cinzel font-bold text-[10px] text-slate-400 uppercase">Tap</span></div><div class="tarot-back bg-cosmic-900 absolute inset-0 flex flex-col items-center justify-center rounded-xl p-4 text-center border-2 border-gold-500/50"><span id="ts-icon-2" class="text-4xl mb-2">⚖️</span><h3 id="ts-name-2" class="font-cinzel text-sm font-bold text-white mb-1">Justice</h3><span id="ts-desc-2" class="text-[10px] text-slate-300">Balance</span></div></div></div></div>
+          <div class="space-y-3"><div class="text-emerald-400 font-bold uppercase">Outcome</div><div id="spread-card-3" class="tarot-card-flip" onclick="this.classList.toggle('flipped')"><div class="tarot-card-inner rounded-2xl shadow-xl border-2 border-slate-700 cursor-pointer"><div class="tarot-front bg-cosmic-950 absolute inset-0 flex flex-col items-center justify-center rounded-xl border border-slate-700"><span class="text-3xl text-slate-600 mb-2">🌀</span><span class="font-cinzel font-bold text-[10px] text-slate-400 uppercase">Tap</span></div><div class="tarot-back bg-cosmic-900 absolute inset-0 flex flex-col items-center justify-center rounded-xl p-4 text-center border-2 border-emerald-500/50"><span id="ts-icon-3" class="text-4xl mb-2">👑</span><h3 id="ts-name-3" class="font-cinzel text-sm font-bold text-white mb-1">Emperor</h3><span id="ts-desc-3" class="text-[10px] text-slate-300">Authority</span></div></div></div></div>
         </div>
       </div>
     </div>
@@ -431,7 +449,7 @@
       </div>
     </div>
 
-    <!-- VIEW 11: ADMIN -->
+    <!-- VIEW 11: ADMIN (Fully Repaired Sign In/Out & Actions) -->
     <div id="page-admin" class="app-view space-y-8 max-w-5xl mx-auto">
       <div class="p-6 bg-gradient-to-r from-amber-950/80 to-cosmic-900 rounded-3xl border-2 border-gold-500 flex justify-between items-center flex-wrap gap-4">
         <div class="flex items-center gap-4"><div class="text-4xl">👑</div><div><h1 class="font-cinzel text-xl sm:text-2xl font-black text-white">King's Command Corner</h1><span class="text-xs text-gold-400">Master Administrator Portal</span></div></div>
@@ -440,14 +458,14 @@
       <div id="admin-locked" class="max-w-sm mx-auto p-6 bg-cosmic-900 rounded-3xl border border-slate-800 text-xs space-y-4">
         <h3 class="font-bold text-white text-center text-sm">Secure Admin Authentication</h3>
         <form onsubmit="handleAdminLogin(event)" class="space-y-3">
-          <input required id="admin-uid" type="text" placeholder="Admin ID" class="w-full bg-cosmic-950 border border-slate-700 p-2.5 rounded-lg text-white font-mono">
-          <input required id="admin-pwd" type="password" placeholder="Password" class="w-full bg-cosmic-950 border border-slate-700 p-2.5 rounded-lg text-white">
+          <input required id="admin-uid" type="text" placeholder="Admin ID (DM-94284)" class="w-full bg-cosmic-950 border border-slate-700 p-2.5 rounded-lg text-white font-mono">
+          <input required id="admin-pwd" type="password" placeholder="Password (admin123)" class="w-full bg-cosmic-950 border border-slate-700 p-2.5 rounded-lg text-white">
           <button type="submit" class="w-full py-3 bg-amber-500 text-black font-bold uppercase rounded-xl transition">Authenticate</button>
         </form>
       </div>
       <div id="admin-unlocked" class="hidden space-y-6">
         <div class="p-6 bg-cosmic-900 rounded-3xl border border-slate-800 space-y-4 text-xs">
-          <h3 class="font-bold text-white text-sm">Pending KYC Registrations</h3>
+          <h3 class="font-bold text-white text-sm">Pending KYC Registrations Queue</h3>
           <div id="admin-kyc-queue" class="space-y-3"></div>
         </div>
       </div>
@@ -545,7 +563,7 @@
       }, 600);
     }
 
-    // Dynamic Kundli Engine (D1 vs D9 Separated)
+    // Dynamic Kundli Engine
     let calculatedD1 = {
       signs: [5, 6, 7, 8, 9, 10, 11, 12, 1, 2, 3, 4],
       planets: { 1:"La²¹", 2:"Mo²⁷", 3:"Ju¹³* • Ra²⁹*", 4:"Pl⁰²*", 5:"Ne²⁹*", 6:"Ur⁰¹*", 7:"Sa¹⁷", 8:"", 9:"Ma⁰⁵ • Ke²⁹*", 10:"Su⁰⁷ • Me²⁸", 11:"Ve⁰⁷", 12:"" }
@@ -600,11 +618,6 @@
       else document.getElementById('custom-coords-row').classList.add('hidden');
     }
 
-    // Baby Names Engine
-    const babyNameBank = {
-      Chitra: ["Chetan", "Chitrak", "Chiranjeev", "Charit", "Chitra", "Charvi"],
-      Ashwini: ["Ashwin", "Abhinav", "Akash", "Akshara", "Ananya", "Aarohi"]
-    };
     function generateBabyNames(nakshatra) {
       const list = babyNameBank[nakshatra] || ["Chetan", "Charit", "Charvi", "Aarav", "Advik"];
       const out = document.getElementById('baby-names-output');
@@ -670,24 +683,34 @@
       alert("Lo Shu Matrix computed successfully!");
     }
 
-    // Cosmic Feed
-    let cosmicFeedPosts = JSON.parse(localStorage.getItem('dm_cosmic_feed')) || [
-      { title: "Saturn's Transit in Aquarius", category: "PLANETARY TRANSIT", date: "Today", content: "Shani Dev in Aquarius aspects 9th, 1st, and 4th houses. Hard work yields long-term rewards." }
+    // Tarot Reshuffle Handler
+    const fullTarotDeck = [
+      { icon: "🎒", name: "The Fool", desc: "New beginnings, spontaneity." },
+      { icon: "🪄", name: "The Magician", desc: "Manifestation, active will." },
+      { icon: "⭐", name: "The Star", desc: "Hope, clarity, renewal." },
+      { icon: "⚖️", name: "Justice", desc: "Truth, fairness, law." },
+      { icon: "👑", name: "The Emperor", desc: "Authority, structure." },
+      { icon: "☸️", name: "Wheel of Fortune", desc: "Karmic cycles, destiny." }
     ];
-    function renderFeed() {
-      const fs = document.getElementById('feed-stream');
-      if (!fs) return;
-      fs.innerHTML = cosmicFeedPosts.map(f => `<div class="p-5 bg-cosmic-900 border border-slate-800 rounded-2xl"><div class="text-gold-400 font-bold mb-1">${f.category} • ${f.date}</div><h3 class="font-bold text-white text-sm mb-1">${f.title}</h3><p class="text-slate-300 leading-relaxed">${f.content}</p></div>`).join('');
-      if (isMasterAdmin) document.getElementById('feed-composer').classList.remove('hidden');
+    function drawDailyTarot() {
+      const pick = fullTarotDeck[Math.floor(Math.random() * fullTarotDeck.length)];
+      document.getElementById('tc-icon').textContent = pick.icon;
+      document.getElementById('tc-name').textContent = pick.name;
+      document.getElementById('tc-guide').textContent = pick.desc;
     }
-    function postFeed() {
-      const t = document.getElementById('f-title').value;
-      const c = document.getElementById('f-body').value;
-      if(!t || !c) return;
-      cosmicFeedPosts.unshift({ title: t, content: c, category: "ANNOUNCEMENT", date: "Today" });
-      localStorage.setItem('dm_cosmic_feed', JSON.stringify(cosmicFeedPosts));
-      renderFeed();
-      document.getElementById('f-title').value = ''; document.getElementById('f-body').value = '';
+    function drawTarotSpread() {
+      document.getElementById('spread-card-1').classList.remove('flipped');
+      document.getElementById('spread-card-2').classList.remove('flipped');
+      document.getElementById('spread-card-3').classList.remove('flipped');
+
+      setTimeout(() => {
+        const shuffled = [...fullTarotDeck].sort(() => 0.5 - Math.random());
+        for(let i=1; i<=3; i++) {
+          document.getElementById('ts-icon-'+i).textContent = shuffled[i-1].icon;
+          document.getElementById('ts-name-'+i).textContent = shuffled[i-1].name;
+          document.getElementById('ts-desc-'+i).textContent = shuffled[i-1].desc;
+        }
+      }, 300);
     }
 
     // Store
@@ -731,19 +754,59 @@
       document.getElementById('milan-logged-out').classList.remove('hidden');
     }
 
-    // Admin
+    // Admin Authentication & Session Management
     function handleAdminLogin(e) {
       e.preventDefault();
-      if(document.getElementById('admin-uid').value === SECRET_ADMIN_ID && document.getElementById('admin-pwd').value === masterPassword) {
-        isMasterAdmin = true; renderAdmin();
-      } else { alert("Invalid Credentials."); }
+      const id = document.getElementById('admin-uid').value.trim();
+      const pwd = document.getElementById('admin-pwd').value.trim();
+      if(id === SECRET_ADMIN_ID && pwd === masterPassword) {
+        isMasterAdmin = true;
+        localStorage.setItem('dm_admin_logged', 'true');
+        renderAdmin();
+        alert("👑 Master Admin Authenticated Successfully!");
+      } else { alert("❌ Invalid Admin Credentials."); }
     }
+
     function renderAdmin() {
-      document.getElementById('admin-locked').classList.add('hidden');
-      document.getElementById('admin-unlocked').classList.remove('hidden');
-      const q = document.getElementById('admin-kyc-queue');
-      const pending = milanRegistrations.filter(r => r.status === "Pending");
-      q.innerHTML = pending.length ? pending.map(p => `<div class="p-3 bg-cosmic-950 rounded-xl border border-amber-500/30 flex justify-between items-center"><span>${p.name} (${p.uid})</span><button onclick="p.status='Approved'; renderAdmin(); alert('Approved!')" class="px-3 py-1 bg-emerald-500 text-black font-bold rounded">Approve</button></div>`).join('') : '<div class="text-slate-500">No pending KYC.</div>';
+      const locked = document.getElementById('admin-locked');
+      const unlocked = document.getElementById('admin-unlocked');
+      const btn = document.getElementById('admin-logout-btn');
+      if (!locked || !unlocked) return;
+
+      if (isMasterAdmin) {
+        locked.classList.add('hidden');
+        unlocked.classList.remove('hidden');
+        if(btn) btn.innerHTML = `<button type="button" onclick="logoutAdmin()" class="px-3 py-1.5 bg-red-950 text-red-400 rounded-lg text-xs font-bold border border-red-800 hover:bg-red-900 transition">Sign Out</button>`;
+        
+        const q = document.getElementById('admin-kyc-queue');
+        const pending = milanRegistrations.filter(r => r.status === "Pending");
+        if(q) {
+          q.innerHTML = pending.length ? pending.map(p => `<div class="p-3 bg-cosmic-950 rounded-xl border border-amber-500/30 flex justify-between items-center text-xs"><span><strong>${p.name}</strong> (${p.uid})</span><button onclick="approveKyc('${p.uid}')" class="px-3 py-1 bg-emerald-500 text-black font-bold rounded">Approve KYC</button></div>`).join('') : '<div class="text-slate-500 text-xs">No pending KYC approvals.</div>';
+        }
+      } else {
+        locked.classList.remove('hidden');
+        unlocked.classList.add('hidden');
+        if(btn) btn.innerHTML = '';
+      }
+    }
+
+    function approveKyc(uid) {
+      const target = milanRegistrations.find(r => r.uid === uid);
+      if (target) {
+        target.status = "Approved";
+        localStorage.setItem('dm_milan_regs', JSON.stringify(milanRegistrations));
+        milanProfiles.push({ uid: target.uid, name: target.name, age: 28, gender: "Female", religion: "Hindu", city: "Chandigarh", job: "Professional", income: "₹15 LPA", img: target.selfieUrl });
+        localStorage.setItem('dm_milan_profiles', JSON.stringify(milanProfiles));
+        renderAdmin();
+        alert(`✓ Candidate ${target.uid} approved!`);
+      }
+    }
+
+    function logoutAdmin() {
+      isMasterAdmin = false;
+      localStorage.removeItem('dm_admin_logged');
+      renderAdmin();
+      switchPage('astrology');
     }
 
     // Modals
@@ -763,3 +826,4 @@
   </script>
 </body>
 </html>
+
