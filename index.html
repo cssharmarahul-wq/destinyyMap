@@ -262,9 +262,9 @@
                 <div class="card-glass rounded-3xl p-6 md:p-8 shadow-2xl text-center space-y-5">
                     <h3 class="text-xl font-bold text-gold cinzel-font"><i class="fa-solid fa-shuffle"></i> 3-Card Shuffle (Past, Present, Future)</h3>
                     <div id="threeCardBox" class="grid grid-cols-3 gap-3 text-xs">
-                        <div class="p-3 bg-cosmic-950/80 border border-gold/30 rounded-2xl flex flex-col items-center justify-center text-gray-400 min-h-[140px]">Past</div>
-                        <div class="p-3 bg-cosmic-950/80 border border-gold/30 rounded-2xl flex flex-col items-center justify-center text-gray-400 min-h-[140px]">Present</div>
-                        <div class="p-3 bg-cosmic-950/80 border border-gold/30 rounded-2xl flex flex-col items-center justify-center text-gray-400 min-h-[140px]">Future</div>
+                        <div class="p-4 bg-cosmic-950/80 border border-gold/30 rounded-2xl flex flex-col items-center justify-center text-gray-400 min-h-[140px]">Past</div>
+                        <div class="p-4 bg-cosmic-950/80 border border-gold/30 rounded-2xl flex flex-col items-center justify-center text-gray-400 min-h-[140px]">Present</div>
+                        <div class="p-4 bg-cosmic-950/80 border border-gold/30 rounded-2xl flex flex-col items-center justify-center text-gray-400 min-h-[140px]">Future</div>
                     </div>
                     <div class="flex gap-2">
                         <button onclick="shuffleThreeCards()" class="flex-1 bg-gold text-black font-black py-3 rounded-2xl shadow-glow hover:opacity-95 transition text-xs uppercase tracking-wider">
@@ -341,7 +341,7 @@
             </div>
         </section>
 
-        <!-- TAB 6: MILAN MATCHMAKING SOFTWARE (With Accurate Time of Birth Predictions) -->
+        <!-- TAB 6: MILAN MATCHMAKING SOFTWARE -->
         <section id="tab-milan" class="tab-content hidden space-y-6">
             <div class="text-center max-w-3xl mx-auto space-y-3">
                 <h2 class="text-3xl md:text-5xl font-black gold-gradient tracking-wide cinzel-font">Milan Matchmaking Software</h2>
@@ -610,28 +610,6 @@
         </div>
     </div>
 
-    <!-- REGISTER MATRIMONY PROFILE MODAL -->
-    <div id="registerProfileModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4">
-        <div class="card-glass rounded-3xl max-w-lg w-full p-6 md:p-8 space-y-4 shadow-2xl relative max-h-[90vh] overflow-y-auto border border-gold/55">
-            <button onclick="closeRegisterProfileModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white text-2xl"><i class="fa-solid fa-xmark"></i></button>
-            <h3 class="text-xl font-bold gold-gradient cinzel-font"><i class="fa-solid fa-user-shield"></i> Matrimony KYC & Profile Registration</h3>
-            <div class="space-y-3.5 text-xs">
-                <input type="text" id="regFullName" placeholder="Full Name" class="w-full bg-cosmic-950/80 border border-gold/30 rounded-2xl px-4 py-3 text-white text-sm outline-none">
-                <div class="grid grid-cols-2 gap-3">
-                    <input type="number" id="regAge" placeholder="Age" class="bg-cosmic-950/80 border border-gold/30 rounded-2xl px-4 py-3 text-white text-sm outline-none">
-                    <input type="text" id="regProfession" placeholder="Profession" class="bg-cosmic-950/80 border border-gold/30 rounded-2xl px-4 py-3 text-white text-sm outline-none">
-                </div>
-                <input type="text" id="regPhone" placeholder="Phone Number (Hidden until paid)" class="w-full bg-cosmic-950/80 border border-gold/30 rounded-2xl px-4 py-3 text-white text-sm outline-none">
-                <input type="email" id="regEmail" placeholder="Email Address (Hidden until paid)" class="w-full bg-cosmic-950/80 border border-gold/30 rounded-2xl px-4 py-3 text-white text-sm outline-none">
-                <input type="text" id="regAadhar" placeholder="Aadhar Number for Mandatory KYC" class="w-full bg-cosmic-950/80 border border-gold/30 rounded-2xl px-4 py-3 text-white text-sm outline-none">
-                <textarea id="regBio" placeholder="Family background, expectations & bio..." rows="3" class="w-full bg-cosmic-950/80 border border-gold/30 rounded-2xl px-4 py-3 text-white text-sm outline-none"></textarea>
-                <button onclick="submitMatrimonyRegistration()" class="w-full bg-gradient-to-r from-amber-500 to-gold text-black font-black py-3.5 rounded-2xl text-xs uppercase tracking-wider shadow-glow hover:opacity-95 transition">
-                    Submit for Admin Approval & KYC Verification
-                </button>
-            </div>
-        </div>
-    </div>
-
     <!-- EXPLANATION MODAL -->
     <div id="explainModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4">
         <div class="card-glass rounded-3xl max-w-lg w-full p-6 md:p-8 space-y-4 shadow-2xl relative border border-gold/55">
@@ -765,7 +743,6 @@
         }
         function closeExplainModal() { document.getElementById('explainModal').classList.add('hidden'); }
 
-        // Accurate Vedic/KP Astrology Engine
         function generateKundali() {
             const name = document.getElementById('astroName').value || 'Rahul Sharma';
             const dob = document.getElementById('astroDob').value || '1994-05-22';
@@ -979,7 +956,7 @@
                         <p class="text-gray-400 text-xs">Kua Number</p>
                         <p class="text-2xl font-black text-gold cinzel-font">${kua}</p>
                     </div>
-                    <div class="box-3d p-4 rounded-2xl cursor-pointer hover:border-gold transition" onclick="explainPlacement('Name Number ${nameSum} (${nameNum})', 'Governs professional branding and public harmony.')">
+                    <div class="box-3d p-4 rounded-2xl cursor-pointer hover:border-gold transition" onclick="explainPlacement('Name Number ${nameSum}', 'Governs professional branding and public harmony.')">
                         <p class="text-gray-400 text-xs">Name Number</p>
                         <p class="text-2xl font-black text-gold cinzel-font">${nameSum} (${nameNum})</p>
                     </div>
@@ -1037,21 +1014,9 @@
                 const pr = tarotDeck[Math.floor(Math.random() * tarotDeck.length)];
                 const f = tarotDeck[Math.floor(Math.random() * tarotDeck.length)];
                 box.innerHTML = `
-                    <div class="p-3 bg-cosmic-950 border border-gold/40 rounded-2xl text-center flex flex-col justify-center min-h-[140px] shadow">
-                        <p class="text-gold font-bold text-[10px] uppercase tracking-wider cinzel-font mb-1">Past</p>
-                        <p class="text-white font-bold text-xs cinzel-font">${p.name}</p>
-                        <p class="text-[9px] text-gray-400 mt-1">${p.meaning.substring(0,40)}...</p>
-                    </div>
-                    <div class="p-3 bg-cosmic-950 border border-gold/40 rounded-2xl text-center flex flex-col justify-center min-h-[140px] shadow">
-                        <p class="text-gold font-bold text-[10px] uppercase tracking-wider cinzel-font mb-1">Present</p>
-                        <p class="text-white font-bold text-xs cinzel-font">${pr.name}</p>
-                        <p class="text-[9px] text-gray-400 mt-1">${pr.meaning.substring(0,40)}...</p>
-                    </div>
-                    <div class="p-3 bg-cosmic-950 border border-gold/40 rounded-2xl text-center flex flex-col justify-center min-h-[140px] shadow">
-                        <p class="text-gold font-bold text-[10px] uppercase tracking-wider cinzel-font mb-1">Future</p>
-                        <p class="text-white font-bold text-xs cinzel-font">${f.name}</p>
-                        <p class="text-[9px] text-gray-400 mt-1">${f.meaning.substring(0,40)}...</p>
-                    </div>
+                    <div class="p-3 bg-cosmic-950 border border-gold/40 rounded-2xl text-center"><p class="text-gold font-bold text-[10px]">Past</p><p class="text-white text-xs font-bold">${p.name}</p><p class="text-[9px] text-gray-400 mt-1">${p.meaning.substring(0,40)}...</p></div>
+                    <div class="p-3 bg-cosmic-950 border border-gold/40 rounded-2xl text-center"><p class="text-gold font-bold text-[10px]">Present</p><p class="text-white text-xs font-bold">${pr.name}</p><p class="text-[9px] text-gray-400 mt-1">${pr.meaning.substring(0,40)}...</p></div>
+                    <div class="p-3 bg-cosmic-950 border border-gold/40 rounded-2xl text-center"><p class="text-gold font-bold text-[10px]">Future</p><p class="text-white text-xs font-bold">${f.name}</p><p class="text-[9px] text-gray-400 mt-1">${f.meaning.substring(0,40)}...</p></div>
                 `;
                 box.style.opacity = "1";
             }, 200);
