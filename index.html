@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
@@ -24,8 +23,7 @@
     }
   </script>
   <style>
-    *, *::before, *::after { box-sizing: border-box; }
-    html, body { background-color: #030611; color: #E2E8F0; font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; writing-mode: horizontal-tb !important; direction: ltr !important; }
+    body { background-color: #030611; color: #E2E8F0; font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; writing-mode: horizontal-tb !important; }
     .gold-text { background: linear-gradient(135deg, #FFFBEB 0%, #FCD34D 50%, #D97706 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     .gold-border-glow { border: 1px solid rgba(245, 158, 11, 0.35); box-shadow: 0 0 20px rgba(245, 158, 11, 0.12); }
     .blur-photo-lock { filter: blur(14px); user-select: none; pointer-events: none; }
@@ -155,7 +153,7 @@
         </div>
         <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 text-xs mb-4">
           <div class="p-3 bg-cosmic-950 border border-slate-800 rounded-xl text-center"><span class="text-slate-400 block text-[10px]">Tithi</span><span id="p-tithi" class="font-bold text-amber-300">Shukla Ashtami</span></div>
-          <div class="p-3 bg-cosmic-950 border border-slate-800 rounded-xl text-center"><span class="text-slate-400 block text-[10px]">Nakshatra</span><span id="p-nak" class="font-bold text-purple-300">Chitra (Pada 3)</span></div>
+          <div class="p-3 bg-cosmic-950 border border-slate-800 rounded-xl text-center"><span class="text-slate-400 block text-[10px]">Nakshatra</span><span id="p-nak" class="font-bold text-purple-300">Mula (Pada 2)</span></div>
           <div class="p-3 bg-cosmic-950 border border-slate-800 rounded-xl text-center"><span class="text-slate-400 block text-[10px]">Yoga</span><span id="p-yoga" class="font-bold text-gold-400">Ayushman</span></div>
           <div class="p-3 bg-cosmic-950 border border-slate-800 rounded-xl text-center"><span class="text-slate-400 block text-[10px]">Karana</span><span id="p-karana" class="font-bold text-emerald-300">Bava</span></div>
           <div class="p-3 bg-cosmic-950 border border-slate-800 rounded-xl text-center col-span-2 sm:col-span-1"><span class="text-slate-400 block text-[10px]">Vaara (Day)</span><span id="p-day" class="font-bold text-rose-300">Shanivar</span></div>
@@ -246,57 +244,50 @@
       </div>
     </div>
 
-    <!-- VIEW 3: NUMEROLOGY -->
+    <!-- VIEW 3: NUMEROLOGY (Locked Behind Paid Service Wall) -->
     <div id="page-numerology" class="app-view space-y-10">
       <div class="text-center">
         <span class="text-xs font-bold text-gold-400 tracking-widest uppercase">Sacred Geometry</span>
         <h1 class="font-cinzel text-3xl sm:text-4xl font-black text-white mt-1">Lo Shu Matrix & Chaldean Vibrations</h1>
       </div>
+
+      <!-- Paid Service Wall Notice -->
+      <div class="p-6 rounded-3xl bg-gradient-to-r from-amber-950/80 to-purple-950/80 border-2 border-gold-500 text-center max-w-xl mx-auto space-y-4 shadow-2xl">
+        <span class="text-4xl block">🔒</span>
+        <h3 class="font-cinzel text-lg font-bold text-white">Numerology Calculation & Lo Shu Matrix Is a Premium Paid Service</h3>
+        <p class="text-xs text-slate-300 leading-relaxed">Unlock complete Magic Square calculations, 6 Cosmic Planes analysis, missing number remedies, and Chaldean Name Vibration adjustments for ₹999.</p>
+        <button onclick="openPaymentModal('numerology', 999, 'Complete Lo Shu & Numerology Report')" class="px-6 py-3 bg-gold-500 hover:bg-gold-400 text-black font-black uppercase text-xs rounded-xl transition shadow-lg">Unlock Numerology Portal (₹999)</button>
+      </div>
+
       <div class="p-6 bg-cosmic-850 rounded-3xl border border-slate-800 gold-border-glow grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
-        <div><label class="block text-slate-300 mb-1 font-semibold">Full Legal Name *</label><input id="num-name-input" type="text" value="RAHUL SHARMA" placeholder="e.g. RAHUL SHARMA" class="w-full bg-cosmic-950 border border-slate-700 rounded-lg p-2.5 text-white uppercase" /></div>
-        <div><label class="block text-slate-300 mb-1 font-semibold">Date of Birth *</label><input id="num-dob-input" type="date" value="1994-05-22" class="w-full bg-cosmic-950 border border-slate-700 rounded-lg p-2.5 text-white" /></div>
+        <div><label class="block text-slate-300 mb-1 font-semibold">Full Legal Name *</label><input id="num-name-input" type="text" placeholder="e.g. RAHUL SHARMA" class="w-full bg-cosmic-950 border border-slate-700 rounded-lg p-2.5 text-white uppercase" /></div>
+        <div><label class="block text-slate-300 mb-1 font-semibold">Date of Birth *</label><input id="num-dob-input" type="date" class="w-full bg-cosmic-950 border border-slate-700 rounded-lg p-2.5 text-white" /></div>
         <div><label class="block text-slate-300 mb-1 font-semibold">Gender *</label>
           <div class="flex gap-2">
-            <select id="num-gender-input" class="flex-1 bg-cosmic-950 border border-slate-700 rounded-lg p-2.5 text-white"><option value="Male" selected>Male</option><option value="Female">Female</option></select>
+            <select id="num-gender-input" class="flex-1 bg-cosmic-950 border border-slate-700 rounded-lg p-2.5 text-white"><option value="Male">Male</option><option value="Female">Female</option></select>
             <button onclick="calculateNumerology()" class="px-5 py-2.5 bg-gold-500 hover:bg-gold-400 text-black font-black uppercase rounded-lg transition">Compute</button>
           </div>
         </div>
       </div>
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+      <div id="numerology-unlocked-section" class="hidden grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
         <div class="lg:col-span-5 p-6 bg-cosmic-950 rounded-3xl border border-slate-800 gold-border-glow">
           <h3 class="font-cinzel text-base font-bold text-white mb-4 text-center">3x3 Magic Square</h3>
           <div class="grid grid-cols-3 gap-3 aspect-square max-w-[280px] mx-auto p-3 bg-cosmic-900 rounded-2xl border border-slate-800">
-            <div id="loshu-4" class="rounded-xl flex flex-col items-center justify-center border border-amber-500 bg-amber-500/20 text-amber-300"><span class="text-2xl font-cinzel font-black">4</span><span id="loshu-cnt-4" class="text-[9px] font-bold">1x</span></div>
-            <div id="loshu-9" class="rounded-xl flex flex-col items-center justify-center border border-amber-500 bg-amber-500/20 text-amber-300"><span class="text-2xl font-cinzel font-black">9</span><span id="loshu-cnt-9" class="text-[9px] font-bold">2x</span></div>
-            <div id="loshu-2" class="rounded-xl flex flex-col items-center justify-center border border-amber-500 bg-amber-500/20 text-amber-300"><span class="text-2xl font-cinzel font-black">2</span><span id="loshu-cnt-2" class="text-[9px] font-bold">3x</span></div>
-            <div id="loshu-3" class="rounded-xl flex flex-col items-center justify-center border border-amber-500 bg-amber-500/20 text-amber-300"><span class="text-2xl font-cinzel font-black">3</span><span id="loshu-cnt-3" class="text-[9px] font-bold">1x</span></div>
-            <div id="loshu-5" class="rounded-xl flex flex-col items-center justify-center border border-amber-500 bg-amber-500/20 text-amber-300"><span class="text-2xl font-cinzel font-black">5</span><span id="loshu-cnt-5" class="text-[9px] font-bold">2x</span></div>
+            <div id="loshu-4" class="rounded-xl flex flex-col items-center justify-center border border-slate-800 bg-cosmic-950 text-slate-600"><span class="text-2xl font-cinzel font-black">4</span><span id="loshu-cnt-4" class="text-[9px] font-bold">0x</span></div>
+            <div id="loshu-9" class="rounded-xl flex flex-col items-center justify-center border border-slate-800 bg-cosmic-950 text-slate-600"><span class="text-2xl font-cinzel font-black">9</span><span id="loshu-cnt-9" class="text-[9px] font-bold">0x</span></div>
+            <div id="loshu-2" class="rounded-xl flex flex-col items-center justify-center border border-slate-800 bg-cosmic-950 text-slate-600"><span class="text-2xl font-cinzel font-black">2</span><span id="loshu-cnt-2" class="text-[9px] font-bold">0x</span></div>
+            <div id="loshu-3" class="rounded-xl flex flex-col items-center justify-center border border-slate-800 bg-cosmic-950 text-slate-600"><span class="text-2xl font-cinzel font-black">3</span><span id="loshu-cnt-3" class="text-[9px] font-bold">0x</span></div>
+            <div id="loshu-5" class="rounded-xl flex flex-col items-center justify-center border border-slate-800 bg-cosmic-950 text-slate-600"><span class="text-2xl font-cinzel font-black">5</span><span id="loshu-cnt-5" class="text-[9px] font-bold">0x</span></div>
             <div id="loshu-7" class="rounded-xl flex flex-col items-center justify-center border border-slate-800 bg-cosmic-950 text-slate-600"><span class="text-2xl font-cinzel font-black">7</span><span id="loshu-cnt-7" class="text-[9px] font-bold">0x</span></div>
             <div id="loshu-8" class="rounded-xl flex flex-col items-center justify-center border border-slate-800 bg-cosmic-950 text-slate-600"><span class="text-2xl font-cinzel font-black">8</span><span id="loshu-cnt-8" class="text-[9px] font-bold">0x</span></div>
-            <div id="loshu-1" class="rounded-xl flex flex-col items-center justify-center border border-amber-500 bg-amber-500/20 text-amber-300"><span class="text-2xl font-cinzel font-black">1</span><span id="loshu-cnt-1" class="text-[9px] font-bold">1x</span></div>
-            <div id="loshu-6" class="rounded-xl flex flex-col items-center justify-center border border-amber-500 bg-amber-500/20 text-amber-300"><span class="text-2xl font-cinzel font-black">6</span><span id="loshu-cnt-6" class="text-[9px] font-bold">1x</span></div>
+            <div id="loshu-1" class="rounded-xl flex flex-col items-center justify-center border border-slate-800 bg-cosmic-950 text-slate-600"><span class="text-2xl font-cinzel font-black">1</span><span id="loshu-cnt-1" class="text-[9px] font-bold">0x</span></div>
+            <div id="loshu-6" class="rounded-xl flex flex-col items-center justify-center border border-slate-800 bg-cosmic-950 text-slate-600"><span class="text-2xl font-cinzel font-black">6</span><span id="loshu-cnt-6" class="text-[9px] font-bold">0x</span></div>
           </div>
           <div class="mt-5 p-4 bg-cosmic-900 rounded-xl text-xs space-y-3">
-            <div class="flex justify-between items-center"><span class="text-slate-400">Destiny Number:</span><strong id="res-destiny" class="text-emerald-400 font-mono text-sm">5</strong></div>
-            <div class="flex justify-between items-center"><span class="text-slate-400">Personality (Moolank):</span><strong id="res-personality" class="text-purple-400 font-mono text-sm">4</strong></div>
-            <div class="flex justify-between items-center border-t border-slate-800 pt-2"><span class="text-slate-400">Name Vib. (Chaldean):</span><div class="text-right"><strong id="res-name" class="text-white font-mono block text-sm">33 ➔ 6</strong><span class="text-[9px] text-amber-300 font-bold block">Correction is Paid</span></div></div>
-            <div class="flex justify-between items-center"><span class="text-slate-400">Kua Number:</span><strong id="res-kua" class="text-amber-300 font-mono text-sm">6 (West Group)</strong></div>
-          </div>
-        </div>
-
-        <div class="lg:col-span-7 space-y-4">
-          <div class="p-6 rounded-3xl bg-cosmic-900 border border-slate-800 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-            <h3 class="col-span-full font-cinzel font-bold text-white mb-2">The 6 Cosmic Planes</h3>
-            <div class="p-3 bg-cosmic-950 rounded-xl border border-slate-800"><div class="font-bold text-amber-300 flex justify-between">Mental (4-9-2) <span class="text-[10px] text-emerald-400 font-bold">Active</span></div></div>
-            <div class="p-3 bg-cosmic-950 rounded-xl border border-slate-800"><div class="font-bold text-amber-300 flex justify-between">Emotional (3-5-7) <span class="text-[10px] text-slate-400">Partial</span></div></div>
-            <div class="p-3 bg-cosmic-950 rounded-xl border border-slate-800"><div class="font-bold text-amber-300 flex justify-between">Practical (8-1-6) <span class="text-[10px] text-slate-400">Partial</span></div></div>
-            <div class="p-3 bg-cosmic-950 rounded-xl border border-slate-800"><div class="font-bold text-amber-300 flex justify-between">Thought (4-3-8) <span class="text-[10px] text-slate-400">Partial</span></div></div>
-            <div class="p-3 bg-cosmic-950 rounded-xl border border-slate-800"><div class="font-bold text-amber-300 flex justify-between">Will (9-5-1) <span class="text-[10px] text-emerald-400 font-bold">Active</span></div></div>
-            <div class="p-3 bg-cosmic-950 rounded-xl border border-slate-800"><div class="font-bold text-amber-300 flex justify-between">Action (2-7-6) <span class="text-[10px] text-slate-400">Partial</span></div></div>
-          </div>
-          <div class="p-5 bg-purple-900/30 border border-purple-500/40 rounded-3xl">
-            <span class="font-bold text-amber-300 text-[10px] uppercase block mb-1">✨ Numerology Suggestion</span>
-            <p id="num-suggestion" class="text-slate-300 text-xs leading-relaxed">With Destiny Number 5 and Moolank 4, you possess strong leadership and analytical foundations. Missing 7 & 8: Keep clear quartz in the center of your home for stability and wear a green aventurine bracelet to enhance wealth discipline.</p>
+            <div class="flex justify-between items-center"><span class="text-slate-400">Destiny Number:</span><strong id="res-destiny" class="text-emerald-400 font-mono text-sm">-</strong></div>
+            <div class="flex justify-between items-center"><span class="text-slate-400">Personality (Moolank):</span><strong id="res-personality" class="text-purple-400 font-mono text-sm">-</strong></div>
+            <div class="flex justify-between items-center border-t border-slate-800 pt-2"><span class="text-slate-400">Name Vib. (Chaldean):</span><div class="text-right"><strong id="res-name" class="text-white font-mono block text-sm">-</strong><span class="text-[9px] text-amber-300 font-bold block">Correction is Paid</span></div></div>
+            <div class="flex justify-between items-center"><span class="text-slate-400">Kua Number:</span><strong id="res-kua" class="text-amber-300 font-mono text-sm">-</strong></div>
           </div>
         </div>
       </div>
@@ -326,7 +317,7 @@
       </div>
     </div>
 
-    <!-- VIEW 5: TAROT (Fully Fixed Reshuffle) -->
+    <!-- VIEW 5: TAROT -->
     <div id="page-tarot" class="app-view space-y-12 text-center">
       <div class="max-w-3xl mx-auto">
         <h1 class="font-cinzel text-3xl font-black text-white">Cosmic Tarot Sanctuary (78-Card Deck)</h1>
@@ -365,13 +356,13 @@
       <div id="store-products-grid" class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-5xl mx-auto"></div>
     </div>
 
-    <!-- VIEW 7: MILAN -->
+    <!-- VIEW 7: MILAN (Full Matrimony Suite) -->
     <div id="page-milan" class="app-view space-y-8 max-w-5xl mx-auto">
       <div class="text-center max-w-2xl mx-auto">
         <h1 class="font-cinzel text-3xl font-black text-white">DestinyyMilan Matrimony Portal</h1>
         <p class="text-xs text-slate-400 mt-2">First 5,000 users get free access. Mandatory Govt ID + Selfie KYC.</p>
       </div>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div id="milan-logged-out" class="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div class="p-6 bg-cosmic-900 rounded-3xl border border-slate-800">
           <h3 class="font-cinzel font-bold text-white mb-3">Register Profile</h3>
           <form onsubmit="handleRegister(event)" class="space-y-3 text-xs">
@@ -563,7 +554,7 @@
       }, 600);
     }
 
-    // Dynamic Kundli Engine
+    // Dynamic Kundli Engine (D1 vs D9 Separated)
     let calculatedD1 = {
       signs: [5, 6, 7, 8, 9, 10, 11, 12, 1, 2, 3, 4],
       planets: { 1:"La²¹", 2:"Mo²⁷", 3:"Ju¹³* • Ra²⁹*", 4:"Pl⁰²*", 5:"Ne²⁹*", 6:"Ur⁰¹*", 7:"Sa¹⁷", 8:"", 9:"Ma⁰⁵ • Ke²⁹*", 10:"Su⁰⁷ • Me²⁸", 11:"Ve⁰⁷", 12:"" }
@@ -618,6 +609,11 @@
       else document.getElementById('custom-coords-row').classList.add('hidden');
     }
 
+    // Baby Names Engine
+    const babyNameBank = {
+      Chitra: ["Chetan", "Chitrak", "Chiranjeev", "Charit", "Chitra", "Charvi"],
+      Ashwini: ["Ashwin", "Abhinav", "Akash", "Akshara", "Ananya", "Aarohi"]
+    };
     function generateBabyNames(nakshatra) {
       const list = babyNameBank[nakshatra] || ["Chetan", "Charit", "Charvi", "Aarav", "Advik"];
       const out = document.getElementById('baby-names-output');
@@ -683,34 +679,24 @@
       alert("Lo Shu Matrix computed successfully!");
     }
 
-    // Tarot Reshuffle Handler
-    const fullTarotDeck = [
-      { icon: "🎒", name: "The Fool", desc: "New beginnings, spontaneity." },
-      { icon: "🪄", name: "The Magician", desc: "Manifestation, active will." },
-      { icon: "⭐", name: "The Star", desc: "Hope, clarity, renewal." },
-      { icon: "⚖️", name: "Justice", desc: "Truth, fairness, law." },
-      { icon: "👑", name: "The Emperor", desc: "Authority, structure." },
-      { icon: "☸️", name: "Wheel of Fortune", desc: "Karmic cycles, destiny." }
+    // Cosmic Feed
+    let cosmicFeedPosts = JSON.parse(localStorage.getItem('dm_cosmic_feed')) || [
+      { title: "Saturn's Transit in Aquarius", category: "PLANETARY TRANSIT", date: "Today", content: "Shani Dev in Aquarius aspects 9th, 1st, and 4th houses. Hard work yields long-term rewards." }
     ];
-    function drawDailyTarot() {
-      const pick = fullTarotDeck[Math.floor(Math.random() * fullTarotDeck.length)];
-      document.getElementById('tc-icon').textContent = pick.icon;
-      document.getElementById('tc-name').textContent = pick.name;
-      document.getElementById('tc-guide').textContent = pick.desc;
+    function renderFeed() {
+      const fs = document.getElementById('feed-stream');
+      if (!fs) return;
+      fs.innerHTML = cosmicFeedPosts.map(f => `<div class="p-5 bg-cosmic-900 border border-slate-800 rounded-2xl"><div class="text-gold-400 font-bold mb-1">${f.category} • ${f.date}</div><h3 class="font-bold text-white text-sm mb-1">${f.title}</h3><p class="text-slate-300 leading-relaxed">${f.content}</p></div>`).join('');
+      if (isMasterAdmin) document.getElementById('feed-composer').classList.remove('hidden');
     }
-    function drawTarotSpread() {
-      document.getElementById('spread-card-1').classList.remove('flipped');
-      document.getElementById('spread-card-2').classList.remove('flipped');
-      document.getElementById('spread-card-3').classList.remove('flipped');
-
-      setTimeout(() => {
-        const shuffled = [...fullTarotDeck].sort(() => 0.5 - Math.random());
-        for(let i=1; i<=3; i++) {
-          document.getElementById('ts-icon-'+i).textContent = shuffled[i-1].icon;
-          document.getElementById('ts-name-'+i).textContent = shuffled[i-1].name;
-          document.getElementById('ts-desc-'+i).textContent = shuffled[i-1].desc;
-        }
-      }, 300);
+    function postFeed() {
+      const t = document.getElementById('f-title').value;
+      const c = document.getElementById('f-body').value;
+      if(!t || !c) return;
+      cosmicFeedPosts.unshift({ title: t, content: c, category: "ANNOUNCEMENT", date: "Today" });
+      localStorage.setItem('dm_cosmic_feed', JSON.stringify(cosmicFeedPosts));
+      renderFeed();
+      document.getElementById('f-title').value = ''; document.getElementById('f-body').value = '';
     }
 
     // Store
@@ -754,7 +740,7 @@
       document.getElementById('milan-logged-out').classList.remove('hidden');
     }
 
-    // Admin Authentication & Session Management
+    // Admin
     function handleAdminLogin(e) {
       e.preventDefault();
       const id = document.getElementById('admin-uid').value.trim();
@@ -766,7 +752,6 @@
         alert("👑 Master Admin Authenticated Successfully!");
       } else { alert("❌ Invalid Admin Credentials."); }
     }
-
     function renderAdmin() {
       const locked = document.getElementById('admin-locked');
       const unlocked = document.getElementById('admin-unlocked');
@@ -816,7 +801,13 @@
       document.getElementById('payment-modal').classList.remove('hidden');
     }
     function closePaymentModal() { document.getElementById('payment-modal').classList.add('hidden'); }
-    function handleUtrSubmission(e) { e.preventDefault(); closePaymentModal(); alert("UTR Submitted successfully!"); }
+    function handleUtrSubmission(e) { 
+      e.preventDefault(); 
+      closePaymentModal(); 
+      alert("UTR Submitted successfully! Unlocking paid report state...");
+      // Unlock Numerology if payment was for numerology
+      document.getElementById('numerology-unlocked-section')?.classList.remove('hidden');
+    }
 
     window.addEventListener('DOMContentLoaded', () => {
       if (isMasterAdmin) renderAdmin();
@@ -826,4 +817,3 @@
   </script>
 </body>
 </html>
-
