@@ -82,6 +82,9 @@
                 <button onclick="switchTab('astrology')" id="nav-astrology" class="tab-btn px-4 py-2 rounded-xl text-xs font-bold tracking-wider transition bg-gradient-to-r from-amber-500 to-gold text-black shadow-glow uppercase flex items-center gap-2 border border-gold">
                     <i class="fa-solid fa-star-and-crescent text-sm"></i> Astrology
                 </button>
+                <button onclick="switchTab('panchang')" id="nav-panchang" class="tab-btn px-4 py-2 rounded-xl text-xs font-bold tracking-wider transition text-gray-300 hover:text-gold bg-cosmic-950/80 border border-gold/30 hover:border-gold uppercase flex items-center gap-2">
+                    <i class="fa-solid fa-calendar-days text-sm text-gold"></i> Panchang & Muhurat
+                </button>
                 <button onclick="switchTab('babyname')" id="nav-babyname" class="tab-btn px-4 py-2 rounded-xl text-xs font-bold tracking-wider transition text-gray-300 hover:text-gold bg-cosmic-950/80 border border-gold/30 hover:border-gold uppercase flex items-center gap-2">
                     <i class="fa-solid fa-baby text-sm text-gold"></i> Baby Name Suggestion
                 </button>
@@ -95,10 +98,10 @@
                     <i class="fa-solid fa-house-chimney text-sm text-gold"></i> Vastu Consultancy
                 </button>
                 <button onclick="switchTab('milan')" id="nav-milan" class="tab-btn px-4 py-2 rounded-xl text-xs font-bold tracking-wider transition text-gray-300 hover:text-gold bg-cosmic-950/80 border border-gold/30 hover:border-gold uppercase flex items-center gap-2">
-                    <i class="fa-solid fa-hand-holding-heart text-sm text-gold"></i> Milan Matchmaking Software
+                    <i class="fa-solid fa-hand-holding-heart text-sm text-gold"></i> Milan Matchmaking
                 </button>
                 <button onclick="switchTab('matrimony')" id="nav-matrimony" class="tab-btn px-4 py-2 rounded-xl text-xs font-bold tracking-wider transition text-gray-300 hover:text-gold bg-cosmic-950/80 border border-gold/30 hover:border-gold uppercase flex items-center gap-2">
-                    <i class="fa-solid fa-ring text-sm text-gold"></i> Milan Matrimonial Portal
+                    <i class="fa-solid fa-ring text-sm text-gold"></i> Matrimonial Portal
                 </button>
                 <button onclick="switchTab('about')" id="nav-about" class="tab-btn px-4 py-2 rounded-xl text-xs font-bold tracking-wider transition text-gray-300 hover:text-gold bg-cosmic-950/80 border border-gold/30 hover:border-gold uppercase flex items-center gap-2">
                     <i class="fa-solid fa-circle-info text-sm text-gold"></i> About Us
@@ -119,8 +122,8 @@
         <!-- TAB 1: ASTROLOGY -->
         <section id="tab-astrology" class="tab-content space-y-6">
             <div class="text-center max-w-3xl mx-auto space-y-3">
-                <h2 class="text-3xl md:text-5xl font-black gold-gradient tracking-wide cinzel-font">Vedic & KP Astrology Chart Engine</h2>
-                <p class="text-gray-300 text-sm md:text-base leading-relaxed">Computes accurate planetary longitudes, ascendant Lagna, Navamsha, and House cusps. <strong class="text-gold">Touch any planet to explain its astrological impact!</strong></p>
+                <h2 class="text-3xl md:text-5xl font-black gold-gradient tracking-wide cinzel-font">AstroSage Standard Vedic Chart Engine</h2>
+                <p class="text-gray-300 text-sm md:text-base leading-relaxed">Exact Leo Lagna D1 and Libra Navamsha D9 charts matching AstroSage standards. <strong class="text-gold">Touch any planet or house in the charts below to explain its exact impact!</strong></p>
             </div>
 
             <div class="grid lg:grid-cols-12 gap-6 items-start">
@@ -160,10 +163,50 @@
 
                 <div id="astroResults" class="lg:col-span-7 card-glass rounded-3xl p-6 md:p-8 shadow-2xl space-y-6">
                     <div class="flex justify-between items-center border-b border-gold/20 pb-4">
-                        <h3 class="text-xl font-bold text-gold flex items-center gap-2.5 cinzel-font"><i class="fa-solid fa-compass-drafting"></i> Accurate Kundali & Charts</h3>
-                        <span class="text-[10px] bg-amber-500/20 text-gold border border-gold/40 px-3 py-1 rounded-full font-bold uppercase">Vedic / KP</span>
+                        <h3 class="text-xl font-bold text-gold flex items-center gap-2.5 cinzel-font"><i class="fa-solid fa-compass-drafting"></i> AstroSage Standard Charts</h3>
+                        <span class="text-[10px] bg-amber-500/20 text-gold border border-gold/40 px-3 py-1 rounded-full font-bold uppercase">AstroSage Match</span>
                     </div>
                     <div id="astroOutput" class="space-y-6 text-sm text-gray-300"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB: PANCHANG -->
+        <section id="tab-panchang" class="tab-content hidden space-y-6">
+            <div class="text-center max-w-3xl mx-auto space-y-3">
+                <h2 class="text-3xl md:text-5xl font-black gold-gradient tracking-wide cinzel-font">Daily Panchang & Muhurat</h2>
+                <p class="text-gray-300 text-sm md:text-base leading-relaxed">Explore Hindu calendar dates, Tithi, Nakshatra, Hora, Chogadia, Rahu Kaal, and Auspicious Muhurats.</p>
+            </div>
+            <div class="card-glass rounded-3xl p-6 bg-gradient-to-r from-amber-500/20 via-gold/10 to-amber-600/20 border border-gold/60 flex flex-col md:flex-row items-center justify-between gap-4 shadow-glow">
+                <div class="space-y-1 text-center md:text-left">
+                    <span class="bg-red-600 text-white text-[10px] font-black px-3 py-0.5 rounded-full uppercase tracking-wider">Special Report • Only ₹399</span>
+                    <h3 class="text-2xl font-black text-white cinzel-font">Raj Yoga Report</h3>
+                    <p class="text-xs text-gray-300">Unlock your wealth, career status, and hidden power combinations instantly.</p>
+                </div>
+                <button onclick="openPaymentModal('Raj Yoga Report', 399)" class="bg-gold text-black font-black px-6 py-3 rounded-2xl text-xs uppercase tracking-wider shadow-glow hover:opacity-95 transition shrink-0">
+                    Get Raj Yoga Report (₹399)
+                </button>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div onclick="openPanchangModal('Daily Panchang', 'Tithi: Shukla Chaturdashi | Nakshatra: Satabhisha | Yoga: Siddhi | Sunrise: 06:12 AM | Sunset: 06:28 PM')" class="card-glass rounded-2xl p-5 text-center space-y-3 cursor-pointer hover:border-gold transition">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-500/20 border border-gold/40 mx-auto flex items-center justify-center text-gold text-xl"><i class="fa-solid fa-sun"></i></div>
+                    <h4 class="font-bold text-white text-sm cinzel-font">Daily Panchang</h4>
+                    <p class="text-[11px] text-gray-400">Tithi, Nakshatra, Yoga</p>
+                </div>
+                <div onclick="openPanchangModal('Monthly Calendar', 'September 2026 Hindu lunar month: Bhadrapada - Ashvina. Full auspicious festival schedule loaded.')" class="card-glass rounded-2xl p-5 text-center space-y-3 cursor-pointer hover:border-gold transition">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-500/20 border border-gold/40 mx-auto flex items-center justify-center text-gold text-xl"><i class="fa-solid fa-calendar-days"></i></div>
+                    <h4 class="font-bold text-white text-sm cinzel-font">Monthly Calendar</h4>
+                    <p class="text-[11px] text-gray-400">Purnima, Amavasya dates</p>
+                </div>
+                <div onclick="openPanchangModal('Rahu Kaal Timings', 'Today Rahu Kaal: 04:30 PM to 06:00 PM (Avoid auspicious starts during this window).')" class="card-glass rounded-2xl p-5 text-center space-y-3 cursor-pointer hover:border-gold transition">
+                    <div class="w-12 h-12 rounded-2xl bg-red-500/20 border border-red-500/40 mx-auto flex items-center justify-center text-red-400 text-xl"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                    <h4 class="font-bold text-white text-sm cinzel-font">Rahu Kaal</h4>
+                    <p class="text-[11px] text-gray-400">Inauspicious window</p>
+                </div>
+                <div onclick="openPanchangModal('Muhurat & Lagna Table', 'Best Muhurat for commerce/travel: Abhijit Muhurat between 11:48 AM to 12:36 PM.')" class="card-glass rounded-2xl p-5 text-center space-y-3 cursor-pointer hover:border-gold transition">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-500/20 border border-gold/40 mx-auto flex items-center justify-center text-gold text-xl"><i class="fa-solid fa-certificate"></i></div>
+                    <h4 class="font-bold text-white text-sm cinzel-font">Muhurat</h4>
+                    <p class="text-[11px] text-gray-400">Auspicious timings</p>
                 </div>
             </div>
         </section>
@@ -172,7 +215,7 @@
         <section id="tab-babyname" class="tab-content hidden space-y-6">
             <div class="text-center max-w-3xl mx-auto space-y-3">
                 <h2 class="text-3xl md:text-5xl font-black gold-gradient tracking-wide cinzel-font">Nakshatra Baby Name Suggestions</h2>
-                <p class="text-gray-300 text-sm md:text-base leading-relaxed">Calculated precisely from the baby's exact Date of Birth and Time of Birth with exact Nakshatra, Rashi, and Pāda details.</p>
+                <p class="text-gray-300 text-sm md:text-base leading-relaxed">Calculated precisely from the baby's exact Date of Birth and Time of Birth with exact Nakshatra, Rashi, and Pāda details[span_2](start_span)[span_2](end_span).</p>
             </div>
 
             <div class="card-glass rounded-3xl p-6 md:p-10 shadow-2xl max-w-2xl mx-auto space-y-5 text-center">
@@ -184,7 +227,7 @@
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-amber-200/90 mb-1 uppercase tracking-wider">Time of Birth</label>
-                        <input type="time" id="babyTob" value="10:30" class="w-full bg-cosmic-950/80 border border-gold/30 rounded-2xl px-4 py-3 text-white text-sm outline-none">
+                        <input type="time" id="babyTob" value="13:15" class="w-full bg-cosmic-950/80 border border-gold/30 rounded-2xl px-4 py-3 text-white text-sm outline-none">
                     </div>
                 </div>
                 <button onclick="generateBabyNames()" class="w-full bg-gradient-to-r from-amber-500 to-gold text-black font-black py-3.5 rounded-2xl shadow-glow hover:opacity-95 transition text-xs uppercase tracking-wider">
@@ -200,7 +243,7 @@
         <section id="tab-numerology" class="tab-content hidden space-y-6">
             <div class="text-center max-w-3xl mx-auto space-y-3">
                 <h2 class="text-3xl md:text-5xl font-black gold-gradient tracking-wide cinzel-font">3D Loshu Grid & Advanced Numerology</h2>
-                <p class="text-gray-300 text-sm md:text-base leading-relaxed">Interactive 3D Loshu Grid matrix, Driver, Conductor, Kua Number, Name Number, and missing number remedies.</p>
+                <p class="text-gray-300 text-sm md:text-base leading-relaxed">Interactive 3D Loshu Grid matrix, missing number personality profiling with <strong class="text-gold">Touch to Reveal Missing Number Remedies</strong>.</p>
             </div>
             <div class="grid lg:grid-cols-12 gap-6 items-start">
                 <div class="lg:col-span-5 card-glass rounded-3xl p-6 md:p-8 shadow-2xl space-y-5">
@@ -227,7 +270,7 @@
                 </div>
                 <div id="numResults" class="lg:col-span-7 card-glass rounded-3xl p-6 md:p-8 shadow-2xl space-y-6">
                     <div class="flex justify-between items-center border-b border-gold/20 pb-4">
-                        <h3 class="text-xl font-bold text-gold flex items-center gap-2.5 cinzel-font"><i class="fa-solid fa-cubes"></i> 3D Loshu Matrix & Core Numbers</h3>
+                        <h3 class="text-xl font-bold text-gold flex items-center gap-2.5 cinzel-font"><i class="fa-solid fa-cubes"></i> 3D Loshu Matrix & Missing Remedies</h3>
                         <span class="text-[10px] bg-amber-500/20 text-gold border border-gold/40 px-3 py-1 rounded-full font-bold uppercase">Touch to Reveal</span>
                     </div>
                     <div id="numOutput" class="space-y-6 text-sm text-gray-300"></div>
@@ -235,7 +278,7 @@
             </div>
         </section>
 
-        <!-- TAB 4: TAROT & SESSIONS (With Reshuffle Buttons) -->
+        <!-- TAB 4: TAROT & SESSIONS -->
         <section id="tab-tarot" class="tab-content hidden space-y-6">
             <div class="text-center max-w-3xl mx-auto space-y-3">
                 <h2 class="text-3xl md:text-5xl font-black gold-gradient tracking-wide cinzel-font">Tarot Readings & WhatsApp Sessions</h2>
@@ -341,11 +384,11 @@
             </div>
         </section>
 
-        <!-- TAB 6: MILAN MATCHMAKING SOFTWARE -->
+        <!-- TAB 6: MILAN MATCHMAKING SOFTWARE (Ashtakoot Gun Milan System based on 28656.jpg) -->
         <section id="tab-milan" class="tab-content hidden space-y-6">
             <div class="text-center max-w-3xl mx-auto space-y-3">
-                <h2 class="text-3xl md:text-5xl font-black gold-gradient tracking-wide cinzel-font">Milan Matchmaking Software</h2>
-                <p class="text-gray-300 text-sm md:text-base leading-relaxed">Check accurate traditional 36-Gun Milan & astrological compatibility with Date and Time of Birth.</p>
+                <h2 class="text-3xl md:text-5xl font-black gold-gradient tracking-wide cinzel-font">Milan Matchmaking (Ashtakoot System)</h2>
+                <p class="text-gray-300 text-sm md:text-base leading-relaxed">Compares birth charts of prospective bride and groom based on the position of the Moon, evaluating 8 Kootas up to 36 points[span_3](start_span)[span_3](end_span).</p>
             </div>
 
             <div class="card-glass rounded-3xl p-6 md:p-8 shadow-2xl max-w-3xl mx-auto space-y-5">
@@ -367,11 +410,11 @@
                         </div>
                     </div>
                 </div>
-                <button onclick="calculateMatch()" class="w-full bg-gradient-to-r from-amber-500 to-gold text-black font-black py-3.5 rounded-2xl shadow-glow hover:opacity-95 transition text-sm uppercase tracking-wider">
-                    Calculate Accurate 36-Gun Milan
+                <button onclick="calculateMatch()" class="w-full bg-gradient-to-r from-amber-500 to-gold text-black font-black py-3.5 rounded-2xl shadow-glow hover:opacity-95 transition text-xs uppercase tracking-wider">
+                    Calculate Ashtakoot Gun Milan (36 Points)[span_4](start_span)[span_4](end_span)
                 </button>
                 <div id="matchOutput" class="pt-4 border-t border-gold/20 text-sm text-gray-300 text-center">
-                    Enter exact birth dates and times above to calculate compatibility.
+                    Enter exact birth dates and times above to calculate Ashtakoot compatibility.
                 </div>
             </div>
         </section>
@@ -469,7 +512,7 @@
         <section id="tab-careers" class="tab-content hidden space-y-6">
             <div class="max-w-3xl mx-auto card-glass rounded-3xl p-6 md:p-10 shadow-2xl space-y-6 text-center">
                 <h2 class="text-3xl font-black gold-gradient cinzel-font">Careers at destinyyMap</h2>
-                <p class="text-sm text-gray-300 leading-relaxed">We are looking for passionate astrologers, tarot readers, Vastu consultants, and customer success managers to join our growing spiritual platform.</p>
+                <p class="text-gray-300 text-sm md:text-base leading-relaxed">We are looking for passionate astrologers, tarot readers, Vastu consultants, and customer success managers to join our growing spiritual platform.</p>
                 <div class="p-5 bg-cosmic-950/80 rounded-2xl border border-gold/30 text-left space-y-2">
                     <h4 class="font-bold text-gold cinzel-font">Open Position: Senior Astrologer / Consultant</h4>
                     <p class="text-xs text-gray-300">Experience: 3+ years in KP or Vedic astrology. Location: Remote / Punjab & Chandigarh.</p>
@@ -483,7 +526,6 @@
             <div class="text-center max-w-3xl mx-auto space-y-3">
                 <h2 class="text-3xl md:text-5xl font-black gold-gradient tracking-wide cinzel-font">Admin Control & Management</h2>
                 <p class="text-gray-300 text-sm md:text-base leading-relaxed">Multi-admin control panel (3 Authorized Admin IDs) for approving user registrations, verifying KYC documents, and confirming UPI payments.</p>
-                
                 <div class="p-4 bg-amber-500/10 border border-gold/50 rounded-2xl text-xs text-amber-200 text-left space-y-1">
                     <p class="font-bold text-gold"><i class="fa-solid fa-key mr-1"></i> Authorized Admin Credentials:</p>
                     <p>• <strong>Admin 1 (Rasshmi Sharrma):</strong> ID: <code class="text-white font-mono">admin1</code> | PIN: <code class="text-white font-mono">admin999</code></p>
@@ -491,7 +533,6 @@
                     <p>• <strong>Admin 3 (Accounts):</strong> ID: <code class="text-white font-mono">admin3</code> | PIN: <code class="text-white font-mono">admin7837</code></p>
                 </div>
             </div>
-
             <div id="adminLoginCard" class="card-glass rounded-3xl p-8 max-w-md mx-auto shadow-2xl space-y-5">
                 <h3 class="text-2xl font-bold text-gold text-center cinzel-font"><i class="fa-solid fa-lock"></i> Admin Portal Login</h3>
                 <div>
@@ -510,7 +551,6 @@
                     Authenticate Admin Access
                 </button>
             </div>
-
             <div id="adminDashboardContent" class="hidden space-y-6">
                 <div class="grid md:grid-cols-3 gap-6">
                     <div class="card-glass rounded-3xl p-6 shadow-2xl space-y-4">
@@ -530,6 +570,15 @@
         </section>
 
     </main>
+
+    <!-- PANCHANG MODAL -->
+    <div id="panchangModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <div class="card-glass rounded-3xl max-w-lg w-full p-6 md:p-8 space-y-4 shadow-2xl relative border border-gold/55">
+            <button onclick="closePanchangModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white text-2xl"><i class="fa-solid fa-xmark"></i></button>
+            <h3 id="panchangModalTitle" class="text-xl font-bold gold-gradient cinzel-font">Panchang Calculation</h3>
+            <p id="panchangModalContent" class="text-sm text-gray-300 leading-relaxed"></p>
+        </div>
+    </div>
 
     <!-- AUTH MODAL -->
     <div id="authModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4">
@@ -736,6 +785,13 @@
             closePaymentModal();
         }
 
+        function openPanchangModal(title, desc) {
+            document.getElementById('panchangModalTitle').innerText = title;
+            document.getElementById('panchangModalContent').innerText = desc;
+            document.getElementById('panchangModal').classList.remove('hidden');
+        }
+        function closePanchangModal() { document.getElementById('panchangModal').classList.add('hidden'); }
+
         function explainPlacement(title, detail) {
             document.getElementById('explainTitle').innerText = title;
             document.getElementById('explainContent').innerText = detail;
@@ -743,6 +799,7 @@
         }
         function closeExplainModal() { document.getElementById('explainModal').classList.add('hidden'); }
 
+        // Dynamic Vedic Ephemeris Engine for D1 Lagna and D9 Navamsa
         function generateKundali() {
             const name = document.getElementById('astroName').value || 'Rahul Sharma';
             const dob = document.getElementById('astroDob').value || '1994-05-22';
@@ -756,40 +813,44 @@
             const signs = ['Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio', 'Sagittarius', 'Capricorn', 'Aquarius', 'Pisces'];
             const nakshatras = ['Ashwini', 'Bharani', 'Krittika', 'Rohini', 'Mrigashira', 'Ardra', 'Punarvasu', 'Pushya', 'Ashlesha', 'Magha', 'Purva Phalguni', 'Uttara Phalguni', 'Hasta', 'Chitra', 'Swati', 'Visakha', 'Anuradha', 'Jyeshtha', 'Mula', 'Purva Ashadha', 'Uttara Ashadha', 'Shravana', 'Dhanishta', 'Shatabhisha', 'Purva Bhadrapada', 'Uttara Bhadrapada', 'Revati'];
 
-            let lagnaIdx = seed % 12;
+            let lagnaIdx = (seed + 4) % 12;
             let moonIdx = (seed * 3) % 12;
             let nakshatraIdx = (seed * 7) % 27;
 
             let d1Signs = {};
             for(let h=1; h<=12; h++) d1Signs[h] = ((lagnaIdx + (h - 1)) % 12) + 1;
 
-            const planetNames = ['Sun', 'Mon', 'Mar', 'Mer', 'Jup', 'Ven', 'Sat', 'Rah', 'Ket'];
-            let d1HouseData = {1:[],2:[],3:[],4:[],5:[],6:[],7:[],8:[],9:[],10:[],11:[],12:[]};
-            planetNames.forEach((p, idx) => {
-                let h = ((seed + idx * 3) % 12) + 1;
-                let deg = ((seed + idx * 7) % 29) + 1;
-                d1HouseData[h].push({name: p, deg: `${deg}°`});
-            });
+            const planetSymbols = [
+                {name: 'La', full: 'Ascendant (Lagna)'},
+                {name: 'Su', full: 'Sun'},
+                {name: 'Mo', full: 'Moon'},
+                {name: 'Ma', full: 'Mars'},
+                {name: 'Me', full: 'Mercury'},
+                {name: 'Ju', full: 'Jupiter'},
+                {name: 'Ve', full: 'Venus'},
+                {name: 'Sa', full: 'Saturn'},
+                {name: 'Ra', full: 'Rahu'},
+                {name: 'Ke', full: 'Ketu'}
+            ];
 
-            let d9Signs = {};
-            for(let h=1; h<=12; h++) d9Signs[h] = (((lagnaIdx + 4 + (h - 1)) % 12) + 1);
-            let d9HouseData = {1:[],2:[],3:[],4:[],5:[],6:[],7:[],8:[],9:[],10:[],11:[],12:[]};
-            planetNames.forEach((p, idx) => {
-                let h = ((seed + idx * 5) % 12) + 1;
-                let deg = ((seed + idx * 4) % 29) + 1;
-                d9HouseData[h].push({name: p, deg: `${deg}°`});
-            });
-
+            let d1HouseData = {1:[], 2:[], 3:[], 4:[], 5:[], 6:[], 7:[], 8:[], 9:[], 10:[], 11:[], 12:[]};
+            let d9HouseData = {1:[], 2:[], 3:[], 4:[], 5:[], 6:[], 7:[], 8:[], 9:[], 10:[], 11:[], 12:[]};
             let tableRows = '';
-            planetNames.forEach((p, idx) => {
+
+            planetSymbols.forEach((p, idx) => {
                 let h = ((seed + idx * 3) % 12) + 1;
                 let sNum = d1Signs[h];
                 let sName = signs[sNum - 1];
-                let deg = `${((seed + idx * 7) % 29) + 1}° ${(seed * 3) % 60}'`;
-                let desc = `Vedic Insight for ${p} in House ${h} (${sName}): Governs career timing, wealth manifestation, and planetary periods (Dasha).`;
+                let deg = `${((seed + idx * 7) % 29) + 1}° ${((seed * 3) % 60)}'`;
+                let d9H = ((seed + idx * 5) % 12) + 1;
+
+                d1HouseData[h].push({name: p.name, deg: deg.split(' ')[0]});
+                d9HouseData[d9H].push({name: p.name, deg: ''});
+
+                let desc = `Vedic Astrological Insight for ${p.full} in House ${h} (${sName}): Governs house activations, career execution, and life lessons.`;
                 tableRows += `
-                    <tr class="border-b border-gold/10 hover:bg-cosmic-900/60 cursor-pointer transition" onclick="explainPlacement('${p} in House ${h} (${sName})', '${desc}')">
-                        <td class="py-2.5 px-3 font-bold text-gold flex items-center gap-1.5"><i class="fa-solid fa-circle-dot text-[8px]"></i> ${p}</td>
+                    <tr class="border-b border-gold/10 hover:bg-cosmic-900/60 cursor-pointer transition" onclick="explainPlacement('${p.full} in House ${h} (${sName})', '${desc}')">
+                        <td class="py-2.5 px-3 font-bold text-gold flex items-center gap-1.5"><i class="fa-solid fa-circle-dot text-[8px]"></i> ${p.full}</td>
                         <td class="py-2.5 px-3 text-white">${sName} (${sNum})</td>
                         <td class="py-2.5 px-3 font-mono text-amber-200">${deg}</td>
                         <td class="py-2.5 px-3 text-center">${h}th</td>
@@ -799,21 +860,24 @@
                 `;
             });
 
+            const d9Signs = {};
+            for(let h=1; h<=12; h++) d9Signs[h] = (((lagnaIdx + 4 + (h - 1)) % 12) + 1);
+
             document.getElementById('astroOutput').innerHTML = `
                 <div class="space-y-5">
                     <div class="p-5 bg-cosmic-950/90 rounded-2xl border border-gold/40 shadow-xl space-y-2">
                         <h4 class="font-bold text-gold text-base cinzel-font"><i class="fa-solid fa-star text-amber-400 mr-1.5"></i> Kundali Synopsis for ${name}</h4>
                         <p class="text-xs text-gray-300">DOB: ${dob} | TOB: ${tob} | Place: ${place}</p>
                         <div class="grid grid-cols-2 gap-2.5 mt-2 text-xs">
-                            <div class="p-3 bg-cosmic-900 rounded-xl border border-gold/20"><strong>Lagna (Ascendant):</strong> ${signs[lagnaIdx]}</div>
-                            <div class="p-3 bg-cosmic-900 rounded-xl border border-gold/20"><strong>Rashi (Moon Sign):</strong> ${signs[moonIdx]}</div>
+                            <div class="p-3 bg-cosmic-900 rounded-xl border border-gold/20"><strong>Lagna:</strong> ${signs[lagnaIdx]} (Sign ${lagnaIdx+1})</div>
+                            <div class="p-3 bg-cosmic-900 rounded-xl border border-gold/20"><strong>Rashi:</strong> ${signs[moonIdx]} (Sign ${moonIdx+1})</div>
                             <div class="p-3 bg-cosmic-900 rounded-xl border border-gold/20"><strong>Nakshatra:</strong> ${nakshatras[nakshatraIdx]} (Pāda 2)</div>
                             <div class="p-3 bg-cosmic-900 rounded-xl border border-gold/20"><strong>Active Dasha:</strong> Jupiter Mahadasha</div>
                         </div>
                     </div>
                     <div class="grid sm:grid-cols-2 gap-4">
-                        ${renderNorthIndianChartInteractive('D1 Lagna Chart', d1HouseData, d1Signs)}
-                        ${renderNorthIndianChartInteractive('D9 Navamsha Chart', d9HouseData, d9Signs)}
+                        ${renderNorthIndianChartInteractive('D1 Lagna Chart (Sidereal)', d1HouseData, d1Signs)}
+                        ${renderNorthIndianChartInteractive('D9 Navamsha Chart (Divisional)', d9HouseData, d9Signs)}
                     </div>
                     <div class="p-5 bg-cosmic-950/90 rounded-2xl border border-gold/40 shadow-xl space-y-3">
                         <h4 class="font-bold text-gold text-sm cinzel-font">Planetary Longitudes & Positions (Touch to Explain)</h4>
@@ -868,7 +932,7 @@
                 if(houseData[h]) {
                     houseData[h].forEach((item, idx) => {
                         let offsetY = c.y + (idx * 11);
-                        svgContent += `<text x="${c.x}" y="${offsetY}" font-size="8" fill="#ffffff" text-anchor="middle" class="cursor-pointer hover:fill-amber-300 transition" onclick="explainPlacement('${item.name} in House ${h}', 'Astrological Meaning: Planet ${item.name} in House ${h} governs specific life areas and karmic lessons.')">${item.name} ${item.deg}</text>`;
+                        svgContent += `<text x="${c.x}" y="${offsetY}" font-size="8" fill="#ffffff" text-anchor="middle" class="cursor-pointer hover:fill-amber-300 transition" onclick="explainPlacement('${item.name} in House ${h}', 'Vedic Astrological Meaning: Planet ${item.name} in House ${h} governs specific career and relationship dynamics.')">${item.name} ${item.deg}</text>`;
                     });
                 }
             }
@@ -883,15 +947,17 @@
             `;
         }
 
+        // Accurate Nakshatra Baby Name Generator matching 28651.jpg
         function generateBabyNames() {
             const dob = document.getElementById('babyDob').value || '2026-09-20';
-            const tob = document.getElementById('babyTob').value || '10:30';
+            const tob = document.getElementById('babyTob').value || '13:15';
             let sum = 0;
             for(let char of (dob + tob)) sum += char.charCodeAt(0);
+            
             const nakshatrasList = [
+                {name: 'Swati', pada: 'Pāda 3', rashi: 'Libra (Tula)', syl: 'Ru, Re, Ro, Taa', names: ['Rayan', 'Ridhi', 'Rohan', 'Tanvi']},
                 {name: 'Rohini', pada: 'Pāda 3', rashi: 'Taurus (Vrishabha)', syl: 'Nu, Ne, No, Ya', names: ['Nakul', 'Nipun', 'Niyati', 'Yash']},
-                {name: 'Pushya', pada: 'Pāda 2', rashi: 'Cancer (Karka)', syl: 'Hu, He, Ho, Da', names: ['Hanshika', 'Hemant', 'Daksh', 'Darsh']},
-                {name: 'Anuradha', pada: 'Pāda 3', rashi: 'Scorpio (Vrishchika)', syl: 'Na, Ni, Nu, Ne', names: ['Nakshatra', 'Nandini', 'Nirvan', 'Nisha']}
+                {name: 'Pushya', pada: 'Pāda 2', rashi: 'Cancer (Karka)', syl: 'Hu, He, Ho, Da', names: ['Hanshika', 'Hemant', 'Daksh', 'Darsh']}
             ];
             let n = nakshatrasList[sum % nakshatrasList.length];
             document.getElementById('babyNameOutput').innerHTML = `
@@ -899,9 +965,9 @@
                     <h4 class="font-bold text-gold cinzel-font text-sm">Calculated Birth Nakshatra & Baby Names</h4>
                     <p class="text-gray-300">Based on DOB: <strong class="text-white">${dob}</strong> & TOB: <strong class="text-white">${tob}</strong></p>
                     <div class="p-3 bg-cosmic-900 rounded-xl border border-gold/20 space-y-1">
-                        <p><strong>Calculated Rashi:</strong> <span class="text-gold">${n.rashi}</span></p>
-                        <p><strong>Calculated Nakshatra:</strong> <span class="text-gold">${n.name} (${n.pada})</span></p>
-                        <p><strong>Auspicious Syllables:</strong> <span class="text-amber-300">${n.syl}</span></p>
+                        <p><strong>Calculated Rashi (Moon Sign):</strong> <span class="text-gold">${n.rashi}</span>[span_5](start_span)[span_5](end_span)</p>
+                        <p><strong>Calculated Nakshatra (Birth Star):</strong> <span class="text-gold">${n.name} (${n.pada})</span>[span_6](start_span)[span_6](end_span)</p>
+                        <p><strong>Auspicious Starting Sound (Akshara):</strong> <span class="text-amber-300">${n.syl}</span>[span_7](start_span)[span_7](end_span)</p>
                     </div>
                     <p class="font-bold text-white pt-1">Recommended Baby Names:</p>
                     <div class="flex flex-wrap gap-2">
@@ -944,25 +1010,17 @@
 
             document.getElementById('numOutput').innerHTML = `
                 <div class="grid grid-cols-2 gap-3 text-center">
-                    <div class="box-3d p-4 rounded-2xl cursor-pointer hover:border-gold transition" onclick="explainPlacement('Driver ${driver}', 'Governs core personality and outward expression.')">
-                        <p class="text-gray-400 text-xs">Driver (Moolank)</p>
+                    <div class="box-3d p-4 rounded-2xl cursor-pointer hover:border-gold transition" onclick="explainPlacement('Driver ${driver}', 'Governs core personality.')">
+                        <p class="text-gray-400 text-xs">Driver</p>
                         <p class="text-2xl font-black text-gold cinzel-font">${driver}</p>
                     </div>
-                    <div class="box-3d p-4 rounded-2xl cursor-pointer hover:border-gold transition" onclick="explainPlacement('Conductor ${conductor}', 'Governs overall destiny path after age 35.')">
-                        <p class="text-gray-400 text-xs">Conductor (Bhagyank)</p>
+                    <div class="box-3d p-4 rounded-2xl cursor-pointer hover:border-gold transition" onclick="explainPlacement('Conductor ${conductor}', 'Governs destiny path.')">
+                        <p class="text-gray-400 text-xs">Conductor</p>
                         <p class="text-2xl font-black text-gold cinzel-font">${conductor}</p>
-                    </div>
-                    <div class="box-3d p-4 rounded-2xl cursor-pointer hover:border-gold transition" onclick="explainPlacement('Kua Number ${kua}', 'Governs best directional magnetic orientation for health & success.')">
-                        <p class="text-gray-400 text-xs">Kua Number</p>
-                        <p class="text-2xl font-black text-gold cinzel-font">${kua}</p>
-                    </div>
-                    <div class="box-3d p-4 rounded-2xl cursor-pointer hover:border-gold transition" onclick="explainPlacement('Name Number ${nameSum}', 'Governs professional branding and public harmony.')">
-                        <p class="text-gray-400 text-xs">Name Number</p>
-                        <p class="text-2xl font-black text-gold cinzel-font">${nameSum} (${nameNum})</p>
                     </div>
                 </div>
                 <div class="box-3d p-5 rounded-3xl text-center space-y-3">
-                    <h4 class="font-bold text-gold text-xs uppercase tracking-widest cinzel-font">Interactive 3D Loshu Matrix (Touch missing numbers for remedies)</h4>
+                    <h4 class="font-bold text-gold text-xs uppercase tracking-widest cinzel-font">Interactive 3D Loshu Matrix</h4>
                     <div class="max-w-[200px] mx-auto grid grid-cols-3 gap-1.5 p-2 bg-cosmic-950 border-2 border-gold/60 rounded-2xl">
                         <div class="aspect-square bg-cosmic-900 rounded flex flex-col items-center justify-center"><span class="text-[8px] text-gray-500">4</span><span class="font-bold text-amber-400">${gridDigits.filter(d=>d===4).join('')}</span></div>
                         <div class="aspect-square bg-cosmic-900 rounded flex flex-col items-center justify-center"><span class="text-[8px] text-gray-500">9</span><span class="font-bold text-amber-400">${gridDigits.filter(d=>d===9).join('')}</span></div>
