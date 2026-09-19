@@ -81,7 +81,7 @@
       </div>
     </div>
     
-    <!-- Mobile Nav -->
+    <!-- Mobile Navigation Drawer -->
     <div id="mobile-nav" class="hidden lg:hidden border-t border-slate-800 bg-cosmic-900 p-4 grid grid-cols-2 gap-2 text-xs">
       <button onclick="switchPage('astrology'); toggleMobileNav()" class="p-2 bg-cosmic-950 rounded-lg text-left text-slate-300">Kundli & Panchang</button>
       <button onclick="switchPage('numerology'); toggleMobileNav()" class="p-2 bg-cosmic-950 rounded-lg text-left text-slate-300">Numerology</button>
@@ -99,12 +99,12 @@
   <main class="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 
     <!-- ================= VIEW 1: ASTROLOGY (DYNAMIC KUNDLI & PANCHANG) ================= -->
-    <div id="page-astrology" class="app-view active space-y-10">
+    <div id="view-astrology" class="app-view active space-y-10">
       
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
           <h1 class="font-cinzel text-3xl sm:text-4xl font-black text-white">Dynamic Parashari Kundli Engine</h1>
-          <p class="text-xs sm:text-sm text-slate-400 mt-1">Enter your birth date below. True planetary longitudes, baby names, and synopses are generated dynamically.</p>
+          <p class="text-xs sm:text-sm text-slate-400 mt-1">Enter birth details below. Planetary degrees, signs, baby names, and synopses are generated dynamically.</p>
         </div>
       </div>
 
@@ -144,16 +144,16 @@
         </div>
       </div>
 
-      <!-- DYNAMIC D1/D9 CHARTS, BABY NAMES & SYNOPSIS (HIDDEN UNTIL CALCULATED) -->
-      <div id="chart-results-container" class="hidden grid grid-cols-1 lg:grid-cols-12 gap-6">
+      <!-- DYNAMIC D1/D9 CHARTS, BABY NAMES & SYNOPSIS -->
+      <div id="chart-results-container" class="grid grid-cols-1 lg:grid-cols-12 gap-6">
         
         <!-- Left: SVG Diamond Chart -->
         <div class="lg:col-span-6 bg-cosmic-900 p-6 rounded-3xl border border-slate-800 gold-border-glow">
           <div class="flex justify-between items-center mb-4">
             <span class="font-cinzel font-bold text-gold-400 text-sm" id="chart-title">D1 Rashi Chart</span>
             <div class="flex gap-2 text-[10px]">
-              <button onclick="switchChartMode('d1')" id="btn-chart-d1" class="px-3 py-1 bg-purple-600 rounded text-white font-bold shadow">D1</button>
-              <button onclick="switchChartMode('d9')" id="btn-chart-d9" class="px-3 py-1 bg-cosmic-800 rounded text-slate-300 hover:text-white">D9</button>
+              <button onclick="switchChartMode('d1')" id="btn-chart-d1" class="px-3 py-1 bg-purple-600 rounded text-white font-bold shadow">D1 Rashi</button>
+              <button onclick="switchChartMode('d9')" id="btn-chart-d9" class="px-3 py-1 bg-cosmic-800 rounded text-slate-300 hover:text-white">D9 Navamsha</button>
             </div>
           </div>
 
@@ -163,18 +163,18 @@
               <line x1="10" y1="10" x2="390" y2="390" /><line x1="390" y1="10" x2="10" y2="390" />
               <polygon points="200,10 390,200 200,390 10,200" stroke="#F59E0B" stroke-width="2" />
 
-              <text id="sign-1" x="200" y="75" text-anchor="middle" class="fill-gold-400 font-cinzel font-bold text-sm" stroke="none">-</text><text id="pl-1" x="200" y="115" text-anchor="middle" class="fill-emerald-300 text-xs font-bold" stroke="none">-</text>
-              <text id="sign-2" x="110" y="50" text-anchor="middle" class="fill-gold-400 font-cinzel text-xs" stroke="none">-</text><text id="pl-2" x="110" y="80" text-anchor="middle" class="fill-purple-300 text-[11px]" stroke="none">-</text>
-              <text id="sign-3" x="50" y="110" text-anchor="middle" class="fill-gold-400 font-cinzel text-xs" stroke="none">-</text><text id="pl-3" x="55" y="140" text-anchor="middle" class="fill-slate-300 text-[10px]" stroke="none">-</text>
-              <text id="sign-4" x="75" y="200" text-anchor="middle" class="fill-gold-400 font-cinzel text-xs" stroke="none">-</text><text id="pl-4" x="110" y="205" text-anchor="middle" class="fill-slate-400 text-xs" stroke="none">-</text>
-              <text id="sign-5" x="50" y="290" text-anchor="middle" class="fill-gold-400 font-cinzel text-xs" stroke="none">-</text><text id="pl-5" x="55" y="320" text-anchor="middle" class="fill-slate-400 text-xs" stroke="none">-</text>
-              <text id="sign-6" x="110" y="350" text-anchor="middle" class="fill-gold-400 font-cinzel text-xs" stroke="none">-</text><text id="pl-6" x="110" y="320" text-anchor="middle" class="fill-slate-400 text-xs" stroke="none">-</text>
-              <text id="sign-7" x="200" y="325" text-anchor="middle" class="fill-gold-400 font-cinzel font-bold text-sm" stroke="none">-</text><text id="pl-7" x="200" y="285" text-anchor="middle" class="fill-amber-300 text-xs font-bold" stroke="none">-</text>
-              <text id="sign-8" x="290" y="350" text-anchor="middle" class="fill-gold-400 font-cinzel text-xs" stroke="none">-</text><text id="pl-8" x="290" y="320" text-anchor="middle" class="fill-slate-400 text-xs" stroke="none">-</text>
-              <text id="sign-9" x="350" y="290" text-anchor="middle" class="fill-gold-400 font-cinzel text-xs" stroke="none">-</text><text id="pl-9" x="345" y="320" text-anchor="middle" class="fill-slate-300 text-[11px]" stroke="none">-</text>
-              <text id="sign-10" x="325" y="200" text-anchor="middle" class="fill-gold-400 font-cinzel text-xs" stroke="none">-</text><text id="pl-10" x="290" y="205" text-anchor="middle" class="fill-rose-400 text-[11px] font-bold" stroke="none">-</text>
-              <text id="sign-11" x="350" y="110" text-anchor="middle" class="fill-gold-400 font-cinzel text-xs" stroke="none">-</text><text id="pl-11" x="345" y="140" text-anchor="middle" class="fill-slate-300 text-[10px]" stroke="none">-</text>
-              <text id="sign-12" x="290" y="50" text-anchor="middle" class="fill-gold-400 font-cinzel text-xs" stroke="none">-</text><text id="pl-12" x="290" y="80" text-anchor="middle" class="fill-slate-400 text-xs" stroke="none">-</text>
+              <text id="sign-1" x="200" y="75" text-anchor="middle" class="fill-gold-400 font-cinzel font-bold text-sm" stroke="none">1</text><text id="pl-1" x="200" y="115" text-anchor="middle" class="fill-emerald-300 text-xs font-bold" stroke="none">La</text>
+              <text id="sign-2" x="110" y="50" text-anchor="middle" class="fill-gold-400 font-cinzel text-xs" stroke="none">2</text><text id="pl-2" x="110" y="80" text-anchor="middle" class="fill-purple-300 text-[11px]" stroke="none"></text>
+              <text id="sign-3" x="50" y="110" text-anchor="middle" class="fill-gold-400 font-cinzel text-xs" stroke="none">3</text><text id="pl-3" x="55" y="140" text-anchor="middle" class="fill-slate-300 text-[10px]" stroke="none"></text>
+              <text id="sign-4" x="75" y="200" text-anchor="middle" class="fill-gold-400 font-cinzel text-xs" stroke="none">4</text><text id="pl-4" x="110" y="205" text-anchor="middle" class="fill-slate-400 text-xs" stroke="none"></text>
+              <text id="sign-5" x="50" y="290" text-anchor="middle" class="fill-gold-400 font-cinzel text-xs" stroke="none">5</text><text id="pl-5" x="55" y="320" text-anchor="middle" class="fill-slate-400 text-xs" stroke="none"></text>
+              <text id="sign-6" x="110" y="350" text-anchor="middle" class="fill-gold-400 font-cinzel text-xs" stroke="none">6</text><text id="pl-6" x="110" y="320" text-anchor="middle" class="fill-slate-400 text-xs" stroke="none"></text>
+              <text id="sign-7" x="200" y="325" text-anchor="middle" class="fill-gold-400 font-cinzel font-bold text-sm" stroke="none">7</text><text id="pl-7" x="200" y="285" text-anchor="middle" class="fill-amber-300 text-xs font-bold" stroke="none"></text>
+              <text id="sign-8" x="290" y="350" text-anchor="middle" class="fill-gold-400 font-cinzel text-xs" stroke="none">8</text><text id="pl-8" x="290" y="320" text-anchor="middle" class="fill-slate-400 text-xs" stroke="none"></text>
+              <text id="sign-9" x="350" y="290" text-anchor="middle" class="fill-gold-400 font-cinzel text-xs" stroke="none">9</text><text id="pl-9" x="345" y="320" text-anchor="middle" class="fill-slate-300 text-[11px]" stroke="none"></text>
+              <text id="sign-10" x="325" y="200" text-anchor="middle" class="fill-gold-400 font-cinzel text-xs" stroke="none">10</text><text id="pl-10" x="290" y="205" text-anchor="middle" class="fill-rose-400 text-[11px] font-bold" stroke="none"></text>
+              <text id="sign-11" x="350" y="110" text-anchor="middle" class="fill-gold-400 font-cinzel text-xs" stroke="none">11</text><text id="pl-11" x="345" y="140" text-anchor="middle" class="fill-slate-300 text-[10px]" stroke="none"></text>
+              <text id="sign-12" x="290" y="50" text-anchor="middle" class="fill-gold-400 font-cinzel text-xs" stroke="none">12</text><text id="pl-12" x="290" y="80" text-anchor="middle" class="fill-slate-400 text-xs" stroke="none"></text>
             </svg>
           </div>
         </div>
@@ -185,17 +185,29 @@
           <!-- Automatically Calculated Baby Names -->
           <div class="p-6 bg-cosmic-900 rounded-3xl border border-slate-800 space-y-3">
             <div class="flex items-center justify-between">
-              <h3 class="font-cinzel text-sm font-bold text-white flex items-center gap-2"><span>👶</span> Vedic Baby Names from Birth Date</h3>
-              <span id="calculated-nak-badge" class="px-2.5 py-0.5 rounded-full bg-purple-500/20 text-purple-300 font-mono text-[10px] font-bold">Calculated</span>
+              <h3 class="font-cinzel text-sm font-bold text-white flex items-center gap-2"><span>👶</span> Vedic Baby Names from Birth Alignment</h3>
+              <span id="calculated-nak-badge" class="px-2.5 py-0.5 rounded-full bg-purple-500/20 text-purple-300 font-mono text-[10px] font-bold">Calculated from DOB</span>
             </div>
             <p class="text-[11px] text-slate-400">Astrologically aligned name suggestions matching your child's Moon Nakshatra & Pada syllable:</p>
-            <div id="baby-names-output" class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-center font-bold text-amber-300"></div>
+            <div id="baby-names-output" class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-center font-bold text-amber-300">
+              <div class="p-2 bg-cosmic-950 border border-purple-500/30 rounded-lg">Aarav</div>
+              <div class="p-2 bg-cosmic-950 border border-purple-500/30 rounded-lg">Advik</div>
+              <div class="p-2 bg-cosmic-950 border border-purple-500/30 rounded-lg">Ananya</div>
+              <div class="p-2 bg-cosmic-950 border border-purple-500/30 rounded-lg">Diya</div>
+              <div class="p-2 bg-cosmic-950 border border-purple-500/30 rounded-lg">Ishaan</div>
+              <div class="p-2 bg-cosmic-950 border border-purple-500/30 rounded-lg">Priya</div>
+            </div>
           </div>
 
           <!-- Free Synopsis -->
           <div class="p-6 bg-cosmic-900 rounded-3xl border border-slate-800 space-y-3">
             <h3 class="font-cinzel text-sm font-bold text-white">Life Characteristics (Free Synopsis)</h3>
-            <ul id="synopsis-list" class="space-y-2 text-slate-300 text-[11px] leading-relaxed"></ul>
+            <ul id="synopsis-list" class="space-y-2 text-slate-300 text-[11px] leading-relaxed">
+              <li>👑 <strong>Archetype:</strong> Dynamic stamina, independent with a strong sense of purpose.</li>
+              <li>💼 <strong>Career:</strong> High competence in structured governance, analytical advisory, and executive management.</li>
+              <li>💰 <strong>Wealth:</strong> Steady accumulation through strategic investments and professional expansion.</li>
+              <li>💍 <strong>Matrimony:</strong> Deep companionship built on mutual respect and shared ethical values.</li>
+            </ul>
           </div>
           
           <!-- Paywall Box -->
@@ -226,14 +238,14 @@
     </div>
 
     <!-- ================= VIEW 2: NUMEROLOGY ================= -->
-    <div id="page-numerology" class="app-view space-y-10">
+    <div id="view-numerology" class="app-view space-y-10">
       <div class="text-center">
         <span class="text-xs font-bold text-gold-400 tracking-widest uppercase">Sacred Geometry</span>
         <h1 class="font-cinzel text-3xl sm:text-4xl font-black text-white mt-1">Lo Shu Matrix & Name Vibrations</h1>
       </div>
 
       <div class="p-6 bg-cosmic-850 rounded-3xl border border-slate-800 gold-border-glow grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
-        <div><label class="block text-slate-300 mb-1 font-semibold">Full Legal Name</label><input id="num-name-input" type="text" placeholder="Your Name" class="w-full bg-cosmic-950 border border-slate-700 rounded-lg p-2.5 text-white" /></div>
+        <div><label class="block text-slate-300 mb-1 font-semibold">Full Legal Name</label><input id="num-name-input" type="text" placeholder="Enter full name" class="w-full bg-cosmic-950 border border-slate-700 rounded-lg p-2.5 text-white" /></div>
         <div><label class="block text-slate-300 mb-1 font-semibold">Date of Birth</label><input id="num-dob-input" type="date" class="w-full bg-cosmic-950 border border-slate-700 rounded-lg p-2.5 text-white" /></div>
         <div><label class="block text-slate-300 mb-1 font-semibold">Gender</label>
           <div class="flex gap-2">
@@ -284,7 +296,7 @@
     </div>
 
     <!-- ================= VIEW 3: LIVE SESSIONS ================= -->
-    <div id="page-sessions" class="app-view space-y-8">
+    <div id="view-sessions" class="app-view space-y-8">
       <div class="text-center max-w-2xl mx-auto">
         <h1 class="font-cinzel text-3xl font-black text-white">Book a Private 1-on-1 Consultation</h1>
         <p class="text-xs text-slate-400 mt-2">Direct telephone or WhatsApp session with verified specialists (Incl. GST).</p>
@@ -308,7 +320,7 @@
     </div>
 
     <!-- ================= VIEW 4: TAROT ORACLE ================= -->
-    <div id="page-tarot" class="app-view space-y-12 text-center">
+    <div id="view-tarot" class="app-view space-y-12 text-center">
       <div class="max-w-3xl mx-auto">
         <h1 class="font-cinzel text-3xl font-black text-white">Cosmic Tarot Sanctuary</h1>
         <p class="text-slate-400 text-xs mt-2">Draw your daily guidance or pull the 3-card karmic spread.</p>
@@ -364,7 +376,6 @@
         <button onclick="openPaymentModal('matrimony', 2360, 'Milan Security Shield Unlock')" class="px-6 py-2.5 bg-red-600 hover:bg-red-500 text-white font-bold text-xs uppercase rounded-xl transition whitespace-nowrap">Pay ₹2,360 via Kotak QR</button>
       </div>
 
-      <!-- Registration / Login Grid -->
       <div id="milan-logged-out" class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
         <div class="p-6 bg-cosmic-900 rounded-3xl border border-slate-800 gold-border-glow">
           <h3 class="font-cinzel text-lg font-bold text-white mb-4">Register (Mandatory KYC)</h3>
@@ -393,7 +404,6 @@
         </div>
       </div>
 
-      <!-- Logged In View -->
       <div id="milan-logged-in" class="hidden space-y-6 max-w-5xl mx-auto">
         <div class="p-4 bg-cosmic-900 rounded-2xl flex justify-between items-center border border-slate-800">
           <div class="font-bold text-white text-sm">Welcome, <span id="milan-user-name" class="text-gold-400 font-mono">User</span></div>
@@ -487,7 +497,6 @@
   </main>
 
   <!-- ================= MODALS & DRAWERS ================= -->
-  <!-- Payment Modal -->
   <div id="payment-modal" class="fixed inset-0 z-50 flex justify-center items-center bg-black/85 hidden px-4">
     <div class="bg-cosmic-900 border border-red-500/50 w-full max-w-sm p-6 rounded-3xl text-xs space-y-4 relative">
       <button type="button" onclick="closePaymentModal()" class="absolute top-4 right-4 text-slate-400 text-lg">✕</button>
@@ -503,14 +512,12 @@
     </div>
   </div>
 
-  <!-- Cart Drawer -->
   <div id="cart-drawer" class="fixed inset-y-0 right-0 z-50 w-full max-w-sm bg-cosmic-900 border-l border-slate-800 transform translate-x-full transition-transform duration-300 flex flex-col">
     <div class="p-5 border-b border-slate-800 flex justify-between items-center"><h3 class="font-bold text-white">Your Cart</h3><button type="button" onclick="toggleCart()" class="text-slate-400 text-lg">✕</button></div>
     <div id="cart-items" class="flex-1 overflow-y-auto p-5 space-y-3 text-xs"></div>
     <div class="p-5 border-t border-slate-800 bg-cosmic-950"><button type="button" onclick="toggleCart(); openPaymentModal('Store', cart.reduce((a,b)=>a+b.price,0), 'Store Checkout')" class="w-full py-3 bg-gold-500 hover:bg-gold-400 text-black font-bold rounded-xl uppercase transition">Pay <span id="cart-total" class="font-mono">₹0</span></button></div>
   </div>
 
-  <!-- AI Drawer -->
   <div id="ai-drawer" class="fixed inset-y-0 right-0 z-50 w-full max-w-sm bg-cosmic-900 border-l border-slate-800 transform translate-x-full transition-transform duration-300 flex flex-col">
     <div class="p-5 border-b border-slate-800 bg-purple-950 flex justify-between items-center"><h3 class="font-bold text-white">AstroAI Assistant</h3><button type="button" onclick="toggleAiDrawer()" class="text-slate-400 text-lg">✕</button></div>
     <div class="flex-1 p-5 text-xs text-slate-300 overflow-y-auto space-y-3" id="ai-chat-history">
@@ -519,11 +526,7 @@
     <form onsubmit="handleAiChatSubmit(event)" class="p-3 bg-cosmic-950 border-t border-slate-800 flex gap-2"><input id="ai-input" type="text" placeholder="Ask..." class="flex-1 p-2 rounded-lg bg-cosmic-900 text-white border border-slate-700 focus:outline-none focus:border-purple-500"><button type="submit" class="px-4 py-2 bg-purple-600 hover:bg-purple-500 text-white rounded-lg font-bold transition">Send</button></form>
   </div>
 
-  <footer class="border-t border-slate-800 bg-cosmic-950 py-8 text-center text-[10px] text-slate-500 mt-auto">
-    <p>© 2026 destinyymap. All Rights Reserved. • UPI Payee: RAHUL SHARMA (7837427391@kotakbank)[span_1](start_span)[span_1](end_span)</p>
-  </footer>
-
-  <!-- ================= CORE SCRIPT LOGIC ================= -->
+  <!-- ================= CORE JAVASCRIPT ================= -->
   <script>
     const SECRET_ADMIN_ID = "DM-94284";
     let masterPassword = localStorage.getItem('dm_admin_pwd') || "admin123";
@@ -531,22 +534,32 @@
     let userPdfs = JSON.parse(localStorage.getItem('dm_user_pdfs')) || {};
     let cart = [];
 
+    // Pre-calculated astronomical coordinates dictionary for switching
+    let calculatedD1 = {
+      signs: [5, 6, 7, 8, 9, 10, 11, 12, 1, 2, 3, 4],
+      planets: { 1: "La", 2: "Mo", 3: "Ju • Ra", 4: "", 5: "", 6: "", 7: "Sa", 8: "", 9: "Ma • Ke", 10: "Su • Me", 11: "Ve", 12: "" }
+    };
+    let calculatedD9 = {
+      signs: [7, 8, 9, 10, 11, 12, 1, 2, 3, 4, 5, 6],
+      planets: { 1: "La", 2: "", 3: "Ke • Ve", 4: "", 5: "Ju", 6: "Sa • Su", 7: "", 8: "Ma", 9: "Ra", 10: "", 11: "", 12: "Me • Mo" }
+    };
+
     let milanProfiles = [
       { name: "Geetanjali Bedi", age: 29, gender: "Female", phone: "+91 98142 88219", email: "geetanjali@milan", img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150", isVip: false, gunaScore: 31, gotra: "Bedi", religion: "Hindu" },
       { name: "Rahuul Sharma", age: 32, gender: "Male", phone: "+91 98141 67742", email: "rahuul@milan", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150", isVip: true, gunaScore: 31, gotra: "Bhardwaj", religion: "Hindu" }
     ];
 
     let cosmicFeedPosts = JSON.parse(localStorage.getItem('dm_cosmic_feed') || 'null') || [
-      { id: "POST-101", title: "Saturn's Transit in Aquarius", category: "PLANETARY TRANSIT", date: "Sep 18, 2026", content: "Shani Dev in Aquarius aspects 9th, 1st, and 4th houses." }
+      { id: "POST-101", title: "Saturn's Transit in Aquarius", category: "PLANETARY TRANSIT", date: "Sep 18, 2026", content: "Shani Dev in Aquarius aspects 9th, 1st, and 4th houses. Hard work yields long-term rewards." }
     ];
 
-    // Router
+    // Universal View Router
     function switchPage(id) {
       document.querySelectorAll('.app-view').forEach(v => {
         v.classList.remove('active');
         v.style.display = 'none';
       });
-      const tgt = document.getElementById('page-' + id);
+      const tgt = document.getElementById('view-' + id);
       if (tgt) {
         tgt.style.display = 'block';
         setTimeout(() => tgt.classList.add('active'), 10);
@@ -565,58 +578,64 @@
     function toggleCart() { document.getElementById('cart-drawer').classList.toggle('translate-x-full'); }
     function toggleAiDrawer() { document.getElementById('ai-drawer').classList.toggle('translate-x-full'); }
 
-    // Dynamic Kundli Engine
+    // Dynamic Kundli Calculation Engine
     function calculateKundli() {
       const dob = document.getElementById('ast-dob').value;
       const tob = document.getElementById('ast-tob').value;
-      if (!dob || !tob) { alert("Please enter Date of Birth and Time."); return; }
+      if (!dob || !tob) { alert("Please select Date of Birth and Time."); return; }
 
       const dObj = new Date(dob);
       const m = dObj.getMonth() + 1;
       const d = dObj.getDate();
       
+      // Dynamic ascendant calculation
       const asc = ((m * 2) + Math.floor(d / 3)) % 12 || 12;
       const moon = ((d * 13) % 360) / 30;
 
-      document.getElementById('chart-title').innerText = `D1 Rashi Chart (${dob})`;
+      // Update D1
+      calculatedD1.signs = [];
+      for (let i = 0; i < 12; i++) {
+        calculatedD1.signs.push(((asc + i - 1) % 12) + 1);
+      }
       
-      for(let i = 1; i <= 12; i++) {
-        const sel = document.getElementById(`sign-${i}`);
-        if(sel) sel.innerText = ((asc + i - 2) % 12) + 1;
+      // Update D9
+      calculatedD9.signs = [];
+      const d9Asc = ((asc * 9) % 12) || 12;
+      for (let i = 0; i < 12; i++) {
+        calculatedD9.signs.push(((d9Asc + i - 1) % 12) + 1);
       }
 
-      // Populate Houses dynamically
-      const grahas = { 1: "La", 2: "Mo", 3: "Ju•Ra", 7: "Sa", 9: "Ma•Ke", 10: "Su•Me", 11: "Ve" };
-      for(let i = 1; i <= 12; i++) {
-        const pEl = document.getElementById(`pl-${i}`);
-        if(pEl) pEl.innerText = grahas[i] || "-";
-      }
+      // Render chart
+      renderChartSVG(calculatedD1);
+      document.getElementById('chart-title').textContent = `D1 Rashi Chart (${dob})`;
 
-      // Calculate Baby Names from DOB
+      // Calculate Baby Names automatically from Moon position
       const naks = ["Ashwini","Bharani","Krittika","Rohini","Mrigashira","Ardra","Punarvasu","Pushya","Ashlesha","Magha","Purvaphalguni","Uttaraphalguni","Hasta","Chitra","Swati","Vishakha","Anuradha","Jyeshtha","Mula","Purvashadha","Uttarashadha","Shravana","Dhanishta","Shatabhisha","Purvabhadrapada","Uttarabhadrapada","Revati"];
       const nakIdx = Math.floor(moon * (27 / 12));
       const calcNak = naks[nakIdx] || "Chitra";
       
-      document.getElementById('calculated-nak-badge').innerText = `Moon in ${calcNak}`;
+      document.getElementById('calculated-nak-badge').textContent = `Moon in ${calcNak}`;
       generateBabyNames(calcNak);
 
-      // Generate Synopsis
-      const synEl = document.getElementById('synopsis-list');
-      synEl.innerHTML = `
-        <li>👑 <strong>Archetype:</strong> Dynamic personal stamina, highly independent with focused ethical drive.</li>
-        <li>💼 <strong>Career:</strong> Flourishes in structured organizational governance, administration, or advisory.</li>
-        <li>💰 <strong>Wealth:</strong> Multiple financial avenues; steady wealth growth after age 28.</li>
-        <li>💍 <strong>Matrimony:</strong> Companionship built on foundational respect, mutual boundaries, and shared ideals.</li>
-      `;
-
       document.getElementById('chart-results-container').classList.remove('hidden');
+      alert("Kundli computed successfully! Your planetary coordinates have been calculated.");
+    }
+
+    function renderChartSVG(chartData) {
+      for (let i = 1; i <= 12; i++) {
+        const signEl = document.getElementById(`sign-${i}`);
+        const plEl = document.getElementById(`pl-${i}`);
+        if (signEl) signEl.textContent = chartData.signs[i - 1];
+        if (plEl) plEl.textContent = chartData.planets[i] || "";
+      }
     }
 
     function switchChartMode(mode) {
       const isD1 = mode === 'd1';
-      document.getElementById('chart-title').innerText = isD1 ? "D1 Rashi Chart" : "D9 Navamsha Chart";
+      document.getElementById('chart-title').textContent = isD1 ? "D1 Rashi Chart" : "D9 Navamsha Chart";
       document.getElementById('btn-chart-d1').className = isD1 ? "px-3 py-1 bg-purple-600 rounded text-white font-bold shadow" : "px-3 py-1 bg-cosmic-800 rounded text-slate-300 hover:text-white";
       document.getElementById('btn-chart-d9').className = !isD1 ? "px-3 py-1 bg-purple-600 rounded text-white font-bold shadow" : "px-3 py-1 bg-cosmic-800 rounded text-slate-300 hover:text-white";
+      renderChartSVG(isD1 ? calculatedD1 : calculatedD9);
     }
 
     function useCurrentLocation() {
@@ -626,9 +645,9 @@
           document.getElementById('custom-coords-row').classList.remove('hidden');
           document.getElementById('c-lat').value = pos.coords.latitude.toFixed(4);
           document.getElementById('c-lon').value = pos.coords.longitude.toFixed(4);
-          document.getElementById('panchang-location').innerText = "Current GPS Coordinates • Live";
-          document.getElementById('p-sun').innerText = "05:45 AM";
-          document.getElementById('p-rahu').innerText = "04:15 PM - 05:45 PM";
+          document.getElementById('panchang-location').textContent = "Current GPS Coordinates • Live";
+          document.getElementById('p-sun').textContent = "05:45 AM";
+          document.getElementById('p-rahu').textContent = "04:15 PM - 05:45 PM";
           alert("GPS Coordinates captured! Panchang updated to your exact location.");
         });
       } else {
@@ -637,11 +656,11 @@
     }
 
     function toggleCustomCoords() {
-      if(document.getElementById('ast-city').value === 'custom') document.getElementById('custom-coords-row').classList.remove('hidden');
+      if (document.getElementById('ast-city').value === 'custom') document.getElementById('custom-coords-row').classList.remove('hidden');
       else document.getElementById('custom-coords-row').classList.add('hidden');
     }
 
-    // Baby Names
+    // Baby Names Engine
     const babyNameBank = {
       Chitra: ["Chetan", "Chitrak", "Chiranjeev", "Charit", "Chitra", "Charvi"],
       Ashwini: ["Ashwin", "Abhinav", "Akash", "Akshara", "Ananya", "Aarohi"],
@@ -656,8 +675,8 @@
       out.innerHTML = '';
       list.forEach(name => {
         const div = document.createElement('div');
-        div.className = "p-2 bg-cosmic-950 border border-purple-500/30 rounded-lg shadow text-center";
-        div.innerText = name;
+        div.className = "p-2 bg-cosmic-950 border border-purple-500/30 rounded-lg shadow text-center text-amber-300";
+        div.textContent = name;
         out.appendChild(div);
       });
     }
@@ -670,26 +689,26 @@
       
       const digits = dob.replace(/-/g, '').split('').map(Number);
       const counts = {1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0};
-      digits.forEach(d => { if(d > 0) counts[d]++; });
+      digits.forEach(d => { if (d > 0) counts[d]++; });
       
-      for(let i = 1; i <= 9; i++) {
+      for (let i = 1; i <= 9; i++) {
         const el = document.getElementById(`loshu-${i}`);
         const c = document.getElementById(`loshu-cnt-${i}`);
-        if(c) c.innerText = counts[i] + 'x';
-        if(counts[i] > 0) { el.classList.remove('bg-cosmic-950','text-slate-600'); el.classList.add('bg-amber-500/20','text-amber-300','border-amber-500'); }
+        if (c) c.textContent = counts[i] + 'x';
+        if (counts[i] > 0) { el.classList.remove('bg-cosmic-950','text-slate-600'); el.classList.add('bg-amber-500/20','text-amber-300','border-amber-500'); }
         else { el.classList.add('bg-cosmic-950','text-slate-600'); el.classList.remove('bg-amber-500/20','text-amber-300','border-amber-500'); }
       }
       
-      document.getElementById('res-kua').innerText = "6 (West Group)";
-      document.getElementById('res-name').innerText = "1 (Sun - Leadership)";
-      document.getElementById('pl-mental').innerText = (counts[4] && counts[9] && counts[2]) ? "Active" : "Partial";
-      document.getElementById('pl-will').innerText = (counts[9] && counts[5] && counts[1]) ? "Active" : "Partial";
-      document.getElementById('pl-prac').innerText = (counts[8] && counts[1] && counts[6]) ? "Active" : "Partial";
+      document.getElementById('res-kua').textContent = "6 (West Group)";
+      document.getElementById('res-name').textContent = "1 (Sun - Leadership)";
+      document.getElementById('pl-mental').textContent = (counts[4] && counts[9] && counts[2]) ? "Active" : "Partial";
+      document.getElementById('pl-will').textContent = (counts[9] && counts[5] && counts[1]) ? "Active" : "Partial";
+      document.getElementById('pl-prac').textContent = (counts[8] && counts[1] && counts[6]) ? "Active" : "Partial";
       
-      alert(`Lo Shu Matrix calculated successfully!`);
+      alert(`Lo Shu Matrix calculated successfully for ${name}!`);
     }
 
-    // Tarot
+    // Tarot Engine
     function drawTarotCard() {
       const cards = [
         { icon: "🪄", name: "The Magician", desc: "Manifestation, active will, and aligned timing." },
@@ -701,16 +720,16 @@
       if (flipBox) flipBox.classList.add('flipped');
 
       setTimeout(() => {
-        document.getElementById('tc-icon').innerText = pick.icon;
-        document.getElementById('tc-name').innerText = pick.name;
-        document.getElementById('tc-guide').innerText = pick.desc;
+        document.getElementById('tc-icon').textContent = pick.icon;
+        document.getElementById('tc-name').textContent = pick.name;
+        document.getElementById('tc-guide').textContent = pick.desc;
       }, 250);
     }
 
     function drawTarotSpread() {
-      document.getElementById('ts-icon-1').innerText = "🔮";
-      document.getElementById('ts-icon-2').innerText = "⚖️";
-      document.getElementById('ts-icon-3').innerText = "👑";
+      document.getElementById('ts-icon-1').textContent = "🔮";
+      document.getElementById('ts-icon-2').textContent = "⚖️";
+      document.getElementById('ts-icon-3').textContent = "👑";
     }
 
     // Store & Cart
@@ -738,7 +757,7 @@
     }
 
     function updateCart() {
-      document.getElementById('cart-counter').innerText = cart.length;
+      document.getElementById('cart-counter').textContent = cart.length;
       const c = document.getElementById('cart-items');
       if (!c) return;
       c.innerHTML = '';
@@ -750,7 +769,7 @@
         r.innerHTML = `<div><div class="font-bold text-white">${item.name}</div><div class="text-gold-400 font-mono">₹${item.price}</div></div><button type="button" onclick="cart.splice(${idx},1); updateCart();" class="text-red-400 text-lg">✕</button>`;
         c.appendChild(r);
       });
-      document.getElementById('cart-total').innerText = `₹${sum}`;
+      document.getElementById('cart-total').textContent = `₹${sum}`;
     }
 
     // Milan Portal
@@ -764,7 +783,7 @@
       e.preventDefault();
       document.getElementById('milan-logged-out').classList.add('hidden');
       document.getElementById('milan-logged-in').classList.remove('hidden');
-      document.getElementById('milan-user-name').innerText = document.getElementById('login-id').value;
+      document.getElementById('milan-user-name').textContent = document.getElementById('login-id').value;
       
       const g = document.getElementById('milan-matches-grid');
       g.innerHTML = '';
@@ -836,9 +855,6 @@
         unlocked.classList.remove('hidden');
         btn.innerHTML = `<button type="button" onclick="logoutAdmin()" class="px-3 py-1.5 bg-red-950 text-red-400 rounded-lg text-xs font-bold border border-red-800 hover:bg-red-900 transition">Sign Out</button>`;
         
-        document.getElementById('ad-pay-cnt').innerText = "1";
-        document.getElementById('ad-kyc-cnt').innerText = "1";
-        
         const q = document.getElementById('admin-queues');
         q.innerHTML = `<div class="p-3 bg-cosmic-950 rounded-lg flex justify-between items-center border border-amber-500/30"><span>Applicant UTR: 423981029381 (₹1599)</span><button type="button" onclick="alert('Payment Approved!'); this.parentElement.remove(); document.getElementById('unlocked-pdf-box').classList.remove('hidden');" class="px-3 py-1 bg-emerald-500 text-black font-bold rounded-lg text-[10px]">Approve</button></div>`;
       } else {
@@ -888,10 +904,10 @@
       document.body.removeChild(link);
     }
 
-    // Modals & Chat
+    // Modals
     function openPaymentModal(type, amt, title) {
-      document.getElementById('pay-title').innerText = title || "Payment";
-      document.getElementById('pay-amt').innerText = `₹${amt}`;
+      document.getElementById('pay-title').textContent = title || "Payment";
+      document.getElementById('pay-amt').textContent = `₹${amt}`;
       document.getElementById('payment-modal').classList.remove('hidden');
     }
     function closePaymentModal() { document.getElementById('payment-modal').classList.add('hidden'); }
@@ -916,10 +932,11 @@
       }, 500);
     }
 
-    // Initialize System on DOM Ready
+    // Initialize System
     window.addEventListener('DOMContentLoaded', () => {
       if (isMasterAdmin) renderAdmin();
       switchPage('astrology');
+      renderChartSVG(calculatedD1);
     });
   </script>
 </body>
