@@ -263,6 +263,36 @@
                     </button>
                 </div>
             </div>
+            <div class="card-glass rounded-3xl p-6 md:p-8 shadow-2xl space-y-6">
+                <h3 class="text-2xl font-bold text-gold text-center cinzel-font"><i class="fa-brands fa-whatsapp text-green-400"></i> WhatsApp Call Tarot Consultations</h3>
+                <div class="grid sm:grid-cols-3 gap-6">
+                    <div class="bg-cosmic-950/90 border border-gold/30 p-6 rounded-2xl text-center space-y-4 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[10px] bg-amber-500/20 text-gold px-3 py-1 rounded-full font-bold uppercase tracking-wider">Quick Session</span>
+                            <h4 class="text-2xl font-black text-white mt-3 cinzel-font">30 Minutes</h4>
+                            <p class="text-3xl font-black text-gold my-2 cinzel-font">₹1,600</p>
+                        </div>
+                        <button onclick="openPaymentModal('Tarot Consultation - 30 Min', 1600)" class="w-full bg-gold text-black font-bold py-3 rounded-xl text-xs uppercase tracking-wider hover:opacity-95 transition shadow">Book 30 Min</button>
+                    </div>
+                    <div class="bg-cosmic-950/90 border-2 border-gold p-6 rounded-2xl text-center space-y-4 flex flex-col justify-between relative shadow-glow">
+                        <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold text-black text-[10px] font-black px-3 py-0.5 rounded-full uppercase tracking-widest shadow">Most Popular</span>
+                        <div>
+                            <span class="text-[10px] bg-amber-500/20 text-gold px-3 py-1 rounded-full font-bold uppercase tracking-wider">Detailed Session</span>
+                            <h4 class="text-2xl font-black text-white mt-3 cinzel-font">45 Minutes</h4>
+                            <p class="text-3xl font-black text-gold my-2 cinzel-font">₹2,100</p>
+                        </div>
+                        <button onclick="openPaymentModal('Tarot Consultation - 45 Min', 2100)" class="w-full bg-gold text-black font-bold py-3 rounded-xl text-xs uppercase tracking-wider hover:opacity-95 transition shadow">Book 45 Min</button>
+                    </div>
+                    <div class="bg-cosmic-950/90 border border-gold/30 p-6 rounded-2xl text-center space-y-4 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[10px] bg-amber-500/20 text-gold px-3 py-1 rounded-full font-bold uppercase tracking-wider">Deep Masterclass</span>
+                            <h4 class="text-2xl font-black text-white mt-3 cinzel-font">60 Minutes</h4>
+                            <p class="text-3xl font-black text-gold my-2 cinzel-font">₹2,800</p>
+                        </div>
+                        <button onclick="openPaymentModal('Tarot Consultation - 60 Min', 2800)" class="w-full bg-gold text-black font-bold py-3 rounded-xl text-xs uppercase tracking-wider hover:opacity-95 transition shadow">Book 60 Min</button>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- TAB 5: VASTU CONSULTANCY -->
@@ -301,26 +331,33 @@
         <section id="tab-milan" class="tab-content hidden space-y-6">
             <div class="text-center max-w-3xl mx-auto space-y-3">
                 <h2 class="text-3xl md:text-5xl font-black gold-gradient tracking-wide cinzel-font">Milan Matchmaking Software</h2>
-                <p class="text-gray-300 text-sm md:text-base leading-relaxed">Check compatibility with traditional 36-Gun Milan or Loshu Numerology compatibility score for marriage.</p>
+                <p class="text-gray-300 text-sm md:text-base leading-relaxed">Check accurate traditional 36-Gun Milan & astrological compatibility with Date and Time of Birth.</p>
             </div>
-            <div class="card-glass rounded-3xl p-6 md:p-8 shadow-2xl max-w-2xl mx-auto space-y-5">
-                <div class="grid sm:grid-cols-2 gap-4">
+
+            <div class="card-glass rounded-3xl p-6 md:p-8 shadow-2xl max-w-3xl mx-auto space-y-5">
+                <div class="grid sm:grid-cols-2 gap-6">
                     <div class="space-y-3">
                         <h4 class="font-bold text-gold text-sm cinzel-font"><i class="fa-solid fa-mars text-blue-400 mr-1"></i> Groom Details</h4>
-                        <input type="text" id="boyName" value="Rahul Sharma" class="w-full bg-cosmic-950/80 border border-gold/30 rounded-2xl px-4 py-3 text-white text-sm outline-none">
-                        <input type="date" id="boyDob" value="1994-05-22" class="w-full bg-cosmic-950/80 border border-gold/30 rounded-2xl px-4 py-3 text-white text-sm outline-none">
+                        <input type="text" id="boyName" value="Rahul Sharma" class="w-full bg-cosmic-950/80 border border-gold/30 rounded-2xl px-4 py-2.5 text-white text-sm outline-none">
+                        <div class="grid grid-cols-2 gap-2">
+                            <input type="date" id="boyDob" value="1994-05-22" class="bg-cosmic-950/80 border border-gold/30 rounded-2xl px-3 py-2 text-white text-xs outline-none">
+                            <input type="time" id="boyTob" value="10:30" class="bg-cosmic-950/80 border border-gold/30 rounded-2xl px-3 py-2 text-white text-xs outline-none">
+                        </div>
                     </div>
                     <div class="space-y-3">
                         <h4 class="font-bold text-gold text-sm cinzel-font"><i class="fa-solid fa-venus text-pink-400 mr-1"></i> Bride Details</h4>
                         <input type="text" id="girlName" value="Geetanjali Bedi" class="w-full bg-cosmic-950/80 border border-gold/30 rounded-2xl px-4 py-3 text-white text-sm outline-none">
-                        <input type="date" id="girlDob" value="1996-02-18" class="w-full bg-cosmic-950/80 border border-gold/30 rounded-2xl px-4 py-3 text-white text-sm outline-none">
+                        <div class="grid grid-cols-2 gap-2">
+                            <input type="date" id="girlDob" value="1996-02-18" class="bg-cosmic-950/80 border border-gold/30 rounded-2xl px-3 py-2 text-white text-xs outline-none">
+                            <input type="time" id="girlTob" value="14:15" class="bg-cosmic-950/80 border border-gold/30 rounded-2xl px-3 py-2 text-white text-xs outline-none">
+                        </div>
                     </div>
                 </div>
                 <button onclick="calculateMatch()" class="w-full bg-gradient-to-r from-amber-500 to-gold text-black font-black py-3.5 rounded-2xl shadow-glow hover:opacity-95 transition text-sm uppercase tracking-wider">
-                    Calculate 36-Gun Milan & Compatibility
+                    Calculate Accurate 36-Gun Milan
                 </button>
                 <div id="matchOutput" class="pt-4 border-t border-gold/20 text-sm text-gray-300 text-center">
-                    Enter details above to check compatibility score.
+                    Enter exact birth dates and times above to calculate compatibility.
                 </div>
             </div>
         </section>
@@ -329,8 +366,9 @@
         <section id="tab-matrimony" class="tab-content hidden space-y-6">
             <div class="text-center max-w-3xl mx-auto space-y-3">
                 <h2 class="text-3xl md:text-5xl font-black gold-gradient tracking-wide cinzel-font">Milan Matrimonial Portal</h2>
-                <p class="text-gray-300 text-sm md:text-base leading-relaxed">Standard verified matrimonial profiles with secure KYC, data protection norms, and admin approval safeguards.</p>
+                <p class="text-gray-300 text-sm md:text-base leading-relaxed">Standard verified matrimonial profiles with secure KYC, privacy protection, and admin approval safeguards. Contact numbers & emails are locked until ₹1,999 payment verification.</p>
             </div>
+
             <div class="flex flex-wrap justify-between items-center gap-4 card-glass rounded-3xl p-5 shadow-2xl">
                 <div class="flex gap-2.5 flex-grow sm:flex-grow-0">
                     <input type="text" id="matrimonySearch" placeholder="Search caste, city..." class="bg-cosmic-950/80 border border-gold/30 rounded-2xl px-4 py-2.5 text-sm text-white outline-none flex-grow">
@@ -340,7 +378,9 @@
                     <i class="fa-solid fa-user-plus"></i> Register Profile (KYC)
                 </button>
             </div>
+
             <div id="matrimonyGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Profile 1 -->
                 <div class="card-glass rounded-3xl p-6 shadow-2xl space-y-4">
                     <div class="flex items-center gap-3.5">
                         <div class="w-14 h-14 rounded-2xl bg-amber-500/20 border border-gold/60 flex items-center justify-center text-gold font-bold text-lg cinzel-font">RS</div>
@@ -350,9 +390,53 @@
                         </div>
                     </div>
                     <p class="text-xs text-gray-300 leading-relaxed">Resides in Punjab/Chandigarh region. Professional corporate and trading background with traditional values.</p>
-                    <div class="flex justify-between items-center pt-3 border-t border-gold/20 text-xs">
+                    
+                    <div class="p-3 bg-cosmic-950 rounded-2xl border border-gold/20 text-xs space-y-2">
+                        <div class="flex items-center justify-between text-gray-400">
+                            <span><i class="fa-solid fa-phone text-gold mr-1"></i> Phone:</span>
+                            <span class="font-mono text-amber-300 blur-sm select-none">🔒 +91 98141*****</span>
+                        </div>
+                        <div class="flex items-center justify-between text-gray-400">
+                            <span><i class="fa-solid fa-envelope text-gold mr-1"></i> Email:</span>
+                            <span class="font-mono text-amber-300 blur-sm select-none">🔒 rahul*****@gmail.com</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between items-center pt-2 text-xs">
                         <span class="text-gold font-mono font-bold">ID: DM-99401</span>
-                        <button onclick="openInterestModal('Rahul Sharma')" class="bg-gold text-black px-4 py-2 rounded-xl font-bold text-xs hover:opacity-95 transition shadow">Send Interest</button>
+                        <button onclick="openPaymentModal('Unlock Matrimony Contact Details', 1999)" class="bg-gradient-to-r from-amber-500 to-gold text-black px-4 py-2 rounded-xl font-black text-xs uppercase tracking-wider hover:opacity-95 transition shadow-glow">
+                            Unlock Contact (₹1,999)
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Profile 2 -->
+                <div class="card-glass rounded-3xl p-6 shadow-2xl space-y-4">
+                    <div class="flex items-center gap-3.5">
+                        <div class="w-14 h-14 rounded-2xl bg-amber-500/20 border border-gold/60 flex items-center justify-center text-gold font-bold text-lg cinzel-font">GB</div>
+                        <div>
+                            <h3 class="font-bold text-white text-base cinzel-font">Geetanjali Bedi <span class="text-[10px] bg-green-500/20 text-green-400 border border-green-500/40 px-2 py-0.5 rounded-full ml-1"><i class="fa-solid fa-shield-check"></i> Verified</span></h3>
+                            <p class="text-xs text-gray-400">30 yrs, 5'6" • Professional Consultant</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-300 leading-relaxed">Resides in North India. Well-educated, cultured background with strong family ethos.</p>
+                    
+                    <div class="p-3 bg-cosmic-950 rounded-2xl border border-gold/20 text-xs space-y-2">
+                        <div class="flex items-center justify-between text-gray-400">
+                            <span><i class="fa-solid fa-phone text-gold mr-1"></i> Phone:</span>
+                            <span class="font-mono text-amber-300 blur-sm select-none">🔒 +91 98765*****</span>
+                        </div>
+                        <div class="flex items-center justify-between text-gray-400">
+                            <span><i class="fa-solid fa-envelope text-gold mr-1"></i> Email:</span>
+                            <span class="font-mono text-amber-300 blur-sm select-none">🔒 geetan*****@gmail.com</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between items-center pt-2 text-xs">
+                        <span class="text-gold font-mono font-bold">ID: DM-96218</span>
+                        <button onclick="openPaymentModal('Unlock Matrimony Contact Details', 1999)" class="bg-gradient-to-r from-amber-500 to-gold text-black px-4 py-2 rounded-xl font-black text-xs uppercase tracking-wider hover:opacity-95 transition shadow-glow">
+                            Unlock Contact (₹1,999)
+                        </button>
                     </div>
                 </div>
             </div>
@@ -411,12 +495,21 @@
             </div>
         </section>
 
-        <!-- ADMIN TAB -->
+        <!-- ADMIN TAB (With Explicit Credentials Displayed) -->
         <section id="tab-admin" class="tab-content hidden space-y-6">
             <div class="text-center max-w-3xl mx-auto space-y-3">
                 <h2 class="text-3xl md:text-5xl font-black gold-gradient tracking-wide cinzel-font">Admin Control & Management</h2>
                 <p class="text-gray-300 text-sm md:text-base leading-relaxed">Multi-admin control panel (3 Authorized Admin IDs) for approving user registrations, verifying KYC documents, and confirming UPI payments.</p>
+                
+                <!-- Explicit Credentials Helper Box -->
+                <div class="p-4 bg-amber-500/10 border border-gold/50 rounded-2xl text-xs text-amber-200 text-left space-y-1">
+                    <p class="font-bold text-gold"><i class="fa-solid fa-key mr-1"></i> Authorized Admin Credentials for Testing:</p>
+                    <p>• <strong>Admin 1 (Rasshmi Sharrma - Master):</strong> ID: <code class="text-white font-mono">admin1</code> | PIN: <code class="text-white font-mono">admin999</code></p>
+                    <p>• <strong>Admin 2 (Senior Verifier):</strong> ID: <code class="text-white font-mono">admin2</code> | PIN: <code class="text-white font-mono">admin2026</code></p>
+                    <p>• <strong>Admin 3 (Accounts & Support):</strong> ID: <code class="text-white font-mono">admin3</code> | PIN: <code class="text-white font-mono">admin7837</code></p>
+                </div>
             </div>
+
             <div id="adminLoginCard" class="card-glass rounded-3xl p-8 max-w-md mx-auto shadow-2xl space-y-5">
                 <h3 class="text-2xl font-bold text-gold text-center cinzel-font"><i class="fa-solid fa-lock"></i> Admin Portal Login</h3>
                 <div>
@@ -429,16 +522,17 @@
                 </div>
                 <div>
                     <label class="block text-xs font-bold text-amber-200/90 mb-1.5 uppercase tracking-wider">Security PIN / Password</label>
-                    <input type="password" id="adminPass" value="1234" class="w-full bg-cosmic-950/80 border border-gold/30 rounded-2xl px-4 py-3 text-white text-sm outline-none">
+                    <input type="password" id="adminPass" placeholder="Enter admin password..." class="w-full bg-cosmic-950/80 border border-gold/30 rounded-2xl px-4 py-3 text-white text-sm outline-none">
                 </div>
                 <button onclick="loginAdmin()" class="w-full bg-gradient-to-r from-amber-500 to-gold text-black font-black py-3.5 rounded-2xl text-xs uppercase tracking-wider shadow-glow hover:opacity-95 transition">
                     Authenticate Admin Access
                 </button>
             </div>
+
             <div id="adminDashboardContent" class="hidden space-y-6">
                 <div class="grid md:grid-cols-3 gap-6">
                     <div class="card-glass rounded-3xl p-6 shadow-2xl space-y-4">
-                        <h3 class="font-bold text-gold flex items-center justify-between cinzel-font text-base"><i class="fa-solid fa-users-gear"></i> Pending KYC</h3>
+                        <h3 class="font-bold text-gold flex items-center justify-between cinzel-font text-base"><i class="fa-solid fa-users-gear"></i> Pending KYC Approvals</h3>
                         <div id="pendingKycList" class="space-y-3 text-xs text-gray-300">
                             <div class="p-4 bg-cosmic-950/80 rounded-2xl border border-gold/30 flex justify-between items-center">
                                 <div>
@@ -447,6 +541,28 @@
                                 </div>
                                 <button onclick="approveKyc(this)" class="bg-green-600 text-white px-3.5 py-1.5 rounded-xl font-bold shadow">Approve</button>
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="card-glass rounded-3xl p-6 shadow-2xl space-y-4">
+                        <h3 class="font-bold text-gold flex items-center justify-between cinzel-font text-base"><i class="fa-solid fa-file-invoice-dollar"></i> Payment Verifications</h3>
+                        <div id="pendingPaymentsList" class="space-y-3 text-xs text-gray-300">
+                            <div class="p-4 bg-cosmic-950/80 rounded-2xl border border-gold/30 flex justify-between items-center">
+                                <div>
+                                    <p class="font-bold text-white text-sm">Matrimony Unlock (₹1,999)</p>
+                                    <p class="text-gray-400">UTR: 9941 • Pending Verification</p>
+                                </div>
+                                <button onclick="approvePayment(this)" class="bg-green-600 text-white px-3.5 py-1.5 rounded-xl font-bold shadow">Verify & Unlock</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-glass rounded-3xl p-6 shadow-2xl space-y-4">
+                        <h3 class="font-bold text-gold flex items-center justify-between cinzel-font text-base"><i class="fa-solid fa-chart-line"></i> Site Stats</h3>
+                        <div class="p-4 bg-cosmic-950/80 rounded-2xl border border-gold/30 space-y-2.5 text-xs">
+                            <p class="flex justify-between"><span>Registered Profiles:</span> <strong class="text-gold">142</strong></p>
+                            <p class="flex justify-between"><span>Pending Approvals:</span> <strong class="text-amber-400">3</strong></p>
+                            <p class="flex justify-between"><span>Today's Sessions:</span> <strong class="text-green-400">12</strong></p>
                         </div>
                     </div>
                 </div>
@@ -534,11 +650,11 @@
         </div>
     </div>
 
-    <!-- EXPLANATION MODAL (TOUCH TO EXPLAIN) -->
+    <!-- EXPLANATION MODAL -->
     <div id="explainModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4">
         <div class="card-glass rounded-3xl max-w-lg w-full p-6 md:p-8 space-y-4 shadow-2xl relative border border-gold/55">
             <button onclick="closeExplainModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white text-2xl"><i class="fa-solid fa-xmark"></i></button>
-            <h3 id="explainTitle" class="text-xl font-bold gold-gradient cinzel-font">Astrological & Numerological Insight</h3>
+            <h3 id="explainTitle" class="text-xl font-bold gold-gradient cinzel-font">Cosmic Insight</h3>
             <p id="explainContent" class="text-sm text-gray-300 leading-relaxed"></p>
         </div>
     </div>
@@ -656,7 +772,7 @@
         function confirmPaymentSubmitted() {
             const utr = document.getElementById('upiUtrInput').value.trim();
             if(!utr) { alert('Please enter your UPI transaction reference / UTR ID.'); return; }
-            alert('Payment confirmation submitted successfully with UTR: ' + utr + '!');
+            alert('Payment confirmation submitted successfully with UTR: ' + utr + '! Contact details will be unlocked upon Admin verification.');
             closePaymentModal();
         }
 
@@ -667,7 +783,6 @@
         }
         function closeExplainModal() { document.getElementById('explainModal').classList.add('hidden'); }
 
-        // Accurate KP Chart Generator & AI Prediction Engine
         function generateKundali() {
             const name = document.getElementById('astroName').value || 'Rahul Sharma';
             const dob = document.getElementById('astroDob').value || '1994-05-22';
@@ -686,9 +801,7 @@
             let nakshatraIdx = (seed * 7) % 27;
 
             let d1Signs = {};
-            for(let h=1; h<=12; h++) {
-                d1Signs[h] = ((lagnaIdx + (h - 1)) % 12) + 1;
-            }
+            for(let h=1; h<=12; h++) d1Signs[h] = ((lagnaIdx + (h - 1)) % 12) + 1;
 
             const planetNames = ['Sun', 'Mon', 'Mar', 'Mer', 'Jup', 'Ven', 'Sat', 'Rah', 'Ket', 'Ura', 'Nep', 'Plu'];
             let d1HouseData = {1:[],2:[],3:[],4:[],5:[],6:[],7:[],8:[],9:[],10:[],11:[],12:[]};
@@ -699,9 +812,7 @@
             });
 
             let d9Signs = {};
-            for(let h=1; h<=12; h++) {
-                d9Signs[h] = (((lagnaIdx + 4 + (h - 1)) % 12) + 1);
-            }
+            for(let h=1; h<=12; h++) d9Signs[h] = (((lagnaIdx + 4 + (h - 1)) % 12) + 1);
             let d9HouseData = {1:[],2:[],3:[],4:[],5:[],6:[],7:[],8:[],9:[],10:[],11:[],12:[]};
             planetNames.forEach((p, idx) => {
                 let h = ((seed + idx * 6) % 12) + 1;
@@ -715,7 +826,7 @@
                 let sNum = d1Signs[h];
                 let sName = signs[sNum - 1];
                 let deg = `${((seed + idx * 9) % 29) + 1}° ${(seed * 5) % 60}'`;
-                let desc = `AI KP Prediction for ${p} in House ${h} (${sName}): Influences career timing, wealth manifestation, and relationship karma based on sub-lord connections.`;
+                let desc = `AI KP Prediction for ${p} in House ${h} (${sName}): Influences career timing, wealth manifestation, and life path.`;
                 tableRows += `
                     <tr class="border-b border-gold/10 hover:bg-cosmic-900/60 cursor-pointer transition" onclick="explainPlacement('${p} in House ${h} (${sName})', '${desc}')">
                         <td class="py-2.5 px-3 font-bold text-gold flex items-center gap-1.5"><i class="fa-solid fa-circle-dot text-[8px]"></i> ${p}</td>
@@ -734,23 +845,18 @@
                         <h4 class="font-bold text-gold text-base cinzel-font"><i class="fa-solid fa-star text-amber-400 mr-1.5"></i> AI KP Synopsis for ${name}</h4>
                         <p class="text-xs text-gray-300">DOB: ${dob} | TOB: ${tob} | Place: ${place}</p>
                         <div class="grid grid-cols-2 gap-2.5 mt-2 text-xs">
-                            <div class="p-3 bg-cosmic-900 rounded-xl border border-gold/20"><strong>Lagna (Ascendant):</strong> ${signs[lagnaIdx]}</div>
-                            <div class="p-3 bg-cosmic-900 rounded-xl border border-gold/20"><strong>Rashi (Moon Sign):</strong> ${signs[moonIdx]}</div>
+                            <div class="p-3 bg-cosmic-900 rounded-xl border border-gold/20"><strong>Lagna:</strong> ${signs[lagnaIdx]}</div>
+                            <div class="p-3 bg-cosmic-900 rounded-xl border border-gold/20"><strong>Rashi:</strong> ${signs[moonIdx]}</div>
                             <div class="p-3 bg-cosmic-900 rounded-xl border border-gold/20"><strong>Nakshatra:</strong> ${nakshatras[nakshatraIdx]} (Pāda 2)</div>
                             <div class="p-3 bg-cosmic-900 rounded-xl border border-gold/20"><strong>Active Dasha:</strong> Jupiter / Saturn</div>
                         </div>
                     </div>
-
                     <div class="grid sm:grid-cols-2 gap-4">
                         ${renderNorthIndianChartInteractive('D1 Lagna Chart', d1HouseData, d1Signs)}
                         ${renderNorthIndianChartInteractive('D9 Navamsha Chart', d9HouseData, d9Signs)}
                     </div>
-
                     <div class="p-5 bg-cosmic-950/90 rounded-2xl border border-gold/40 shadow-xl space-y-3">
-                        <h4 class="font-bold text-gold text-sm cinzel-font flex items-center justify-between">
-                            <span><i class="fa-solid fa-table-list mr-1.5"></i> AI Predicted Planetary Table</span>
-                            <span class="text-[10px] text-gray-400 font-normal">Touch any row for AI prediction</span>
-                        </h4>
+                        <h4 class="font-bold text-gold text-sm cinzel-font">Planetary Table (Touch to Explain)</h4>
                         <div class="overflow-x-auto">
                             <table class="w-full text-left text-xs">
                                 <thead>
@@ -760,12 +866,10 @@
                                         <th class="py-2 px-3">Degree</th>
                                         <th class="py-2 px-3 text-center">House</th>
                                         <th class="py-2 px-3">Nakshatra</th>
-                                        <th class="py-2 px-3 text-right">AI Insight</th>
+                                        <th class="py-2 px-3 text-right">Insight</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    ${tableRows}
-                                </tbody>
+                                <tbody>${tableRows}</tbody>
                             </table>
                         </div>
                     </div>
@@ -784,7 +888,6 @@
                     <line x1="150" y1="295" x2="5" y2="150" stroke="currentColor" stroke-width="1.5"/>
                     <line x1="5" y1="150" x2="150" y2="5" stroke="currentColor" stroke-width="1.5"/>
             `;
-
             const coords = {
                 1: {x:150, y:55, signX:150, signY:30},
                 2: {x:75, y:38, signX:75, signY:18},
@@ -799,48 +902,38 @@
                 11: {x:262, y:75, signX:282, signY:75},
                 12: {x:225, y:38, signX:225, signY:18}
             };
-
             for(let h=1; h<=12; h++) {
                 let c = coords[h];
                 svgContent += `<text x="${c.signX}" y="${c.signY}" font-size="9.5" fill="#ffd700" text-anchor="middle" font-weight="bold">${signNumbers[h] || h}</text>`;
                 if(houseData[h]) {
-                    let items = houseData[h];
-                    items.forEach((item, idx) => {
+                    houseData[h].forEach((item, idx) => {
                         let offsetY = c.y + (idx * 11);
-                        svgContent += `<text x="${c.x}" y="${offsetY}" font-size="8" fill="#ffffff" text-anchor="middle" class="cursor-pointer hover:fill-amber-300 transition" onclick="explainPlacement('${item.name} in House ${h}', 'AI KP Prediction: Planet ${item.name} in House ${h} governs specific sub-lord karmic linkages affecting finance and life path.')">${item.name} ${item.deg}</text>`;
+                        svgContent += `<text x="${c.x}" y="${offsetY}" font-size="8" fill="#ffffff" text-anchor="middle" class="cursor-pointer hover:fill-amber-300 transition" onclick="explainPlacement('${item.name} in House ${h}', 'AI KP Prediction: Planet ${item.name} in House ${h} governs financial and career stability.')">${item.name} ${item.deg}</text>`;
                     });
                 }
             }
             svgContent += `</svg>`;
-
             return `
-                <div class="bg-cosmic-950/90 border border-gold/40 rounded-2xl p-4 text-center space-y-2 shadow-xl relative overflow-hidden">
-                    <h4 class="font-bold text-gold text-xs uppercase tracking-wider cinzel-font">${title} (Touch planets)</h4>
-                    <div class="w-full max-w-[280px] mx-auto aspect-square relative bg-cosmic-900 border-2 border-gold rounded-2xl p-2 flex items-center justify-center shadow-glow">
+                <div class="bg-cosmic-950/90 border border-gold/40 rounded-2xl p-4 text-center space-y-2 shadow-xl">
+                    <h4 class="font-bold text-gold text-xs uppercase tracking-wider cinzel-font">${title}</h4>
+                    <div class="w-full max-w-[280px] mx-auto aspect-square relative bg-cosmic-900 border-2 border-gold rounded-2xl p-2 flex items-center justify-center">
                         ${svgContent}
                     </div>
                 </div>
             `;
         }
 
-        // Accurate Nakshatra Baby Name Generator based strictly on DOB & TOB
         function generateBabyNames() {
             const dob = document.getElementById('babyDob').value || '2026-09-20';
             const tob = document.getElementById('babyTob').value || '10:30';
-            
             let sum = 0;
             for(let char of (dob + tob)) sum += char.charCodeAt(0);
-            
             const nakshatrasList = [
-                {name: 'Ashwini', pada: 'Pāda 1', syl: 'Chu, Che, Cho, La', names: ['Chitrang', 'Chetan', 'Chhavi', 'Lalita']},
                 {name: 'Rohini', pada: 'Pāda 3', syl: 'Nu, Ne, No, Ya', names: ['Nakul', 'Nipun', 'Niyati', 'Yash']},
                 {name: 'Pushya', pada: 'Pāda 2', syl: 'Hu, He, Ho, Da', names: ['Hanshika', 'Hemant', 'Daksh', 'Darsh']},
-                {name: 'Anuradha', pada: 'Pāda 3', syl: 'Na, Ni, Nu, Ne', names: ['Nakshatra', 'Nandini', 'Nirvan', 'Nisha']},
-                {name: 'Shravana', pada: 'Pāda 1', syl: 'Ju, Je, Jo, Gha', names: ['Jatin', 'Jaya', 'Ghanshyam', 'Gargi']}
+                {name: 'Anuradha', pada: 'Pāda 3', syl: 'Na, Ni, Nu, Ne', names: ['Nakshatra', 'Nandini', 'Nirvan', 'Nisha']}
             ];
-
             let n = nakshatrasList[sum % nakshatrasList.length];
-
             document.getElementById('babyNameOutput').innerHTML = `
                 <div class="p-4 bg-cosmic-950 rounded-2xl border border-gold/30 space-y-3 text-xs">
                     <h4 class="font-bold text-gold cinzel-font text-sm">Calculated Birth Nakshatra & Baby Names</h4>
@@ -860,57 +953,28 @@
         function generateNumerology() {
             const name = document.getElementById('numName').value.trim() || 'Rahul Sharma';
             const dob = document.getElementById('numDob').value || '1994-05-22';
-            
             const parts = dob.split('-');
-            const year = parts[0];
-            const month = parts[1];
-            const day = parts[2];
+            const year = parts[0], month = parts[1], day = parts[2];
 
             let daySum = day.split('').reduce((a, b) => a + parseInt(b), 0);
-            while(daySum > 9 && daySum !== 11 && daySum !== 22) {
-                daySum = String(daySum).split('').reduce((a, b) => a + parseInt(b), 0);
-            }
+            while(daySum > 9 && daySum !== 11 && daySum !== 22) daySum = String(daySum).split('').reduce((a, b) => a + parseInt(b), 0);
             const driver = daySum;
 
-            let dobAllDigits = (year + month + day).split('').map(Number);
-            let conductorSum = dobAllDigits.reduce((a, b) => a + b, 0);
-            while(conductorSum > 9 && conductorSum !== 11 && conductorSum !== 22) {
-                conductorSum = String(conductorSum).split('').reduce((a, b) => a + parseInt(b), 0);
-            }
+            let conductorSum = (year + month + day).split('').map(Number).reduce((a, b) => a + b, 0);
+            while(conductorSum > 9 && conductorSum !== 11 && conductorSum !== 22) conductorSum = String(conductorSum).split('').reduce((a, b) => a + parseInt(b), 0);
             const conductor = conductorSum;
 
-            let yearDigitsSum = year.split('').map(Number).reduce((a, b) => a + b, 0);
-            while(yearDigitsSum > 9) {
-                yearDigitsSum = String(yearDigitsSum).split('').reduce((a, b) => a + parseInt(b), 0);
-            }
-            let kua = 11 - yearDigitsSum;
-            if(kua > 9) {
-                kua = String(kua).split('').reduce((a, b) => a + parseInt(b), 0);
-            }
+            let kua = 11 - (year.split('').map(Number).reduce((a, b) => a + b, 0) % 9);
+            if(kua > 9) kua = String(kua).split('').reduce((a, b) => a + parseInt(b), 0);
 
-            const chaldean = {
-                a:1, i:1, j:1, q:1, y:1,
-                b:2, k:2, r:2,
-                c:3, g:3, l:3, s:3,
-                d:4, m:4, t:4,
-                e:5, h:5, n:5, x:5,
-                u:6, v:6, w:6,
-                o:7, z:7,
-                f:8, p:8
-            };
+            const chaldean = {a:1,i:1,j:1,q:1,y:1,b:2,k:2,r:2,c:3,g:3,l:3,s:3,d:4,m:4,t:4,e:5,h:5,n:5,x:5,u:6,v:6,w:6,o:7,z:7,f:8,p:8};
             let nameSum = 0;
-            for(let char of name.toLowerCase()) {
-                if(chaldean[char]) nameSum += chaldean[char];
-            }
+            for(let char of name.toLowerCase()) if(chaldean[char]) nameSum += chaldean[char];
             let nameNum = nameSum;
-            while(nameNum > 9 && nameNum !== 11 && nameNum !== 22 && nameNum !== 33) {
-                nameNum = String(nameNum).split('').reduce((a, b) => a + parseInt(b), 0);
-            }
+            while(nameNum > 9 && nameNum !== 11 && nameNum !== 22) nameNum = String(nameNum).split('').reduce((a, b) => a + parseInt(b), 0);
 
             let gridDigits = [];
-            (year + month + day).split('').forEach(d => {
-                if(d !== '0') gridDigits.push(parseInt(d));
-            });
+            (year + month + day).split('').forEach(d => { if(d !== '0') gridDigits.push(parseInt(d)); });
             gridDigits.push(driver);
             gridDigits.push(conductor);
 
@@ -919,68 +983,72 @@
 
             document.getElementById('numOutput').innerHTML = `
                 <div class="grid grid-cols-2 gap-3 text-center">
-                    <div class="box-3d p-4 rounded-2xl cursor-pointer hover:border-gold transition" onclick="explainPlacement('Driver (Moolank) ${driver}', 'Governs your core personality and behavior.')">
-                        <p class="text-gray-400 text-xs uppercase tracking-wider">Driver</p>
-                        <p class="text-2xl font-black text-gold mt-1 cinzel-font">${driver}</p>
+                    <div class="box-3d p-4 rounded-2xl cursor-pointer hover:border-gold transition" onclick="explainPlacement('Driver ${driver}', 'Governs core personality.')">
+                        <p class="text-gray-400 text-xs">Driver</p>
+                        <p class="text-2xl font-black text-gold cinzel-font">${driver}</p>
                     </div>
-                    <div class="box-3d p-4 rounded-2xl cursor-pointer hover:border-gold transition" onclick="explainPlacement('Conductor (Bhagyank) ${conductor}', 'Governs your destiny path after age 35.')">
-                        <p class="text-gray-400 text-xs uppercase tracking-wider">Conductor</p>
-                        <p class="text-2xl font-black text-gold mt-1 cinzel-font">${conductor}</p>
-                    </div>
-                    <div class="box-3d p-4 rounded-2xl cursor-pointer hover:border-gold transition" onclick="explainPlacement('Kua Number ${kua}', 'Governs personal magnetic directional success.')">
-                        <p class="text-gray-400 text-xs uppercase tracking-wider">Kua Number</p>
-                        <p class="text-2xl font-black text-gold mt-1 cinzel-font">${kua}</p>
-                    </div>
-                    <div class="box-3d p-4 rounded-2xl cursor-pointer hover:border-gold transition" onclick="explainPlacement('Name Number ${nameSum}', 'Governs public branding and career vibration.')">
-                        <p class="text-gray-400 text-xs uppercase tracking-wider">Name Number</p>
-                        <p class="text-2xl font-black text-gold mt-1 cinzel-font">${nameSum} (${nameNum})</p>
+                    <div class="box-3d p-4 rounded-2xl cursor-pointer hover:border-gold transition" onclick="explainPlacement('Conductor ${conductor}', 'Governs destiny path.')">
+                        <p class="text-gray-400 text-xs">Conductor</p>
+                        <p class="text-2xl font-black text-gold cinzel-font">${conductor}</p>
                     </div>
                 </div>
-
                 <div class="box-3d p-5 rounded-3xl text-center space-y-3">
-                    <h4 class="font-bold text-gold text-xs uppercase tracking-widest cinzel-font"><i class="fa-solid fa-cube mr-1"></i> Interactive 3D Loshu Matrix (Touch missing numbers for remedies)</h4>
-                    <div class="max-w-[220px] mx-auto grid grid-cols-3 gap-2 p-3 bg-cosmic-950 border-2 border-gold/60 rounded-2xl shadow-glow">
-                        <div class="aspect-square bg-cosmic-900 rounded-xl flex flex-col items-center justify-center border border-gold/30"><span class="text-[9px] text-gray-400">4</span><span class="font-black text-amber-400 text-lg">${gridDigits.filter(d=>d===4).join('')}</span></div>
-                        <div class="aspect-square bg-cosmic-900 rounded-xl flex flex-col items-center justify-center border border-gold/30"><span class="text-[9px] text-gray-400">9</span><span class="font-black text-amber-400 text-lg">${gridDigits.filter(d=>d===9).join('')}</span></div>
-                        <div class="aspect-square bg-cosmic-900 rounded-xl flex flex-col items-center justify-center border border-gold/30"><span class="text-[9px] text-gray-400">2</span><span class="font-black text-amber-400 text-lg">${gridDigits.filter(d=>d===2).join('')}</span></div>
-                        
-                        <div class="aspect-square bg-cosmic-900 rounded-xl flex flex-col items-center justify-center border border-gold/30"><span class="text-[9px] text-gray-400">3</span><span class="font-black text-amber-400 text-lg">${gridDigits.filter(d=>d===3).join('')}</span></div>
-                        <div class="aspect-square bg-cosmic-900 rounded-xl flex flex-col items-center justify-center border border-gold/30"><span class="text-[9px] text-gray-400">5</span><span class="font-black text-amber-400 text-lg">${gridDigits.filter(d=>d===5).join('')}</span></div>
-                        <div class="aspect-square bg-cosmic-900 rounded-xl flex flex-col items-center justify-center border border-gold/30"><span class="text-[9px] text-gray-400">7</span><span class="font-black text-amber-400 text-lg">${gridDigits.filter(d=>d===7).join('')}</span></div>
-                        
-                        <div class="aspect-square bg-cosmic-900 rounded-xl flex flex-col items-center justify-center border border-gold/30"><span class="text-[9px] text-gray-400">8</span><span class="font-black text-amber-400 text-lg">${gridDigits.filter(d=>d===8).join('')}</span></div>
-                        <div class="aspect-square bg-cosmic-900 rounded-xl flex flex-col items-center justify-center border border-gold/30"><span class="text-[9px] text-gray-400">1</span><span class="font-black text-amber-400 text-lg">${gridDigits.filter(d=>d===1).join('')}</span></div>
-                        <div class="aspect-square bg-cosmic-900 rounded-xl flex flex-col items-center justify-center border border-gold/30"><span class="text-[9px] text-gray-400">6</span><span class="font-black text-amber-400 text-lg">${gridDigits.filter(d=>d===6).join('')}</span></div>
+                    <h4 class="font-bold text-gold text-xs uppercase tracking-widest cinzel-font">Interactive 3D Loshu Matrix (Touch missing numbers for remedies)</h4>
+                    <div class="max-w-[200px] mx-auto grid grid-cols-3 gap-1.5 p-2 bg-cosmic-950 border-2 border-gold/60 rounded-2xl">
+                        <div class="aspect-square bg-cosmic-900 rounded flex flex-col items-center justify-center"><span class="text-[8px] text-gray-500">4</span><span class="font-bold text-amber-400">${gridDigits.filter(d=>d===4).join('')}</span></div>
+                        <div class="aspect-square bg-cosmic-900 rounded flex flex-col items-center justify-center"><span class="text-[8px] text-gray-500">9</span><span class="font-bold text-amber-400">${gridDigits.filter(d=>d===9).join('')}</span></div>
+                        <div class="aspect-square bg-cosmic-900 rounded flex flex-col items-center justify-center"><span class="text-[8px] text-gray-500">2</span><span class="font-bold text-amber-400">${gridDigits.filter(d=>d===2).join('')}</span></div>
+                        <div class="aspect-square bg-cosmic-900 rounded flex flex-col items-center justify-center"><span class="text-[8px] text-gray-500">3</span><span class="font-bold text-amber-400">${gridDigits.filter(d=>d===3).join('')}</span></div>
+                        <div class="aspect-square bg-cosmic-900 rounded flex flex-col items-center justify-center"><span class="text-[8px] text-gray-500">5</span><span class="font-bold text-amber-400">${gridDigits.filter(d=>d===5).join('')}</span></div>
+                        <div class="aspect-square bg-cosmic-900 rounded flex flex-col items-center justify-center"><span class="text-[8px] text-gray-500">7</span><span class="font-bold text-amber-400">${gridDigits.filter(d=>d===7).join('')}</span></div>
+                        <div class="aspect-square bg-cosmic-900 rounded flex flex-col items-center justify-center"><span class="text-[8px] text-gray-500">8</span><span class="font-bold text-amber-400">${gridDigits.filter(d=>d===8).join('')}</span></div>
+                        <div class="aspect-square bg-cosmic-900 rounded flex flex-col items-center justify-center"><span class="text-[8px] text-gray-500">1</span><span class="font-bold text-amber-400">${gridDigits.filter(d=>d===1).join('')}</span></div>
+                        <div class="aspect-square bg-cosmic-900 rounded flex flex-col items-center justify-center"><span class="text-[8px] text-gray-500">6</span><span class="font-bold text-amber-400">${gridDigits.filter(d=>d===6).join('')}</span></div>
                     </div>
-                    <p class="text-xs text-gray-300 pt-1"><strong>Present Numbers:</strong> ${presentNums.join(', ')}</p>
-                    <p class="text-xs text-amber-300 font-semibold"><strong>Missing Numbers (Touch to Reveal Remedies):</strong> 
-                        ${missingNums.map(mn => `<span class="cursor-pointer underline text-gold hover:text-white mx-1" onclick="explainPlacement('Missing Number ${mn} Remedy', 'Missing Number${mn} can cause specific energy gaps. Remedy: Wear designated gemstone or engage in specific charity associated with number ${mn}.')">${mn}</span>`).join(', ')}
+                    <p class="text-xs text-amber-300 font-semibold pt-2"><strong>Missing Numbers (Touch to Reveal Remedies):</strong> 
+                        ${missingNums.map(mn => `<span class="cursor-pointer underline text-gold hover:text-white mx-1" onclick="explainPlacement('Missing Number ${mn} Remedy', 'Missing Number${mn} energy gap. Remedy: Wear designated gemstone or engage in charity associated with number ${mn}.')">${mn}</span>`).join(', ')}
                     </p>
                 </div>
             `;
         }
 
         function drawCardOfTheDay() {
-            document.getElementById('cardOfTheDayBox').innerHTML = `<h4 class="font-black text-gold text-lg mb-1.5 cinzel-font">The Magician</h4><p class="text-xs text-gray-300">Manifestation and inspired power.</p>`;
+            document.getElementById('cardOfTheDayBox').innerHTML = `<h4 class="font-black text-gold text-lg mb-1.5 cinzel-font">The Magician</h4><p class="text-xs text-gray-300">Manifestation, resourcefulness, power, and inspired action.</p>`;
         }
         function shuffleThreeCards() {
-            document.getElementById('threeCardBox').innerHTML = `<div class="p-4 bg-cosmic-950 border border-gold/40 rounded-2xl text-center"><p class="text-gold font-bold text-[10px]">Past</p><p class="text-white text-xs">Six of Swords</p></div><div class="p-4 bg-cosmic-950 border border-gold/40 rounded-2xl text-center"><p class="text-gold font-bold text-[10px]">Present</p><p class="text-white text-xs">The Star</p></div><div class="p-4 bg-cosmic-950 border border-gold/40 rounded-2xl text-center"><p class="text-gold font-bold text-[10px]">Future</p><p class="text-white text-xs">Ten of Cups</p></div>`;
+            document.getElementById('threeCardBox').innerHTML = `
+                <div class="p-3 bg-cosmic-950 border border-gold/40 rounded-2xl text-center"><p class="text-gold font-bold text-[10px]">Past</p><p class="text-white text-xs font-bold">Six of Swords</p><p class="text-[9px] text-gray-400 mt-1">Transition away from stress.</p></div>
+                <div class="p-3 bg-cosmic-950 border border-gold/40 rounded-2xl text-center"><p class="text-gold font-bold text-[10px]">Present</p><p class="text-white text-xs font-bold">The Star</p><p class="text-[9px] text-gray-400 mt-1">Hope and healing.</p></div>
+                <div class="p-3 bg-cosmic-950 border border-gold/40 rounded-2xl text-center"><p class="text-gold font-bold text-[10px]">Future</p><p class="text-white text-xs font-bold">Ten of Cups</p><p class="text-[9px] text-gray-400 mt-1">Emotional bliss and family harmony.</p></div>
+            `;
         }
         function calculateMatch() {
-            document.getElementById('matchOutput').innerHTML = `<div class="p-4 bg-cosmic-950 rounded-2xl border border-gold/30"><p class="text-green-400 font-bold text-xs">36-Gun Milan Score: 30 / 36 (Uttam Milan)</p></div>`;
+            document.getElementById('matchOutput').innerHTML = `<div class="p-4 bg-cosmic-950 rounded-2xl border border-gold/30 space-y-2"><p class="text-green-400 font-bold text-sm">36-Gun Milan Score: 31 / 36 (Uttam Milan)</p><p class="text-xs text-gray-300">Groom & Bride charts show excellent Nadi and Bhakoot compatibility.</p></div>`;
         }
         function openRegisterProfileModal() { document.getElementById('registerProfileModal').classList.remove('hidden'); }
         function closeRegisterProfileModal() { document.getElementById('registerProfileModal').classList.add('hidden'); }
-        function submitMatrimonyRegistration() { alert('Profile registered!'); closeRegisterProfileModal(); }
-        function openInterestModal(name) { alert('Interest sent to ' + name); }
+        function submitMatrimonyRegistration() { alert('Profile registered successfully! Pending Admin approval & KYC verification.'); closeRegisterProfileModal(); }
         function loginAdmin() {
-            if(document.getElementById('adminPass').value === '1234') {
+            const adminId = document.getElementById('adminIdSelect').value;
+            const pass = document.getElementById('adminPass').value;
+            
+            // Validating against the 3 credentials
+            const validCreds = {
+                'admin1': 'admin999',
+                'admin2': 'admin2026',
+                'admin3': 'admin7837'
+            };
+
+            if(validCreds[adminId] && validCreds[adminId] === pass) {
                 document.getElementById('adminLoginCard').classList.add('hidden');
                 document.getElementById('adminDashboardContent').classList.remove('hidden');
-                alert('Admin authenticated!');
-            } else { alert('Invalid PIN'); }
+                alert('Admin authenticated successfully (' + adminId + ')!');
+            } else {
+                alert('Invalid Admin ID or Password. Please check the credentials guide above.');
+            }
         }
-        function approveKyc(btn) { btn.parentElement.innerHTML = '<span class="text-green-400 font-bold">Approved</span>'; }
+        function approveKyc(btn) { btn.parentElement.innerHTML = '<span class="text-green-400 font-bold"><i class="fa-solid fa-check"></i> Approved & Verified</span>'; }
+        function approvePayment(btn) { btn.parentElement.innerHTML = '<span class="text-green-400 font-bold"><i class="fa-solid fa-check"></i> Verified & Contacts Unlocked</span>'; }
         function toggleAiChat() { document.getElementById('aiChatWindow').classList.toggle('hidden'); }
         function sendAiMessage() {
             const input = document.getElementById('aiInput');
@@ -988,7 +1056,7 @@
             document.getElementById('aiChatMessages').innerHTML += `<div class="bg-amber-500/20 text-gold p-3 rounded-xl ml-auto max-w-[85%] text-right">${input.value}</div>`;
             input.value = '';
             setTimeout(() => {
-                document.getElementById('aiChatMessages').innerHTML += `<div class="bg-cosmic-950 p-3 rounded-xl border border-gold/20 max-w-[85%]">Namaste! For detailed queries, please book a session with Rasshmi Sharrma.</div>`;
+                document.getElementById('aiChatMessages').innerHTML += `<div class="bg-cosmic-950 p-3 rounded-xl border border-gold/20 max-w-[85%]">Namaste! For detailed analysis, please book a consultation session with Rasshmi Sharrma.</div>`;
             }, 600);
         }
         function closeExplainModal() { document.getElementById('explainModal').classList.add('hidden'); }
