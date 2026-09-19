@@ -153,7 +153,7 @@
         </div>
         <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 text-xs mb-4">
           <div class="p-3 bg-cosmic-950 border border-slate-800 rounded-xl text-center"><span class="text-slate-400 block text-[10px]">Tithi</span><span id="p-tithi" class="font-bold text-amber-300">Shukla Ashtami</span></div>
-          <div class="p-3 bg-cosmic-950 border border-slate-800 rounded-xl text-center"><span class="text-slate-400 block text-[10px]">Nakshatra</span><span id="p-nak" class="font-bold text-purple-300">Chitra (Pada 3)</span></div>
+          <div class="p-3 bg-cosmic-950 border border-slate-800 rounded-xl text-center"><span class="text-slate-400 block text-[10px]">Nakshatra</span><span id="p-nak" class="font-bold text-purple-300">Mula (Pada 2)</span></div>
           <div class="p-3 bg-cosmic-950 border border-slate-800 rounded-xl text-center"><span class="text-slate-400 block text-[10px]">Yoga</span><span id="p-yoga" class="font-bold text-gold-400">Ayushman</span></div>
           <div class="p-3 bg-cosmic-950 border border-slate-800 rounded-xl text-center"><span class="text-slate-400 block text-[10px]">Karana</span><span id="p-karana" class="font-bold text-emerald-300">Bava</span></div>
           <div class="p-3 bg-cosmic-950 border border-slate-800 rounded-xl text-center col-span-2 sm:col-span-1"><span class="text-slate-400 block text-[10px]">Vaara (Day)</span><span id="p-day" class="font-bold text-rose-300">Shanivar</span></div>
@@ -244,7 +244,7 @@
       </div>
     </div>
 
-    <!-- VIEW 3: NUMEROLOGY (Free Grid & Synopsis, Paid Name Correction) -->
+    <!-- VIEW 3: NUMEROLOGY (Free Grid & Synopsis Restored) -->
     <div id="page-numerology" class="app-view space-y-10">
       <div class="text-center">
         <span class="text-xs font-bold text-gold-400 tracking-widest uppercase">Sacred Geometry</span>
@@ -330,7 +330,7 @@
       </div>
     </div>
 
-    <!-- VIEW 5: TAROT (Fully Repaired Reshuffle) -->
+    <!-- VIEW 5: TAROT -->
     <div id="page-tarot" class="app-view space-y-12 text-center">
       <div class="max-w-3xl mx-auto">
         <h1 class="font-cinzel text-3xl font-black text-white">Cosmic Tarot Sanctuary (78-Card Deck)</h1>
@@ -684,45 +684,35 @@
       document.getElementById('res-personality').textContent = `${personalityNum}`;
       document.getElementById('res-name').textContent = `${chaldeanSum} ➔ ${nameVib}`;
       document.getElementById('res-destiny').textContent = `${destinyNum}`;
-      document.getElementById('numerology-unlocked-section')?.classList.remove('hidden');
       alert("Lo Shu Matrix computed successfully!");
     }
 
-    // Tarot Reshuffle Handler
-    const fullTarotDeck = [
-      { icon: "🎒", name: "The Fool", desc: "New beginnings, spontaneity." },
-      { icon: "🪄", name: "The Magician", desc: "Manifestation, active will." },
-      { icon: "⭐", name: "The Star", desc: "Hope, clarity, renewal." },
-      { icon: "⚖️", name: "Justice", desc: "Truth, fairness, law." },
-      { icon: "👑", name: "The Emperor", desc: "Authority, structure." },
-      { icon: "☸️", name: "Wheel of Fortune", desc: "Karmic cycles, destiny." }
+    // Cosmic Feed
+    let cosmicFeedPosts = JSON.parse(localStorage.getItem('dm_cosmic_feed')) || [
+      { title: "Saturn's Transit in Aquarius", category: "PLANETARY TRANSIT", date: "Today", content: "Shani Dev in Aquarius aspects 9th, 1st, and 4th houses. Hard work yields long-term rewards." },
+      { title: "New Moon in Leo Portal", category: "ANNUAL EVENT", date: "Upcoming", content: "Harness the magnetic solar energy for leadership and high-stakes venture launches." }
     ];
-    function drawDailyTarot() {
-      const pick = fullTarotDeck[Math.floor(Math.random() * fullTarotDeck.length)];
-      document.getElementById('tc-icon').textContent = pick.icon;
-      document.getElementById('tc-name').textContent = pick.name;
-      document.getElementById('tc-guide').textContent = pick.desc;
+    function renderFeed() {
+      const fs = document.getElementById('feed-stream');
+      if (!fs) return;
+      fs.innerHTML = cosmicFeedPosts.map(f => `<div class="p-5 bg-cosmic-900 border border-slate-800 rounded-2xl"><div class="text-gold-400 font-bold mb-1">${f.category} • ${f.date}</div><h3 class="font-bold text-white text-sm mb-1">${f.title}</h3><p class="text-slate-300 leading-relaxed">${f.content}</p></div>`).join('');
+      if (isMasterAdmin) document.getElementById('feed-composer').classList.remove('hidden');
     }
-    function drawTarotSpread() {
-      document.getElementById('spread-card-1').classList.remove('flipped');
-      document.getElementById('spread-card-2').classList.remove('flipped');
-      document.getElementById('spread-card-3').classList.remove('flipped');
-
-      setTimeout(() => {
-        const shuffled = [...fullTarotDeck].sort(() => 0.5 - Math.random());
-        for(let i=1; i<=3; i++) {
-          document.getElementById('ts-icon-'+i).textContent = shuffled[i-1].icon;
-          document.getElementById('ts-name-'+i).textContent = shuffled[i-1].name;
-          document.getElementById('ts-desc-'+i).textContent = shuffled[i-1].desc;
-        }
-      }, 300);
+    function postFeed() {
+      const t = document.getElementById('f-title').value;
+      const c = document.getElementById('f-body').value;
+      if(!t || !c) return;
+      cosmicFeedPosts.unshift({ title: t, content: c, category: "ANNOUNCEMENT", date: "Today" });
+      localStorage.setItem('dm_cosmic_feed', JSON.stringify(cosmicFeedPosts));
+      renderFeed();
+      document.getElementById('f-title').value = ''; document.getElementById('f-body').value = '';
     }
 
     // Store
     function renderStore() {
       const g = document.getElementById('store-products-grid');
       if (!g) return;
-      g.innerHTML = `<div class="p-5 bg-cosmic-900 rounded-2xl border border-slate-800 text-xs">📿 Kamal Gatta Mala (₹1,250)<button onclick="cart.push({name:'Mala', price:1250}); updateCart(); alert('Added!')" class="mt-2 w-full py-2 bg-emerald-500 text-black font-bold rounded">+ Add</button></div>`;
+      g.innerHTML = `<div class="p-5 bg-cosmic-900 rounded-2xl border border-slate-800 text-xs flex flex-col justify-between"><div><div class="text-4xl mb-2">📿</div><div class="font-bold text-white mb-1">108 Siddh Kamal Gatta Mala</div><div class="text-gold-400 font-mono mb-3">₹1,250</div></div><button onclick="cart.push({name:'Kamal Gatta Mala', price:1250}); updateCart(); alert('Added to cart!')" class="w-full py-2 bg-emerald-500 text-black font-bold rounded">+ Add to Cart</button></div>`;
     }
     function updateCart() { document.getElementById('cart-counter').textContent = cart.length; }
 
@@ -823,14 +813,13 @@
     function handleUtrSubmission(e) { 
       e.preventDefault(); 
       closePaymentModal(); 
-      alert("UTR Submitted successfully! Unlocking paid report state...");
-      document.getElementById('numerology-unlocked-section')?.classList.remove('hidden');
+      alert("UTR Submitted successfully!");
     }
 
     window.addEventListener('DOMContentLoaded', () => {
       if (isMasterAdmin) renderAdmin();
       switchPage('astrology');
-      generateBabyNames("Chitra");
+      renderFeed();
     });
   </script>
 </body>
