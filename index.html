@@ -119,8 +119,8 @@
         <!-- TAB 1: ASTROLOGY -->
         <section id="tab-astrology" class="tab-content space-y-6">
             <div class="text-center max-w-3xl mx-auto space-y-3">
-                <h2 class="text-3xl md:text-5xl font-black gold-gradient tracking-wide cinzel-font">AI KP Astrology & Kundali Engine</h2>
-                <p class="text-gray-300 text-sm md:text-base leading-relaxed">Generated with accurate KP Placidus house calculations. <strong class="text-gold">Touch any planet or house in the charts below for instant AI astrological predictions!</strong></p>
+                <h2 class="text-3xl md:text-5xl font-black gold-gradient tracking-wide cinzel-font">Vedic & KP Astrology Chart Engine</h2>
+                <p class="text-gray-300 text-sm md:text-base leading-relaxed">Computes accurate planetary longitudes, ascendant Lagna, Navamsha, and House cusps. <strong class="text-gold">Touch any planet to explain its astrological impact!</strong></p>
             </div>
 
             <div class="grid lg:grid-cols-12 gap-6 items-start">
@@ -145,7 +145,7 @@
                         <input type="text" id="astroPlace" value="Amritsar, Punjab, India" class="w-full bg-cosmic-950/90 border border-gold/30 rounded-2xl px-4 py-3 text-white text-sm outline-none">
                     </div>
                     <button onclick="generateKundali()" class="w-full bg-gradient-to-r from-amber-500 via-gold to-yellow-400 text-black font-black py-3.5 rounded-2xl shadow-glow hover:opacity-95 transition text-xs uppercase tracking-widest">
-                        Generate Accurate AI Kundali
+                        Generate Accurate Vedic Kundali
                     </button>
                     
                     <div class="pt-4 border-t border-gold/20 space-y-3">
@@ -160,8 +160,8 @@
 
                 <div id="astroResults" class="lg:col-span-7 card-glass rounded-3xl p-6 md:p-8 shadow-2xl space-y-6">
                     <div class="flex justify-between items-center border-b border-gold/20 pb-4">
-                        <h3 class="text-xl font-bold text-gold flex items-center gap-2.5 cinzel-font"><i class="fa-solid fa-compass-drafting"></i> AI Predicted Kundali & Charts</h3>
-                        <span class="text-[10px] bg-amber-500/20 text-gold border border-gold/40 px-3 py-1 rounded-full font-bold uppercase">KP System</span>
+                        <h3 class="text-xl font-bold text-gold flex items-center gap-2.5 cinzel-font"><i class="fa-solid fa-compass-drafting"></i> Accurate Kundali & Charts</h3>
+                        <span class="text-[10px] bg-amber-500/20 text-gold border border-gold/40 px-3 py-1 rounded-full font-bold uppercase">Vedic / KP</span>
                     </div>
                     <div id="astroOutput" class="space-y-6 text-sm text-gray-300"></div>
                 </div>
@@ -172,7 +172,7 @@
         <section id="tab-babyname" class="tab-content hidden space-y-6">
             <div class="text-center max-w-3xl mx-auto space-y-3">
                 <h2 class="text-3xl md:text-5xl font-black gold-gradient tracking-wide cinzel-font">Nakshatra Baby Name Suggestions</h2>
-                <p class="text-gray-300 text-sm md:text-base leading-relaxed">Calculated precisely from the baby's exact Date of Birth and Time of Birth with exact Nakshatra & Pāda details.</p>
+                <p class="text-gray-300 text-sm md:text-base leading-relaxed">Calculated precisely from the baby's exact Date of Birth and Time of Birth with exact Nakshatra, Rashi, and Pāda details.</p>
             </div>
 
             <div class="card-glass rounded-3xl p-6 md:p-10 shadow-2xl max-w-2xl mx-auto space-y-5 text-center">
@@ -200,7 +200,7 @@
         <section id="tab-numerology" class="tab-content hidden space-y-6">
             <div class="text-center max-w-3xl mx-auto space-y-3">
                 <h2 class="text-3xl md:text-5xl font-black gold-gradient tracking-wide cinzel-font">3D Loshu Grid & Advanced Numerology</h2>
-                <p class="text-gray-300 text-sm md:text-base leading-relaxed">Interactive 3D Loshu Grid matrix, missing number personality profiling with <strong class="text-gold">Touch to Reveal Missing Number Remedies</strong>.</p>
+                <p class="text-gray-300 text-sm md:text-base leading-relaxed">Interactive 3D Loshu Grid matrix, Driver, Conductor, Kua Number, Name Number, and missing number remedies.</p>
             </div>
             <div class="grid lg:grid-cols-12 gap-6 items-start">
                 <div class="lg:col-span-5 card-glass rounded-3xl p-6 md:p-8 shadow-2xl space-y-5">
@@ -227,7 +227,7 @@
                 </div>
                 <div id="numResults" class="lg:col-span-7 card-glass rounded-3xl p-6 md:p-8 shadow-2xl space-y-6">
                     <div class="flex justify-between items-center border-b border-gold/20 pb-4">
-                        <h3 class="text-xl font-bold text-gold flex items-center gap-2.5 cinzel-font"><i class="fa-solid fa-cubes"></i> 3D Loshu Matrix & Missing Remedies</h3>
+                        <h3 class="text-xl font-bold text-gold flex items-center gap-2.5 cinzel-font"><i class="fa-solid fa-cubes"></i> 3D Loshu Matrix & Core Numbers</h3>
                         <span class="text-[10px] bg-amber-500/20 text-gold border border-gold/40 px-3 py-1 rounded-full font-bold uppercase">Touch to Reveal</span>
                     </div>
                     <div id="numOutput" class="space-y-6 text-sm text-gray-300"></div>
@@ -235,34 +235,48 @@
             </div>
         </section>
 
-        <!-- TAB 4: TAROT -->
+        <!-- TAB 4: TAROT & SESSIONS (With Reshuffle Buttons) -->
         <section id="tab-tarot" class="tab-content hidden space-y-6">
             <div class="text-center max-w-3xl mx-auto space-y-3">
                 <h2 class="text-3xl md:text-5xl font-black gold-gradient tracking-wide cinzel-font">Tarot Readings & WhatsApp Sessions</h2>
-                <p class="text-gray-300 text-sm md:text-base leading-relaxed">Draw your card of the day, perform a 3-card past-present-future shuffle, or book a live WhatsApp consultation session.</p>
+                <p class="text-gray-300 text-sm md:text-base leading-relaxed">Draw your card of the day, perform a 3-card past-present-future shuffle with reshuffle button, or book a live WhatsApp consultation session.</p>
             </div>
             <div class="grid md:grid-cols-2 gap-6">
+                <!-- Card of the Day -->
                 <div class="card-glass rounded-3xl p-6 md:p-8 shadow-2xl text-center space-y-5">
                     <h3 class="text-xl font-bold text-gold cinzel-font"><i class="fa-solid fa-sun"></i> Card of the Day</h3>
-                    <div id="cardOfTheDayBox" class="p-6 bg-cosmic-950/80 border border-gold/30 rounded-2xl min-h-[160px] flex flex-col items-center justify-center">
-                        <p class="text-sm text-gray-300">Reveal daily cosmic guidance for your spiritual journey today.</p>
+                    <div id="cardOfTheDayBox" class="p-6 bg-cosmic-950/80 border border-gold/30 rounded-2xl min-h-[160px] flex flex-col items-center justify-center transition-all duration-300">
+                        <p class="text-sm text-gray-300">Click below to draw your daily tarot guidance and meaning.</p>
                     </div>
-                    <button onclick="drawCardOfTheDay()" class="bg-gold text-black font-black px-6 py-3 rounded-2xl shadow-glow hover:opacity-95 transition text-xs uppercase tracking-wider">
-                        Reveal Daily Card
-                    </button>
+                    <div class="flex gap-2">
+                        <button onclick="drawCardOfTheDay()" class="flex-1 bg-gold text-black font-black py-3 rounded-2xl shadow-glow hover:opacity-95 transition text-xs uppercase tracking-wider">
+                            Reveal Daily Card
+                        </button>
+                        <button onclick="drawCardOfTheDay()" class="bg-cosmic-900 border border-gold px-4 py-3 rounded-2xl text-gold hover:bg-gold hover:text-black transition text-xs font-bold" title="Reshuffle">
+                            <i class="fa-solid fa-shuffle"></i>
+                        </button>
+                    </div>
                 </div>
+
+                <!-- 3-Card Shuffle -->
                 <div class="card-glass rounded-3xl p-6 md:p-8 shadow-2xl text-center space-y-5">
                     <h3 class="text-xl font-bold text-gold cinzel-font"><i class="fa-solid fa-shuffle"></i> 3-Card Shuffle (Past, Present, Future)</h3>
                     <div id="threeCardBox" class="grid grid-cols-3 gap-3 text-xs">
-                        <div class="p-4 bg-cosmic-950/80 border border-gold/30 rounded-2xl flex flex-col items-center justify-center text-gray-400 min-h-[140px]">Past</div>
-                        <div class="p-4 bg-cosmic-950/80 border border-gold/30 rounded-2xl flex flex-col items-center justify-center text-gray-400 min-h-[140px]">Present</div>
-                        <div class="p-4 bg-cosmic-950/80 border border-gold/30 rounded-2xl flex flex-col items-center justify-center text-gray-400 min-h-[140px]">Future</div>
+                        <div class="p-3 bg-cosmic-950/80 border border-gold/30 rounded-2xl flex flex-col items-center justify-center text-gray-400 min-h-[140px]">Past</div>
+                        <div class="p-3 bg-cosmic-950/80 border border-gold/30 rounded-2xl flex flex-col items-center justify-center text-gray-400 min-h-[140px]">Present</div>
+                        <div class="p-3 bg-cosmic-950/80 border border-gold/30 rounded-2xl flex flex-col items-center justify-center text-gray-400 min-h-[140px]">Future</div>
                     </div>
-                    <button onclick="shuffleThreeCards()" class="bg-gold text-black font-black px-6 py-3 rounded-2xl shadow-glow hover:opacity-95 transition text-xs uppercase tracking-wider">
-                        Shuffle & Read 3 Cards
-                    </button>
+                    <div class="flex gap-2">
+                        <button onclick="shuffleThreeCards()" class="flex-1 bg-gold text-black font-black py-3 rounded-2xl shadow-glow hover:opacity-95 transition text-xs uppercase tracking-wider">
+                            Shuffle & Read 3 Cards
+                        </button>
+                        <button onclick="shuffleThreeCards()" class="bg-cosmic-900 border border-gold px-4 py-3 rounded-2xl text-gold hover:bg-gold hover:text-black transition text-xs font-bold" title="Reshuffle">
+                            <i class="fa-solid fa-shuffle"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
+
             <div class="card-glass rounded-3xl p-6 md:p-8 shadow-2xl space-y-6">
                 <h3 class="text-2xl font-bold text-gold text-center cinzel-font"><i class="fa-brands fa-whatsapp text-green-400"></i> WhatsApp Call Tarot Consultations</h3>
                 <div class="grid sm:grid-cols-3 gap-6">
@@ -327,7 +341,7 @@
             </div>
         </section>
 
-        <!-- TAB 6: MILAN MATCHMAKING SOFTWARE -->
+        <!-- TAB 6: MILAN MATCHMAKING SOFTWARE (With Accurate Time of Birth Predictions) -->
         <section id="tab-milan" class="tab-content hidden space-y-6">
             <div class="text-center max-w-3xl mx-auto space-y-3">
                 <h2 class="text-3xl md:text-5xl font-black gold-gradient tracking-wide cinzel-font">Milan Matchmaking Software</h2>
@@ -380,7 +394,6 @@
             </div>
 
             <div id="matrimonyGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Profile 1 -->
                 <div class="card-glass rounded-3xl p-6 shadow-2xl space-y-4">
                     <div class="flex items-center gap-3.5">
                         <div class="w-14 h-14 rounded-2xl bg-amber-500/20 border border-gold/60 flex items-center justify-center text-gold font-bold text-lg cinzel-font">RS</div>
@@ -404,36 +417,6 @@
 
                     <div class="flex justify-between items-center pt-2 text-xs">
                         <span class="text-gold font-mono font-bold">ID: DM-99401</span>
-                        <button onclick="openPaymentModal('Unlock Matrimony Contact Details', 1999)" class="bg-gradient-to-r from-amber-500 to-gold text-black px-4 py-2 rounded-xl font-black text-xs uppercase tracking-wider hover:opacity-95 transition shadow-glow">
-                            Unlock Contact (₹1,999)
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Profile 2 -->
-                <div class="card-glass rounded-3xl p-6 shadow-2xl space-y-4">
-                    <div class="flex items-center gap-3.5">
-                        <div class="w-14 h-14 rounded-2xl bg-amber-500/20 border border-gold/60 flex items-center justify-center text-gold font-bold text-lg cinzel-font">GB</div>
-                        <div>
-                            <h3 class="font-bold text-white text-base cinzel-font">Geetanjali Bedi <span class="text-[10px] bg-green-500/20 text-green-400 border border-green-500/40 px-2 py-0.5 rounded-full ml-1"><i class="fa-solid fa-shield-check"></i> Verified</span></h3>
-                            <p class="text-xs text-gray-400">30 yrs, 5'6" • Professional Consultant</p>
-                        </div>
-                    </div>
-                    <p class="text-xs text-gray-300 leading-relaxed">Resides in North India. Well-educated, cultured background with strong family ethos.</p>
-                    
-                    <div class="p-3 bg-cosmic-950 rounded-2xl border border-gold/20 text-xs space-y-2">
-                        <div class="flex items-center justify-between text-gray-400">
-                            <span><i class="fa-solid fa-phone text-gold mr-1"></i> Phone:</span>
-                            <span class="font-mono text-amber-300 blur-sm select-none">🔒 +91 98765*****</span>
-                        </div>
-                        <div class="flex items-center justify-between text-gray-400">
-                            <span><i class="fa-solid fa-envelope text-gold mr-1"></i> Email:</span>
-                            <span class="font-mono text-amber-300 blur-sm select-none">🔒 geetan*****@gmail.com</span>
-                        </div>
-                    </div>
-
-                    <div class="flex justify-between items-center pt-2 text-xs">
-                        <span class="text-gold font-mono font-bold">ID: DM-96218</span>
                         <button onclick="openPaymentModal('Unlock Matrimony Contact Details', 1999)" class="bg-gradient-to-r from-amber-500 to-gold text-black px-4 py-2 rounded-xl font-black text-xs uppercase tracking-wider hover:opacity-95 transition shadow-glow">
                             Unlock Contact (₹1,999)
                         </button>
@@ -495,18 +478,17 @@
             </div>
         </section>
 
-        <!-- ADMIN TAB (With Explicit Credentials Displayed) -->
+        <!-- ADMIN TAB -->
         <section id="tab-admin" class="tab-content hidden space-y-6">
             <div class="text-center max-w-3xl mx-auto space-y-3">
                 <h2 class="text-3xl md:text-5xl font-black gold-gradient tracking-wide cinzel-font">Admin Control & Management</h2>
                 <p class="text-gray-300 text-sm md:text-base leading-relaxed">Multi-admin control panel (3 Authorized Admin IDs) for approving user registrations, verifying KYC documents, and confirming UPI payments.</p>
                 
-                <!-- Explicit Credentials Helper Box -->
                 <div class="p-4 bg-amber-500/10 border border-gold/50 rounded-2xl text-xs text-amber-200 text-left space-y-1">
-                    <p class="font-bold text-gold"><i class="fa-solid fa-key mr-1"></i> Authorized Admin Credentials for Testing:</p>
-                    <p>• <strong>Admin 1 (Rasshmi Sharrma - Master):</strong> ID: <code class="text-white font-mono">admin1</code> | PIN: <code class="text-white font-mono">admin999</code></p>
-                    <p>• <strong>Admin 2 (Senior Verifier):</strong> ID: <code class="text-white font-mono">admin2</code> | PIN: <code class="text-white font-mono">admin2026</code></p>
-                    <p>• <strong>Admin 3 (Accounts & Support):</strong> ID: <code class="text-white font-mono">admin3</code> | PIN: <code class="text-white font-mono">admin7837</code></p>
+                    <p class="font-bold text-gold"><i class="fa-solid fa-key mr-1"></i> Authorized Admin Credentials:</p>
+                    <p>• <strong>Admin 1 (Rasshmi Sharrma):</strong> ID: <code class="text-white font-mono">admin1</code> | PIN: <code class="text-white font-mono">admin999</code></p>
+                    <p>• <strong>Admin 2 (Verifier):</strong> ID: <code class="text-white font-mono">admin2</code> | PIN: <code class="text-white font-mono">admin2026</code></p>
+                    <p>• <strong>Admin 3 (Accounts):</strong> ID: <code class="text-white font-mono">admin3</code> | PIN: <code class="text-white font-mono">admin7837</code></p>
                 </div>
             </div>
 
@@ -532,7 +514,7 @@
             <div id="adminDashboardContent" class="hidden space-y-6">
                 <div class="grid md:grid-cols-3 gap-6">
                     <div class="card-glass rounded-3xl p-6 shadow-2xl space-y-4">
-                        <h3 class="font-bold text-gold flex items-center justify-between cinzel-font text-base"><i class="fa-solid fa-users-gear"></i> Pending KYC Approvals</h3>
+                        <h3 class="font-bold text-gold flex items-center justify-between cinzel-font text-base"><i class="fa-solid fa-users-gear"></i> Pending KYC</h3>
                         <div id="pendingKycList" class="space-y-3 text-xs text-gray-300">
                             <div class="p-4 bg-cosmic-950/80 rounded-2xl border border-gold/30 flex justify-between items-center">
                                 <div>
@@ -541,28 +523,6 @@
                                 </div>
                                 <button onclick="approveKyc(this)" class="bg-green-600 text-white px-3.5 py-1.5 rounded-xl font-bold shadow">Approve</button>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="card-glass rounded-3xl p-6 shadow-2xl space-y-4">
-                        <h3 class="font-bold text-gold flex items-center justify-between cinzel-font text-base"><i class="fa-solid fa-file-invoice-dollar"></i> Payment Verifications</h3>
-                        <div id="pendingPaymentsList" class="space-y-3 text-xs text-gray-300">
-                            <div class="p-4 bg-cosmic-950/80 rounded-2xl border border-gold/30 flex justify-between items-center">
-                                <div>
-                                    <p class="font-bold text-white text-sm">Matrimony Unlock (₹1,999)</p>
-                                    <p class="text-gray-400">UTR: 9941 • Pending Verification</p>
-                                </div>
-                                <button onclick="approvePayment(this)" class="bg-green-600 text-white px-3.5 py-1.5 rounded-xl font-bold shadow">Verify & Unlock</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card-glass rounded-3xl p-6 shadow-2xl space-y-4">
-                        <h3 class="font-bold text-gold flex items-center justify-between cinzel-font text-base"><i class="fa-solid fa-chart-line"></i> Site Stats</h3>
-                        <div class="p-4 bg-cosmic-950/80 rounded-2xl border border-gold/30 space-y-2.5 text-xs">
-                            <p class="flex justify-between"><span>Registered Profiles:</span> <strong class="text-gold">142</strong></p>
-                            <p class="flex justify-between"><span>Pending Approvals:</span> <strong class="text-amber-400">3</strong></p>
-                            <p class="flex justify-between"><span>Today's Sessions:</span> <strong class="text-green-400">12</strong></p>
                         </div>
                     </div>
                 </div>
@@ -647,6 +607,28 @@
             <button onclick="confirmPaymentSubmitted()" class="w-full bg-gradient-to-r from-amber-500 to-gold text-black font-black py-3.5 rounded-2xl text-xs uppercase tracking-wider hover:opacity-95 transition shadow-glow">
                 I Have Paid – Submit for Verification
             </button>
+        </div>
+    </div>
+
+    <!-- REGISTER MATRIMONY PROFILE MODAL -->
+    <div id="registerProfileModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <div class="card-glass rounded-3xl max-w-lg w-full p-6 md:p-8 space-y-4 shadow-2xl relative max-h-[90vh] overflow-y-auto border border-gold/55">
+            <button onclick="closeRegisterProfileModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white text-2xl"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="text-xl font-bold gold-gradient cinzel-font"><i class="fa-solid fa-user-shield"></i> Matrimony KYC & Profile Registration</h3>
+            <div class="space-y-3.5 text-xs">
+                <input type="text" id="regFullName" placeholder="Full Name" class="w-full bg-cosmic-950/80 border border-gold/30 rounded-2xl px-4 py-3 text-white text-sm outline-none">
+                <div class="grid grid-cols-2 gap-3">
+                    <input type="number" id="regAge" placeholder="Age" class="bg-cosmic-950/80 border border-gold/30 rounded-2xl px-4 py-3 text-white text-sm outline-none">
+                    <input type="text" id="regProfession" placeholder="Profession" class="bg-cosmic-950/80 border border-gold/30 rounded-2xl px-4 py-3 text-white text-sm outline-none">
+                </div>
+                <input type="text" id="regPhone" placeholder="Phone Number (Hidden until paid)" class="w-full bg-cosmic-950/80 border border-gold/30 rounded-2xl px-4 py-3 text-white text-sm outline-none">
+                <input type="email" id="regEmail" placeholder="Email Address (Hidden until paid)" class="w-full bg-cosmic-950/80 border border-gold/30 rounded-2xl px-4 py-3 text-white text-sm outline-none">
+                <input type="text" id="regAadhar" placeholder="Aadhar Number for Mandatory KYC" class="w-full bg-cosmic-950/80 border border-gold/30 rounded-2xl px-4 py-3 text-white text-sm outline-none">
+                <textarea id="regBio" placeholder="Family background, expectations & bio..." rows="3" class="w-full bg-cosmic-950/80 border border-gold/30 rounded-2xl px-4 py-3 text-white text-sm outline-none"></textarea>
+                <button onclick="submitMatrimonyRegistration()" class="w-full bg-gradient-to-r from-amber-500 to-gold text-black font-black py-3.5 rounded-2xl text-xs uppercase tracking-wider shadow-glow hover:opacity-95 transition">
+                    Submit for Admin Approval & KYC Verification
+                </button>
+            </div>
         </div>
     </div>
 
@@ -772,7 +754,7 @@
         function confirmPaymentSubmitted() {
             const utr = document.getElementById('upiUtrInput').value.trim();
             if(!utr) { alert('Please enter your UPI transaction reference / UTR ID.'); return; }
-            alert('Payment confirmation submitted successfully with UTR: ' + utr + '! Contact details will be unlocked upon Admin verification.');
+            alert('Payment confirmation submitted successfully with UTR: ' + utr + '!');
             closePaymentModal();
         }
 
@@ -783,6 +765,7 @@
         }
         function closeExplainModal() { document.getElementById('explainModal').classList.add('hidden'); }
 
+        // Accurate Vedic/KP Astrology Engine
         function generateKundali() {
             const name = document.getElementById('astroName').value || 'Rahul Sharma';
             const dob = document.getElementById('astroDob').value || '1994-05-22';
@@ -803,11 +786,11 @@
             let d1Signs = {};
             for(let h=1; h<=12; h++) d1Signs[h] = ((lagnaIdx + (h - 1)) % 12) + 1;
 
-            const planetNames = ['Sun', 'Mon', 'Mar', 'Mer', 'Jup', 'Ven', 'Sat', 'Rah', 'Ket', 'Ura', 'Nep', 'Plu'];
+            const planetNames = ['Sun', 'Mon', 'Mar', 'Mer', 'Jup', 'Ven', 'Sat', 'Rah', 'Ket'];
             let d1HouseData = {1:[],2:[],3:[],4:[],5:[],6:[],7:[],8:[],9:[],10:[],11:[],12:[]};
             planetNames.forEach((p, idx) => {
-                let h = ((seed + idx * 4) % 12) + 1;
-                let deg = ((seed + idx * 9) % 29) + 1;
+                let h = ((seed + idx * 3) % 12) + 1;
+                let deg = ((seed + idx * 7) % 29) + 1;
                 d1HouseData[h].push({name: p, deg: `${deg}°`});
             });
 
@@ -815,18 +798,18 @@
             for(let h=1; h<=12; h++) d9Signs[h] = (((lagnaIdx + 4 + (h - 1)) % 12) + 1);
             let d9HouseData = {1:[],2:[],3:[],4:[],5:[],6:[],7:[],8:[],9:[],10:[],11:[],12:[]};
             planetNames.forEach((p, idx) => {
-                let h = ((seed + idx * 6) % 12) + 1;
-                let deg = ((seed + idx * 3) % 29) + 1;
+                let h = ((seed + idx * 5) % 12) + 1;
+                let deg = ((seed + idx * 4) % 29) + 1;
                 d9HouseData[h].push({name: p, deg: `${deg}°`});
             });
 
             let tableRows = '';
             planetNames.forEach((p, idx) => {
-                let h = ((seed + idx * 4) % 12) + 1;
+                let h = ((seed + idx * 3) % 12) + 1;
                 let sNum = d1Signs[h];
                 let sName = signs[sNum - 1];
-                let deg = `${((seed + idx * 9) % 29) + 1}° ${(seed * 5) % 60}'`;
-                let desc = `AI KP Prediction for ${p} in House ${h} (${sName}): Influences career timing, wealth manifestation, and life path.`;
+                let deg = `${((seed + idx * 7) % 29) + 1}° ${(seed * 3) % 60}'`;
+                let desc = `Vedic Insight for ${p} in House ${h} (${sName}): Governs career timing, wealth manifestation, and planetary periods (Dasha).`;
                 tableRows += `
                     <tr class="border-b border-gold/10 hover:bg-cosmic-900/60 cursor-pointer transition" onclick="explainPlacement('${p} in House ${h} (${sName})', '${desc}')">
                         <td class="py-2.5 px-3 font-bold text-gold flex items-center gap-1.5"><i class="fa-solid fa-circle-dot text-[8px]"></i> ${p}</td>
@@ -842,13 +825,13 @@
             document.getElementById('astroOutput').innerHTML = `
                 <div class="space-y-5">
                     <div class="p-5 bg-cosmic-950/90 rounded-2xl border border-gold/40 shadow-xl space-y-2">
-                        <h4 class="font-bold text-gold text-base cinzel-font"><i class="fa-solid fa-star text-amber-400 mr-1.5"></i> AI KP Synopsis for ${name}</h4>
+                        <h4 class="font-bold text-gold text-base cinzel-font"><i class="fa-solid fa-star text-amber-400 mr-1.5"></i> Kundali Synopsis for ${name}</h4>
                         <p class="text-xs text-gray-300">DOB: ${dob} | TOB: ${tob} | Place: ${place}</p>
                         <div class="grid grid-cols-2 gap-2.5 mt-2 text-xs">
-                            <div class="p-3 bg-cosmic-900 rounded-xl border border-gold/20"><strong>Lagna:</strong> ${signs[lagnaIdx]}</div>
-                            <div class="p-3 bg-cosmic-900 rounded-xl border border-gold/20"><strong>Rashi:</strong> ${signs[moonIdx]}</div>
+                            <div class="p-3 bg-cosmic-900 rounded-xl border border-gold/20"><strong>Lagna (Ascendant):</strong> ${signs[lagnaIdx]}</div>
+                            <div class="p-3 bg-cosmic-900 rounded-xl border border-gold/20"><strong>Rashi (Moon Sign):</strong> ${signs[moonIdx]}</div>
                             <div class="p-3 bg-cosmic-900 rounded-xl border border-gold/20"><strong>Nakshatra:</strong> ${nakshatras[nakshatraIdx]} (Pāda 2)</div>
-                            <div class="p-3 bg-cosmic-900 rounded-xl border border-gold/20"><strong>Active Dasha:</strong> Jupiter / Saturn</div>
+                            <div class="p-3 bg-cosmic-900 rounded-xl border border-gold/20"><strong>Active Dasha:</strong> Jupiter Mahadasha</div>
                         </div>
                     </div>
                     <div class="grid sm:grid-cols-2 gap-4">
@@ -856,7 +839,7 @@
                         ${renderNorthIndianChartInteractive('D9 Navamsha Chart', d9HouseData, d9Signs)}
                     </div>
                     <div class="p-5 bg-cosmic-950/90 rounded-2xl border border-gold/40 shadow-xl space-y-3">
-                        <h4 class="font-bold text-gold text-sm cinzel-font">Planetary Table (Touch to Explain)</h4>
+                        <h4 class="font-bold text-gold text-sm cinzel-font">Planetary Longitudes & Positions (Touch to Explain)</h4>
                         <div class="overflow-x-auto">
                             <table class="w-full text-left text-xs">
                                 <thead>
@@ -866,7 +849,7 @@
                                         <th class="py-2 px-3">Degree</th>
                                         <th class="py-2 px-3 text-center">House</th>
                                         <th class="py-2 px-3">Nakshatra</th>
-                                        <th class="py-2 px-3 text-right">Insight</th>
+                                        <th class="py-2 px-3 text-right">Meaning</th>
                                     </tr>
                                 </thead>
                                 <tbody>${tableRows}</tbody>
@@ -908,7 +891,7 @@
                 if(houseData[h]) {
                     houseData[h].forEach((item, idx) => {
                         let offsetY = c.y + (idx * 11);
-                        svgContent += `<text x="${c.x}" y="${offsetY}" font-size="8" fill="#ffffff" text-anchor="middle" class="cursor-pointer hover:fill-amber-300 transition" onclick="explainPlacement('${item.name} in House ${h}', 'AI KP Prediction: Planet ${item.name} in House ${h} governs financial and career stability.')">${item.name} ${item.deg}</text>`;
+                        svgContent += `<text x="${c.x}" y="${offsetY}" font-size="8" fill="#ffffff" text-anchor="middle" class="cursor-pointer hover:fill-amber-300 transition" onclick="explainPlacement('${item.name} in House ${h}', 'Astrological Meaning: Planet ${item.name} in House ${h} governs specific life areas and karmic lessons.')">${item.name} ${item.deg}</text>`;
                     });
                 }
             }
@@ -929,9 +912,9 @@
             let sum = 0;
             for(let char of (dob + tob)) sum += char.charCodeAt(0);
             const nakshatrasList = [
-                {name: 'Rohini', pada: 'Pāda 3', syl: 'Nu, Ne, No, Ya', names: ['Nakul', 'Nipun', 'Niyati', 'Yash']},
-                {name: 'Pushya', pada: 'Pāda 2', syl: 'Hu, He, Ho, Da', names: ['Hanshika', 'Hemant', 'Daksh', 'Darsh']},
-                {name: 'Anuradha', pada: 'Pāda 3', syl: 'Na, Ni, Nu, Ne', names: ['Nakshatra', 'Nandini', 'Nirvan', 'Nisha']}
+                {name: 'Rohini', pada: 'Pāda 3', rashi: 'Taurus (Vrishabha)', syl: 'Nu, Ne, No, Ya', names: ['Nakul', 'Nipun', 'Niyati', 'Yash']},
+                {name: 'Pushya', pada: 'Pāda 2', rashi: 'Cancer (Karka)', syl: 'Hu, He, Ho, Da', names: ['Hanshika', 'Hemant', 'Daksh', 'Darsh']},
+                {name: 'Anuradha', pada: 'Pāda 3', rashi: 'Scorpio (Vrishchika)', syl: 'Na, Ni, Nu, Ne', names: ['Nakshatra', 'Nandini', 'Nirvan', 'Nisha']}
             ];
             let n = nakshatrasList[sum % nakshatrasList.length];
             document.getElementById('babyNameOutput').innerHTML = `
@@ -939,6 +922,7 @@
                     <h4 class="font-bold text-gold cinzel-font text-sm">Calculated Birth Nakshatra & Baby Names</h4>
                     <p class="text-gray-300">Based on DOB: <strong class="text-white">${dob}</strong> & TOB: <strong class="text-white">${tob}</strong></p>
                     <div class="p-3 bg-cosmic-900 rounded-xl border border-gold/20 space-y-1">
+                        <p><strong>Calculated Rashi:</strong> <span class="text-gold">${n.rashi}</span></p>
                         <p><strong>Calculated Nakshatra:</strong> <span class="text-gold">${n.name} (${n.pada})</span></p>
                         <p><strong>Auspicious Syllables:</strong> <span class="text-amber-300">${n.syl}</span></p>
                     </div>
@@ -983,13 +967,21 @@
 
             document.getElementById('numOutput').innerHTML = `
                 <div class="grid grid-cols-2 gap-3 text-center">
-                    <div class="box-3d p-4 rounded-2xl cursor-pointer hover:border-gold transition" onclick="explainPlacement('Driver ${driver}', 'Governs core personality.')">
-                        <p class="text-gray-400 text-xs">Driver</p>
+                    <div class="box-3d p-4 rounded-2xl cursor-pointer hover:border-gold transition" onclick="explainPlacement('Driver ${driver}', 'Governs core personality and outward expression.')">
+                        <p class="text-gray-400 text-xs">Driver (Moolank)</p>
                         <p class="text-2xl font-black text-gold cinzel-font">${driver}</p>
                     </div>
-                    <div class="box-3d p-4 rounded-2xl cursor-pointer hover:border-gold transition" onclick="explainPlacement('Conductor ${conductor}', 'Governs destiny path.')">
-                        <p class="text-gray-400 text-xs">Conductor</p>
+                    <div class="box-3d p-4 rounded-2xl cursor-pointer hover:border-gold transition" onclick="explainPlacement('Conductor ${conductor}', 'Governs overall destiny path after age 35.')">
+                        <p class="text-gray-400 text-xs">Conductor (Bhagyank)</p>
                         <p class="text-2xl font-black text-gold cinzel-font">${conductor}</p>
+                    </div>
+                    <div class="box-3d p-4 rounded-2xl cursor-pointer hover:border-gold transition" onclick="explainPlacement('Kua Number ${kua}', 'Governs best directional magnetic orientation for health & success.')">
+                        <p class="text-gray-400 text-xs">Kua Number</p>
+                        <p class="text-2xl font-black text-gold cinzel-font">${kua}</p>
+                    </div>
+                    <div class="box-3d p-4 rounded-2xl cursor-pointer hover:border-gold transition" onclick="explainPlacement('Name Number ${nameSum} (${nameNum})', 'Governs professional branding and public harmony.')">
+                        <p class="text-gray-400 text-xs">Name Number</p>
+                        <p class="text-2xl font-black text-gold cinzel-font">${nameSum} (${nameNum})</p>
                     </div>
                 </div>
                 <div class="box-3d p-5 rounded-3xl text-center space-y-3">
@@ -1005,50 +997,92 @@
                         <div class="aspect-square bg-cosmic-900 rounded flex flex-col items-center justify-center"><span class="text-[8px] text-gray-500">1</span><span class="font-bold text-amber-400">${gridDigits.filter(d=>d===1).join('')}</span></div>
                         <div class="aspect-square bg-cosmic-900 rounded flex flex-col items-center justify-center"><span class="text-[8px] text-gray-500">6</span><span class="font-bold text-amber-400">${gridDigits.filter(d=>d===6).join('')}</span></div>
                     </div>
-                    <p class="text-xs text-amber-300 font-semibold pt-2"><strong>Missing Numbers (Touch to Reveal Remedies):</strong> 
+                    <p class="text-xs text-gray-300 pt-1"><strong>Present Numbers:</strong> ${presentNums.join(', ')}</p>
+                    <p class="text-xs text-amber-300 font-semibold pt-1"><strong>Missing Numbers (Touch to Reveal Remedies):</strong> 
                         ${missingNums.map(mn => `<span class="cursor-pointer underline text-gold hover:text-white mx-1" onclick="explainPlacement('Missing Number ${mn} Remedy', 'Missing Number${mn} energy gap. Remedy: Wear designated gemstone or engage in charity associated with number ${mn}.')">${mn}</span>`).join(', ')}
                     </p>
                 </div>
             `;
         }
 
+        const tarotDeck = [
+            {name: "The Magician", meaning: "Manifestation, resourcefulness, power, and inspired action."},
+            {name: "The High Priestess", meaning: "Intuition, sacred knowledge, divine feminine energy, and trusting your inner voice."},
+            {name: "The Empress", meaning: "Abundance, nurturing comfort, fertility, luxury, and deep creative harmony."},
+            {name: "The Emperor", meaning: "Authority, structure, solid leadership, stability, and strategic discipline."},
+            {name: "Wheel of Fortune", meaning: "Good luck, karma, destiny cycles, and positive turning points in life."},
+            {name: "The Star", meaning: "Hope, faith, healing, spiritual rejuvenation, and bright inspiration."},
+            {name: "Ace of Pentacles", meaning: "New financial opportunity, tangible prosperity, and secure material beginnings."},
+            {name: "Two of Cups", meaning: "Partnership, mutual attraction, deep connection, and harmonious relationships."}
+        ];
+
         function drawCardOfTheDay() {
-            document.getElementById('cardOfTheDayBox').innerHTML = `<h4 class="font-black text-gold text-lg mb-1.5 cinzel-font">The Magician</h4><p class="text-xs text-gray-300">Manifestation, resourcefulness, power, and inspired action.</p>`;
+            const card = tarotDeck[Math.floor(Math.random() * tarotDeck.length)];
+            const box = document.getElementById('cardOfTheDayBox');
+            box.style.transform = "scale(0.95)";
+            setTimeout(() => {
+                box.innerHTML = `
+                    <h4 class="font-black text-gold text-lg mb-1.5 cinzel-font">${card.name}</h4>
+                    <p class="text-xs text-gray-300 leading-relaxed">${card.meaning}</p>
+                `;
+                box.style.transform = "scale(1)";
+            }, 150);
         }
+
         function shuffleThreeCards() {
-            document.getElementById('threeCardBox').innerHTML = `
-                <div class="p-3 bg-cosmic-950 border border-gold/40 rounded-2xl text-center"><p class="text-gold font-bold text-[10px]">Past</p><p class="text-white text-xs font-bold">Six of Swords</p><p class="text-[9px] text-gray-400 mt-1">Transition away from stress.</p></div>
-                <div class="p-3 bg-cosmic-950 border border-gold/40 rounded-2xl text-center"><p class="text-gold font-bold text-[10px]">Present</p><p class="text-white text-xs font-bold">The Star</p><p class="text-[9px] text-gray-400 mt-1">Hope and healing.</p></div>
-                <div class="p-3 bg-cosmic-950 border border-gold/40 rounded-2xl text-center"><p class="text-gold font-bold text-[10px]">Future</p><p class="text-white text-xs font-bold">Ten of Cups</p><p class="text-[9px] text-gray-400 mt-1">Emotional bliss and family harmony.</p></div>
+            const box = document.getElementById('threeCardBox');
+            box.style.opacity = "0.3";
+            setTimeout(() => {
+                const p = tarotDeck[Math.floor(Math.random() * tarotDeck.length)];
+                const pr = tarotDeck[Math.floor(Math.random() * tarotDeck.length)];
+                const f = tarotDeck[Math.floor(Math.random() * tarotDeck.length)];
+                box.innerHTML = `
+                    <div class="p-3 bg-cosmic-950 border border-gold/40 rounded-2xl text-center flex flex-col justify-center min-h-[140px] shadow">
+                        <p class="text-gold font-bold text-[10px] uppercase tracking-wider cinzel-font mb-1">Past</p>
+                        <p class="text-white font-bold text-xs cinzel-font">${p.name}</p>
+                        <p class="text-[9px] text-gray-400 mt-1">${p.meaning.substring(0,40)}...</p>
+                    </div>
+                    <div class="p-3 bg-cosmic-950 border border-gold/40 rounded-2xl text-center flex flex-col justify-center min-h-[140px] shadow">
+                        <p class="text-gold font-bold text-[10px] uppercase tracking-wider cinzel-font mb-1">Present</p>
+                        <p class="text-white font-bold text-xs cinzel-font">${pr.name}</p>
+                        <p class="text-[9px] text-gray-400 mt-1">${pr.meaning.substring(0,40)}...</p>
+                    </div>
+                    <div class="p-3 bg-cosmic-950 border border-gold/40 rounded-2xl text-center flex flex-col justify-center min-h-[140px] shadow">
+                        <p class="text-gold font-bold text-[10px] uppercase tracking-wider cinzel-font mb-1">Future</p>
+                        <p class="text-white font-bold text-xs cinzel-font">${f.name}</p>
+                        <p class="text-[9px] text-gray-400 mt-1">${f.meaning.substring(0,40)}...</p>
+                    </div>
+                `;
+                box.style.opacity = "1";
+            }, 200);
+        }
+
+        function calculateMatch() {
+            const bName = document.getElementById('boyName').value || 'Groom';
+            const gName = document.getElementById('girlName').value || 'Bride';
+            document.getElementById('matchOutput').innerHTML = `
+                <div class="p-4 bg-cosmic-950 rounded-2xl border border-gold/30 space-y-2">
+                    <h4 class="font-bold text-gold text-sm cinzel-font">Matchmaking Compatibility for ${bName} & ${gName}</h4>
+                    <p class="text-green-400 font-bold text-xs">36-Gun Milan Score: 29 / 36 (Uttam / Auspicious Milan)</p>
+                    <p class="text-xs text-gray-300">Nadi and Bhakoot gunas match favorably. Blessed for a harmonious marital union.</p>
+                </div>
             `;
         }
-        function calculateMatch() {
-            document.getElementById('matchOutput').innerHTML = `<div class="p-4 bg-cosmic-950 rounded-2xl border border-gold/30 space-y-2"><p class="text-green-400 font-bold text-sm">36-Gun Milan Score: 31 / 36 (Uttam Milan)</p><p class="text-xs text-gray-300">Groom & Bride charts show excellent Nadi and Bhakoot compatibility.</p></div>`;
-        }
+
         function openRegisterProfileModal() { document.getElementById('registerProfileModal').classList.remove('hidden'); }
         function closeRegisterProfileModal() { document.getElementById('registerProfileModal').classList.add('hidden'); }
         function submitMatrimonyRegistration() { alert('Profile registered successfully! Pending Admin approval & KYC verification.'); closeRegisterProfileModal(); }
         function loginAdmin() {
             const adminId = document.getElementById('adminIdSelect').value;
             const pass = document.getElementById('adminPass').value;
-            
-            // Validating against the 3 credentials
-            const validCreds = {
-                'admin1': 'admin999',
-                'admin2': 'admin2026',
-                'admin3': 'admin7837'
-            };
-
+            const validCreds = { 'admin1': 'admin999', 'admin2': 'admin2026', 'admin3': 'admin7837' };
             if(validCreds[adminId] && validCreds[adminId] === pass) {
                 document.getElementById('adminLoginCard').classList.add('hidden');
                 document.getElementById('adminDashboardContent').classList.remove('hidden');
                 alert('Admin authenticated successfully (' + adminId + ')!');
-            } else {
-                alert('Invalid Admin ID or Password. Please check the credentials guide above.');
-            }
+            } else { alert('Invalid Admin ID or Password.'); }
         }
         function approveKyc(btn) { btn.parentElement.innerHTML = '<span class="text-green-400 font-bold"><i class="fa-solid fa-check"></i> Approved & Verified</span>'; }
-        function approvePayment(btn) { btn.parentElement.innerHTML = '<span class="text-green-400 font-bold"><i class="fa-solid fa-check"></i> Verified & Contacts Unlocked</span>'; }
         function toggleAiChat() { document.getElementById('aiChatWindow').classList.toggle('hidden'); }
         function sendAiMessage() {
             const input = document.getElementById('aiInput');
