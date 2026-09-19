@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>destinyymap | Dynamic Vedic Kundli, Vastu, Chaldean Numerology, Tarot & Milan</title>
+  <title>destinyymap | Vedic Kundli, Vastu, Chaldean Numerology, Tarot, Milan & Store</title>
   
   <link rel="icon" type="image/jpeg" href="IMG-20260917-WA0021.jpg" />
   <script src="https://cdn.tailwindcss.com"></script>
@@ -138,12 +138,6 @@
           </div>
           <div><button onclick="calculateKundli()" class="w-full py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 text-white font-bold rounded-lg uppercase tracking-wider shadow-lg transition">Calculate Chart</button></div>
         </div>
-
-        <div id="custom-coords-row" class="hidden grid grid-cols-1 sm:grid-cols-3 gap-4 border-t border-slate-800 pt-4 text-xs">
-          <div><label class="block text-slate-400 mb-1">Latitude</label><input id="c-lat" type="number" step="0.0001" placeholder="e.g. 31.6340" class="w-full bg-cosmic-950 border border-slate-700 rounded-lg p-2 text-white" /></div>
-          <div><label class="block text-slate-400 mb-1">Longitude</label><input id="c-lon" type="number" step="0.0001" placeholder="e.g. 74.8723" class="w-full bg-cosmic-950 border border-slate-700 rounded-lg p-2 text-white" /></div>
-          <div class="flex items-end"><button onclick="useCurrentLocation()" class="w-full py-2 bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 rounded-lg font-bold transition">📍 Use Current GPS Location</button></div>
-        </div>
       </div>
 
       <div class="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-purple-950/40 to-amber-950/40 border border-purple-500/40 shadow-xl">
@@ -223,6 +217,16 @@
         <div class="p-5 rounded-2xl bg-cosmic-900 border border-slate-800"><div class="font-bold text-purple-300 mb-1">North-East • Water</div><p class="text-slate-400 text-[11px]">Divine clarity and spiritual insight. Ideal for Mandir.</p></div>
         <div class="p-5 rounded-2xl bg-cosmic-900 border border-slate-800"><div class="font-bold text-emerald-300 mb-1">East (Surya) • Air</div><p class="text-slate-400 text-[11px]">Social connectivity and health.</p></div>
         <div class="p-5 rounded-2xl bg-cosmic-900 border border-slate-800"><div class="font-bold text-rose-300 mb-1">South-East (Agni) • Fire</div><p class="text-slate-400 text-[11px]">Cash liquidity and kitchen stove zone.</p></div>
+      </div>
+      <div class="p-8 rounded-3xl bg-gradient-to-r from-amber-950/40 via-cosmic-900 to-amber-950/40 border border-gold-500/50 shadow-xl flex flex-col md:flex-row justify-between items-center gap-6">
+        <div>
+          <h3 class="font-cinzel text-xl font-bold text-white">Book Comprehensive Vastu Audit</h3>
+          <p class="text-xs text-slate-300 mt-1 max-w-xl">Non-Demolition Remedies (Color therapy, metal strips, pyramid energy).</p>
+        </div>
+        <div class="flex gap-3">
+          <button onclick="openPaymentModal('vastu', 3500, 'Residential Vastu Audit')" class="px-5 py-3 bg-cosmic-800 border border-slate-700 text-gold-400 font-bold text-xs rounded-xl">Floorplan Audit (₹3,500)</button>
+          <button onclick="openPaymentModal('vastu', 5100, 'Commercial Vastu Audit')" class="px-6 py-3 bg-gradient-to-r from-amber-500 to-gold-500 text-black font-black text-xs uppercase rounded-xl">Detailed Audit (₹5,100)</button>
+        </div>
       </div>
     </div>
 
@@ -505,6 +509,7 @@
       });
       if (id === 'store') renderStore();
       if (id === 'admin') renderAdmin();
+      if (id === 'feed') renderFeed();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
@@ -530,18 +535,22 @@
       }, 600);
     }
 
-    // Dynamic Kundli Engine
+    // Dynamic Kundli Engine (D1 vs D9 Separated)
+    let calculatedD1 = {
+      signs: [5, 6, 7, 8, 9, 10, 11, 12, 1, 2, 3, 4],
+      planets: { 1:"La²¹", 2:"Mo²⁷", 3:"Ju¹³* • Ra²⁹*", 4:"Pl⁰²*", 5:"Ne²⁹*", 6:"Ur⁰¹*", 7:"Sa¹⁷", 8:"", 9:"Ma⁰⁵ • Ke²⁹*", 10:"Su⁰⁷ • Me²⁸", 11:"Ve⁰⁷", 12:"" }
+    };
+    let calculatedD9 = {
+      signs: [7, 8, 9, 10, 11, 12, 1, 2, 3, 4, 5, 6],
+      planets: { 1:"La", 2:"Ne", 3:"Ke", 4:"Ur", 5:"Ju", 6:"Sa • Su", 7:"", 8:"Ma", 9:"Ra", 10:"Pl", 11:"", 12:"Mo • Me" }
+    };
+
     function calculateKundli() {
       const dob = document.getElementById('ast-dob').value;
       const tob = document.getElementById('ast-tob').value;
       if (!dob || !tob) { alert("Please select Date of Birth and Time."); return; }
       document.getElementById('chart-title').textContent = `D1 Rashi Chart (${dob})`;
-      
-      const sampleD1 = {
-        signs: [5, 6, 7, 8, 9, 10, 11, 12, 1, 2, 3, 4],
-        planets: { 1:"La²¹", 2:"Mo²⁷", 3:"Ju¹³* • Ra²⁹*", 4:"Pl⁰²*", 5:"Ne²⁹*", 6:"Ur⁰¹*", 7:"Sa¹⁷", 8:"", 9:"Ma⁰⁵ • Ke²⁹*", 10:"Su⁰⁷ • Me²⁸", 11:"Ve⁰⁷", 12:"" }
-      };
-      renderChartSVG(sampleD1);
+      renderChartSVG(calculatedD1);
       document.getElementById('chart-results-container').classList.remove('hidden');
       alert("Kundli computed successfully!");
     }
@@ -560,6 +569,7 @@
       document.getElementById('chart-title').textContent = isD1 ? "D1 Rashi Chart" : "D9 Navamsha Chart";
       document.getElementById('btn-chart-d1').className = isD1 ? "px-3 py-1 bg-purple-600 rounded text-white font-bold shadow" : "px-3 py-1 bg-cosmic-800 rounded text-slate-300 hover:text-white";
       document.getElementById('btn-chart-d9').className = !isD1 ? "px-3 py-1 bg-purple-600 rounded text-white font-bold shadow" : "px-3 py-1 bg-cosmic-800 rounded text-slate-300 hover:text-white";
+      renderChartSVG(isD1 ? calculatedD1 : calculatedD9);
     }
 
     function useCurrentLocation() {
@@ -630,22 +640,24 @@
       alert("Lo Shu Matrix computed successfully!");
     }
 
-    // Tarot
-    const fullTarotDeck = [
-      { icon: "🎒", name: "The Fool", desc: "New beginnings, spontaneity." },
-      { icon: "🪄", name: "The Magician", desc: "Manifestation, active will." },
-      { icon: "⭐", name: "The Star", desc: "Hope, clarity, renewal." }
+    // Cosmic Feed
+    let cosmicFeedPosts = JSON.parse(localStorage.getItem('dm_cosmic_feed')) || [
+      { title: "Saturn's Transit in Aquarius", category: "PLANETARY TRANSIT", date: "Today", content: "Shani Dev in Aquarius aspects 9th, 1st, and 4th houses. Hard work yields long-term rewards." }
     ];
-    function drawDailyTarot() {
-      const pick = fullTarotDeck[Math.floor(Math.random() * fullTarotDeck.length)];
-      document.getElementById('tc-icon').textContent = pick.icon;
-      document.getElementById('tc-name').textContent = pick.name;
-      document.getElementById('tc-guide').textContent = pick.desc;
+    function renderFeed() {
+      const fs = document.getElementById('feed-stream');
+      if (!fs) return;
+      fs.innerHTML = cosmicFeedPosts.map(f => `<div class="p-5 bg-cosmic-900 border border-slate-800 rounded-2xl"><div class="text-gold-400 font-bold mb-1">${f.category} • ${f.date}</div><h3 class="font-bold text-white text-sm mb-1">${f.title}</h3><p class="text-slate-300 leading-relaxed">${f.content}</p></div>`).join('');
+      if (isMasterAdmin) document.getElementById('feed-composer').classList.remove('hidden');
     }
-    function drawTarotSpread() {
-      document.getElementById('spread-card-1').classList.remove('flipped');
-      document.getElementById('spread-card-2').classList.remove('flipped');
-      document.getElementById('spread-card-3').classList.remove('flipped');
+    function postFeed() {
+      const t = document.getElementById('f-title').value;
+      const c = document.getElementById('f-body').value;
+      if(!t || !c) return;
+      cosmicFeedPosts.unshift({ title: t, content: c, category: "ANNOUNCEMENT", date: "Today" });
+      localStorage.setItem('dm_cosmic_feed', JSON.stringify(cosmicFeedPosts));
+      renderFeed();
+      document.getElementById('f-title').value = ''; document.getElementById('f-body').value = '';
     }
 
     // Store
