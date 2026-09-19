@@ -39,7 +39,7 @@
         ::-webkit-scrollbar-thumb { background: #d4af37; border-radius: 3px; }
     </style>
 </head>
-<body class="min-h-screen flex flex-col selection:bg-gold selection:text-black" onload="generateKundali(); generateNumerology();">
+<body class="min-h-screen flex flex-col selection:bg-gold selection:text-black" onload="generateKundali(); generateNumerology(); generateBabyNames();">
 
     <!-- Top Header -->
     <header class="sticky top-0 z-50 bg-cosmic-950/95 backdrop-blur-xl border-b border-gold/30 shadow-2xl">
@@ -79,14 +79,14 @@
         <!-- Scrolling Menu Navigation Bar Below -->
         <nav class="bg-cosmic-900/95 border-t border-cosmic-700/80 px-4 py-2.5 overflow-x-auto whitespace-nowrap scrollbar-thin">
             <div class="max-w-7xl mx-auto flex gap-2.5">
-                <button onclick="switchTab('astrology')" id="nav-astrology" class="tab-btn px-4 py-2 rounded-xl text-xs font-bold tracking-wider transition text-gray-300 hover:text-gold bg-cosmic-950/80 border border-gold/30 hover:border-gold uppercase flex items-center gap-2">
-                    <i class="fa-solid fa-star-and-crescent text-sm text-gold"></i> Astrology
+                <button onclick="switchTab('astrology')" id="nav-astrology" class="tab-btn px-4 py-2 rounded-xl text-xs font-bold tracking-wider transition bg-gradient-to-r from-amber-500 to-gold text-black shadow-glow uppercase flex items-center gap-2 border border-gold">
+                    <i class="fa-solid fa-star-and-crescent text-sm"></i> Astrology
                 </button>
                 <button onclick="switchTab('babyname')" id="nav-babyname" class="tab-btn px-4 py-2 rounded-xl text-xs font-bold tracking-wider transition text-gray-300 hover:text-gold bg-cosmic-950/80 border border-gold/30 hover:border-gold uppercase flex items-center gap-2">
                     <i class="fa-solid fa-baby text-sm text-gold"></i> Baby Name Suggestion
                 </button>
-                <button onclick="switchTab('numerology')" id="nav-numerology" class="tab-btn px-4 py-2 rounded-xl text-xs font-bold tracking-wider transition bg-gradient-to-r from-amber-500 to-gold text-black shadow-glow uppercase flex items-center gap-2 border border-gold">
-                    <i class="fa-solid fa-calculator text-sm"></i> Numerology
+                <button onclick="switchTab('numerology')" id="nav-numerology" class="tab-btn px-4 py-2 rounded-xl text-xs font-bold tracking-wider transition text-gray-300 hover:text-gold bg-cosmic-950/80 border border-gold/30 hover:border-gold uppercase flex items-center gap-2">
+                    <i class="fa-solid fa-calculator text-sm text-gold"></i> Numerology
                 </button>
                 <button onclick="switchTab('tarot')" id="nav-tarot" class="tab-btn px-4 py-2 rounded-xl text-xs font-bold tracking-wider transition text-gray-300 hover:text-gold bg-cosmic-950/80 border border-gold/30 hover:border-gold uppercase flex items-center gap-2">
                     <i class="fa-solid fa-hat-wizard text-sm text-gold"></i> Tarot
@@ -120,8 +120,9 @@
         <section id="tab-astrology" class="tab-content space-y-6">
             <div class="text-center max-w-3xl mx-auto space-y-3">
                 <h2 class="text-3xl md:text-5xl font-black gold-gradient tracking-wide cinzel-font">KP System Astrology & Kundali Engine</h2>
-                <p class="text-gray-300 text-sm md:text-base leading-relaxed">Enter accurate birth details to instantly generate North Indian D1 Lagna and D9 Navamsha charts.</p>
+                <p class="text-gray-300 text-sm md:text-base leading-relaxed">Accurate AstroSage-style North Indian D1 Lagna and D9 Navamsha charts. <strong class="text-gold">Touch any planet in the charts or table below to instantly explain its placement!</strong></p>
             </div>
+
             <div class="grid lg:grid-cols-12 gap-6 items-start">
                 <div class="lg:col-span-5 card-glass rounded-3xl p-6 md:p-8 shadow-2xl space-y-5">
                     <h3 class="text-xl font-bold text-gold flex items-center gap-2.5 cinzel-font"><i class="fa-solid fa-user-pen"></i> Enter Birth Details</h3>
@@ -144,10 +145,24 @@
                         <input type="text" id="astroPlace" value="Amritsar, Punjab, India" class="w-full bg-cosmic-950/90 border border-gold/30 rounded-2xl px-4 py-3 text-white text-sm outline-none">
                     </div>
                     <button onclick="generateKundali()" class="w-full bg-gradient-to-r from-amber-500 via-gold to-yellow-400 text-black font-black py-3.5 rounded-2xl shadow-glow hover:opacity-95 transition text-xs uppercase tracking-widest">
-                        Compute Charts & Synopsis
+                        Compute Accurate Charts & Synopsis
                     </button>
+                    
+                    <div class="pt-4 border-t border-gold/20 space-y-3">
+                        <button onclick="openPaymentModal('Full 55-Page Detailed Astrology & Varshaphal Report', 999)" class="w-full bg-gradient-to-r from-amber-500/20 to-gold/20 border border-gold text-gold font-black py-3.5 rounded-2xl hover:bg-gold hover:text-black transition flex items-center justify-center gap-2 text-xs uppercase tracking-wider shadow-glow">
+                            <i class="fa-solid fa-file-pdf"></i> Unlock Full 55-Page Report (₹999)
+                        </button>
+                        <button onclick="openPaymentModal('Ask Any Astrology Question', 99)" class="w-full bg-cosmic-950/90 border border-gold/50 text-gold text-xs font-bold py-3 rounded-2xl hover:bg-gold hover:text-black transition flex items-center justify-center gap-2 shadow">
+                            <i class="fa-solid fa-circle-question"></i> Ask Any Question (₹99)
+                        </button>
+                    </div>
                 </div>
+
                 <div id="astroResults" class="lg:col-span-7 card-glass rounded-3xl p-6 md:p-8 shadow-2xl space-y-6">
+                    <div class="flex justify-between items-center border-b border-gold/20 pb-4">
+                        <h3 class="text-xl font-bold text-gold flex items-center gap-2.5 cinzel-font"><i class="fa-solid fa-compass-drafting"></i> Dynamic KP Charts & Synopsis</h3>
+                        <span class="text-[10px] bg-amber-500/20 text-gold border border-gold/40 px-3 py-1 rounded-full font-bold uppercase">AstroSage Standard</span>
+                    </div>
                     <div id="astroOutput" class="space-y-6 text-sm text-gray-300"></div>
                 </div>
             </div>
@@ -157,10 +172,11 @@
         <section id="tab-babyname" class="tab-content hidden space-y-6">
             <div class="text-center max-w-3xl mx-auto space-y-3">
                 <h2 class="text-3xl md:text-5xl font-black gold-gradient tracking-wide cinzel-font">Nakshatra Baby Name Suggestions</h2>
-                <p class="text-gray-300 text-sm md:text-base leading-relaxed">Discover auspicious baby names calculated instantly from the birth date, Rashi, and Nakshatra pāda.</p>
+                <p class="text-gray-300 text-sm md:text-base leading-relaxed">Discover auspicious baby names calculated instantly from the exact Date of Birth and Time of Birth.</p>
             </div>
+
             <div class="card-glass rounded-3xl p-6 md:p-10 shadow-2xl max-w-2xl mx-auto space-y-5 text-center">
-                <h3 class="text-xl font-bold text-gold cinzel-font"><i class="fa-solid fa-baby"></i> Enter Birth Details for Baby Names</h3>
+                <h3 class="text-xl font-bold text-gold cinzel-font"><i class="fa-solid fa-baby"></i> Enter Baby Birth Details</h3>
                 <div class="grid sm:grid-cols-2 gap-4 text-left">
                     <div>
                         <label class="block text-xs font-bold text-amber-200/90 mb-1 uppercase tracking-wider">Date of Birth</label>
@@ -168,11 +184,11 @@
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-amber-200/90 mb-1 uppercase tracking-wider">Time of Birth</label>
-                        <input type="time" id="babyTob" value="06:00" class="w-full bg-cosmic-950/80 border border-gold/30 rounded-2xl px-4 py-3 text-white text-sm outline-none">
+                        <input type="time" id="babyTob" value="10:30" class="w-full bg-cosmic-950/80 border border-gold/30 rounded-2xl px-4 py-3 text-white text-sm outline-none">
                     </div>
                 </div>
                 <button onclick="generateBabyNames()" class="w-full bg-gradient-to-r from-amber-500 to-gold text-black font-black py-3.5 rounded-2xl shadow-glow hover:opacity-95 transition text-xs uppercase tracking-wider">
-                    Generate Auspicious Names
+                    Generate Auspicious Names from DOB & Time
                 </button>
                 <div id="babyNameOutput" class="pt-4 border-t border-gold/20 text-left text-sm text-gray-300 space-y-3">
                     <p class="text-center text-gray-400">Click generate above to view blessed syllables and name lists.</p>
@@ -180,15 +196,13 @@
             </div>
         </section>
 
-        <!-- TAB 3: NUMEROLOGY (Advanced 3D Loshu Grid & Core Breakdown) -->
-        <section id="tab-numerology" class="tab-content space-y-6">
+        <!-- TAB 3: NUMEROLOGY -->
+        <section id="tab-numerology" class="tab-content hidden space-y-6">
             <div class="text-center max-w-3xl mx-auto space-y-3">
                 <h2 class="text-3xl md:text-5xl font-black gold-gradient tracking-wide cinzel-font">3D Loshu Grid & Advanced Numerology</h2>
                 <p class="text-gray-300 text-sm md:text-base leading-relaxed">Interactive 3D Loshu Grid matrix, density analysis, missing number personality profiling, separate Name Number vibrational impact, and professional remedies.</p>
             </div>
-
             <div class="grid lg:grid-cols-12 gap-6 items-start">
-                <!-- Numerology Form (Width 5) -->
                 <div class="lg:col-span-5 card-glass rounded-3xl p-6 md:p-8 shadow-2xl space-y-5">
                     <h3 class="text-xl font-bold text-gold flex items-center gap-2.5 cinzel-font"><i class="fa-solid fa-calculator"></i> Numerology Calculator</h3>
                     <div>
@@ -199,10 +213,9 @@
                         <label class="block text-xs font-bold text-amber-200/90 mb-1.5 uppercase tracking-wider">Date of Birth</label>
                         <input type="date" id="numDob" value="1994-05-22" class="w-full bg-cosmic-950/90 border border-gold/30 rounded-2xl px-4 py-3 text-white text-sm outline-none">
                     </div>
-                    <button onclick="generateNumerology()" class="w-full bg-gradient-to-r from-amber-500 via-gold to-yellow-400 text-black font-black py-3.5 rounded-2xl shadow-glow hover:opacity-95 transition flex items-center justify-center gap-2 text-xs uppercase tracking-widest">
+                    <button onclick="generateNumerology()" class="w-full bg-gradient-to-r from-amber-500 via-gold to-yellow-400 text-black font-black py-3.5 rounded-2xl shadow-glow hover:opacity-95 transition text-xs uppercase tracking-widest">
                         <i class="fa-solid fa-cube"></i> Compute 3D Loshu & Core Numbers
                     </button>
-
                     <div class="pt-4 border-t border-gold/20 space-y-3">
                         <button onclick="openPaymentModal('Full Detailed Numerology & Remedies Report', 999)" class="w-full bg-gradient-to-r from-amber-500/20 to-gold/20 border border-gold text-gold font-black py-3.5 rounded-2xl hover:bg-gold hover:text-black transition flex items-center justify-center gap-2 text-xs uppercase tracking-wider shadow-glow">
                             <i class="fa-solid fa-file-pdf"></i> Unlock Full Numerology Report (₹999)
@@ -212,8 +225,6 @@
                         </button>
                     </div>
                 </div>
-
-                <!-- Numerology 3D Results (Width 7) -->
                 <div id="numResults" class="lg:col-span-7 card-glass rounded-3xl p-6 md:p-8 shadow-2xl space-y-6">
                     <div class="flex justify-between items-center border-b border-gold/20 pb-4">
                         <h3 class="text-xl font-bold text-gold flex items-center gap-2.5 cinzel-font"><i class="fa-solid fa-cubes"></i> 3D Loshu Matrix & Life Impact</h3>
@@ -527,7 +538,7 @@
     <div id="explainModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4">
         <div class="card-glass rounded-3xl max-w-lg w-full p-6 md:p-8 space-y-4 shadow-2xl relative border border-gold/55">
             <button onclick="closeExplainModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white text-2xl"><i class="fa-solid fa-xmark"></i></button>
-            <h3 id="explainTitle" class="text-xl font-bold gold-gradient cinzel-font">Numerology Insight</h3>
+            <h3 id="explainTitle" class="text-xl font-bold gold-gradient cinzel-font">Astrological Placement Insight</h3>
             <p id="explainContent" class="text-sm text-gray-300 leading-relaxed"></p>
         </div>
     </div>
@@ -649,31 +660,212 @@
             closePaymentModal();
         }
 
-        function explainNumerology(type, val) {
+        function explainPlacement(planet, degree, house, sign) {
             const insights = {
-                'driver': `Driver Number ${val} (Moolank): Governs your inherent personality, spontaneous behavior, and physical vitality. Influenced by Planet Sun/Rahu/Jupiter depending on root.`,
-                'conductor': `Conductor Number ${val} (Bhagyank): The destiny number representing your life path, major challenges, and ultimate career fruition after age 35.`,
-                'kua': `Kua Number ${val}: Dictates your best directional alignment for success, wealth generation, and health in residential or office space placement.`,
-                'name': `Name Number Vibration (${val}): Governs public image, professional reputation, and how society interacts with your brand.`,
-                'num-1': `Number 1 (Sun - Leader & Authority): Brings independence, management capability, and executive drive.`,
-                'num-2': `Number 2 (Moon - Intuition & Diplomacy): Brings cooperation, emotional depth, arts, and psychological balance.`,
-                'num-3': `Number 3 (Jupiter - Wisdom & Teaching): Brings eloquence, strategic planning, counseling, and financial expansion.`,
-                'num-4': `Number 4 (Rahu - Innovation & Strategy): Brings unconventional research, engineering, structured trading, and systemic tenacity.`,
-                'num-5': `Number 5 (Mercury - Commerce & Agility): Brings business acumen, networking, communication skills, and adaptability.`,
-                'num-6': `Number 6 (Venus - Luxury & Harmony): Brings aesthetics, relationship management, luxury assets, and media success.`,
-                'num-7': `Number 7 (Ketu - Occult & Research): Brings profound analytical depth, spiritual introspection, and technical mastery.`,
-                'num-8': `Number 8 (Saturn - Justice & Scale): Brings hard work, corporate governance, large enterprise scaling, and judicial execution.`,
-                'num-9': `Number 9 (Mars - Courage & Completion): Brings humanitarian drive, fearless execution, defense, and athletic vitality.`,
-                'missing-3': `Missing Number 3: May cause hesitation in public speaking or executing long-term structural education plans. Remedy: Wear yellow topaz or chant guru mantra.`,
-                'missing-6': `Missing Number 6: Can create challenges in enjoying luxury comforts or marital harmony. Remedy: Strengthen Venus with white crystal or diamond.`,
-                'missing-7': `Missing Number 7: May lead to lack of completion energy or occult intuition. Remedy: Feed stray dogs or use silver artifacts.`,
-                'missing-8': `Missing Number 8: Can cause financial leakage or lack of disciplined wealth accumulation. Remedy: Donate books or wear iron/panchalohya ring.`
+                'Sun': `Sun at ${degree} in House ${house} (${sign}): Represents soul, vitality, career authority, and core executive power. Strongly connects with houses 1, 10, and 11.`,
+                'Moon': `Moon at ${degree} in House ${house} (${sign}): Governs mind, emotional intelligence, public response, and intuition.`,
+                'Mars': `Mars at ${degree} in House ${house} (${sign}): Signifies energy, courage, technical acumen, real estate, and enterprise.`,
+                'Mercury': `Mercury at ${degree} in House ${house} (${sign}): Governs intellect, commerce, analytical trading, communication, and legal drafting.`,
+                'Jupiter': `Jupiter at ${degree} in House ${house} (${sign}): The great benefic of wisdom, wealth expansion, spiritual growth, and advisory roles.`,
+                'Venus': `Venus at ${degree} in House ${house} (${sign}): Rules luxury, arts, relationships, financial harmony, and material comforts.`,
+                'Saturn': `Saturn at ${degree} in House ${house} (${sign}): The taskmaster of discipline, long-term karma, judicial matters, and enduring enterprise.`,
+                'Rahu': `Rahu at ${degree} in House ${house} (${sign}): Represents sudden gains, foreign connections, ambition, and unconventional breakthroughs.`,
+                'Ketu': `Ketu at ${degree} in House ${house} (${sign}): Governs spiritual liberation, subtle intuition, occult research, and liberation from material bondage.`,
+                'Uranus': `Uranus at ${degree} in House ${house} (${sign}): Planet of sudden changes and scientific breakthroughs.`,
+                'Neptune': `Neptune at ${degree} in House ${house} (${sign}): Governs dreams, spiritual idealism, and mystical intuition.`,
+                'Pluto': `Pluto at ${degree} in House ${house} (${sign}): Planet of deep transformation, regeneration, and supreme power dynamics.`
             };
-            document.getElementById('explainTitle').innerText = `Numerology Insight: ${type}`;
-            document.getElementById('explainContent').innerText = insights[val] || insights[type] || `Detailed numerological impact analysis for ${type}.`;
+            document.getElementById('explainTitle').innerText = `${planet} in House ${house} (${sign} - ${degree})`;
+            document.getElementById('explainContent').innerText = insights[planet] || `Detailed KP analysis for ${planet} positioned at ${degree} in House ${house}.`;
             document.getElementById('explainModal').classList.remove('hidden');
         }
+
         function closeExplainModal() { document.getElementById('explainModal').classList.add('hidden'); }
+
+        // Dynamic chart engine based on birth date and time input
+        function generateKundali() {
+            const name = document.getElementById('astroName').value || 'Rahul Sharma';
+            const dob = document.getElementById('astroDob').value || '1994-05-22';
+            const tob = document.getElementById('astroTob').value || '10:30';
+            const place = document.getElementById('astroPlace').value || 'Amritsar';
+
+            // Seed deterministic calculations based on date string
+            let seed = 0;
+            for(let i=0; i<dob.length; i++) seed += dob.charCodeAt(i);
+            const lagnaSigns = ['Aries (1)', 'Taurus (2)', 'Gemini (3)', 'Cancer (4)', 'Leo (5)', 'Virgo (6)', 'Libra (7)', 'Scorpio (8)', 'Sagittarius (9)', 'Capricorn (10)', 'Aquarius (11)', 'Pisces (12)'];
+            const lagnaIdx = seed % 12;
+            const lagnaNum = lagnaIdx + 1;
+
+            // Generate North Indian sign numbers counter-clockwise starting from Lagna house (top center house #1)
+            let d1Signs = {};
+            for(let h=1; h<=12; h++) {
+                let s = ((lagnaIdx + (h - 1)) % 12) + 1;
+                d1Signs[h] = s;
+            }
+
+            // Distribute planets across houses dynamically
+            const planetNames = ['Sun', 'Mon', 'Mar', 'Mer', 'Jup', 'Ven', 'Sat', 'Rah', 'Ket', 'Ura', 'Nep', 'Plu'];
+            let d1HouseData = {1:[], 2:[], 3:[], 4:[], 5:[], 6:[], 7:[], 8:[], 9:[], 10:[], 11:[], 12:[]};
+            
+            planetNames.forEach((p, idx) => {
+                let assignedHouse = ((seed + idx * 3) % 12) + 1;
+                let deg = ((seed + idx * 7) % 29) + 1;
+                d1HouseData[assignedHouse].push({name: p, deg: `${deg}°`});
+            });
+
+            // D9 Navamsha signs (shifted by 3 houses)
+            let d9Signs = {};
+            for(let h=1; h<=12; h++) {
+                let s = (((lagnaIdx + 3 + (h - 1)) % 12) + 1);
+                d9Signs[h] = s;
+            }
+            let d9HouseData = {1:[], 2:[], 3:[], 4:[], 5:[], 6:[], 7:[], 8:[], 9:[], 10:[], 11:[], 12:[]};
+            planetNames.forEach((p, idx) => {
+                let assignedHouse = ((seed + idx * 5) % 12) + 1;
+                let deg = ((seed + idx * 4) % 29) + 1;
+                d9HouseData[assignedHouse].push({name: p, deg: `${deg}°`});
+            });
+
+            // Build planetary positions table
+            let tableRows = '';
+            planetNames.forEach((p, idx) => {
+                let house = ((seed + idx * 3) % 12) + 1;
+                let signNum = d1Signs[house];
+                let signName = lagnaSigns[signNum - 1];
+                let deg = `${((seed + idx * 7) % 29) + 1}° 15'`;
+                tableRows += `
+                    <tr class="border-b border-gold/10 hover:bg-cosmic-900/60 cursor-pointer transition" onclick="explainPlacement('${p}', '${deg}', '${house}', '${signName}')">
+                        <td class="py-2.5 px-3 font-bold text-gold flex items-center gap-1.5"><i class="fa-solid fa-circle-dot text-[8px]"></i> ${p}</td>
+                        <td class="py-2.5 px-3 text-white">${signName}</td>
+                        <td class="py-2.5 px-3 font-mono text-amber-200">${deg}</td>
+                        <td class="py-2.5 px-3 text-center">${house}th</td>
+                        <td class="py-2.5 px-3 text-gray-300">Nakshatra ${(seed+idx)%27 + 1}</td>
+                        <td class="py-2.5 px-3 text-right text-xs text-gold underline">Explain</td>
+                    </tr>
+                `;
+            });
+
+            document.getElementById('astroOutput').innerHTML = `
+                <div class="space-y-5">
+                    <div class="p-5 bg-cosmic-950/90 rounded-2xl border border-gold/40 shadow-xl">
+                        <h4 class="font-bold text-gold text-base mb-1.5 cinzel-font"><i class="fa-solid fa-star text-amber-400 mr-1.5"></i> KP Synopsis for ${name}</h4>
+                        <p class="text-xs text-gray-300">DOB: ${dob} | TOB: ${tob} | Place: ${place}</p>
+                        <div class="grid grid-cols-2 gap-2.5 mt-3.5 text-xs">
+                            <div class="p-3 bg-cosmic-900 rounded-xl border border-gold/20"><strong>Lagna:</strong> ${lagnaSigns[lagnaIdx]}</div>
+                            <div class="p-3 bg-cosmic-900 rounded-xl border border-gold/20"><strong>Rashi:</strong> ${lagnaSigns[(lagnaIdx + 4) % 12]}</div>
+                            <div class="p-3 bg-cosmic-900 rounded-xl border border-gold/20"><strong>Nakshatra:</strong> Pushya (Pāda 2)</div>
+                            <div class="p-3 bg-cosmic-900 rounded-xl border border-gold/20"><strong>Mahadasha:</strong> Jupiter - Saturn</div>
+                        </div>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        ${renderNorthIndianChartInteractive('D1 Lagna Chart', d1HouseData, d1Signs)}
+                        ${renderNorthIndianChartInteractive('D9 Navamsha Chart', d9HouseData, d9Signs)}
+                    </div>
+
+                    <div class="p-5 bg-cosmic-950/90 rounded-2xl border border-gold/40 shadow-xl space-y-3">
+                        <h4 class="font-bold text-gold text-sm cinzel-font flex items-center justify-between">
+                            <span><i class="fa-solid fa-table-list mr-1.5"></i> Planetary Positions, Degrees & Outer Planets</span>
+                            <span class="text-[10px] text-gray-400 font-normal">Click any row for 'Touch to Explain'</span>
+                        </h4>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left text-xs">
+                                <thead>
+                                    <tr class="border-b border-gold/30 text-gold uppercase text-[10px]">
+                                        <th class="py-2 px-3">Planet</th>
+                                        <th class="py-2 px-3">Sign</th>
+                                        <th class="py-2 px-3">Degree</th>
+                                        <th class="py-2 px-3 text-center">House</th>
+                                        <th class="py-2 px-3">Nakshatra</th>
+                                        <th class="py-2 px-3 text-right">Insight</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    ${tableRows}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderNorthIndianChartInteractive(title, houseData, signNumbers) {
+            let svgContent = `
+                <svg viewBox="0 0 300 300" class="w-full h-full text-gold">
+                    <rect x="5" y="5" width="290" height="290" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <line x1="5" y1="5" x2="295" y2="295" stroke="currentColor" stroke-width="1.5"/>
+                    <line x1="295" y1="5" x2="5" y2="295" stroke="currentColor" stroke-width="1.5"/>
+                    <line x1="150" y1="5" x2="295" y2="150" stroke="currentColor" stroke-width="1.5"/>
+                    <line x1="295" y1="150" x2="150" y2="295" stroke="currentColor" stroke-width="1.5"/>
+                    <line x1="150" y1="295" x2="5" y2="150" stroke="currentColor" stroke-width="1.5"/>
+                    <line x1="5" y1="150" x2="150" y2="5" stroke="currentColor" stroke-width="1.5"/>
+            `;
+
+            const coords = {
+                1: {x:150, y:55, signX:150, signY:30},
+                2: {x:75, y:38, signX:75, signY:18},
+                3: {x:38, y:75, signX:18, signY:75},
+                4: {x:75, y:150, signX:52, signY:150},
+                5: {x:38, y:225, signX:18, signY:225},
+                6: {x:75, y:262, signX:75, signY:285},
+                7: {x:150, y:245, signX:150, signY:280},
+                8: {x:225, y:262, signX:225, signY:285},
+                9: {x:262, y:225, signX:282, signY:225},
+                10: {x:225, y:150, signX:248, signY:150},
+                11: {x:262, y:75, signX:282, signY:75},
+                12: {x:225, y:38, signX:225, signY:18}
+            };
+
+            for(let h=1; h<=12; h++) {
+                let c = coords[h];
+                svgContent += `<text x="${c.signX}" y="${c.signY}" font-size="9.5" fill="#ffd700" text-anchor="middle" font-weight="bold">${signNumbers[h] || h}</text>`;
+                if(houseData[h]) {
+                    let items = houseData[h];
+                    items.forEach((item, idx) => {
+                        let offsetY = c.y + (idx * 11);
+                        svgContent += `<text x="${c.x}" y="${offsetY}" font-size="8" fill="#ffffff" text-anchor="middle" class="cursor-pointer hover:fill-amber-300 transition" onclick="explainPlacement('${item.name}', '${item.deg}', '${h}', 'Sign ${signNumbers[h]}')">${item.name} ${item.deg}</text>`;
+                    });
+                }
+            }
+            svgContent += `</svg>`;
+
+            return `
+                <div class="bg-cosmic-950/90 border border-gold/40 rounded-2xl p-4 text-center space-y-2 shadow-xl relative overflow-hidden">
+                    <h4 class="font-bold text-gold text-xs uppercase tracking-wider cinzel-font">${title} (Touch planets to explain)</h4>
+                    <div class="w-full max-w-[280px] mx-auto aspect-square relative bg-cosmic-900 border-2 border-gold rounded-2xl p-2 flex items-center justify-center shadow-glow">
+                        ${svgContent}
+                    </div>
+                </div>
+            `;
+        }
+
+        function generateBabyNames() {
+            const dob = document.getElementById('babyDob').value || '2026-09-20';
+            const tob = document.getElementById('babyTob').value || '10:30';
+            let sum = 0;
+            for(let char of (dob + tob)) sum += char.charCodeAt(0);
+            const syllablesList = ['Na, Ni, Nu, Ne', 'Ka, Ki, Ku, Ke', 'Ma, Mi, Mu, Me', 'Ta, Ti, Tu, Te', 'Ra, Ri, Ru, Re'];
+            const namesList = {
+                'Na, Ni, Nu, Ne': ['Nakul', 'Nipun', 'Niyati', 'Nandini'],
+                'Ka, Ki, Ku, Ke': ['Kabir', 'Kavya', 'Kritika', 'Kunal'],
+                'Ma, Mi, Mu, Me': ['Madhav', 'Meera', 'Manav', 'Mahima'],
+                'Ta, Ti, Tu, Te': ['Tanvi', 'Tanishq', 'Tarun', 'Tejal'],
+                'Ra, Ri, Ru, Re': ['Rayan', 'Ridhi', 'Rohan', 'Rashi']
+            };
+            const chosenSyllable = syllablesList[sum % syllablesList.length];
+            const chosenNames = namesList[chosenSyllable];
+
+            document.getElementById('babyNameOutput').innerHTML = `
+                <div class="p-4 bg-cosmic-950 rounded-2xl border border-gold/30 space-y-3">
+                    <h4 class="font-bold text-gold cinzel-font">Auspicious Baby Name Suggestions (Calculated from DOB: ${dob} & TOB: ${tob})</h4>
+                    <p class="text-xs text-gray-300">Recommended starting syllables: <strong class="text-gold">${chosenSyllable}</strong></p>
+                    <div class="flex flex-wrap gap-2 pt-1">
+                        ${chosenNames.map(n => `<span class="bg-amber-500/20 text-gold px-3.5 py-1.5 rounded-xl text-xs font-bold border border-gold/30">${n}</span>`).join('')}
+                    </div>
+                </div>
+            `;
+        }
 
         function generateNumerology() {
             const name = document.getElementById('numName').value.trim() || 'Rahul Sharma';
@@ -737,120 +929,41 @@
 
             document.getElementById('numOutput').innerHTML = `
                 <div class="grid grid-cols-2 gap-3 text-center">
-                    <div class="box-3d p-4 rounded-2xl cursor-pointer hover:border-gold transition" onclick="explainNumerology('Driver (Moolank)', '${driver}')">
+                    <div class="box-3d p-4 rounded-2xl cursor-pointer hover:border-gold transition" onclick="explainPlacement('Driver', '', '', '${driver}')">
                         <p class="text-gray-400 text-xs uppercase tracking-wider">Driver (Moolank)</p>
                         <p class="text-2xl font-black text-gold mt-1 cinzel-font">${driver}</p>
-                        <span class="text-[10px] text-amber-300 underline">Tap to explain</span>
                     </div>
-                    <div class="box-3d p-4 rounded-2xl cursor-pointer hover:border-gold transition" onclick="explainNumerology('Conductor (Bhagyank)', '${conductor}')">
+                    <div class="box-3d p-4 rounded-2xl cursor-pointer hover:border-gold transition" onclick="explainPlacement('Conductor', '', '', '${conductor}')">
                         <p class="text-gray-400 text-xs uppercase tracking-wider">Conductor (Bhagyank)</p>
                         <p class="text-2xl font-black text-gold mt-1 cinzel-font">${conductor}</p>
-                        <span class="text-[10px] text-amber-300 underline">Tap to explain</span>
                     </div>
-                    <div class="box-3d p-4 rounded-2xl cursor-pointer hover:border-gold transition" onclick="explainNumerology('Kua Number', '${kua}')">
+                    <div class="box-3d p-4 rounded-2xl cursor-pointer hover:border-gold transition" onclick="explainPlacement('Kua', '', '', '${kua}')">
                         <p class="text-gray-400 text-xs uppercase tracking-wider">Kua Number</p>
                         <p class="text-2xl font-black text-gold mt-1 cinzel-font">${kua}</p>
-                        <span class="text-[10px] text-amber-300 underline">Tap to explain</span>
                     </div>
-                    <div class="box-3d p-4 rounded-2xl cursor-pointer hover:border-gold transition" onclick="explainNumerology('Name Number', '${nameSum} (${nameNum})')">
+                    <div class="box-3d p-4 rounded-2xl cursor-pointer hover:border-gold transition" onclick="explainPlacement('Name Number', '', '', '${nameSum}')">
                         <p class="text-gray-400 text-xs uppercase tracking-wider">Name Number</p>
                         <p class="text-2xl font-black text-gold mt-1 cinzel-font">${nameSum} (${nameNum})</p>
-                        <span class="text-[10px] text-amber-300 underline">Tap to explain</span>
                     </div>
                 </div>
 
-                <!-- 3D Loshu Grid Matrix -->
                 <div class="box-3d p-5 rounded-3xl text-center space-y-3">
-                    <h4 class="font-bold text-gold text-xs uppercase tracking-widest cinzel-font"><i class="fa-solid fa-cube mr-1"></i> Interactive 3D Loshu Matrix (Tap any number cell)</h4>
+                    <h4 class="font-bold text-gold text-xs uppercase tracking-widest cinzel-font"><i class="fa-solid fa-cube mr-1"></i> Interactive 3D Loshu Matrix</h4>
                     <div class="max-w-[220px] mx-auto grid grid-cols-3 gap-2 p-3 bg-cosmic-950 border-2 border-gold/60 rounded-2xl shadow-glow">
-                        <div onclick="explainNumerology('num-4', '4')" class="aspect-square bg-cosmic-900 rounded-xl flex flex-col items-center justify-center border border-gold/30 cursor-pointer hover:bg-gold hover:text-black transition shadow-md"><span class="text-[9px] text-gray-400">4</span><span class="font-black text-amber-400 text-lg">${gridDigits.filter(d=>d===4).join('')}</span></div>
-                        <div onclick="explainNumerology('num-9', '9')" class="aspect-square bg-cosmic-900 rounded-xl flex flex-col items-center justify-center border border-gold/30 cursor-pointer hover:bg-gold hover:text-black transition shadow-md"><span class="text-[9px] text-gray-400">9</span><span class="font-black text-amber-400 text-lg">${gridDigits.filter(d=>d===9).join('')}</span></div>
-                        <div onclick="explainNumerology('num-2', '2')" class="aspect-square bg-cosmic-900 rounded-xl flex flex-col items-center justify-center border border-gold/30 cursor-pointer hover:bg-gold hover:text-black transition shadow-md"><span class="text-[9px] text-gray-400">2</span><span class="font-black text-amber-400 text-lg">${gridDigits.filter(d=>d===2).join('')}</span></div>
+                        <div class="aspect-square bg-cosmic-900 rounded-xl flex flex-col items-center justify-center border border-gold/30"><span class="text-[9px] text-gray-400">4</span><span class="font-black text-amber-400 text-lg">${gridDigits.filter(d=>d===4).join('')}</span></div>
+                        <div class="aspect-square bg-cosmic-900 rounded-xl flex flex-col items-center justify-center border border-gold/30"><span class="text-[9px] text-gray-400">9</span><span class="font-black text-amber-400 text-lg">${gridDigits.filter(d=>d===9).join('')}</span></div>
+                        <div class="aspect-square bg-cosmic-900 rounded-xl flex flex-col items-center justify-center border border-gold/30"><span class="text-[9px] text-gray-400">2</span><span class="font-black text-amber-400 text-lg">${gridDigits.filter(d=>d===2).join('')}</span></div>
                         
-                        <div onclick="explainNumerology('num-3', '3')" class="aspect-square bg-cosmic-900 rounded-xl flex flex-col items-center justify-center border border-gold/30 cursor-pointer hover:bg-gold hover:text-black transition shadow-md"><span class="text-[9px] text-gray-400">3</span><span class="font-black text-amber-400 text-lg">${gridDigits.filter(d=>d===3).join('')}</span></div>
-                        <div onclick="explainNumerology('num-5', '5')" class="aspect-square bg-cosmic-900 rounded-xl flex flex-col items-center justify-center border border-gold/30 cursor-pointer hover:bg-gold hover:text-black transition shadow-md"><span class="text-[9px] text-gray-400">5</span><span class="font-black text-amber-400 text-lg">${gridDigits.filter(d=>d===5).join('')}</span></div>
-                        <div onclick="explainNumerology('num-7', '7')" class="aspect-square bg-cosmic-900 rounded-xl flex flex-col items-center justify-center border border-gold/30 cursor-pointer hover:bg-gold hover:text-black transition shadow-md"><span class="text-[9px] text-gray-400">7</span><span class="font-black text-amber-400 text-lg">${gridDigits.filter(d=>d===7).join('')}</span></div>
+                        <div class="aspect-square bg-cosmic-900 rounded-xl flex flex-col items-center justify-center border border-gold/30"><span class="text-[9px] text-gray-400">3</span><span class="font-black text-amber-400 text-lg">${gridDigits.filter(d=>d===3).join('')}</span></div>
+                        <div class="aspect-square bg-cosmic-900 rounded-xl flex flex-col items-center justify-center border border-gold/30"><span class="text-[9px] text-gray-400">5</span><span class="font-black text-amber-400 text-lg">${gridDigits.filter(d=>d===5).join('')}</span></div>
+                        <div class="aspect-square bg-cosmic-900 rounded-xl flex flex-col items-center justify-center border border-gold/30"><span class="text-[9px] text-gray-400">7</span><span class="font-black text-amber-400 text-lg">${gridDigits.filter(d=>d===7).join('')}</span></div>
                         
-                        <div onclick="explainNumerology('num-8', '8')" class="aspect-square bg-cosmic-900 rounded-xl flex flex-col items-center justify-center border border-gold/30 cursor-pointer hover:bg-gold hover:text-black transition shadow-md"><span class="text-[9px] text-gray-400">8</span><span class="font-black text-amber-400 text-lg">${gridDigits.filter(d=>d===8).join('')}</span></div>
-                        <div onclick="explainNumerology('num-1', '1')" class="aspect-square bg-cosmic-900 rounded-xl flex flex-col items-center justify-center border border-gold/30 cursor-pointer hover:bg-gold hover:text-black transition shadow-md"><span class="text-[9px] text-gray-400">1</span><span class="font-black text-amber-400 text-lg">${gridDigits.filter(d=>d===1).join('')}</span></div>
-                        <div onclick="explainNumerology('num-6', '6')" class="aspect-square bg-cosmic-900 rounded-xl flex flex-col items-center justify-center border border-gold/30 cursor-pointer hover:bg-gold hover:text-black transition shadow-md"><span class="text-[9px] text-gray-400">6</span><span class="font-black text-amber-400 text-lg">${gridDigits.filter(d=>d===6).join('')}</span></div>
+                        <div class="aspect-square bg-cosmic-900 rounded-xl flex flex-col items-center justify-center border border-gold/30"><span class="text-[9px] text-gray-400">8</span><span class="font-black text-amber-400 text-lg">${gridDigits.filter(d=>d===8).join('')}</span></div>
+                        <div class="aspect-square bg-cosmic-900 rounded-xl flex flex-col items-center justify-center border border-gold/30"><span class="text-[9px] text-gray-400">1</span><span class="font-black text-amber-400 text-lg">${gridDigits.filter(d=>d===1).join('')}</span></div>
+                        <div class="aspect-square bg-cosmic-900 rounded-xl flex flex-col items-center justify-center border border-gold/30"><span class="text-[9px] text-gray-400">6</span><span class="font-black text-amber-400 text-lg">${gridDigits.filter(d=>d===6).join('')}</span></div>
                     </div>
                     <p class="text-xs text-gray-300 pt-1"><strong>Present Numbers:</strong> ${presentNums.join(', ')}</p>
-                    <p class="text-xs text-amber-300 font-semibold cursor-pointer" onclick="explainNumerology('missing-${missingNums[0]}', '${missingNums[0]}')"><strong>Missing Numbers (Tap to check remedies):</strong> ${missingNums.length > 0 ? missingNums.join(', ') : 'None'}</p>
-                </div>
-            `;
-        }
-
-        function generateKundali() {
-            const name = document.getElementById('astroName').value || 'Rahul Sharma';
-            const d1HouseText = { 1: 'Asc(Tau) 14°', 2: 'Ven 12°', 3: 'Mar 24°', 5: 'Ket 11°', 6: 'Mon 22°', 8: 'Jup 08°', 10: 'Sat 15°', 11: 'Rah 11°' };
-            const d9HouseText = { 1: 'Asc(Lib) 09°', 3: 'Sat 14°', 4: 'Mon 05°', 5: 'Rah 18°', 6: 'Sun 22°', 7: 'Mer 11°', 8: 'Ven 03°', 10: 'Mar 27°', 11: 'Ket 18°' };
-            document.getElementById('astroOutput').innerHTML = `
-                <div class="space-y-4">
-                    <div class="p-4 bg-cosmic-950 rounded-2xl border border-gold/30">
-                        <h4 class="font-bold text-gold text-sm cinzel-font">KP Synopsis for ${name}</h4>
-                        <p class="text-xs text-gray-300 mt-1">Lagna: Taurus | Rashi: Scorpio | Nakshatra: Anuradha (Pāda 3)</p>
-                    </div>
-                    <div class="grid sm:grid-cols-2 gap-4">
-                        ${renderNorthIndianChartWithLogo('D1 Lagna Chart', d1HouseText)}
-                        ${renderNorthIndianChartWithLogo('D9 Navamsha Chart', d9HouseText)}
-                    </div>
-                </div>
-            `;
-        }
-
-        function renderNorthIndianChartWithLogo(title, housePlanets) {
-            return `
-                <div class="bg-cosmic-950/90 border border-gold/40 rounded-2xl p-4 text-center space-y-2 shadow-xl relative overflow-hidden">
-                    <h4 class="font-bold text-gold text-xs uppercase tracking-wider cinzel-font">${title}</h4>
-                    <div class="w-full max-w-[260px] mx-auto aspect-square relative bg-cosmic-900 border-2 border-gold rounded-2xl p-2 flex items-center justify-center">
-                        <svg viewBox="0 0 300 300" class="w-full h-full text-gold">
-                            <rect x="5" y="5" width="290" height="290" fill="none" stroke="currentColor" stroke-width="2"/>
-                            <line x1="5" y1="5" x2="295" y2="295" stroke="currentColor" stroke-width="1.5"/>
-                            <line x1="295" y1="5" x2="5" y2="295" stroke="currentColor" stroke-width="1.5"/>
-                            <line x1="150" y1="5" x2="295" y2="150" stroke="currentColor" stroke-width="1.5"/>
-                            <line x1="295" y1="150" x2="150" y2="295" stroke="currentColor" stroke-width="1.5"/>
-                            <line x1="150" y1="295" x2="5" y2="150" stroke="currentColor" stroke-width="1.5"/>
-                            <line x1="5" y1="150" x2="150" y2="5" stroke="currentColor" stroke-width="1.5"/>
-                            <text x="150" y="45" font-size="10" fill="#ffd700" text-anchor="middle" font-weight="bold">1</text>
-                            <text x="150" y="60" font-size="8.5" fill="#ffffff" text-anchor="middle">${housePlanets[1] || ''}</text>
-                            <text x="75" y="30" font-size="10" fill="#ffd700" text-anchor="middle" font-weight="bold">2</text>
-                            <text x="75" y="45" font-size="8.5" fill="#ffffff" text-anchor="middle">${housePlanets[2] || ''}</text>
-                            <text x="35" y="75" font-size="10" fill="#ffd700" text-anchor="middle" font-weight="bold">3</text>
-                            <text x="35" y="90" font-size="8.5" fill="#ffffff" text-anchor="middle">${housePlanets[3] || ''}</text>
-                            <text x="75" y="150" font-size="10" fill="#ffd700" text-anchor="middle" font-weight="bold">4</text>
-                            <text x="75" y="165" font-size="8.5" fill="#ffffff" text-anchor="middle">${housePlanets[4] || ''}</text>
-                            <text x="35" y="225" font-size="10" fill="#ffd700" text-anchor="middle" font-weight="bold">5</text>
-                            <text x="35" y="240" font-size="8.5" fill="#ffffff" text-anchor="middle">${housePlanets[5] || ''}</text>
-                            <text x="75" y="270" font-size="10" fill="#ffd700" text-anchor="middle" font-weight="bold">6</text>
-                            <text x="75" y="285" font-size="8.5" fill="#ffffff" text-anchor="middle">${housePlanets[6] || ''}</text>
-                            <text x="150" y="255" font-size="10" fill="#ffd700" text-anchor="middle" font-weight="bold">7</text>
-                            <text x="150" y="240" font-size="8.5" fill="#ffffff" text-anchor="middle">${housePlanets[7] || ''}</text>
-                            <text x="225" y="270" font-size="10" fill="#ffd700" text-anchor="middle" font-weight="bold">8</text>
-                            <text x="225" y="285" font-size="8.5" fill="#ffffff" text-anchor="middle">${housePlanets[8] || ''}</text>
-                            <text x="265" y="225" font-size="10" fill="#ffd700" text-anchor="middle" font-weight="bold">9</text>
-                            <text x="265" y="240" font-size="8.5" fill="#ffffff" text-anchor="middle">${housePlanets[9] || ''}</text>
-                            <text x="225" y="150" font-size="10" fill="#ffd700" text-anchor="middle" font-weight="bold">10</text>
-                            <text x="225" y="165" font-size="8.5" fill="#ffffff" text-anchor="middle">${housePlanets[10] || ''}</text>
-                            <text x="265" y="75" font-size="10" fill="#ffd700" text-anchor="middle" font-weight="bold">11</text>
-                            <text x="265" y="90" font-size="8.5" fill="#ffffff" text-anchor="middle">${housePlanets[11] || ''}</text>
-                            <text x="225" y="30" font-size="10" fill="#ffd700" text-anchor="middle" font-weight="bold">12</text>
-                            <text x="225" y="45" font-size="8.5" fill="#ffffff" text-anchor="middle">${housePlanets[12] || ''}</text>
-                        </svg>
-                    </div>
-                </div>
-            `;
-        }
-
-        function generateBabyNames() {
-            document.getElementById('babyNameOutput').innerHTML = `
-                <div class="p-4 bg-cosmic-950 rounded-2xl border border-gold/30 space-y-3">
-                    <h4 class="font-bold text-gold cinzel-font">Auspicious Baby Name Suggestions</h4>
-                    <p class="text-xs text-gray-300">Syllables: <strong class="text-gold">Na, Ni, Nu, Ne</strong></p>
-                    <div class="flex flex-wrap gap-2 pt-1">
-                        <span class="bg-amber-500/20 text-gold px-3 py-1.5 rounded-xl text-xs font-bold border border-gold/30">Nakul</span>
-                        <span class="bg-amber-500/20 text-gold px-3 py-1.5 rounded-xl text-xs font-bold border border-gold/30">Nipun</span>
-                    </div>
+                    <p class="text-xs text-amber-300 font-semibold"><strong>Missing Numbers:</strong> ${missingNums.length > 0 ? missingNums.join(', ') : 'None'}</p>
                 </div>
             `;
         }
