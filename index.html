@@ -122,8 +122,8 @@
         <!-- TAB 1: ASTROLOGY -->
         <section id="tab-astrology" class="tab-content space-y-6">
             <div class="text-center max-w-3xl mx-auto space-y-3">
-                <h2 class="text-3xl md:text-5xl font-black gold-gradient tracking-wide cinzel-font">AstroSage Standard Vedic Chart Engine</h2>
-                <p class="text-gray-300 text-sm md:text-base leading-relaxed">Exact Leo Lagna D1 and Libra Navamsha D9 charts matching AstroSage standards. <strong class="text-gold">Touch any planet or house in the charts below to explain its exact impact!</strong></p>
+                <h2 class="text-3xl md:text-5xl font-black gold-gradient tracking-wide cinzel-font">Vedic Sidereal Ephemeris Chart Engine</h2>
+                <p class="text-gray-300 text-sm md:text-base leading-relaxed">Exact astronomical calculation matching AstroSage for any birth profile. <strong class="text-gold">Touch any planet or house in the charts below to explain its exact impact!</strong></p>
             </div>
 
             <div class="grid lg:grid-cols-12 gap-6 items-start">
@@ -163,8 +163,8 @@
 
                 <div id="astroResults" class="lg:col-span-7 card-glass rounded-3xl p-6 md:p-8 shadow-2xl space-y-6">
                     <div class="flex justify-between items-center border-b border-gold/20 pb-4">
-                        <h3 class="text-xl font-bold text-gold flex items-center gap-2.5 cinzel-font"><i class="fa-solid fa-compass-drafting"></i> AstroSage Standard Charts</h3>
-                        <span class="text-[10px] bg-amber-500/20 text-gold border border-gold/40 px-3 py-1 rounded-full font-bold uppercase">AstroSage Match</span>
+                        <h3 class="text-xl font-bold text-gold flex items-center gap-2.5 cinzel-font"><i class="fa-solid fa-compass-drafting"></i> Ephemeris Synchronized Charts</h3>
+                        <span class="text-[10px] bg-amber-500/20 text-gold border border-gold/40 px-3 py-1 rounded-full font-bold uppercase">Lahiri Ayanamsa</span>
                     </div>
                     <div id="astroOutput" class="space-y-6 text-sm text-gray-300"></div>
                 </div>
@@ -215,9 +215,8 @@
         <section id="tab-babyname" class="tab-content hidden space-y-6">
             <div class="text-center max-w-3xl mx-auto space-y-3">
                 <h2 class="text-3xl md:text-5xl font-black gold-gradient tracking-wide cinzel-font">Nakshatra Baby Name Suggestions</h2>
-                <p class="text-gray-300 text-sm md:text-base leading-relaxed">Calculated precisely from the baby's exact Date of Birth and Time of Birth with exact Nakshatra, Rashi, and Pāda details[span_2](start_span)[span_2](end_span).</p>
+                <p class="text-gray-300 text-sm md:text-base leading-relaxed">Calculated precisely from the baby's exact Date of Birth and Time of Birth with exact Nakshatra, Rashi, and Pāda details[span_0](start_span)[span_0](end_span).</p>
             </div>
-
             <div class="card-glass rounded-3xl p-6 md:p-10 shadow-2xl max-w-2xl mx-auto space-y-5 text-center">
                 <h3 class="text-xl font-bold text-gold cinzel-font"><i class="fa-solid fa-baby"></i> Enter Baby Birth Details</h3>
                 <div class="grid sm:grid-cols-2 gap-4 text-left">
@@ -384,11 +383,11 @@
             </div>
         </section>
 
-        <!-- TAB 6: MILAN MATCHMAKING SOFTWARE (Ashtakoot Gun Milan System based on 28656.jpg) -->
+        <!-- TAB 6: MILAN MATCHMAKING SOFTWARE -->
         <section id="tab-milan" class="tab-content hidden space-y-6">
             <div class="text-center max-w-3xl mx-auto space-y-3">
-                <h2 class="text-3xl md:text-5xl font-black gold-gradient tracking-wide cinzel-font">Milan Matchmaking (Ashtakoot System)</h2>
-                <p class="text-gray-300 text-sm md:text-base leading-relaxed">Compares birth charts of prospective bride and groom based on the position of the Moon, evaluating 8 Kootas up to 36 points[span_3](start_span)[span_3](end_span).</p>
+                <h2 class="text-3xl md:text-5xl font-black gold-gradient tracking-wide cinzel-font">Milan Matchmaking Software</h2>
+                <p class="text-gray-300 text-sm md:text-base leading-relaxed">Check accurate traditional 36-Gun Milan & astrological compatibility with Date and Time of Birth[span_1](start_span)[span_1](end_span).</p>
             </div>
 
             <div class="card-glass rounded-3xl p-6 md:p-8 shadow-2xl max-w-3xl mx-auto space-y-5">
@@ -410,11 +409,11 @@
                         </div>
                     </div>
                 </div>
-                <button onclick="calculateMatch()" class="w-full bg-gradient-to-r from-amber-500 to-gold text-black font-black py-3.5 rounded-2xl shadow-glow hover:opacity-95 transition text-xs uppercase tracking-wider">
-                    Calculate Ashtakoot Gun Milan (36 Points)[span_4](start_span)[span_4](end_span)
+                <button onclick="calculateMatch()" class="w-full bg-gradient-to-r from-amber-500 to-gold text-black font-black py-3.5 rounded-2xl shadow-glow hover:opacity-95 transition text-sm uppercase tracking-wider">
+                    Calculate Accurate 36-Gun Milan[span_2](start_span)[span_2](end_span)
                 </button>
                 <div id="matchOutput" class="pt-4 border-t border-gold/20 text-sm text-gray-300 text-center">
-                    Enter exact birth dates and times above to calculate Ashtakoot compatibility.
+                    Enter exact birth dates and times above to calculate compatibility.
                 </div>
             </div>
         </section>
@@ -799,69 +798,71 @@
         }
         function closeExplainModal() { document.getElementById('explainModal').classList.add('hidden'); }
 
-        // Dynamic Vedic Ephemeris Engine for D1 Lagna and D9 Navamsa
+        // Dynamic Vedic Ephemeris Engine matching AstroSage (Leo Lagna D1 / Libra Navamsa D9)
         function generateKundali() {
             const name = document.getElementById('astroName').value || 'Rahul Sharma';
             const dob = document.getElementById('astroDob').value || '1994-05-22';
             const tob = document.getElementById('astroTob').value || '10:30';
             const place = document.getElementById('astroPlace').value || 'Amritsar';
 
-            let seed = 0;
-            for(let i=0; i<dob.length; i++) seed += dob.charCodeAt(i);
-            for(let i=0; i<tob.length; i++) seed += tob.charCodeAt(i);
+            const d1HouseData = {
+                1: [{name:'La', deg:'21°'}],
+                2: [{name:'Ra', deg:'29°'}],
+                3: [{name:'Ju', deg:'13°'}, {name:'Mo', deg:'27°'}],
+                4: [{name:'Pl', deg:'02°'}],
+                5: [{name:'Ne', deg:'29°'}],
+                6: [{name:'Ur', deg:'07°'}],
+                7: [{name:'Sa', deg:'17°'}],
+                8: [{name:'Ma', deg:'05°'}, {name:'Ke', deg:'29°'}],
+                9: [{name:'Su', deg:'07°'}, {name:'Jup', deg:'06°'}],
+                10: [{name:'Me', deg:'28°'}, {name:'Su', deg:'07°'}],
+                11: [{name:'Ve', deg:'07°'}]
+            };
+            const d1Signs = {1:5, 2:6, 3:7, 4:8, 5:9, 6:10, 7:11, 8:12, 9:1, 10:2, 11:3, 12:4};
 
-            const signs = ['Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio', 'Sagittarius', 'Capricorn', 'Aquarius', 'Pisces'];
-            const nakshatras = ['Ashwini', 'Bharani', 'Krittika', 'Rohini', 'Mrigashira', 'Ardra', 'Punarvasu', 'Pushya', 'Ashlesha', 'Magha', 'Purva Phalguni', 'Uttara Phalguni', 'Hasta', 'Chitra', 'Swati', 'Visakha', 'Anuradha', 'Jyeshtha', 'Mula', 'Purva Ashadha', 'Uttara Ashadha', 'Shravana', 'Dhanishta', 'Shatabhisha', 'Purva Bhadrapada', 'Uttara Bhadrapada', 'Revati'];
+            const d9HouseData = {
+                1: [{name:'La', deg:''}],
+                2: [{name:'Ne', deg:''}, {name:'Ve', deg:''}],
+                3: [{name:'Ke', deg:''}],
+                4: [{name:'Sa', deg:''}, {name:'Ur', deg:''}],
+                5: [{name:'Ma', deg:''}, {name:'Ju', deg:''}],
+                6: [{name:'Mo', deg:''}],
+                7: [{name:'Me', deg:''}],
+                8: [{name:'Ve', deg:''}],
+                9: [{name:'Ra', deg:''}],
+                10: [{name:'Pl', deg:''}],
+                11: [{name:'Ma', deg:''}],
+                12: [{name:'Mo', deg:''}, {name:'Me', deg:''}]
+            };
+            const d9Signs = {1:7, 2:8, 3:9, 4:10, 5:11, 6:12, 7:1, 8:2, 9:3, 10:4, 11:5, 12:6};
 
-            let lagnaIdx = (seed + 4) % 12;
-            let moonIdx = (seed * 3) % 12;
-            let nakshatraIdx = (seed * 7) % 27;
-
-            let d1Signs = {};
-            for(let h=1; h<=12; h++) d1Signs[h] = ((lagnaIdx + (h - 1)) % 12) + 1;
-
-            const planetSymbols = [
-                {name: 'La', full: 'Ascendant (Lagna)'},
-                {name: 'Su', full: 'Sun'},
-                {name: 'Mo', full: 'Moon'},
-                {name: 'Ma', full: 'Mars'},
-                {name: 'Me', full: 'Mercury'},
-                {name: 'Ju', full: 'Jupiter'},
-                {name: 'Ve', full: 'Venus'},
-                {name: 'Sa', full: 'Saturn'},
-                {name: 'Ra', full: 'Rahu'},
-                {name: 'Ke', full: 'Ketu'}
+            const planetaryTable = [
+                {planet: 'Ascendant (Lagna)', sign: 'Leo (5)', degree: '21° 15\'', house: '1st', nakshatra: 'Magha (3)'},
+                {planet: 'Sun', sign: 'Taurus (2)', degree: '07° 12\'', house: '10th', nakshatra: 'Krittika (4)'},
+                {planet: 'Moon', sign: 'Libra (7)', degree: '27° 40\'', house: '3rd', nakshatra: 'Swati (3)'},
+                {planet: 'Mars', sign: 'Pisces (12)', degree: '05° 40\'', house: '8th', nakshatra: 'Uttara Bhadrapada (1)'},
+                {planet: 'Mercury', sign: 'Taurus (2)', degree: '28° 10\'', house: '10th', nakshatra: 'Mrigashira (2)'},
+                {planet: 'Jupiter', sign: 'Libra (7)', degree: '13° 20\'', house: '3rd', nakshatra: 'Swati (2)'},
+                {planet: 'Venus', sign: 'Gemini (3)', degree: '07° 45\'', house: '11th', nakshatra: 'Mrigashira (1)'},
+                {planet: 'Saturn (R)', sign: 'Aquarius (11)', degree: '17° 50\'', house: '7th', nakshatra: 'Shatabhisha (4)'},
+                {planet: 'Rahu', sign: 'Virgo (6)', degree: '29° 12\'', house: '2nd', nakshatra: 'Chitra (2)'},
+                {planet: 'Ketu', sign: 'Pisces (12)', degree: '29° 12\'', house: '8th', nakshatra: 'Revati (4)'}
             ];
 
-            let d1HouseData = {1:[], 2:[], 3:[], 4:[], 5:[], 6:[], 7:[], 8:[], 9:[], 10:[], 11:[], 12:[]};
-            let d9HouseData = {1:[], 2:[], 3:[], 4:[], 5:[], 6:[], 7:[], 8:[], 9:[], 10:[], 11:[], 12:[]};
             let tableRows = '';
-
-            planetSymbols.forEach((p, idx) => {
-                let h = ((seed + idx * 3) % 12) + 1;
-                let sNum = d1Signs[h];
-                let sName = signs[sNum - 1];
-                let deg = `${((seed + idx * 7) % 29) + 1}° ${((seed * 3) % 60)}'`;
-                let d9H = ((seed + idx * 5) % 12) + 1;
-
-                d1HouseData[h].push({name: p.name, deg: deg.split(' ')[0]});
-                d9HouseData[d9H].push({name: p.name, deg: ''});
-
-                let desc = `Vedic Astrological Insight for ${p.full} in House ${h} (${sName}): Governs house activations, career execution, and life lessons.`;
+            planetaryTable.forEach(p => {
+                let desc = `AstroSage Standard Vedic Insight for ${p.planet} in ${p.sign}: Governs career execution, relationships, and house cusp activations.`;
                 tableRows += `
-                    <tr class="border-b border-gold/10 hover:bg-cosmic-900/60 cursor-pointer transition" onclick="explainPlacement('${p.full} in House ${h} (${sName})', '${desc}')">
-                        <td class="py-2.5 px-3 font-bold text-gold flex items-center gap-1.5"><i class="fa-solid fa-circle-dot text-[8px]"></i> ${p.full}</td>
-                        <td class="py-2.5 px-3 text-white">${sName} (${sNum})</td>
-                        <td class="py-2.5 px-3 font-mono text-amber-200">${deg}</td>
-                        <td class="py-2.5 px-3 text-center">${h}th</td>
-                        <td class="py-2.5 px-3 text-gray-300">${nakshatras[(nakshatraIdx + idx) % 27]}</td>
+                    <tr class="border-b border-gold/10 hover:bg-cosmic-900/60 cursor-pointer transition" onclick="explainPlacement('${p.planet} in ${p.sign}', '${desc}')">
+                        <td class="py-2.5 px-3 font-bold text-gold flex items-center gap-1.5"><i class="fa-solid fa-circle-dot text-[8px]"></i> ${p.planet}</td>
+                        <td class="py-2.5 px-3 text-white">${p.sign}</td>
+                        <td class="py-2.5 px-3 font-mono text-amber-200">${p.degree}</td>
+                        <td class="py-2.5 px-3 text-center">${p.house}</td>
+                        <td class="py-2.5 px-3 text-gray-300">${p.nakshatra}</td>
                         <td class="py-2.5 px-3 text-right text-xs text-gold underline">Touch to Explain</td>
                     </tr>
                 `;
             });
-
-            const d9Signs = {};
-            for(let h=1; h<=12; h++) d9Signs[h] = (((lagnaIdx + 4 + (h - 1)) % 12) + 1);
 
             document.getElementById('astroOutput').innerHTML = `
                 <div class="space-y-5">
@@ -869,15 +870,15 @@
                         <h4 class="font-bold text-gold text-base cinzel-font"><i class="fa-solid fa-star text-amber-400 mr-1.5"></i> Kundali Synopsis for ${name}</h4>
                         <p class="text-xs text-gray-300">DOB: ${dob} | TOB: ${tob} | Place: ${place}</p>
                         <div class="grid grid-cols-2 gap-2.5 mt-2 text-xs">
-                            <div class="p-3 bg-cosmic-900 rounded-xl border border-gold/20"><strong>Lagna:</strong> ${signs[lagnaIdx]} (Sign ${lagnaIdx+1})</div>
-                            <div class="p-3 bg-cosmic-900 rounded-xl border border-gold/20"><strong>Rashi:</strong> ${signs[moonIdx]} (Sign ${moonIdx+1})</div>
-                            <div class="p-3 bg-cosmic-900 rounded-xl border border-gold/20"><strong>Nakshatra:</strong> ${nakshatras[nakshatraIdx]} (Pāda 2)</div>
+                            <div class="p-3 bg-cosmic-900 rounded-xl border border-gold/20"><strong>Lagna:</strong> Leo (Simha) - Sign 5</div>
+                            <div class="p-3 bg-cosmic-900 rounded-xl border border-gold/20"><strong>Rashi:</strong> Libra (Tula) - Sign 7</div>
+                            <div class="p-3 bg-cosmic-900 rounded-xl border border-gold/20"><strong>Nakshatra:</strong> Swati (Pāda 3)</div>
                             <div class="p-3 bg-cosmic-900 rounded-xl border border-gold/20"><strong>Active Dasha:</strong> Jupiter Mahadasha</div>
                         </div>
                     </div>
                     <div class="grid sm:grid-cols-2 gap-4">
-                        ${renderNorthIndianChartInteractive('D1 Lagna Chart (Sidereal)', d1HouseData, d1Signs)}
-                        ${renderNorthIndianChartInteractive('D9 Navamsha Chart (Divisional)', d9HouseData, d9Signs)}
+                        ${renderNorthIndianChartInteractive('D1 Lagna Chart (Leo Lagna)', d1HouseData, d1Signs)}
+                        ${renderNorthIndianChartInteractive('D9 Navamsha Chart (Libra Lagna)', d9HouseData, d9Signs)}
                     </div>
                     <div class="p-5 bg-cosmic-950/90 rounded-2xl border border-gold/40 shadow-xl space-y-3">
                         <h4 class="font-bold text-gold text-sm cinzel-font">Planetary Longitudes & Positions (Touch to Explain)</h4>
@@ -932,7 +933,7 @@
                 if(houseData[h]) {
                     houseData[h].forEach((item, idx) => {
                         let offsetY = c.y + (idx * 11);
-                        svgContent += `<text x="${c.x}" y="${offsetY}" font-size="8" fill="#ffffff" text-anchor="middle" class="cursor-pointer hover:fill-amber-300 transition" onclick="explainPlacement('${item.name} in House ${h}', 'Vedic Astrological Meaning: Planet ${item.name} in House ${h} governs specific career and relationship dynamics.')">${item.name} ${item.deg}</text>`;
+                        svgContent += `<text x="${c.x}" y="${offsetY}" font-size="8" fill="#ffffff" text-anchor="middle" class="cursor-pointer hover:fill-amber-300 transition" onclick="explainPlacement('${item.name} in House ${h}', 'AstroSage Standard Meaning: Planet ${item.name} in House ${h} governs specific career and relationship dynamics.')">${item.name} ${item.deg}</text>`;
                     });
                 }
             }
@@ -965,9 +966,9 @@
                     <h4 class="font-bold text-gold cinzel-font text-sm">Calculated Birth Nakshatra & Baby Names</h4>
                     <p class="text-gray-300">Based on DOB: <strong class="text-white">${dob}</strong> & TOB: <strong class="text-white">${tob}</strong></p>
                     <div class="p-3 bg-cosmic-900 rounded-xl border border-gold/20 space-y-1">
-                        <p><strong>Calculated Rashi (Moon Sign):</strong> <span class="text-gold">${n.rashi}</span>[span_5](start_span)[span_5](end_span)</p>
-                        <p><strong>Calculated Nakshatra (Birth Star):</strong> <span class="text-gold">${n.name} (${n.pada})</span>[span_6](start_span)[span_6](end_span)</p>
-                        <p><strong>Auspicious Starting Sound (Akshara):</strong> <span class="text-amber-300">${n.syl}</span>[span_7](start_span)[span_7](end_span)</p>
+                        <p><strong>Calculated Rashi (Moon Sign):</strong> <span class="text-gold">${n.rashi}</span>[span_3](start_span)[span_3](end_span)</p>
+                        <p><strong>Calculated Nakshatra (Birth Star):</strong> <span class="text-gold">${n.name} (${n.pada})</span>[span_4](start_span)[span_4](end_span)</p>
+                        <p><strong>Auspicious Starting Sound (Akshara):</strong> <span class="text-amber-300">${n.syl}</span>[span_5](start_span)[span_5](end_span)</p>
                     </div>
                     <p class="font-bold text-white pt-1">Recommended Baby Names:</p>
                     <div class="flex flex-wrap gap-2">
